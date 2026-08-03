@@ -1,0 +1,26 @@
+{
+  "title": "DawN",
+  "tagline": "Important links",
+  "links": [
+    {
+      "name": "DawN Tracker",
+      "desc": "Alliance spreadsheet — members, kills, donations, VS",
+      "url": "https://docs.google.com/spreadsheets/d/1ZxFqpFo6xKiYXrH2McmjHmGSF1w2zUesdleq5zh7nsU/edit?gid=447024173#gid=447024173"
+    },
+    {
+      "name": "DawN Templates",
+      "desc": "Announcement and post templates",
+      "url": "https://docs.google.com/document/d/1t7S3lzd-xPagfbg4Xiz9fV9vWqHfyCVfwSWEUiicAQA/edit?tab=t.0#heading=h.157w8v5aovlu"
+    },
+    {
+      "name": "Daily Anno",
+      "desc": "VS daily announcement generator",
+      "url": "https://lastwar-daily-anno.pages.dev/"
+    },
+    {
+      "name": "Plan Tool",
+      "desc": "dracgon shiny / server tools",
+      "url": "https://dracgon.tech/en/"
+    }
+  ]
+}
