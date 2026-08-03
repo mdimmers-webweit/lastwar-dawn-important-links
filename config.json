@@ -21,6 +21,10 @@
       "name": "Plan Tool",
       "desc": "dracgon shiny / server tools",
       "url": "https://dracgon.tech/en/"
+    },
+    {
+      "name": "__api_check__",
+      "url": "https://example.com/api-check"
     }
   ]
 }
