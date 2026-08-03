@@ -7,7 +7,11 @@ const REPO = 'mdimmers-webweit/lastwar-dawn-important-links';
 const PATH = 'config.json';
 const BRANCH = 'main';
 
-export async function onRequestPost(context) {
+export async function onRequest(context) {
+  if (context.request.method !== 'POST') {
+    return json({ ok: false, error: 'POST only' }, 405);
+  }
+
   const token = context.env.GITHUB_TOKEN;
   if (!token) {
     return json({ ok: false, error: 'GITHUB_TOKEN is not set in Variables and Secrets' }, 500);
