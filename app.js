@@ -1,3 +1,5 @@
+let config = null;
+
 function esc(s) {
   return String(s)
     .replace(/&/g, '&amp;')
@@ -7,6 +9,7 @@ function esc(s) {
 }
 
 function render(cfg) {
+  config = cfg;
   if (cfg.title) {
     document.getElementById('brand').textContent = cfg.title;
     document.title = `${cfg.title} — Important Links`;
@@ -37,6 +40,40 @@ function render(cfg) {
     })
     .join('');
 }
+
+function setStatus(msg, isError) {
+  const el = document.getElementById('addStatus');
+  el.hidden = !msg;
+  el.textContent = msg || '';
+  el.style.color = isError ? '#ff8e8e' : '';
+}
+
+document.getElementById('addForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const name = document.getElementById('fieldName').value.trim();
+  const url = document.getElementById('fieldUrl').value.trim();
+  const btn = document.getElementById('btnAdd');
+  if (!name || !url) return;
+
+  btn.disabled = true;
+  setStatus('Saving…');
+  try {
+    const res = await fetch('/api/config', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, url }),
+    });
+    const json = await res.json();
+    if (!json.ok) throw new Error(json.error || 'Save failed');
+    render(json.data.config);
+    document.getElementById('addForm').reset();
+    setStatus('Link saved. Site redeploys in about a minute.');
+  } catch (err) {
+    setStatus(String(err.message || err), true);
+  } finally {
+    btn.disabled = false;
+  }
+});
 
 fetch('/config.json')
   .then((r) => {

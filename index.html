@@ -27,6 +27,22 @@
         <li class="loading">Loading…</li>
       </ul>
     </section>
+
+    <section class="add" aria-label="Add a link">
+      <h2>Add link</h2>
+      <form id="addForm" class="add-form">
+        <label>
+          <span>Name / Description</span>
+          <input type="text" id="fieldName" name="name" required placeholder="e.g. DawN Tracker" autocomplete="off">
+        </label>
+        <label>
+          <span>Link</span>
+          <input type="url" id="fieldUrl" name="url" required placeholder="https://…" autocomplete="off">
+        </label>
+        <button type="submit" id="btnAdd">Add</button>
+      </form>
+      <p id="addStatus" class="status" hidden></p>
+    </section>
   </main>
 
   <script src="app.js"></script>

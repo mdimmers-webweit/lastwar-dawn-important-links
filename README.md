@@ -2,9 +2,16 @@
 
 Link hub for the DawN alliance.
 
-- **Host:** Cloudflare Pages (connect this repo, Framework **None**)
-- **Config:** [`config.json`](config.json) — add entries as `{ "name", "desc", "url" }`, then push
+- **Host:** Cloudflare Pages (Framework **None**)
+- **Config:** [`config.json`](config.json)
+- **Add link** in the UI writes to `config.json` via GitHub
 
-## Links
+## Secret
 
-Edit `config.json` → commit to `main` → Pages redeploys.
+Pages → Settings → **Variables and Secrets**:
+
+| Name | Type |
+|------|------|
+| `GITHUB_TOKEN` | Secret (Contents read/write on this repo) |
+
+Redeploy after adding the secret.

@@ -162,6 +162,87 @@ body {
 
 .err { color: #ff8e8e; }
 
+.add {
+  margin-top: 28px;
+  padding: 18px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  animation: fadeUp 0.8s ease-out 0.55s both;
+}
+
+.add h2 {
+  margin: 0 0 14px;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.add-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.add-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.add-form input {
+  font: inherit;
+  font-size: 1rem;
+  letter-spacing: normal;
+  text-transform: none;
+  color: var(--text);
+  background: rgba(7, 4, 12, 0.75);
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  padding: 10px 12px;
+}
+
+.add-form input:focus {
+  outline: none;
+  border-color: var(--gold);
+}
+
+.add-form button {
+  align-self: flex-start;
+  margin-top: 4px;
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #1a1008;
+  background: linear-gradient(180deg, var(--gold-soft), var(--gold-dim));
+  border: none;
+  border-radius: 2px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.add-form button:disabled {
+  opacity: 0.55;
+  cursor: wait;
+}
+
+.add-form button:hover:not(:disabled) {
+  filter: brightness(1.06);
+}
+
+.status {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
 @keyframes rise {
   from { opacity: 0; transform: scale(1.04); }
   to { opacity: 1; transform: scale(1); }
