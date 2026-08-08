@@ -25,6 +25,10 @@
     {
       "name": "CBT Hedge - Plan Tool 2",
       "url": "https://cpt-hedge.com/"
+    },
+    {
+      "name": "__diag__",
+      "url": "https://example.com/diag"
     }
   ]
 }
