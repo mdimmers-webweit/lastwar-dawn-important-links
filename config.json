@@ -1,11 +1,18 @@
 {
   "title": "DawN",
   "tagline": "Important links",
-  "vsWeeks": [],
+  "vsWeeks": [
+    {
+      "year": 2026,
+      "week": 34,
+      "mode": "save",
+      "max": 12000000
+    }
+  ],
   "links": [
     {
       "name": "DawN Tracker",
-      "desc": "Alliance spreadsheet \u2014 members, kills, donations, VS",
+      "desc": "Alliance spreadsheet — members, kills, donations, VS",
       "url": "https://docs.google.com/spreadsheets/d/1ZxFqpFo6xKiYXrH2McmjHmGSF1w2zUesdleq5zh7nsU/edit?gid=447024173#gid=447024173"
     },
     {
