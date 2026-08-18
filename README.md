@@ -2,9 +2,9 @@
 
 Link hub for the DawN alliance.
 
-- **Host:** Cloudflare Pages (Framework **None**)
-- **Config:** [`config.json`](config.json)
-- **Add link** in the UI writes to `config.json` via GitHub
+- **Host:** Cloudflare Pages (Framework **None**) → https://lastwar-dawn-important-links.pages.dev
+- **Config:** [`config.json`](config.json) — links and `vsWeeks`
+- **Add link** / **VS weeks** in the UI write to `config.json` via GitHub
 
 ## Secret
 

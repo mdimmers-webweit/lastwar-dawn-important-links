@@ -170,7 +170,8 @@ body {
   animation: fadeUp 0.8s ease-out 0.55s both;
 }
 
-.add h2 {
+.add h2,
+.weeks h2 {
   margin: 0 0 14px;
   font-family: var(--font-display);
   font-size: 1rem;
@@ -196,7 +197,8 @@ body {
   color: var(--muted);
 }
 
-.add-form input {
+.add-form input,
+.add-form select {
   font: inherit;
   font-size: 1rem;
   letter-spacing: normal;
@@ -208,7 +210,8 @@ body {
   padding: 10px 12px;
 }
 
-.add-form input:focus {
+.add-form input:focus,
+.add-form select:focus {
   outline: none;
   border-color: var(--gold);
 }
@@ -241,6 +244,69 @@ body {
   margin: 12px 0 0;
   color: var(--muted);
   font-size: 0.9rem;
+}
+
+.weeks {
+  margin-top: 28px;
+  padding: 18px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  animation: fadeUp 0.8s ease-out 0.5s both;
+}
+
+.hint {
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.week-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.week-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 14px;
+  font-size: 0.95rem;
+}
+
+.week-table th,
+.week-table td {
+  text-align: left;
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--line);
+}
+
+.week-table th {
+  color: var(--muted);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.week-table tr.current td {
+  background: rgba(232, 197, 106, 0.08);
+}
+
+button.ghost {
+  font: inherit;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold);
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  padding: 4px 10px;
+  cursor: pointer;
+}
+
+@media (min-width: 640px) {
+  .week-fields { grid-template-columns: 90px 80px 1fr 110px; }
 }
 
 @keyframes rise {
