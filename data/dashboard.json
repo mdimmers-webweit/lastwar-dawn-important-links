@@ -8443,11 +8443,11 @@
       ]
     }
   },
-  "generated_at": "2026-10-19T11:19:05Z",
-  "stand_berlin": "19.10.2026, 13:19",
+  "generated_at": "2026-10-19T13:08:42Z",
+  "stand_berlin": "19.10.2026, 15:08",
   "source": "google_sheets",
   "source_file": "DawN - Base + Tabs (live)",
-  "snapshot": "2026-10-19T11:19:05",
+  "snapshot": "2026-10-19T13:08:42",
   "links": {
     "title": "DawN",
     "tagline": "Important links",
@@ -8463,7 +8463,7 @@
         "desc": "Announcement and post templates"
       },
       {
-        "name": "Daily Anno",
+        "name": "DawN Anno",
         "url": "https://lastwar-daily-anno.pages.dev/",
         "desc": "VS daily announcement generator"
       },
