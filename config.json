@@ -3,6 +3,11 @@
   "tagline": "Important links",
   "vsWeeks": [
     {
+      "year": 2099,
+      "week": 2,
+      "mode": "push"
+    },
+    {
       "year": 2026,
       "week": 43,
       "mode": "push",
