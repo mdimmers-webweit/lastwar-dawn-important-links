@@ -24,6 +24,7 @@
     "season_defeat": 0.3
   },
   "meta": {
+    "VSLastDate": "2026-10-19",
     "VSWeekMode": "push",
     "VSWeekYear": "2026",
     "VSWeekNumber": "43",
@@ -38,7 +39,7 @@
       "t1": "43,69",
       "thp": 130500000,
       "thp_display": "130.500.000",
-      "donations": 0,
+      "donations": 8050,
       "kills": "",
       "kills_pct": null,
       "events": "10/10",
@@ -46,9 +47,9 @@
       "cs": false,
       "season_activity": 0.3,
       "season_display": "30,0%",
-      "activity": 0.3,
-      "activity_display": "30,0%",
-      "vs_flag": "",
+      "activity": 0.7477064220183487,
+      "activity_display": "74,8%",
+      "vs_flag": "OK",
       "ds_master": {
         "name": "DiViNE10",
         "role": "R5",
@@ -90,7 +91,7 @@
       "t1": "42,67",
       "thp": 121000000,
       "thp_display": "121.000.000",
-      "donations": 0,
+      "donations": 2850,
       "kills": "",
       "kills_pct": null,
       "events": "10/10",
@@ -98,9 +99,9 @@
       "cs": false,
       "season_activity": 0.3,
       "season_display": "30,0%",
-      "activity": 0.3,
-      "activity_display": "30,0%",
-      "vs_flag": "",
+      "activity": 0.6522935779816514,
+      "activity_display": "65,2%",
+      "vs_flag": "OK",
       "ds_master": {
         "name": "Icey786",
         "role": "R4",
@@ -142,7 +143,7 @@
       "t1": "44,4",
       "thp": 129200000,
       "thp_display": "129.200.000",
-      "donations": 0,
+      "donations": 6050,
       "kills": "",
       "kills_pct": null,
       "events": "10/10",
@@ -150,9 +151,9 @@
       "cs": false,
       "season_activity": 0.3,
       "season_display": "30,0%",
-      "activity": 0.3,
-      "activity_display": "30,0%",
-      "vs_flag": "",
+      "activity": 0.6123085076452599,
+      "activity_display": "61,2%",
+      "vs_flag": "1/1 below",
       "ds_master": {
         "name": "mandarin",
         "role": "R4",
@@ -194,7 +195,7 @@
       "t1": "53,66",
       "thp": 166400000,
       "thp_display": "166.400.000",
-      "donations": 0,
+      "donations": 10900,
       "kills": "",
       "kills_pct": null,
       "events": "10/10",
@@ -202,9 +203,9 @@
       "cs": false,
       "season_activity": 0.3,
       "season_display": "30,0%",
-      "activity": 0.3,
-      "activity_display": "30,0%",
-      "vs_flag": "",
+      "activity": 0.8,
+      "activity_display": "80,0%",
+      "vs_flag": "OK",
       "ds_master": {
         "name": "GrummelGriesgram",
         "role": "R4",
@@ -246,7 +247,7 @@
       "t1": "41,62",
       "thp": 108800000,
       "thp_display": "108.800.000",
-      "donations": 0,
+      "donations": 5550,
       "kills": "",
       "kills_pct": null,
       "events": "10/10",
@@ -254,9 +255,9 @@
       "cs": false,
       "season_activity": 0.3,
       "season_display": "30,0%",
-      "activity": 0.3,
-      "activity_display": "30,0%",
-      "vs_flag": "",
+      "activity": 0.5227837790519878,
+      "activity_display": "52,3%",
+      "vs_flag": "1/1 below",
       "ds_master": {
         "name": "LaLaLanD",
         "role": "R4",
@@ -298,7 +299,7 @@
       "t1": "44,5",
       "thp": 125400000,
       "thp_display": "125.400.000",
-      "donations": 0,
+      "donations": 3500,
       "kills": "",
       "kills_pct": null,
       "events": "10/10",
@@ -306,9 +307,9 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
-      "activity": 0.0,
-      "activity_display": "0,0%",
-      "vs_flag": "",
+      "activity": 0.29986222515290517,
+      "activity_display": "30,0%",
+      "vs_flag": "1/1 below",
       "ds_master": {
         "name": "Sosiskaa",
         "role": "R3",
@@ -350,7 +351,7 @@
       "t1": "46,9",
       "thp": 136700000,
       "thp_display": "136.700.000",
-      "donations": 0,
+      "donations": 3900,
       "kills": "",
       "kills_pct": null,
       "events": "10/10",
@@ -358,9 +359,9 @@
       "cs": false,
       "season_activity": 0.3,
       "season_display": "30,0%",
-      "activity": 0.3,
-      "activity_display": "30,0%",
-      "vs_flag": "",
+      "activity": 0.6715596330275229,
+      "activity_display": "67,2%",
+      "vs_flag": "OK",
       "ds_master": {
         "name": "Gabi Kamado",
         "role": "R4",
@@ -402,7 +403,7 @@
       "t1": "48,29",
       "thp": 141800000,
       "thp_display": "141.800.000",
-      "donations": 0,
+      "donations": 5200,
       "kills": "",
       "kills_pct": null,
       "events": "10/10",
@@ -410,9 +411,9 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
-      "activity": 0.0,
-      "activity_display": "0,0%",
-      "vs_flag": "",
+      "activity": 0.39541284403669724,
+      "activity_display": "39,5%",
+      "vs_flag": "OK",
       "ds_master": {
         "name": "Banu89",
         "role": "R3",
@@ -454,7 +455,7 @@
       "t1": "46,5",
       "thp": 143400000,
       "thp_display": "143.400.000",
-      "donations": 0,
+      "donations": 9550,
       "kills": "",
       "kills_pct": null,
       "events": "10/10",
@@ -462,9 +463,9 @@
       "cs": false,
       "season_activity": 0.3,
       "season_display": "30,0%",
-      "activity": 0.3,
-      "activity_display": "30,0%",
-      "vs_flag": "",
+      "activity": 0.7748077744648318,
+      "activity_display": "77,5%",
+      "vs_flag": "1/1 below",
       "ds_master": {
         "name": "Königinnenreich",
         "role": "R4",
@@ -506,7 +507,7 @@
       "t1": "",
       "thp": 131400000,
       "thp_display": "131.400.000",
-      "donations": 0,
+      "donations": 7000,
       "kills": "",
       "kills_pct": null,
       "events": "10/10",
@@ -514,9 +515,9 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
-      "activity": 0.0,
-      "activity_display": "0,0%",
-      "vs_flag": "",
+      "activity": 0.2697685336391437,
+      "activity_display": "27,0%",
+      "vs_flag": "1/1 below",
       "ds_master": {
         "name": "Juliani86",
         "role": "R3",
@@ -558,7 +559,7 @@
       "t1": "46,12",
       "thp": 129600000,
       "thp_display": "129.600.000",
-      "donations": 0,
+      "donations": 1300,
       "kills": "",
       "kills_pct": null,
       "events": "10/10",
@@ -566,9 +567,9 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
-      "activity": 0.0,
-      "activity_display": "0,0%",
-      "vs_flag": "",
+      "activity": 0.28586991934250766,
+      "activity_display": "28,6%",
+      "vs_flag": "1/1 below",
       "ds_master": {
         "name": "Bazïinga",
         "role": "R3",
@@ -610,7 +611,7 @@
       "t1": "44,62",
       "thp": 131100000,
       "thp_display": "131.100.000",
-      "donations": 0,
+      "donations": 5200,
       "kills": "",
       "kills_pct": null,
       "events": "10/10",
@@ -618,9 +619,9 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
-      "activity": 0.0,
-      "activity_display": "0,0%",
-      "vs_flag": "",
+      "activity": 0.31558076070336394,
+      "activity_display": "31,6%",
+      "vs_flag": "1/1 below",
       "ds_master": {
         "name": "DesertSniper",
         "role": "R3",
@@ -670,9 +671,9 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
-      "activity": 0.0,
-      "activity_display": "0,0%",
-      "vs_flag": "",
+      "activity": 0.15182208333333333,
+      "activity_display": "15,2%",
+      "vs_flag": "1/1 below",
       "ds_master": {
         "name": "Bruna Laïs",
         "role": "R3",
@@ -722,9 +723,9 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
-      "activity": 0.0,
-      "activity_display": "0,0%",
-      "vs_flag": "",
+      "activity": 0.00671875,
+      "activity_display": "0,7%",
+      "vs_flag": "1/1 below",
       "ds_master": {
         "name": "Andressita MD",
         "role": "R3",
@@ -766,7 +767,7 @@
       "t1": "41,91",
       "thp": 126400000,
       "thp_display": "126.400.000",
-      "donations": 0,
+      "donations": 2150,
       "kills": "",
       "kills_pct": null,
       "events": "10/10",
@@ -774,9 +775,9 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
-      "activity": 0.0,
-      "activity_display": "0,0%",
-      "vs_flag": "",
+      "activity": 0.22093920795107033,
+      "activity_display": "22,1%",
+      "vs_flag": "1/1 below",
       "ds_master": {
         "name": "Cmdr William T Riker",
         "role": "R3",
@@ -818,7 +819,7 @@
       "t1": "36,9",
       "thp": 107000000,
       "thp_display": "107.000.000",
-      "donations": 0,
+      "donations": 4050,
       "kills": "",
       "kills_pct": null,
       "events": "10/10",
@@ -826,9 +827,9 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
-      "activity": 0.0,
-      "activity_display": "0,0%",
-      "vs_flag": "",
+      "activity": 0.3540385099388379,
+      "activity_display": "35,4%",
+      "vs_flag": "1/1 below",
       "ds_master": {
         "name": "Knives00",
         "role": "R3",
@@ -917,7 +918,7 @@
       "t1": "47,87",
       "thp": 147100000,
       "thp_display": "147.100.000",
-      "donations": 0,
+      "donations": 550,
       "kills": "",
       "kills_pct": null,
       "events": "10/10",
@@ -925,9 +926,9 @@
       "cs": false,
       "season_activity": 0.3,
       "season_display": "30,0%",
-      "activity": 0.3,
-      "activity_display": "30,0%",
-      "vs_flag": "",
+      "activity": 0.6100917431192661,
+      "activity_display": "61,0%",
+      "vs_flag": "OK",
       "ds_master": {
         "name": "Eisen024",
         "role": "R4",
@@ -1021,7 +1022,7 @@
       "t1": "",
       "thp": 122600000,
       "thp_display": "122.600.000",
-      "donations": 0,
+      "donations": 5450,
       "kills": "",
       "kills_pct": null,
       "events": "",
@@ -1029,9 +1030,9 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
-      "activity": 0.0,
-      "activity_display": "0,0%",
-      "vs_flag": "",
+      "activity": 0.30996599999999996,
+      "activity_display": "31,0%",
+      "vs_flag": "1/1 below",
       "ds_master": {
         "name": "0 AÇOUGUEIRO",
         "role": "R3",
@@ -1068,7 +1069,7 @@
       "t1": "47,42",
       "thp": 139000000,
       "thp_display": "139.000.000",
-      "donations": 0,
+      "donations": 3850,
       "kills": "",
       "kills_pct": null,
       "events": "10/10",
@@ -1076,9 +1077,9 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
-      "activity": 0.0,
-      "activity_display": "0,0%",
-      "vs_flag": "",
+      "activity": 0.3706422018348624,
+      "activity_display": "37,1%",
+      "vs_flag": "OK",
       "ds_master": {
         "name": "Rico 2026",
         "role": "R3",
@@ -1120,7 +1121,7 @@
       "t1": "43,27",
       "thp": 122500000,
       "thp_display": "122.500.000",
-      "donations": 0,
+      "donations": 4500,
       "kills": "",
       "kills_pct": null,
       "events": "10/10",
@@ -1128,9 +1129,9 @@
       "cs": false,
       "season_activity": 0.3,
       "season_display": "30,0%",
-      "activity": 0.3,
-      "activity_display": "30,0%",
-      "vs_flag": "",
+      "activity": 0.5933729323394495,
+      "activity_display": "59,3%",
+      "vs_flag": "1/1 below",
       "ds_master": {
         "name": "Lana 67",
         "role": "R4",
@@ -1172,7 +1173,7 @@
       "t1": "44,06",
       "thp": 125900000,
       "thp_display": "125.900.000",
-      "donations": 0,
+      "donations": 6350,
       "kills": "",
       "kills_pct": null,
       "events": "10/10",
@@ -1180,9 +1181,9 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
-      "activity": 0.0,
-      "activity_display": "0,0%",
-      "vs_flag": "",
+      "activity": 0.21549942813455655,
+      "activity_display": "21,5%",
+      "vs_flag": "1/1 below",
       "ds_master": {
         "name": "Relapse94",
         "role": "R3",
@@ -1224,7 +1225,7 @@
       "t1": "36,45",
       "thp": 99500000,
       "thp_display": "99.500.000",
-      "donations": 0,
+      "donations": 1850,
       "kills": "",
       "kills_pct": null,
       "events": "10/10",
@@ -1232,9 +1233,9 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
-      "activity": 0.0,
-      "activity_display": "0,0%",
-      "vs_flag": "",
+      "activity": 0.12037787079510702,
+      "activity_display": "12,0%",
+      "vs_flag": "1/1 below",
       "ds_master": {
         "name": "Everton 123456",
         "role": "R3",
@@ -1276,7 +1277,7 @@
       "t1": "42,1",
       "thp": 120400000,
       "thp_display": "120.400.000",
-      "donations": 0,
+      "donations": 3800,
       "kills": "",
       "kills_pct": null,
       "events": "10/10",
@@ -1284,9 +1285,9 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
-      "activity": 0.0,
-      "activity_display": "0,0%",
-      "vs_flag": "",
+      "activity": 0.25825189564220186,
+      "activity_display": "25,8%",
+      "vs_flag": "1/1 below",
       "ds_master": {
         "name": "damboddambod",
         "role": "R3",
@@ -1328,7 +1329,7 @@
       "t1": "44,04",
       "thp": 139500000,
       "thp_display": "139.500.000",
-      "donations": 0,
+      "donations": 6700,
       "kills": "",
       "kills_pct": null,
       "events": "10/10",
@@ -1336,9 +1337,9 @@
       "cs": false,
       "season_activity": 0.3,
       "season_display": "30,0%",
-      "activity": 0.3,
-      "activity_display": "30,0%",
-      "vs_flag": "",
+      "activity": 0.7229357798165137,
+      "activity_display": "72,3%",
+      "vs_flag": "OK",
       "ds_master": {
         "name": "Ougat",
         "role": "R4",
@@ -1380,7 +1381,7 @@
       "t1": "",
       "thp": 103900000,
       "thp_display": "103.900.000",
-      "donations": 0,
+      "donations": 3350,
       "kills": "",
       "kills_pct": null,
       "events": "",
@@ -1388,9 +1389,9 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
-      "activity": 0.0,
-      "activity_display": "0,0%",
-      "vs_flag": "",
+      "activity": 0.21238976490825687,
+      "activity_display": "21,2%",
+      "vs_flag": "1/1 below",
       "ds_master": {
         "name": "Megalocasiadon",
         "role": "R3",
@@ -1427,7 +1428,7 @@
       "t1": "46",
       "thp": 142000000,
       "thp_display": "142.000.000",
-      "donations": 0,
+      "donations": 4700,
       "kills": "",
       "kills_pct": null,
       "events": "10/10",
@@ -1435,9 +1436,9 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
-      "activity": 0.0,
-      "activity_display": "0,0%",
-      "vs_flag": "",
+      "activity": 0.16711353211009175,
+      "activity_display": "16,7%",
+      "vs_flag": "1/1 below",
       "ds_master": {
         "name": "Jazzcat78",
         "role": "R3",
@@ -1479,7 +1480,7 @@
       "t1": "39,56",
       "thp": 122400000,
       "thp_display": "122.400.000",
-      "donations": 0,
+      "donations": 3800,
       "kills": "",
       "kills_pct": null,
       "events": "10/10",
@@ -1487,9 +1488,9 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
-      "activity": 0.0,
-      "activity_display": "0,0%",
-      "vs_flag": "",
+      "activity": 0.3697247706422018,
+      "activity_display": "37,0%",
+      "vs_flag": "OK",
       "ds_master": {
         "name": "Filippos4Paok",
         "role": "R3",
@@ -1583,7 +1584,7 @@
       "t1": "44,51",
       "thp": 122300000,
       "thp_display": "122.300.000",
-      "donations": 0,
+      "donations": 7000,
       "kills": "",
       "kills_pct": null,
       "events": "10/10",
@@ -1591,9 +1592,9 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
-      "activity": 0.0,
-      "activity_display": "0,0%",
-      "vs_flag": "",
+      "activity": 0.42844036697247706,
+      "activity_display": "42,8%",
+      "vs_flag": "OK",
       "ds_master": {
         "name": "Itamar1130",
         "role": "R3",
@@ -1635,7 +1636,7 @@
       "t1": "40,4",
       "thp": 107900000,
       "thp_display": "107.900.000",
-      "donations": 0,
+      "donations": 3250,
       "kills": "",
       "kills_pct": null,
       "events": "10/10",
@@ -1643,9 +1644,9 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
-      "activity": 0.0,
-      "activity_display": "0,0%",
-      "vs_flag": "",
+      "activity": 0.15701586085626912,
+      "activity_display": "15,7%",
+      "vs_flag": "1/1 below",
       "ds_master": {
         "name": "Squatislav",
         "role": "R3",
@@ -1687,7 +1688,7 @@
       "t1": "41,36",
       "thp": 124400000,
       "thp_display": "124.400.000",
-      "donations": 0,
+      "donations": 2750,
       "kills": "",
       "kills_pct": null,
       "events": "10/10",
@@ -1695,9 +1696,9 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
-      "activity": 0.0,
-      "activity_display": "0,0%",
-      "vs_flag": "",
+      "activity": 0.1278415489296636,
+      "activity_display": "12,8%",
+      "vs_flag": "1/1 below",
       "ds_master": {
         "name": "Alex000392",
         "role": "R3",
@@ -1739,7 +1740,7 @@
       "t1": "43,27",
       "thp": 135900000,
       "thp_display": "135.900.000",
-      "donations": 0,
+      "donations": 2800,
       "kills": "",
       "kills_pct": null,
       "events": "10/10",
@@ -1747,9 +1748,9 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
-      "activity": 0.0,
-      "activity_display": "0,0%",
-      "vs_flag": "",
+      "activity": 0.3513761467889908,
+      "activity_display": "35,1%",
+      "vs_flag": "OK",
       "ds_master": {
         "name": "Erdbeermarmelade",
         "role": "R3",
@@ -1799,9 +1800,9 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
-      "activity": 0.0,
-      "activity_display": "0,0%",
-      "vs_flag": "",
+      "activity": 0.07457541666666666,
+      "activity_display": "7,5%",
+      "vs_flag": "1/1 below",
       "ds_master": {
         "name": "Optimus Bob",
         "role": "R3",
@@ -1843,7 +1844,7 @@
       "t1": "40",
       "thp": 111900000,
       "thp_display": "111.900.000",
-      "donations": 0,
+      "donations": 4850,
       "kills": "",
       "kills_pct": null,
       "events": "10/10",
@@ -1851,9 +1852,9 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
-      "activity": 0.0,
-      "activity_display": "0,0%",
-      "vs_flag": "",
+      "activity": 0.25060578402140676,
+      "activity_display": "25,1%",
+      "vs_flag": "1/1 below",
       "ds_master": {
         "name": "Lord Rembe",
         "role": "R3",
@@ -1903,9 +1904,9 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
-      "activity": 0.0,
-      "activity_display": "0,0%",
-      "vs_flag": "",
+      "activity": 0.047011375,
+      "activity_display": "4,7%",
+      "vs_flag": "1/1 below",
       "ds_master": {
         "name": "Hassleham",
         "role": "R3",
@@ -1947,7 +1948,7 @@
       "t1": "50,24",
       "thp": 146300000,
       "thp_display": "146.300.000",
-      "donations": 0,
+      "donations": 3350,
       "kills": "",
       "kills_pct": null,
       "events": "10/10",
@@ -1955,9 +1956,9 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
-      "activity": 0.0,
-      "activity_display": "0,0%",
-      "vs_flag": "",
+      "activity": 0.28767322324159017,
+      "activity_display": "28,8%",
+      "vs_flag": "1/1 below",
       "ds_master": {
         "name": "JazzHandsThomas",
         "role": "R3",
@@ -1999,7 +2000,7 @@
       "t1": "41,7",
       "thp": 119500000,
       "thp_display": "119.500.000",
-      "donations": 0,
+      "donations": 6150,
       "kills": "",
       "kills_pct": null,
       "events": "10/10",
@@ -2007,9 +2008,9 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
-      "activity": 0.0,
-      "activity_display": "0,0%",
-      "vs_flag": "",
+      "activity": 0.365270995030581,
+      "activity_display": "36,5%",
+      "vs_flag": "1/1 below",
       "ds_master": {
         "name": "Diniz Infaaaa",
         "role": "R3",
@@ -2051,7 +2052,7 @@
       "t1": "37,79",
       "thp": 109300000,
       "thp_display": "109.300.000",
-      "donations": 0,
+      "donations": 4150,
       "kills": "",
       "kills_pct": null,
       "events": "10/10",
@@ -2059,9 +2060,9 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
-      "activity": 0.0,
-      "activity_display": "0,0%",
-      "vs_flag": "",
+      "activity": 0.2510686639908257,
+      "activity_display": "25,1%",
+      "vs_flag": "1/1 below",
       "ds_master": {
         "name": "Fred67290",
         "role": "R3",
@@ -2103,7 +2104,7 @@
       "t1": "",
       "thp": 106300000,
       "thp_display": "106.300.000",
-      "donations": 0,
+      "donations": 2100,
       "kills": "",
       "kills_pct": null,
       "events": "10/10",
@@ -2111,9 +2112,9 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
-      "activity": 0.0,
-      "activity_display": "0,0%",
-      "vs_flag": "",
+      "activity": 0.22886898509174314,
+      "activity_display": "22,9%",
+      "vs_flag": "1/1 below",
       "ds_master": {
         "name": "AndreResende",
         "role": "R3",
@@ -2155,7 +2156,7 @@
       "t1": "40,9",
       "thp": 121600000,
       "thp_display": "121.600.000",
-      "donations": 0,
+      "donations": 4900,
       "kills": "",
       "kills_pct": null,
       "events": "10/10",
@@ -2163,9 +2164,9 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
-      "activity": 0.0,
-      "activity_display": "0,0%",
-      "vs_flag": "",
+      "activity": 0.3427780485474006,
+      "activity_display": "34,3%",
+      "vs_flag": "1/1 below",
       "ds_master": {
         "name": "chalako77",
         "role": "R3",
@@ -2207,7 +2208,7 @@
       "t1": "40",
       "thp": 108000000,
       "thp_display": "108.000.000",
-      "donations": 0,
+      "donations": 5150,
       "kills": "",
       "kills_pct": null,
       "events": "10/10",
@@ -2215,9 +2216,9 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
-      "activity": 0.0,
-      "activity_display": "0,0%",
-      "vs_flag": "",
+      "activity": 0.39449541284403666,
+      "activity_display": "39,4%",
+      "vs_flag": "OK",
       "ds_master": {
         "name": "Ringwraiths",
         "role": "R3",
@@ -2267,9 +2268,9 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
-      "activity": 0.0,
-      "activity_display": "0,0%",
-      "vs_flag": "",
+      "activity": 0.069921875,
+      "activity_display": "7,0%",
+      "vs_flag": "1/1 below",
       "ds_master": {
         "name": "Millanoo",
         "role": "R3",
@@ -2311,7 +2312,7 @@
       "t1": "39,27",
       "thp": 109700000,
       "thp_display": "109.700.000",
-      "donations": 0,
+      "donations": 5800,
       "kills": "",
       "kills_pct": null,
       "events": "10/10",
@@ -2319,9 +2320,9 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
-      "activity": 0.0,
-      "activity_display": "0,0%",
-      "vs_flag": "",
+      "activity": 0.3073057683486239,
+      "activity_display": "30,7%",
+      "vs_flag": "1/1 below",
       "ds_master": {
         "name": "IGU7",
         "role": "R3",
@@ -2363,7 +2364,7 @@
       "t1": "38,93",
       "thp": 108900000,
       "thp_display": "108.900.000",
-      "donations": 0,
+      "donations": 2650,
       "kills": "",
       "kills_pct": null,
       "events": "10/10",
@@ -2371,9 +2372,9 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
-      "activity": 0.0,
-      "activity_display": "0,0%",
-      "vs_flag": "",
+      "activity": 0.21097939487767584,
+      "activity_display": "21,1%",
+      "vs_flag": "1/1 below",
       "ds_master": {
         "name": "MarchH",
         "role": "R3",
@@ -2415,7 +2416,7 @@
       "t1": "",
       "thp": 100500000,
       "thp_display": "100.500.000",
-      "donations": 0,
+      "donations": 3850,
       "kills": "",
       "kills_pct": null,
       "events": "10/10",
@@ -2423,9 +2424,9 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
-      "activity": 0.0,
-      "activity_display": "0,0%",
-      "vs_flag": "",
+      "activity": 0.34697557683486235,
+      "activity_display": "34,7%",
+      "vs_flag": "1/1 below",
       "ds_master": {
         "name": "AJ die Beste",
         "role": "R3",
@@ -2467,7 +2468,7 @@
       "t1": "38,06",
       "thp": 120300000,
       "thp_display": "120.300.000",
-      "donations": 0,
+      "donations": 8050,
       "kills": "",
       "kills_pct": null,
       "events": "10/10",
@@ -2475,9 +2476,9 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
-      "activity": 0.0,
-      "activity_display": "0,0%",
-      "vs_flag": "",
+      "activity": 0.22778988035168196,
+      "activity_display": "22,8%",
+      "vs_flag": "1/1 below",
       "ds_master": {
         "name": "73Katy",
         "role": "R3",
@@ -2519,7 +2520,7 @@
       "t1": "39,76",
       "thp": 105400000,
       "thp_display": "105.400.000",
-      "donations": 0,
+      "donations": 5100,
       "kills": "",
       "kills_pct": null,
       "events": "—",
@@ -2527,9 +2528,9 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
-      "activity": 0.0,
-      "activity_display": "0,0%",
-      "vs_flag": "",
+      "activity": 0.3845305649847095,
+      "activity_display": "38,5%",
+      "vs_flag": "1/1 below",
       "ds_master": {
         "name": "Random Attacks",
         "role": "R3",
@@ -2571,7 +2572,7 @@
       "t1": "37,53",
       "thp": 102900000,
       "thp_display": "102.900.000",
-      "donations": 0,
+      "donations": 4200,
       "kills": "",
       "kills_pct": null,
       "events": "",
@@ -2579,9 +2580,9 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
-      "activity": 0.0,
-      "activity_display": "0,0%",
-      "vs_flag": "",
+      "activity": 0.37706422018348623,
+      "activity_display": "37,7%",
+      "vs_flag": "OK",
       "ds_master": {
         "name": "Kaizennnnnnnnnnnn",
         "role": "R3",
@@ -2618,7 +2619,7 @@
       "t1": "38,56",
       "thp": 109400000,
       "thp_display": "109.400.000",
-      "donations": 0,
+      "donations": 2900,
       "kills": "",
       "kills_pct": null,
       "events": "10/10",
@@ -2626,9 +2627,9 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
-      "activity": 0.0,
-      "activity_display": "0,0%",
-      "vs_flag": "",
+      "activity": 0.3532110091743119,
+      "activity_display": "35,3%",
+      "vs_flag": "OK",
       "ds_master": {
         "name": "Sandboxman",
         "role": "R3",
@@ -2670,7 +2671,7 @@
       "t1": "41,96",
       "thp": 122600000,
       "thp_display": "122.600.000",
-      "donations": 0,
+      "donations": 5100,
       "kills": "",
       "kills_pct": null,
       "events": "",
@@ -2678,9 +2679,9 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
-      "activity": 0.0,
-      "activity_display": "0,0%",
-      "vs_flag": "",
+      "activity": 0.39357798165137614,
+      "activity_display": "39,4%",
+      "vs_flag": "OK",
       "ds_master": {
         "name": "TheStarks",
         "role": "R3",
@@ -2717,7 +2718,7 @@
       "t1": "39,81",
       "thp": 103400000,
       "thp_display": "103.400.000",
-      "donations": 0,
+      "donations": 3100,
       "kills": "",
       "kills_pct": null,
       "events": "10/10",
@@ -2725,9 +2726,9 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
-      "activity": 0.0,
-      "activity_display": "0,0%",
-      "vs_flag": "",
+      "activity": 0.18926356727828744,
+      "activity_display": "18,9%",
+      "vs_flag": "1/1 below",
       "ds_master": {
         "name": "Yuna",
         "role": "R3",
@@ -2769,7 +2770,7 @@
       "t1": "0",
       "thp": 103300000,
       "thp_display": "103.300.000",
-      "donations": 0,
+      "donations": 7350,
       "kills": "",
       "kills_pct": null,
       "events": "",
@@ -2777,9 +2778,9 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
-      "activity": 0.0,
-      "activity_display": "0,0%",
-      "vs_flag": "",
+      "activity": 0.4348623853211009,
+      "activity_display": "43,5%",
+      "vs_flag": "OK",
       "ds_master": {
         "name": "Ref1exX",
         "role": "R3",
@@ -2816,7 +2817,7 @@
       "t1": "39,3",
       "thp": 113100000,
       "thp_display": "113.100.000",
-      "donations": 0,
+      "donations": 3250,
       "kills": "",
       "kills_pct": null,
       "events": "",
@@ -2824,9 +2825,9 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
-      "activity": 0.0,
-      "activity_display": "0,0%",
-      "vs_flag": "",
+      "activity": 0.3596330275229358,
+      "activity_display": "36,0%",
+      "vs_flag": "OK",
       "ds_master": {
         "name": "ImpAugustus",
         "role": "R3",
@@ -2863,7 +2864,7 @@
       "t1": "",
       "thp": 128800000,
       "thp_display": "128.800.000",
-      "donations": 0,
+      "donations": 5000,
       "kills": "",
       "kills_pct": null,
       "events": "",
@@ -2871,9 +2872,9 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
-      "activity": 0.0,
-      "activity_display": "0,0%",
-      "vs_flag": "",
+      "activity": 0.20885836926605506,
+      "activity_display": "20,9%",
+      "vs_flag": "1/1 below",
       "ds_master": {
         "name": "Gubalibre",
         "role": "R3",
@@ -2910,7 +2911,7 @@
       "t1": "",
       "thp": 130500000,
       "thp_display": "130500000",
-      "donations": 0,
+      "donations": 3100,
       "kills": "",
       "kills_pct": null,
       "events": "",
@@ -2918,9 +2919,9 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
-      "activity": 0.0,
-      "activity_display": "0,0%",
-      "vs_flag": "",
+      "activity": 0.3568807339449541,
+      "activity_display": "35,7%",
+      "vs_flag": "OK",
       "ds_master": {
         "name": "Zettovic",
         "role": "R3",
@@ -2957,7 +2958,7 @@
       "t1": "",
       "thp": 130500000,
       "thp_display": "130500000",
-      "donations": 0,
+      "donations": 3350,
       "kills": "",
       "kills_pct": null,
       "events": "",
@@ -2965,9 +2966,9 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
-      "activity": 0.0,
-      "activity_display": "0,0%",
-      "vs_flag": "",
+      "activity": 0.36146788990825685,
+      "activity_display": "36,1%",
+      "vs_flag": "OK",
       "ds_master": {
         "name": "Buckioio",
         "role": "R3",
@@ -3004,7 +3005,7 @@
       "t1": "",
       "thp": 130500000,
       "thp_display": "130500000",
-      "donations": 0,
+      "donations": 5250,
       "kills": "",
       "kills_pct": null,
       "events": "",
@@ -3012,9 +3013,9 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
-      "activity": 0.0,
-      "activity_display": "0,0%",
-      "vs_flag": "",
+      "activity": 0.3963302752293578,
+      "activity_display": "39,6%",
+      "vs_flag": "OK",
       "ds_master": {
         "name": "xXxJoKeRxXx",
         "role": "R3",
@@ -3051,7 +3052,7 @@
       "t1": "",
       "thp": 130500000,
       "thp_display": "130500000",
-      "donations": 0,
+      "donations": 4650,
       "kills": "",
       "kills_pct": null,
       "events": "",
@@ -3059,9 +3060,9 @@
       "cs": false,
       "season_activity": 0.3,
       "season_display": "30,0%",
-      "activity": 0.3,
-      "activity_display": "30,0%",
-      "vs_flag": "",
+      "activity": 0.6550676009174312,
+      "activity_display": "65,5%",
+      "vs_flag": "1/1 below",
       "ds_master": {
         "name": "DUNGEON KEEPER",
         "role": "R4",
@@ -3098,7 +3099,7 @@
       "t1": "",
       "thp": 130500000,
       "thp_display": "130500000",
-      "donations": 0,
+      "donations": 4200,
       "kills": "",
       "kills_pct": null,
       "events": "",
@@ -3106,9 +3107,9 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
-      "activity": 0.0,
-      "activity_display": "0,0%",
-      "vs_flag": "",
+      "activity": 0.22318567851681959,
+      "activity_display": "22,3%",
+      "vs_flag": "1/1 below",
       "ds_master": {
         "name": "Tomatofake",
         "role": "R3",
@@ -3145,7 +3146,7 @@
       "t1": "",
       "thp": 130500000,
       "thp_display": "130500000",
-      "donations": 0,
+      "donations": 5600,
       "kills": "",
       "kills_pct": null,
       "events": "",
@@ -3153,9 +3154,9 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
-      "activity": 0.0,
-      "activity_display": "0,0%",
-      "vs_flag": "",
+      "activity": 0.40275229357798165,
+      "activity_display": "40,3%",
+      "vs_flag": "OK",
       "ds_master": {
         "name": "YaneZ",
         "role": "R3",
@@ -3192,7 +3193,7 @@
       "t1": "",
       "thp": 130500000,
       "thp_display": "130500000",
-      "donations": 0,
+      "donations": 3900,
       "kills": "",
       "kills_pct": null,
       "events": "",
@@ -3200,9 +3201,9 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
-      "activity": 0.0,
-      "activity_display": "0,0%",
-      "vs_flag": "",
+      "activity": 0.24213159136085627,
+      "activity_display": "24,2%",
+      "vs_flag": "1/1 below",
       "ds_master": {
         "name": "Nakama Tskulaxo",
         "role": "R3",
@@ -3239,7 +3240,7 @@
       "t1": "",
       "thp": 130500000,
       "thp_display": "130500000",
-      "donations": 0,
+      "donations": 1550,
       "kills": "",
       "kills_pct": null,
       "events": "",
@@ -3247,9 +3248,9 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
-      "activity": 0.0,
-      "activity_display": "0,0%",
-      "vs_flag": "",
+      "activity": 0.10972820030581039,
+      "activity_display": "11,0%",
+      "vs_flag": "1/1 below",
       "ds_master": {
         "name": "RubiA",
         "role": "R3",
@@ -3286,7 +3287,7 @@
       "t1": "",
       "thp": 130500000,
       "thp_display": "130500000",
-      "donations": 0,
+      "donations": 2500,
       "kills": "",
       "kills_pct": null,
       "events": "",
@@ -3294,9 +3295,9 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
-      "activity": 0.0,
-      "activity_display": "0,0%",
-      "vs_flag": "",
+      "activity": 0.3458715596330275,
+      "activity_display": "34,6%",
+      "vs_flag": "OK",
       "ds_master": {
         "name": "Draurg v2",
         "role": "R3",
@@ -3333,7 +3334,7 @@
       "t1": "",
       "thp": 130500000,
       "thp_display": "130500000",
-      "donations": 0,
+      "donations": 2850,
       "kills": "",
       "kills_pct": null,
       "events": "",
@@ -3341,9 +3342,9 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
-      "activity": 0.0,
-      "activity_display": "0,0%",
-      "vs_flag": "",
+      "activity": 0.2578494946483181,
+      "activity_display": "25,8%",
+      "vs_flag": "1/1 below",
       "ds_master": {
         "name": "Southwest01",
         "role": "R3",
@@ -3380,7 +3381,7 @@
       "t1": "",
       "thp": 130500000,
       "thp_display": "130500000",
-      "donations": 0,
+      "donations": 6250,
       "kills": "",
       "kills_pct": null,
       "events": "",
@@ -3388,9 +3389,9 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
-      "activity": 0.0,
-      "activity_display": "0,0%",
-      "vs_flag": "",
+      "activity": 0.41467889908256883,
+      "activity_display": "41,5%",
+      "vs_flag": "OK",
       "ds_master": {
         "name": "Jhow09",
         "role": "R3",
@@ -3427,7 +3428,7 @@
       "t1": "",
       "thp": 130500000,
       "thp_display": "130500000",
-      "donations": 0,
+      "donations": 750,
       "kills": "",
       "kills_pct": null,
       "events": "",
@@ -3435,9 +3436,9 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
-      "activity": 0.0,
-      "activity_display": "0,0%",
-      "vs_flag": "",
+      "activity": 0.3137614678899082,
+      "activity_display": "31,4%",
+      "vs_flag": "OK",
       "ds_master": {
         "name": "RvE x",
         "role": "R3",
@@ -3482,9 +3483,9 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
-      "activity": 0.0,
-      "activity_display": "0,0%",
-      "vs_flag": "",
+      "activity": 0.3,
+      "activity_display": "30,0%",
+      "vs_flag": "OK",
       "ds_master": {
         "name": "The phantom 0",
         "role": "R3",
@@ -3521,7 +3522,7 @@
       "t1": "",
       "thp": 130500000,
       "thp_display": "130500000",
-      "donations": 0,
+      "donations": 4700,
       "kills": "",
       "kills_pct": null,
       "events": "",
@@ -3529,9 +3530,9 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
-      "activity": 0.0,
-      "activity_display": "0,0%",
-      "vs_flag": "",
+      "activity": 0.18443532377675842,
+      "activity_display": "18,4%",
+      "vs_flag": "1/1 below",
       "ds_master": {
         "name": "User1904",
         "role": "R3",
@@ -3576,9 +3577,9 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
-      "activity": 0.0,
-      "activity_display": "0,0%",
-      "vs_flag": "",
+      "activity": 0.09414804166666665,
+      "activity_display": "9,4%",
+      "vs_flag": "1/1 below",
       "ds_master": {
         "name": "Outerspace Chase",
         "role": "R3",
@@ -3615,7 +3616,7 @@
       "t1": "",
       "thp": 130500000,
       "thp_display": "130500000",
-      "donations": 0,
+      "donations": 3500,
       "kills": "",
       "kills_pct": null,
       "events": "",
@@ -3623,9 +3624,9 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
-      "activity": 0.0,
-      "activity_display": "0,0%",
-      "vs_flag": "",
+      "activity": 0.3321159751529052,
+      "activity_display": "33,2%",
+      "vs_flag": "1/1 below",
       "ds_master": {
         "name": "WT1110",
         "role": "R3",
@@ -3662,7 +3663,7 @@
       "t1": "",
       "thp": 130500000,
       "thp_display": "130500000",
-      "donations": 0,
+      "donations": 5600,
       "kills": "",
       "kills_pct": null,
       "events": "",
@@ -3670,9 +3671,9 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
-      "activity": 0.0,
-      "activity_display": "0,0%",
-      "vs_flag": "",
+      "activity": 0.18188346024464833,
+      "activity_display": "18,2%",
+      "vs_flag": "1/1 below",
       "ds_master": {
         "name": "FBraga01",
         "role": "R3",
@@ -3709,7 +3710,7 @@
       "t1": "",
       "thp": 130500000,
       "thp_display": "130500000",
-      "donations": 0,
+      "donations": 5500,
       "kills": "",
       "kills_pct": null,
       "events": "",
@@ -3717,9 +3718,9 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
-      "activity": 0.0,
-      "activity_display": "0,0%",
-      "vs_flag": "",
+      "activity": 0.40091743119266054,
+      "activity_display": "40,1%",
+      "vs_flag": "OK",
       "ds_master": {
         "name": "PALADINO BR",
         "role": "R3",
@@ -3756,7 +3757,7 @@
       "t1": "",
       "thp": 130500000,
       "thp_display": "130500000",
-      "donations": 0,
+      "donations": 5100,
       "kills": "",
       "kills_pct": null,
       "events": "",
@@ -3764,9 +3765,9 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
-      "activity": 0.0,
-      "activity_display": "0,0%",
-      "vs_flag": "",
+      "activity": 0.39357798165137614,
+      "activity_display": "39,4%",
+      "vs_flag": "OK",
       "ds_master": {
         "name": "Valério",
         "role": "R3",
@@ -3811,9 +3812,9 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
-      "activity": 0.0,
-      "activity_display": "0,0%",
-      "vs_flag": "",
+      "activity": 0.0993125,
+      "activity_display": "9,9%",
+      "vs_flag": "1/1 below",
       "ds_master": {
         "name": "iamJazzyy",
         "role": "R3",
@@ -3850,7 +3851,7 @@
       "t1": "",
       "thp": 130500000,
       "thp_display": "130500000",
-      "donations": 0,
+      "donations": 3100,
       "kills": "",
       "kills_pct": null,
       "events": "",
@@ -3858,9 +3859,9 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
-      "activity": 0.0,
-      "activity_display": "0,0%",
-      "vs_flag": "",
+      "activity": 0.19781823394495412,
+      "activity_display": "19,8%",
+      "vs_flag": "1/1 below",
       "ds_master": {
         "name": "Mr Xanor",
         "role": "R3",
@@ -3897,7 +3898,7 @@
       "t1": "",
       "thp": 130500000,
       "thp_display": "130500000",
-      "donations": 0,
+      "donations": 4750,
       "kills": "",
       "kills_pct": null,
       "events": "",
@@ -3905,9 +3906,9 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
-      "activity": 0.0,
-      "activity_display": "0,0%",
-      "vs_flag": "",
+      "activity": 0.38715596330275226,
+      "activity_display": "38,7%",
+      "vs_flag": "OK",
       "ds_master": {
         "name": "Noxnanni",
         "role": "R3",
@@ -3952,9 +3953,9 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
-      "activity": 0.0,
-      "activity_display": "0,0%",
-      "vs_flag": "",
+      "activity": 0.2927697083333333,
+      "activity_display": "29,3%",
+      "vs_flag": "1/1 below",
       "ds_master": {
         "name": "CANONDA",
         "role": "R3",
@@ -3991,7 +3992,7 @@
       "t1": "",
       "thp": 130500000,
       "thp_display": "130500000",
-      "donations": 0,
+      "donations": 7850,
       "kills": "",
       "kills_pct": null,
       "events": "",
@@ -3999,9 +4000,9 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
-      "activity": 0.0,
-      "activity_display": "0,0%",
-      "vs_flag": "",
+      "activity": 0.3753559472477064,
+      "activity_display": "37,5%",
+      "vs_flag": "1/1 below",
       "ds_master": {
         "name": "Jiintan",
         "role": "R3",
@@ -4038,7 +4039,7 @@
       "t1": "",
       "thp": 130500000,
       "thp_display": "130500000",
-      "donations": 0,
+      "donations": 3000,
       "kills": "",
       "kills_pct": null,
       "events": "",
@@ -4046,9 +4047,9 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
-      "activity": 0.0,
-      "activity_display": "0,0%",
-      "vs_flag": "",
+      "activity": 0.355045871559633,
+      "activity_display": "35,5%",
+      "vs_flag": "OK",
       "ds_master": {
         "name": "Lawima",
         "role": "R3",
@@ -4085,7 +4086,7 @@
       "t1": "",
       "thp": 130500000,
       "thp_display": "130500000",
-      "donations": 0,
+      "donations": 4650,
       "kills": "",
       "kills_pct": null,
       "events": "",
@@ -4093,9 +4094,9 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
-      "activity": 0.0,
-      "activity_display": "0,0%",
-      "vs_flag": "",
+      "activity": 0.2858900175840978,
+      "activity_display": "28,6%",
+      "vs_flag": "1/1 below",
       "ds_master": {
         "name": "blubbb123",
         "role": "R3",
@@ -4132,7 +4133,7 @@
       "t1": "",
       "thp": 130500000,
       "thp_display": "130500000",
-      "donations": 0,
+      "donations": 1950,
       "kills": "",
       "kills_pct": null,
       "events": "",
@@ -4140,9 +4141,9 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
-      "activity": 0.0,
-      "activity_display": "0,0%",
-      "vs_flag": "",
+      "activity": 0.33577981651376143,
+      "activity_display": "33,6%",
+      "vs_flag": "OK",
       "ds_master": {
         "name": "ForesTalaniz",
         "role": "R3",
@@ -4179,7 +4180,7 @@
       "t1": "",
       "thp": 130500000,
       "thp_display": "130500000",
-      "donations": 0,
+      "donations": 3100,
       "kills": "",
       "kills_pct": null,
       "events": "",
@@ -4187,9 +4188,9 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
-      "activity": 0.0,
-      "activity_display": "0,0%",
-      "vs_flag": "",
+      "activity": 0.3568807339449541,
+      "activity_display": "35,7%",
+      "vs_flag": "OK",
       "ds_master": {
         "name": "BlackHeiX",
         "role": "R3",
@@ -4226,7 +4227,7 @@
       "t1": "",
       "thp": 130500000,
       "thp_display": "130500000",
-      "donations": 0,
+      "donations": 2350,
       "kills": "",
       "kills_pct": null,
       "events": "",
@@ -4234,9 +4235,9 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
-      "activity": 0.0,
-      "activity_display": "0,0%",
-      "vs_flag": "",
+      "activity": 0.2907522243883792,
+      "activity_display": "29,1%",
+      "vs_flag": "1/1 below",
       "ds_master": {
         "name": "Munsoned",
         "role": "R3",
@@ -4273,7 +4274,7 @@
       "t1": "",
       "thp": 130500000,
       "thp_display": "130500000",
-      "donations": 0,
+      "donations": 3100,
       "kills": "",
       "kills_pct": null,
       "events": "",
@@ -4281,9 +4282,9 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
-      "activity": 0.0,
-      "activity_display": "0,0%",
-      "vs_flag": "",
+      "activity": 0.14137298394495412,
+      "activity_display": "14,1%",
+      "vs_flag": "1/1 below",
       "ds_master": {
         "name": "i k k i",
         "role": "R3",
@@ -4320,7 +4321,7 @@
       "t1": "",
       "thp": 130500000,
       "thp_display": "130500000",
-      "donations": 0,
+      "donations": 7850,
       "kills": "",
       "kills_pct": null,
       "events": "",
@@ -4328,9 +4329,9 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
-      "activity": 0.0,
-      "activity_display": "0,0%",
-      "vs_flag": "",
+      "activity": 0.2907147805810397,
+      "activity_display": "29,1%",
+      "vs_flag": "1/1 below",
       "ds_master": {
         "name": "Masterzin",
         "role": "R3",
@@ -4367,7 +4368,7 @@
       "t1": "",
       "thp": 130500000,
       "thp_display": "130500000",
-      "donations": 0,
+      "donations": 3400,
       "kills": "",
       "kills_pct": null,
       "events": "",
@@ -4375,9 +4376,9 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
-      "activity": 0.0,
-      "activity_display": "0,0%",
-      "vs_flag": "",
+      "activity": 0.19581507110091745,
+      "activity_display": "19,6%",
+      "vs_flag": "1/1 below",
       "ds_master": {
         "name": "Rodrigo",
         "role": "R3",
@@ -4414,7 +4415,7 @@
       "t1": "",
       "thp": 130500000,
       "thp_display": "130500000",
-      "donations": 0,
+      "donations": 4050,
       "kills": "",
       "kills_pct": null,
       "events": "",
@@ -4422,9 +4423,9 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
-      "activity": 0.0,
-      "activity_display": "0,0%",
-      "vs_flag": "",
+      "activity": 0.23089725993883792,
+      "activity_display": "23,1%",
+      "vs_flag": "1/1 below",
       "ds_master": {
         "name": "xJeeane",
         "role": "R3",
@@ -4461,7 +4462,7 @@
       "t1": "",
       "thp": 130500000,
       "thp_display": "130500000",
-      "donations": 0,
+      "donations": 2850,
       "kills": "",
       "kills_pct": null,
       "events": "",
@@ -4469,9 +4470,9 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
-      "activity": 0.0,
-      "activity_display": "0,0%",
-      "vs_flag": "",
+      "activity": 0.3522935779816514,
+      "activity_display": "35,2%",
+      "vs_flag": "OK",
       "ds_master": {
         "name": "Inlv1",
         "role": "R3",
@@ -4508,7 +4509,7 @@
       "t1": "",
       "thp": 130500000,
       "thp_display": "130500000",
-      "donations": 0,
+      "donations": 4900,
       "kills": "",
       "kills_pct": null,
       "events": "",
@@ -4516,9 +4517,9 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
-      "activity": 0.0,
-      "activity_display": "0,0%",
-      "vs_flag": "",
+      "activity": 0.38990825688073394,
+      "activity_display": "39,0%",
+      "vs_flag": "OK",
       "ds_master": {
         "name": "AnnoraX",
         "role": "R3",
@@ -4555,7 +4556,7 @@
       "t1": "",
       "thp": 130500000,
       "thp_display": "130500000",
-      "donations": 0,
+      "donations": 5250,
       "kills": "",
       "kills_pct": null,
       "events": "",
@@ -4563,9 +4564,9 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
-      "activity": 0.0,
-      "activity_display": "0,0%",
-      "vs_flag": "",
+      "activity": 0.3963302752293578,
+      "activity_display": "39,6%",
+      "vs_flag": "OK",
       "ds_master": {
         "name": "rePlay",
         "role": "R3",
@@ -4602,7 +4603,7 @@
       "t1": "",
       "thp": 130500000,
       "thp_display": "130500000",
-      "donations": 0,
+      "donations": 3100,
       "kills": "",
       "kills_pct": null,
       "events": "",
@@ -4610,9 +4611,9 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
-      "activity": 0.0,
-      "activity_display": "0,0%",
-      "vs_flag": "",
+      "activity": 0.2807825256116208,
+      "activity_display": "28,1%",
+      "vs_flag": "1/1 below",
       "ds_master": {
         "name": "❤ Katarina ❤",
         "role": "R3",
@@ -4649,7 +4650,7 @@
       "t1": "",
       "thp": 130500000,
       "thp_display": "130500000",
-      "donations": 0,
+      "donations": 3900,
       "kills": "",
       "kills_pct": null,
       "events": "",
@@ -4657,9 +4658,9 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
-      "activity": 0.0,
-      "activity_display": "0,0%",
-      "vs_flag": "",
+      "activity": 0.37155963302752293,
+      "activity_display": "37,2%",
+      "vs_flag": "OK",
       "ds_master": {
         "name": "ClovE",
         "role": "R3",
@@ -4751,9 +4752,9 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
-      "activity": 0.0,
-      "activity_display": "0,0%",
-      "vs_flag": "",
+      "activity": 0.0105,
+      "activity_display": "1,1%",
+      "vs_flag": "1/1 below",
       "ds_master": {
         "name": "Lover Of Manquaca",
         "role": "R3",
@@ -4790,7 +4791,7 @@
       "t1": "",
       "thp": 130500000,
       "thp_display": "130500000",
-      "donations": 0,
+      "donations": 3350,
       "kills": "",
       "kills_pct": null,
       "events": "",
@@ -4798,9 +4799,9 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
-      "activity": 0.0,
-      "activity_display": "0,0%",
-      "vs_flag": "",
+      "activity": 0.36146788990825685,
+      "activity_display": "36,1%",
+      "vs_flag": "OK",
       "ds_master": {
         "name": "HeinselHH",
         "role": "R3",
@@ -4884,7 +4885,7 @@
       "t1": "",
       "thp": 130500000,
       "thp_display": "130500000",
-      "donations": 0,
+      "donations": 2950,
       "kills": "",
       "kills_pct": null,
       "events": "",
@@ -4892,9 +4893,9 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
-      "activity": 0.0,
-      "activity_display": "0,0%",
-      "vs_flag": "",
+      "activity": 0.13608156536697247,
+      "activity_display": "13,6%",
+      "vs_flag": "1/1 below",
       "ds_master": {
         "name": "Omori UO>",
         "role": "R3",
@@ -5022,10 +5023,10 @@
   "summary": {
     "members_total": 101,
     "members_active": 101,
-    "activity_avg": 0.0327,
-    "vs_ok": 0,
+    "activity_avg": 0.3,
+    "vs_ok": 36,
     "vs_other": 0,
-    "vs_below_quota": 0,
+    "vs_below_quota": 58,
     "ds_registered": 0,
     "cs_registered": 0,
     "ds_played": 0,
@@ -5033,14 +5034,2667 @@
     "generals_trial_rows": 48
   },
   "sheets": {
-    "vs": null,
+    "vs": {
+      "columns": [
+        "2026-10-19"
+      ],
+      "summary_columns": [
+        "Latest",
+        "Weekly Avg"
+      ],
+      "rows": [
+        {
+          "name": "Icey786",
+          "latest": 24565530,
+          "weekly_avg": 24565530,
+          "values": {
+            "2026-10-19": 24565530
+          }
+        },
+        {
+          "name": "Rico 2026",
+          "latest": 21225308,
+          "weekly_avg": 21225308,
+          "values": {
+            "2026-10-19": 21225308
+          }
+        },
+        {
+          "name": "Lawima",
+          "latest": 20130020,
+          "weekly_avg": 20130020,
+          "values": {
+            "2026-10-19": 20130020
+          }
+        },
+        {
+          "name": "Zettovic",
+          "latest": 17616252,
+          "weekly_avg": 17616252,
+          "values": {
+            "2026-10-19": 17616252
+          }
+        },
+        {
+          "name": "Noxnanni",
+          "latest": 17509683,
+          "weekly_avg": 17509683,
+          "values": {
+            "2026-10-19": 17509683
+          }
+        },
+        {
+          "name": "Jhow09",
+          "latest": 15583467,
+          "weekly_avg": 15583467,
+          "values": {
+            "2026-10-19": 15583467
+          }
+        },
+        {
+          "name": "Filippos4Paok",
+          "latest": 15080051,
+          "weekly_avg": 15080051,
+          "values": {
+            "2026-10-19": 15080051
+          }
+        },
+        {
+          "name": "Ringwraiths",
+          "latest": 14305164,
+          "weekly_avg": 14305164,
+          "values": {
+            "2026-10-19": 14305164
+          }
+        },
+        {
+          "name": "BlackHeiX",
+          "latest": 14042305,
+          "weekly_avg": 14042305,
+          "values": {
+            "2026-10-19": 14042305
+          }
+        },
+        {
+          "name": "HeinselHH",
+          "latest": 13619689,
+          "weekly_avg": 13619689,
+          "values": {
+            "2026-10-19": 13619689
+          }
+        },
+        {
+          "name": "Draurg v2",
+          "latest": 13423958,
+          "weekly_avg": 13423958,
+          "values": {
+            "2026-10-19": 13423958
+          }
+        },
+        {
+          "name": "Valério",
+          "latest": 13250910,
+          "weekly_avg": 13250910,
+          "values": {
+            "2026-10-19": 13250910
+          }
+        },
+        {
+          "name": "AnnoraX",
+          "latest": 13224644,
+          "weekly_avg": 13224644,
+          "values": {
+            "2026-10-19": 13224644
+          }
+        },
+        {
+          "name": "The phantom 0",
+          "latest": 12109688,
+          "weekly_avg": 12109688,
+          "values": {
+            "2026-10-19": 12109688
+          }
+        },
+        {
+          "name": "Buckioio",
+          "latest": 12001039,
+          "weekly_avg": 12001039,
+          "values": {
+            "2026-10-19": 12001039
+          }
+        },
+        {
+          "name": "YaneZ",
+          "latest": 11531319,
+          "weekly_avg": 11531319,
+          "values": {
+            "2026-10-19": 11531319
+          }
+        },
+        {
+          "name": "rePlay",
+          "latest": 11045625,
+          "weekly_avg": 11045625,
+          "values": {
+            "2026-10-19": 11045625
+          }
+        },
+        {
+          "name": "RvE x",
+          "latest": 10234271,
+          "weekly_avg": 10234271,
+          "values": {
+            "2026-10-19": 10234271
+          }
+        },
+        {
+          "name": "Gabi Kamado",
+          "latest": 10189689,
+          "weekly_avg": 10189689,
+          "values": {
+            "2026-10-19": 10189689
+          }
+        },
+        {
+          "name": "TheStarks",
+          "latest": 10065376,
+          "weekly_avg": 10065376,
+          "values": {
+            "2026-10-19": 10065376
+          }
+        },
+        {
+          "name": "Sandboxman",
+          "latest": 9762991,
+          "weekly_avg": 9762991,
+          "values": {
+            "2026-10-19": 9762991
+          }
+        },
+        {
+          "name": "ClovE",
+          "latest": 9683438,
+          "weekly_avg": 9683438,
+          "values": {
+            "2026-10-19": 9683438
+          }
+        },
+        {
+          "name": "Kaizennnnnnnnnnnn",
+          "latest": 9106066,
+          "weekly_avg": 9106066,
+          "values": {
+            "2026-10-19": 9106066
+          }
+        },
+        {
+          "name": "Erdbeermarmelade",
+          "latest": 8903438,
+          "weekly_avg": 8903438,
+          "values": {
+            "2026-10-19": 8903438
+          }
+        },
+        {
+          "name": "GrummelGriesgram",
+          "latest": 8883338,
+          "weekly_avg": 8883338,
+          "values": {
+            "2026-10-19": 8883338
+          }
+        },
+        {
+          "name": "Ref1exX",
+          "latest": 7900011,
+          "weekly_avg": 7900011,
+          "values": {
+            "2026-10-19": 7900011
+          }
+        },
+        {
+          "name": "PALADINO BR",
+          "latest": 7864658,
+          "weekly_avg": 7864658,
+          "values": {
+            "2026-10-19": 7864658
+          }
+        },
+        {
+          "name": "xXxJoKeRxXx",
+          "latest": 7812375,
+          "weekly_avg": 7812375,
+          "values": {
+            "2026-10-19": 7812375
+          }
+        },
+        {
+          "name": "Ougat",
+          "latest": 7734111,
+          "weekly_avg": 7734111,
+          "values": {
+            "2026-10-19": 7734111
+          }
+        },
+        {
+          "name": "Eisen024",
+          "latest": 7617121,
+          "weekly_avg": 7617121,
+          "values": {
+            "2026-10-19": 7617121
+          }
+        },
+        {
+          "name": "DiViNE10",
+          "latest": 7615875,
+          "weekly_avg": 7615875,
+          "values": {
+            "2026-10-19": 7615875
+          }
+        },
+        {
+          "name": "Banu89",
+          "latest": 7542434,
+          "weekly_avg": 7542434,
+          "values": {
+            "2026-10-19": 7542434
+          }
+        },
+        {
+          "name": "ForesTalaniz",
+          "latest": 7433780,
+          "weekly_avg": 7433780,
+          "values": {
+            "2026-10-19": 7433780
+          }
+        },
+        {
+          "name": "Inlv1",
+          "latest": 7388329,
+          "weekly_avg": 7388329,
+          "values": {
+            "2026-10-19": 7388329
+          }
+        },
+        {
+          "name": "ImpAugustus",
+          "latest": 7336875,
+          "weekly_avg": 7336875,
+          "values": {
+            "2026-10-19": 7336875
+          }
+        },
+        {
+          "name": "Itamar1130",
+          "latest": 7200004,
+          "weekly_avg": 7200004,
+          "values": {
+            "2026-10-19": 7200004
+          }
+        },
+        {
+          "name": "Königinnenreich",
+          "latest": 7189882,
+          "weekly_avg": 7189882,
+          "values": {
+            "2026-10-19": 7189882
+          }
+        },
+        {
+          "name": "CANONDA",
+          "latest": 7026473,
+          "weekly_avg": 7026473,
+          "values": {
+            "2026-10-19": 7026473
+          }
+        },
+        {
+          "name": "Random Attacks",
+          "latest": 6982862,
+          "weekly_avg": 6982862,
+          "values": {
+            "2026-10-19": 6982862
+          }
+        },
+        {
+          "name": "Knives00",
+          "latest": 6713438,
+          "weekly_avg": 6713438,
+          "values": {
+            "2026-10-19": 6713438
+          }
+        },
+        {
+          "name": "AJ die Beste",
+          "latest": 6632001,
+          "weekly_avg": 6632001,
+          "values": {
+            "2026-10-19": 6632001
+          }
+        },
+        {
+          "name": "DUNGEON KEEPER",
+          "latest": 6473916,
+          "weekly_avg": 6473916,
+          "values": {
+            "2026-10-19": 6473916
+          }
+        },
+        {
+          "name": "WT1110",
+          "latest": 6429499,
+          "weekly_avg": 6429499,
+          "values": {
+            "2026-10-19": 6429499
+          }
+        },
+        {
+          "name": "Bazïinga",
+          "latest": 6288401,
+          "weekly_avg": 6288401,
+          "values": {
+            "2026-10-19": 6288401
+          }
+        },
+        {
+          "name": "chalako77",
+          "latest": 6068875,
+          "weekly_avg": 6068875,
+          "values": {
+            "2026-10-19": 6068875
+          }
+        },
+        {
+          "name": "Diniz Infaaaa",
+          "latest": 6058247,
+          "weekly_avg": 6058247,
+          "values": {
+            "2026-10-19": 6058247
+          }
+        },
+        {
+          "name": "Munsoned",
+          "latest": 5943191,
+          "weekly_avg": 5943191,
+          "values": {
+            "2026-10-19": 5943191
+          }
+        },
+        {
+          "name": "Sosiskaa",
+          "latest": 5655409,
+          "weekly_avg": 5655409,
+          "values": {
+            "2026-10-19": 5655409
+          }
+        },
+        {
+          "name": "Jiintan",
+          "latest": 5551662,
+          "weekly_avg": 5551662,
+          "values": {
+            "2026-10-19": 5551662
+          }
+        },
+        {
+          "name": "JazzHandsThomas",
+          "latest": 5428928,
+          "weekly_avg": 5428928,
+          "values": {
+            "2026-10-19": 5428928
+          }
+        },
+        {
+          "name": "❤ Katarina ❤",
+          "latest": 5373643,
+          "weekly_avg": 5373643,
+          "values": {
+            "2026-10-19": 5373643
+          }
+        },
+        {
+          "name": "DesertSniper",
+          "latest": 5284030,
+          "weekly_avg": 5284030,
+          "values": {
+            "2026-10-19": 5284030
+          }
+        },
+        {
+          "name": "Lana 67",
+          "latest": 5059299,
+          "weekly_avg": 5059299,
+          "values": {
+            "2026-10-19": 5059299
+          }
+        },
+        {
+          "name": "0 AÇOUGUEIRO",
+          "latest": 5039184,
+          "weekly_avg": 5039184,
+          "values": {
+            "2026-10-19": 5039184
+          }
+        },
+        {
+          "name": "Southwest01",
+          "latest": 4933342,
+          "weekly_avg": 4933342,
+          "values": {
+            "2026-10-19": 4933342
+          }
+        },
+        {
+          "name": "mandarin",
+          "latest": 4831184,
+          "weekly_avg": 4831184,
+          "values": {
+            "2026-10-19": 4831184
+          }
+        },
+        {
+          "name": "IGU7",
+          "latest": 4821210,
+          "weekly_avg": 4821210,
+          "values": {
+            "2026-10-19": 4821210
+          }
+        },
+        {
+          "name": "blubbb123",
+          "latest": 4813654,
+          "weekly_avg": 4813654,
+          "values": {
+            "2026-10-19": 4813654
+          }
+        },
+        {
+          "name": "AndreResende",
+          "latest": 4568085,
+          "weekly_avg": 4568085,
+          "values": {
+            "2026-10-19": 4568085
+          }
+        },
+        {
+          "name": "damboddambod",
+          "latest": 4524651,
+          "weekly_avg": 4524651,
+          "values": {
+            "2026-10-19": 4524651
+          }
+        },
+        {
+          "name": "Cmdr William T Riker",
+          "latest": 4355752,
+          "weekly_avg": 4355752,
+          "values": {
+            "2026-10-19": 4355752
+          }
+        },
+        {
+          "name": "Fred67290",
+          "latest": 4198125,
+          "weekly_avg": 4198125,
+          "values": {
+            "2026-10-19": 4198125
+          }
+        },
+        {
+          "name": "Nakama Tskulaxo",
+          "latest": 4093727,
+          "weekly_avg": 4093727,
+          "values": {
+            "2026-10-19": 4093727
+          }
+        },
+        {
+          "name": "MarchH",
+          "latest": 3896533,
+          "weekly_avg": 3896533,
+          "values": {
+            "2026-10-19": 3896533
+          }
+        },
+        {
+          "name": "Lord Rembe",
+          "latest": 3878759,
+          "weekly_avg": 3878759,
+          "values": {
+            "2026-10-19": 3878759
+          }
+        },
+        {
+          "name": "xJeeane",
+          "latest": 3758048,
+          "weekly_avg": 3758048,
+          "values": {
+            "2026-10-19": 3758048
+          }
+        },
+        {
+          "name": "Bruna Laïs",
+          "latest": 3643730,
+          "weekly_avg": 3643730,
+          "values": {
+            "2026-10-19": 3643730
+          }
+        },
+        {
+          "name": "Megalocasiadon",
+          "latest": 3622125,
+          "weekly_avg": 3622125,
+          "values": {
+            "2026-10-19": 3622125
+          }
+        },
+        {
+          "name": "Masterzin",
+          "latest": 3520274,
+          "weekly_avg": 3520274,
+          "values": {
+            "2026-10-19": 3520274
+          }
+        },
+        {
+          "name": "Tomatofake",
+          "latest": 3506915,
+          "weekly_avg": 3506915,
+          "values": {
+            "2026-10-19": 3506915
+          }
+        },
+        {
+          "name": "Juliani86",
+          "latest": 3391876,
+          "weekly_avg": 3391876,
+          "values": {
+            "2026-10-19": 3391876
+          }
+        },
+        {
+          "name": "Mr Xanor",
+          "latest": 3382500,
+          "weekly_avg": 3382500,
+          "values": {
+            "2026-10-19": 3382500
+          }
+        },
+        {
+          "name": "Rodrigo",
+          "latest": 3202314,
+          "weekly_avg": 3202314,
+          "values": {
+            "2026-10-19": 3202314
+          }
+        },
+        {
+          "name": "Yuna",
+          "latest": 3177188,
+          "weekly_avg": 3177188,
+          "values": {
+            "2026-10-19": 3177188
+          }
+        },
+        {
+          "name": "LaLaLanD",
+          "latest": 2902774,
+          "weekly_avg": 2902774,
+          "values": {
+            "2026-10-19": 2902774
+          }
+        },
+        {
+          "name": "Gubalibre",
+          "latest": 2810766,
+          "weekly_avg": 2810766,
+          "values": {
+            "2026-10-19": 2810766
+          }
+        },
+        {
+          "name": "iamJazzyy",
+          "latest": 2383500,
+          "weekly_avg": 2383500,
+          "values": {
+            "2026-10-19": 2383500
+          }
+        },
+        {
+          "name": "Relapse94",
+          "latest": 2375656,
+          "weekly_avg": 2375656,
+          "values": {
+            "2026-10-19": 2375656
+          }
+        },
+        {
+          "name": "User1904",
+          "latest": 2356723,
+          "weekly_avg": 2356723,
+          "values": {
+            "2026-10-19": 2356723
+          }
+        },
+        {
+          "name": "Squatislav",
+          "latest": 2337188,
+          "weekly_avg": 2337188,
+          "values": {
+            "2026-10-19": 2337188
+          }
+        },
+        {
+          "name": "Outerspace Chase",
+          "latest": 2259553,
+          "weekly_avg": 2259553,
+          "values": {
+            "2026-10-19": 2259553
+          }
+        },
+        {
+          "name": "Everton 123456",
+          "latest": 2074390,
+          "weekly_avg": 2074390,
+          "values": {
+            "2026-10-19": 2074390
+          }
+        },
+        {
+          "name": "i k k i",
+          "latest": 2027814,
+          "weekly_avg": 2027814,
+          "values": {
+            "2026-10-19": 2027814
+          }
+        },
+        {
+          "name": "Omori UO>",
+          "latest": 1966875,
+          "weekly_avg": 1966875,
+          "values": {
+            "2026-10-19": 1966875
+          }
+        },
+        {
+          "name": "RubiA",
+          "latest": 1950908,
+          "weekly_avg": 1950908,
+          "values": {
+            "2026-10-19": 1950908
+          }
+        },
+        {
+          "name": "Jazzcat78",
+          "latest": 1941000,
+          "weekly_avg": 1941000,
+          "values": {
+            "2026-10-19": 1941000
+          }
+        },
+        {
+          "name": "73Katy",
+          "latest": 1922003,
+          "weekly_avg": 1922003,
+          "values": {
+            "2026-10-19": 1922003
+          }
+        },
+        {
+          "name": "FBraga01",
+          "latest": 1899148,
+          "weekly_avg": 1899148,
+          "values": {
+            "2026-10-19": 1899148
+          }
+        },
+        {
+          "name": "Alex000392",
+          "latest": 1857188,
+          "weekly_avg": 1857188,
+          "values": {
+            "2026-10-19": 1857188
+          }
+        },
+        {
+          "name": "Optimus Bob",
+          "latest": 1789810,
+          "weekly_avg": 1789810,
+          "values": {
+            "2026-10-19": 1789810
+          }
+        },
+        {
+          "name": "Millanoo",
+          "latest": 1678125,
+          "weekly_avg": 1678125,
+          "values": {
+            "2026-10-19": 1678125
+          }
+        },
+        {
+          "name": "Hassleham",
+          "latest": 1128273,
+          "weekly_avg": 1128273,
+          "values": {
+            "2026-10-19": 1128273
+          }
+        },
+        {
+          "name": "Lover Of Manquaca",
+          "latest": 252000,
+          "weekly_avg": 252000,
+          "values": {
+            "2026-10-19": 252000
+          }
+        },
+        {
+          "name": "Andressita MD",
+          "latest": 161250,
+          "weekly_avg": 161250,
+          "values": {
+            "2026-10-19": 161250
+          }
+        },
+        {
+          "name": "Fabinho gomes",
+          "latest": 0,
+          "weekly_avg": 0,
+          "values": {
+            "2026-10-19": 0
+          }
+        },
+        {
+          "name": "SEKRETIK",
+          "latest": 0,
+          "weekly_avg": 0,
+          "values": {
+            "2026-10-19": 0
+          }
+        },
+        {
+          "name": "Baby Bax Baba Bax",
+          "latest": 0,
+          "weekly_avg": 0,
+          "values": {
+            "2026-10-19": 0
+          }
+        },
+        {
+          "name": "Dani Earth",
+          "latest": 0,
+          "weekly_avg": 0,
+          "values": {
+            "2026-10-19": 0
+          }
+        },
+        {
+          "name": "Pepsi ZeR0",
+          "latest": 0,
+          "weekly_avg": 0,
+          "values": {
+            "2026-10-19": 0
+          }
+        },
+        {
+          "name": "Nraurn uw?",
+          "latest": 0,
+          "weekly_avg": 0,
+          "values": {
+            "2026-10-19": 0
+          }
+        },
+        {
+          "name": "CTPAHHIK",
+          "latest": 0,
+          "weekly_avg": 0,
+          "values": {
+            "2026-10-19": 0
+          }
+        }
+      ]
+    },
     "vs_compare": {
-      "days": [],
-      "player_dates": [],
-      "players": []
+      "days": [
+        {
+          "date": "2026-10-19",
+          "dawn": 648378924,
+          "opponent": 2496158552,
+          "delta": -1847779628,
+          "result": "Loss",
+          "necessary": 648378924,
+          "unnecessary": 0,
+          "shortfall": 1847779628,
+          "dawn_count": 94,
+          "opp_count": 94
+        }
+      ],
+      "player_dates": [
+        "46.314",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "players": [
+        {
+          "name": "BlackHeiX",
+          "necessary": 14042305,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.314": 14042305,
+            "": null
+          }
+        },
+        {
+          "name": "Bazïinga",
+          "necessary": 6288401,
+          "unnecessary": null,
+          "verdict": "Needed more",
+          "daily_scores": {
+            "46.314": 6288401,
+            "": null
+          }
+        },
+        {
+          "name": "Alex000392",
+          "necessary": 1857188,
+          "unnecessary": null,
+          "verdict": "Needed more",
+          "daily_scores": {
+            "46.314": 1857188,
+            "": null
+          }
+        },
+        {
+          "name": "AndreResende",
+          "necessary": 4568085,
+          "unnecessary": null,
+          "verdict": "Needed more",
+          "daily_scores": {
+            "46.314": 4568085,
+            "": null
+          }
+        },
+        {
+          "name": "IGU7",
+          "necessary": 4821210,
+          "unnecessary": null,
+          "verdict": "Needed more",
+          "daily_scores": {
+            "46.314": 4821210,
+            "": null
+          }
+        },
+        {
+          "name": "Pepsi ZeR0",
+          "necessary": null,
+          "unnecessary": null,
+          "verdict": "",
+          "daily_scores": {
+            "46.314": null,
+            "": null
+          }
+        },
+        {
+          "name": "Lana 67",
+          "necessary": 5471799,
+          "unnecessary": null,
+          "verdict": "Needed more",
+          "daily_scores": {
+            "46.314": 5471799,
+            "": null
+          }
+        },
+        {
+          "name": "Fred67290",
+          "necessary": 4198125,
+          "unnecessary": null,
+          "verdict": "Needed more",
+          "daily_scores": {
+            "46.314": 4198125,
+            "": null
+          }
+        },
+        {
+          "name": "blubbb123",
+          "necessary": 4813654,
+          "unnecessary": null,
+          "verdict": "Needed more",
+          "daily_scores": {
+            "46.314": 4813654,
+            "": null
+          }
+        },
+        {
+          "name": "AJ die Beste",
+          "necessary": 6632001,
+          "unnecessary": null,
+          "verdict": "Needed more",
+          "daily_scores": {
+            "46.314": 6632001,
+            "": null
+          }
+        },
+        {
+          "name": "HeinselHH",
+          "necessary": 13619689,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.314": 13619689,
+            "": null
+          }
+        },
+        {
+          "name": "Gabi Kamado",
+          "necessary": 10189689,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.314": 10189689,
+            "": null
+          }
+        },
+        {
+          "name": "Nraurn uw?",
+          "necessary": null,
+          "unnecessary": null,
+          "verdict": "",
+          "daily_scores": {
+            "46.314": null,
+            "": null
+          }
+        },
+        {
+          "name": "0 AÇOUGUEIRO",
+          "necessary": 5039184,
+          "unnecessary": null,
+          "verdict": "Needed more",
+          "daily_scores": {
+            "46.314": 5039184,
+            "": null
+          }
+        },
+        {
+          "name": "Yuna",
+          "necessary": 3177188,
+          "unnecessary": null,
+          "verdict": "Needed more",
+          "daily_scores": {
+            "46.314": 3177188,
+            "": null
+          }
+        },
+        {
+          "name": "Megalocasiadon",
+          "necessary": 3622125,
+          "unnecessary": null,
+          "verdict": "Needed more",
+          "daily_scores": {
+            "46.314": 3622125,
+            "": null
+          }
+        },
+        {
+          "name": "Masterzin",
+          "necessary": 3520274,
+          "unnecessary": null,
+          "verdict": "Needed more",
+          "daily_scores": {
+            "46.314": 3520274,
+            "": null
+          }
+        },
+        {
+          "name": "Munsoned",
+          "necessary": 5943191,
+          "unnecessary": null,
+          "verdict": "Needed more",
+          "daily_scores": {
+            "46.314": 5943191,
+            "": null
+          }
+        },
+        {
+          "name": "Lord Rembe",
+          "necessary": 3878759,
+          "unnecessary": null,
+          "verdict": "Needed more",
+          "daily_scores": {
+            "46.314": 3878759,
+            "": null
+          }
+        },
+        {
+          "name": "User1904",
+          "necessary": 2356723,
+          "unnecessary": null,
+          "verdict": "Needed more",
+          "daily_scores": {
+            "46.314": 2356723,
+            "": null
+          }
+        },
+        {
+          "name": "Valério",
+          "necessary": 13250910,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.314": 13250910,
+            "": null
+          }
+        },
+        {
+          "name": "LaLaLanD",
+          "necessary": 2902774,
+          "unnecessary": null,
+          "verdict": "Needed more",
+          "daily_scores": {
+            "46.314": 2902774,
+            "": null
+          }
+        },
+        {
+          "name": "ClovE",
+          "necessary": 9683438,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.314": 9683438,
+            "": null
+          }
+        },
+        {
+          "name": "rePlay",
+          "necessary": 11045625,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.314": 11045625,
+            "": null
+          }
+        },
+        {
+          "name": "Erdbeermarmelade",
+          "necessary": 8903438,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.314": 8903438,
+            "": null
+          }
+        },
+        {
+          "name": "Sosiskaa",
+          "necessary": 5655409,
+          "unnecessary": null,
+          "verdict": "Needed more",
+          "daily_scores": {
+            "46.314": 5655409,
+            "": null
+          }
+        },
+        {
+          "name": "Relapse94",
+          "necessary": 2383156,
+          "unnecessary": null,
+          "verdict": "Needed more",
+          "daily_scores": {
+            "46.314": 2383156,
+            "": null
+          }
+        },
+        {
+          "name": "Gubalibre",
+          "necessary": 2810766,
+          "unnecessary": null,
+          "verdict": "Needed more",
+          "daily_scores": {
+            "46.314": 2810766,
+            "": null
+          }
+        },
+        {
+          "name": "Ougat",
+          "necessary": 7734111,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.314": 7734111,
+            "": null
+          }
+        },
+        {
+          "name": "Lawima",
+          "necessary": 20130020,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.314": 20130020,
+            "": null
+          }
+        },
+        {
+          "name": "TheStarks",
+          "necessary": 10065376,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.314": 10065376,
+            "": null
+          }
+        },
+        {
+          "name": "Millanoo",
+          "necessary": 1678125,
+          "unnecessary": null,
+          "verdict": "Needed more",
+          "daily_scores": {
+            "46.314": 1678125,
+            "": null
+          }
+        },
+        {
+          "name": "Banu89",
+          "necessary": 7542434,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.314": 7542434,
+            "": null
+          }
+        },
+        {
+          "name": "❤ Katarina ❤",
+          "necessary": 5373643,
+          "unnecessary": null,
+          "verdict": "Needed more",
+          "daily_scores": {
+            "46.314": 5373643,
+            "": null
+          }
+        },
+        {
+          "name": "Ref1exX",
+          "necessary": 7900011,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.314": 7900011,
+            "": null
+          }
+        },
+        {
+          "name": "RvE x",
+          "necessary": 10234271,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.314": 10234271,
+            "": null
+          }
+        },
+        {
+          "name": "Fabinho gomes",
+          "necessary": null,
+          "unnecessary": null,
+          "verdict": "",
+          "daily_scores": {
+            "46.314": null,
+            "": null
+          }
+        },
+        {
+          "name": "Random Attacks",
+          "necessary": 6982862,
+          "unnecessary": null,
+          "verdict": "Needed more",
+          "daily_scores": {
+            "46.314": 6982862,
+            "": null
+          }
+        },
+        {
+          "name": "i k k i",
+          "necessary": 2027814,
+          "unnecessary": null,
+          "verdict": "Needed more",
+          "daily_scores": {
+            "46.314": 2027814,
+            "": null
+          }
+        },
+        {
+          "name": "mandarin",
+          "necessary": 4831184,
+          "unnecessary": null,
+          "verdict": "Needed more",
+          "daily_scores": {
+            "46.314": 4831184,
+            "": null
+          }
+        },
+        {
+          "name": "JazzHandsThomas",
+          "necessary": 5428928,
+          "unnecessary": null,
+          "verdict": "Needed more",
+          "daily_scores": {
+            "46.314": 5428928,
+            "": null
+          }
+        },
+        {
+          "name": "CANONDA",
+          "necessary": 7026473,
+          "unnecessary": null,
+          "verdict": "Needed more",
+          "daily_scores": {
+            "46.314": 7026473,
+            "": null
+          }
+        },
+        {
+          "name": "WT1110",
+          "necessary": 6429499,
+          "unnecessary": null,
+          "verdict": "Needed more",
+          "daily_scores": {
+            "46.314": 6429499,
+            "": null
+          }
+        },
+        {
+          "name": "Jazzcat78",
+          "necessary": 1941000,
+          "unnecessary": null,
+          "verdict": "Needed more",
+          "daily_scores": {
+            "46.314": 1941000,
+            "": null
+          }
+        },
+        {
+          "name": "YaneZ",
+          "necessary": 11531319,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.314": 11531319,
+            "": null
+          }
+        },
+        {
+          "name": "73Katy",
+          "necessary": 1922003,
+          "unnecessary": null,
+          "verdict": "Needed more",
+          "daily_scores": {
+            "46.314": 1922003,
+            "": null
+          }
+        },
+        {
+          "name": "RubiA",
+          "necessary": 1950908,
+          "unnecessary": null,
+          "verdict": "Needed more",
+          "daily_scores": {
+            "46.314": 1950908,
+            "": null
+          }
+        },
+        {
+          "name": "DesertSniper",
+          "necessary": 5284030,
+          "unnecessary": null,
+          "verdict": "Needed more",
+          "daily_scores": {
+            "46.314": 5284030,
+            "": null
+          }
+        },
+        {
+          "name": "Southwest01",
+          "necessary": 4933342,
+          "unnecessary": null,
+          "verdict": "Needed more",
+          "daily_scores": {
+            "46.314": 4933342,
+            "": null
+          }
+        },
+        {
+          "name": "Filippos4Paok",
+          "necessary": 15080051,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.314": 15080051,
+            "": null
+          }
+        },
+        {
+          "name": "Icey786",
+          "necessary": 24565530,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.314": 24565530,
+            "": null
+          }
+        },
+        {
+          "name": "damboddambod",
+          "necessary": 4524651,
+          "unnecessary": null,
+          "verdict": "Needed more",
+          "daily_scores": {
+            "46.314": 4524651,
+            "": null
+          }
+        },
+        {
+          "name": "xXxJoKeRxXx",
+          "necessary": 7812375,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.314": 7812375,
+            "": null
+          }
+        },
+        {
+          "name": "Jhow09",
+          "necessary": 15583467,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.314": 15583467,
+            "": null
+          }
+        },
+        {
+          "name": "Buckioio",
+          "necessary": 12001039,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.314": 12001039,
+            "": null
+          }
+        },
+        {
+          "name": "Outerspace Chase",
+          "necessary": 2259553,
+          "unnecessary": null,
+          "verdict": "Needed more",
+          "daily_scores": {
+            "46.314": 2259553,
+            "": null
+          }
+        },
+        {
+          "name": "ForesTalaniz",
+          "necessary": 7433780,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.314": 7433780,
+            "": null
+          }
+        },
+        {
+          "name": "FBraga01",
+          "necessary": 1899148,
+          "unnecessary": null,
+          "verdict": "Needed more",
+          "daily_scores": {
+            "46.314": 1899148,
+            "": null
+          }
+        },
+        {
+          "name": "Tomatofake",
+          "necessary": 3506915,
+          "unnecessary": null,
+          "verdict": "Needed more",
+          "daily_scores": {
+            "46.314": 3506915,
+            "": null
+          }
+        },
+        {
+          "name": "Rico 2026",
+          "necessary": 21225308,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.314": 21225308,
+            "": null
+          }
+        },
+        {
+          "name": "Rodrigo",
+          "necessary": 3202314,
+          "unnecessary": null,
+          "verdict": "Needed more",
+          "daily_scores": {
+            "46.314": 3202314,
+            "": null
+          }
+        },
+        {
+          "name": "chalako77",
+          "necessary": 6095091,
+          "unnecessary": null,
+          "verdict": "Needed more",
+          "daily_scores": {
+            "46.314": 6095091,
+            "": null
+          }
+        },
+        {
+          "name": "Inlv1",
+          "necessary": 7388329,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.314": 7388329,
+            "": null
+          }
+        },
+        {
+          "name": "ImpAugustus",
+          "necessary": 7336875,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.314": 7336875,
+            "": null
+          }
+        },
+        {
+          "name": "Hassleham",
+          "necessary": 1128273,
+          "unnecessary": null,
+          "verdict": "Needed more",
+          "daily_scores": {
+            "46.314": 1128273,
+            "": null
+          }
+        },
+        {
+          "name": "Omori UO>",
+          "necessary": 1966875,
+          "unnecessary": null,
+          "verdict": "Needed more",
+          "daily_scores": {
+            "46.314": 1966875,
+            "": null
+          }
+        },
+        {
+          "name": "Knives00",
+          "necessary": 6713438,
+          "unnecessary": null,
+          "verdict": "Needed more",
+          "daily_scores": {
+            "46.314": 6713438,
+            "": null
+          }
+        },
+        {
+          "name": "Kaizennnnnnnnnnnn",
+          "necessary": 9106066,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.314": 9106066,
+            "": null
+          }
+        },
+        {
+          "name": "The phantom 0",
+          "necessary": 12109688,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.314": 12109688,
+            "": null
+          }
+        },
+        {
+          "name": "Andressita MD",
+          "necessary": 161250,
+          "unnecessary": null,
+          "verdict": "Needed more",
+          "daily_scores": {
+            "46.314": 161250,
+            "": null
+          }
+        },
+        {
+          "name": "Eisen024",
+          "necessary": 7617121,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.314": 7617121,
+            "": null
+          }
+        },
+        {
+          "name": "SEKRETIK",
+          "necessary": null,
+          "unnecessary": null,
+          "verdict": "",
+          "daily_scores": {
+            "46.314": null,
+            "": null
+          }
+        },
+        {
+          "name": "PALADINO BR",
+          "necessary": 7864658,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.314": 7864658,
+            "": null
+          }
+        },
+        {
+          "name": "GrummelGriesgram",
+          "necessary": 8883338,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.314": 8883338,
+            "": null
+          }
+        },
+        {
+          "name": "Itamar1130",
+          "necessary": 7200004,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.314": 7200004,
+            "": null
+          }
+        },
+        {
+          "name": "Ringwraiths",
+          "necessary": 14305164,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.314": 14305164,
+            "": null
+          }
+        },
+        {
+          "name": "Noxnanni",
+          "necessary": 17509683,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.314": 17509683,
+            "": null
+          }
+        },
+        {
+          "name": "Mr Xanor",
+          "necessary": 3382500,
+          "unnecessary": null,
+          "verdict": "Needed more",
+          "daily_scores": {
+            "46.314": 3382500,
+            "": null
+          }
+        },
+        {
+          "name": "MarchH",
+          "necessary": 3896533,
+          "unnecessary": null,
+          "verdict": "Needed more",
+          "daily_scores": {
+            "46.314": 3896533,
+            "": null
+          }
+        },
+        {
+          "name": "Draurg v2",
+          "necessary": 13423958,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.314": 13423958,
+            "": null
+          }
+        },
+        {
+          "name": "Sandboxman",
+          "necessary": 9762991,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.314": 9762991,
+            "": null
+          }
+        },
+        {
+          "name": "DUNGEON KEEPER",
+          "necessary": 6473916,
+          "unnecessary": null,
+          "verdict": "Needed more",
+          "daily_scores": {
+            "46.314": 6473916,
+            "": null
+          }
+        },
+        {
+          "name": "Juliani86",
+          "necessary": 3391876,
+          "unnecessary": null,
+          "verdict": "Needed more",
+          "daily_scores": {
+            "46.314": 3391876,
+            "": null
+          }
+        },
+        {
+          "name": "Königinnenreich",
+          "necessary": 7189882,
+          "unnecessary": null,
+          "verdict": "Needed more",
+          "daily_scores": {
+            "46.314": 7189882,
+            "": null
+          }
+        },
+        {
+          "name": "iamJazzyy",
+          "necessary": 2383500,
+          "unnecessary": null,
+          "verdict": "Needed more",
+          "daily_scores": {
+            "46.314": 2383500,
+            "": null
+          }
+        },
+        {
+          "name": "CTPAHHIK",
+          "necessary": null,
+          "unnecessary": null,
+          "verdict": "",
+          "daily_scores": {
+            "46.314": null,
+            "": null
+          }
+        },
+        {
+          "name": "Baby Bax Baba Bax",
+          "necessary": null,
+          "unnecessary": null,
+          "verdict": "",
+          "daily_scores": {
+            "46.314": null,
+            "": null
+          }
+        },
+        {
+          "name": "Cmdr William T Riker",
+          "necessary": 4355752,
+          "unnecessary": null,
+          "verdict": "Needed more",
+          "daily_scores": {
+            "46.314": 4355752,
+            "": null
+          }
+        },
+        {
+          "name": "Everton 123456",
+          "necessary": 2074390,
+          "unnecessary": null,
+          "verdict": "Needed more",
+          "daily_scores": {
+            "46.314": 2074390,
+            "": null
+          }
+        },
+        {
+          "name": "Dani Earth",
+          "necessary": null,
+          "unnecessary": null,
+          "verdict": "",
+          "daily_scores": {
+            "46.314": null,
+            "": null
+          }
+        },
+        {
+          "name": "DiViNE10",
+          "necessary": 7615875,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.314": 7615875,
+            "": null
+          }
+        },
+        {
+          "name": "AnnoraX",
+          "necessary": 13224644,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.314": 13224644,
+            "": null
+          }
+        },
+        {
+          "name": "Diniz Infaaaa",
+          "necessary": 6058247,
+          "unnecessary": null,
+          "verdict": "Needed more",
+          "daily_scores": {
+            "46.314": 6058247,
+            "": null
+          }
+        },
+        {
+          "name": "CTPAHHIK",
+          "necessary": null,
+          "unnecessary": null,
+          "verdict": "",
+          "daily_scores": {
+            "46.314": null,
+            "": null
+          }
+        },
+        {
+          "name": "Bruna Laïs",
+          "necessary": 3643730,
+          "unnecessary": null,
+          "verdict": "Needed more",
+          "daily_scores": {
+            "46.314": 3643730,
+            "": null
+          }
+        },
+        {
+          "name": "Optimus Bob",
+          "necessary": 1789810,
+          "unnecessary": null,
+          "verdict": "Needed more",
+          "daily_scores": {
+            "46.314": 1789810,
+            "": null
+          }
+        },
+        {
+          "name": "Jiintan",
+          "necessary": 5551662,
+          "unnecessary": null,
+          "verdict": "Needed more",
+          "daily_scores": {
+            "46.314": 5551662,
+            "": null
+          }
+        },
+        {
+          "name": "xJeeane",
+          "necessary": 3758048,
+          "unnecessary": null,
+          "verdict": "Needed more",
+          "daily_scores": {
+            "46.314": 3758048,
+            "": null
+          }
+        },
+        {
+          "name": "Squatislav",
+          "necessary": 2337188,
+          "unnecessary": null,
+          "verdict": "Needed more",
+          "daily_scores": {
+            "46.314": 2337188,
+            "": null
+          }
+        },
+        {
+          "name": "Nakama Tskulaxo",
+          "necessary": 4093727,
+          "unnecessary": null,
+          "verdict": "Needed more",
+          "daily_scores": {
+            "46.314": 4093727,
+            "": null
+          }
+        },
+        {
+          "name": "Lover Of Manquaca",
+          "necessary": 252000,
+          "unnecessary": null,
+          "verdict": "Needed more",
+          "daily_scores": {
+            "46.314": 252000,
+            "": null
+          }
+        },
+        {
+          "name": "Zettovic",
+          "necessary": 17616252,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.314": 17616252,
+            "": null
+          }
+        }
+      ]
     },
     "kills": null,
-    "donations": null,
+    "donations": {
+      "columns": [
+        "2026-10-19"
+      ],
+      "summary_columns": [
+        "Latest",
+        "Weekly Avg"
+      ],
+      "rows": [
+        {
+          "name": "GrummelGriesgram",
+          "latest": 10900,
+          "weekly_avg": 10900,
+          "values": {
+            "2026-10-19": 10900
+          }
+        },
+        {
+          "name": "Königinnenreich",
+          "latest": 9550,
+          "weekly_avg": 9550,
+          "values": {
+            "2026-10-19": 9550
+          }
+        },
+        {
+          "name": "DiViNE10",
+          "latest": 8050,
+          "weekly_avg": 8050,
+          "values": {
+            "2026-10-19": 8050
+          }
+        },
+        {
+          "name": "73Katy",
+          "latest": 8050,
+          "weekly_avg": 8050,
+          "values": {
+            "2026-10-19": 8050
+          }
+        },
+        {
+          "name": "Jiintan",
+          "latest": 7850,
+          "weekly_avg": 7850,
+          "values": {
+            "2026-10-19": 7850
+          }
+        },
+        {
+          "name": "Masterzin",
+          "latest": 7850,
+          "weekly_avg": 7850,
+          "values": {
+            "2026-10-19": 7850
+          }
+        },
+        {
+          "name": "Ref1exX",
+          "latest": 7350,
+          "weekly_avg": 7350,
+          "values": {
+            "2026-10-19": 7350
+          }
+        },
+        {
+          "name": "Juliani86",
+          "latest": 7000,
+          "weekly_avg": 7000,
+          "values": {
+            "2026-10-19": 7000
+          }
+        },
+        {
+          "name": "Itamar1130",
+          "latest": 7000,
+          "weekly_avg": 7000,
+          "values": {
+            "2026-10-19": 7000
+          }
+        },
+        {
+          "name": "Ougat",
+          "latest": 6700,
+          "weekly_avg": 6700,
+          "values": {
+            "2026-10-19": 6700
+          }
+        },
+        {
+          "name": "Relapse94",
+          "latest": 6350,
+          "weekly_avg": 6350,
+          "values": {
+            "2026-10-19": 6350
+          }
+        },
+        {
+          "name": "Jhow09",
+          "latest": 6250,
+          "weekly_avg": 6250,
+          "values": {
+            "2026-10-19": 6250
+          }
+        },
+        {
+          "name": "Diniz Infaaaa",
+          "latest": 6150,
+          "weekly_avg": 6150,
+          "values": {
+            "2026-10-19": 6150
+          }
+        },
+        {
+          "name": "mandarin",
+          "latest": 6050,
+          "weekly_avg": 6050,
+          "values": {
+            "2026-10-19": 6050
+          }
+        },
+        {
+          "name": "IGU7",
+          "latest": 5800,
+          "weekly_avg": 5800,
+          "values": {
+            "2026-10-19": 5800
+          }
+        },
+        {
+          "name": "FBraga01",
+          "latest": 5600,
+          "weekly_avg": 5600,
+          "values": {
+            "2026-10-19": 5600
+          }
+        },
+        {
+          "name": "YaneZ",
+          "latest": 5600,
+          "weekly_avg": 5600,
+          "values": {
+            "2026-10-19": 5600
+          }
+        },
+        {
+          "name": "LaLaLanD",
+          "latest": 5550,
+          "weekly_avg": 5550,
+          "values": {
+            "2026-10-19": 5550
+          }
+        },
+        {
+          "name": "PALADINO BR",
+          "latest": 5500,
+          "weekly_avg": 5500,
+          "values": {
+            "2026-10-19": 5500
+          }
+        },
+        {
+          "name": "0 AÇOUGUEIRO",
+          "latest": 5450,
+          "weekly_avg": 5450,
+          "values": {
+            "2026-10-19": 5450
+          }
+        },
+        {
+          "name": "rePlay",
+          "latest": 5250,
+          "weekly_avg": 5250,
+          "values": {
+            "2026-10-19": 5250
+          }
+        },
+        {
+          "name": "xXxJoKeRxXx",
+          "latest": 5250,
+          "weekly_avg": 5250,
+          "values": {
+            "2026-10-19": 5250
+          }
+        },
+        {
+          "name": "DesertSniper",
+          "latest": 5200,
+          "weekly_avg": 5200,
+          "values": {
+            "2026-10-19": 5200
+          }
+        },
+        {
+          "name": "Banu89",
+          "latest": 5200,
+          "weekly_avg": 5200,
+          "values": {
+            "2026-10-19": 5200
+          }
+        },
+        {
+          "name": "Ringwraiths",
+          "latest": 5150,
+          "weekly_avg": 5150,
+          "values": {
+            "2026-10-19": 5150
+          }
+        },
+        {
+          "name": "TheStarks",
+          "latest": 5100,
+          "weekly_avg": 5100,
+          "values": {
+            "2026-10-19": 5100
+          }
+        },
+        {
+          "name": "Valério",
+          "latest": 5100,
+          "weekly_avg": 5100,
+          "values": {
+            "2026-10-19": 5100
+          }
+        },
+        {
+          "name": "Random Attacks",
+          "latest": 5100,
+          "weekly_avg": 5100,
+          "values": {
+            "2026-10-19": 5100
+          }
+        },
+        {
+          "name": "Gubalibre",
+          "latest": 5000,
+          "weekly_avg": 5000,
+          "values": {
+            "2026-10-19": 5000
+          }
+        },
+        {
+          "name": "chalako77",
+          "latest": 4900,
+          "weekly_avg": 4900,
+          "values": {
+            "2026-10-19": 4900
+          }
+        },
+        {
+          "name": "AnnoraX",
+          "latest": 4900,
+          "weekly_avg": 4900,
+          "values": {
+            "2026-10-19": 4900
+          }
+        },
+        {
+          "name": "Lord Rembe",
+          "latest": 4850,
+          "weekly_avg": 4850,
+          "values": {
+            "2026-10-19": 4850
+          }
+        },
+        {
+          "name": "Noxnanni",
+          "latest": 4750,
+          "weekly_avg": 4750,
+          "values": {
+            "2026-10-19": 4750
+          }
+        },
+        {
+          "name": "Jazzcat78",
+          "latest": 4700,
+          "weekly_avg": 4700,
+          "values": {
+            "2026-10-19": 4700
+          }
+        },
+        {
+          "name": "User1904",
+          "latest": 4700,
+          "weekly_avg": 4700,
+          "values": {
+            "2026-10-19": 4700
+          }
+        },
+        {
+          "name": "DUNGEON KEEPER",
+          "latest": 4650,
+          "weekly_avg": 4650,
+          "values": {
+            "2026-10-19": 4650
+          }
+        },
+        {
+          "name": "blubbb123",
+          "latest": 4650,
+          "weekly_avg": 4650,
+          "values": {
+            "2026-10-19": 4650
+          }
+        },
+        {
+          "name": "Lana 67",
+          "latest": 4500,
+          "weekly_avg": 4500,
+          "values": {
+            "2026-10-19": 4500
+          }
+        },
+        {
+          "name": "Tomatofake",
+          "latest": 4200,
+          "weekly_avg": 4200,
+          "values": {
+            "2026-10-19": 4200
+          }
+        },
+        {
+          "name": "Kaizennnnnnnnnnnn",
+          "latest": 4200,
+          "weekly_avg": 4200,
+          "values": {
+            "2026-10-19": 4200
+          }
+        },
+        {
+          "name": "Fred67290",
+          "latest": 4150,
+          "weekly_avg": 4150,
+          "values": {
+            "2026-10-19": 4150
+          }
+        },
+        {
+          "name": "Knives00",
+          "latest": 4050,
+          "weekly_avg": 4050,
+          "values": {
+            "2026-10-19": 4050
+          }
+        },
+        {
+          "name": "xJeeane",
+          "latest": 4050,
+          "weekly_avg": 4050,
+          "values": {
+            "2026-10-19": 4050
+          }
+        },
+        {
+          "name": "ClovE",
+          "latest": 3900,
+          "weekly_avg": 3900,
+          "values": {
+            "2026-10-19": 3900
+          }
+        },
+        {
+          "name": "Gabi Kamado",
+          "latest": 3900,
+          "weekly_avg": 3900,
+          "values": {
+            "2026-10-19": 3900
+          }
+        },
+        {
+          "name": "Nakama Tskulaxo",
+          "latest": 3900,
+          "weekly_avg": 3900,
+          "values": {
+            "2026-10-19": 3900
+          }
+        },
+        {
+          "name": "AJ die Beste",
+          "latest": 3850,
+          "weekly_avg": 3850,
+          "values": {
+            "2026-10-19": 3850
+          }
+        },
+        {
+          "name": "Rico 2026",
+          "latest": 3850,
+          "weekly_avg": 3850,
+          "values": {
+            "2026-10-19": 3850
+          }
+        },
+        {
+          "name": "Filippos4Paok",
+          "latest": 3800,
+          "weekly_avg": 3800,
+          "values": {
+            "2026-10-19": 3800
+          }
+        },
+        {
+          "name": "damboddambod",
+          "latest": 3800,
+          "weekly_avg": 3800,
+          "values": {
+            "2026-10-19": 3800
+          }
+        },
+        {
+          "name": "WT1110",
+          "latest": 3500,
+          "weekly_avg": 3500,
+          "values": {
+            "2026-10-19": 3500
+          }
+        },
+        {
+          "name": "Sosiskaa",
+          "latest": 3500,
+          "weekly_avg": 3500,
+          "values": {
+            "2026-10-19": 3500
+          }
+        },
+        {
+          "name": "Rodrigo",
+          "latest": 3400,
+          "weekly_avg": 3400,
+          "values": {
+            "2026-10-19": 3400
+          }
+        },
+        {
+          "name": "HeinselHH",
+          "latest": 3350,
+          "weekly_avg": 3350,
+          "values": {
+            "2026-10-19": 3350
+          }
+        },
+        {
+          "name": "Megalocasiadon",
+          "latest": 3350,
+          "weekly_avg": 3350,
+          "values": {
+            "2026-10-19": 3350
+          }
+        },
+        {
+          "name": "Buckioio",
+          "latest": 3350,
+          "weekly_avg": 3350,
+          "values": {
+            "2026-10-19": 3350
+          }
+        },
+        {
+          "name": "JazzHandsThomas",
+          "latest": 3350,
+          "weekly_avg": 3350,
+          "values": {
+            "2026-10-19": 3350
+          }
+        },
+        {
+          "name": "ImpAugustus",
+          "latest": 3250,
+          "weekly_avg": 3250,
+          "values": {
+            "2026-10-19": 3250
+          }
+        },
+        {
+          "name": "Squatislav",
+          "latest": 3250,
+          "weekly_avg": 3250,
+          "values": {
+            "2026-10-19": 3250
+          }
+        },
+        {
+          "name": "Zettovic",
+          "latest": 3100,
+          "weekly_avg": 3100,
+          "values": {
+            "2026-10-19": 3100
+          }
+        },
+        {
+          "name": "Mr Xanor",
+          "latest": 3100,
+          "weekly_avg": 3100,
+          "values": {
+            "2026-10-19": 3100
+          }
+        },
+        {
+          "name": "BlackHeiX",
+          "latest": 3100,
+          "weekly_avg": 3100,
+          "values": {
+            "2026-10-19": 3100
+          }
+        },
+        {
+          "name": "❤ Katarina ❤",
+          "latest": 3100,
+          "weekly_avg": 3100,
+          "values": {
+            "2026-10-19": 3100
+          }
+        },
+        {
+          "name": "Yuna",
+          "latest": 3100,
+          "weekly_avg": 3100,
+          "values": {
+            "2026-10-19": 3100
+          }
+        },
+        {
+          "name": "i k k i",
+          "latest": 3100,
+          "weekly_avg": 3100,
+          "values": {
+            "2026-10-19": 3100
+          }
+        },
+        {
+          "name": "Lawima",
+          "latest": 3000,
+          "weekly_avg": 3000,
+          "values": {
+            "2026-10-19": 3000
+          }
+        },
+        {
+          "name": "Omori UO>",
+          "latest": 2950,
+          "weekly_avg": 2950,
+          "values": {
+            "2026-10-19": 2950
+          }
+        },
+        {
+          "name": "Sandboxman",
+          "latest": 2900,
+          "weekly_avg": 2900,
+          "values": {
+            "2026-10-19": 2900
+          }
+        },
+        {
+          "name": "Icey786",
+          "latest": 2850,
+          "weekly_avg": 2850,
+          "values": {
+            "2026-10-19": 2850
+          }
+        },
+        {
+          "name": "Inlv1",
+          "latest": 2850,
+          "weekly_avg": 2850,
+          "values": {
+            "2026-10-19": 2850
+          }
+        },
+        {
+          "name": "Southwest01",
+          "latest": 2850,
+          "weekly_avg": 2850,
+          "values": {
+            "2026-10-19": 2850
+          }
+        },
+        {
+          "name": "Erdbeermarmelade",
+          "latest": 2800,
+          "weekly_avg": 2800,
+          "values": {
+            "2026-10-19": 2800
+          }
+        },
+        {
+          "name": "Alex000392",
+          "latest": 2750,
+          "weekly_avg": 2750,
+          "values": {
+            "2026-10-19": 2750
+          }
+        },
+        {
+          "name": "MarchH",
+          "latest": 2650,
+          "weekly_avg": 2650,
+          "values": {
+            "2026-10-19": 2650
+          }
+        },
+        {
+          "name": "Draurg v2",
+          "latest": 2500,
+          "weekly_avg": 2500,
+          "values": {
+            "2026-10-19": 2500
+          }
+        },
+        {
+          "name": "Munsoned",
+          "latest": 2350,
+          "weekly_avg": 2350,
+          "values": {
+            "2026-10-19": 2350
+          }
+        },
+        {
+          "name": "Cmdr William T Riker",
+          "latest": 2150,
+          "weekly_avg": 2150,
+          "values": {
+            "2026-10-19": 2150
+          }
+        },
+        {
+          "name": "AndreResende",
+          "latest": 2100,
+          "weekly_avg": 2100,
+          "values": {
+            "2026-10-19": 2100
+          }
+        },
+        {
+          "name": "ForesTalaniz",
+          "latest": 1950,
+          "weekly_avg": 1950,
+          "values": {
+            "2026-10-19": 1950
+          }
+        },
+        {
+          "name": "Everton 123456",
+          "latest": 1850,
+          "weekly_avg": 1850,
+          "values": {
+            "2026-10-19": 1850
+          }
+        },
+        {
+          "name": "RubiA",
+          "latest": 1550,
+          "weekly_avg": 1550,
+          "values": {
+            "2026-10-19": 1550
+          }
+        },
+        {
+          "name": "Bazïinga",
+          "latest": 1300,
+          "weekly_avg": 1300,
+          "values": {
+            "2026-10-19": 1300
+          }
+        },
+        {
+          "name": "RvE x",
+          "latest": 750,
+          "weekly_avg": 750,
+          "values": {
+            "2026-10-19": 750
+          }
+        },
+        {
+          "name": "Eisen024",
+          "latest": 550,
+          "weekly_avg": 550,
+          "values": {
+            "2026-10-19": 550
+          }
+        },
+        {
+          "name": "iamJazzyy",
+          "latest": 0,
+          "weekly_avg": 0,
+          "values": {
+            "2026-10-19": 0
+          }
+        },
+        {
+          "name": "Dani Earth",
+          "latest": 0,
+          "weekly_avg": 0,
+          "values": {
+            "2026-10-19": 0
+          }
+        },
+        {
+          "name": "Baby Bax Baba Bax",
+          "latest": 0,
+          "weekly_avg": 0,
+          "values": {
+            "2026-10-19": 0
+          }
+        },
+        {
+          "name": "Hassleham",
+          "latest": 0,
+          "weekly_avg": 0,
+          "values": {
+            "2026-10-19": 0
+          }
+        },
+        {
+          "name": "Fabinho gomes",
+          "latest": 0,
+          "weekly_avg": 0,
+          "values": {
+            "2026-10-19": 0
+          }
+        },
+        {
+          "name": "CANONDA",
+          "latest": 0,
+          "weekly_avg": 0,
+          "values": {
+            "2026-10-19": 0
+          }
+        },
+        {
+          "name": "The phantom 0",
+          "latest": 0,
+          "weekly_avg": 0,
+          "values": {
+            "2026-10-19": 0
+          }
+        },
+        {
+          "name": "Andressita MD",
+          "latest": 0,
+          "weekly_avg": 0,
+          "values": {
+            "2026-10-19": 0
+          }
+        },
+        {
+          "name": "Bruna Laïs",
+          "latest": 0,
+          "weekly_avg": 0,
+          "values": {
+            "2026-10-19": 0
+          }
+        },
+        {
+          "name": "Millanoo",
+          "latest": 0,
+          "weekly_avg": 0,
+          "values": {
+            "2026-10-19": 0
+          }
+        },
+        {
+          "name": "Outerspace Chase",
+          "latest": 0,
+          "weekly_avg": 0,
+          "values": {
+            "2026-10-19": 0
+          }
+        },
+        {
+          "name": "SEKRETIK",
+          "latest": 0,
+          "weekly_avg": 0,
+          "values": {
+            "2026-10-19": 0
+          }
+        },
+        {
+          "name": "Optimus Bob",
+          "latest": 0,
+          "weekly_avg": 0,
+          "values": {
+            "2026-10-19": 0
+          }
+        },
+        {
+          "name": "Lover Of Manquaca",
+          "latest": 0,
+          "weekly_avg": 0,
+          "values": {
+            "2026-10-19": 0
+          }
+        }
+      ]
+    },
     "missing_entries": {
       "by_tab": {
         "T1 - Squad": 0,
@@ -8443,11 +11097,11 @@
       ]
     }
   },
-  "generated_at": "2026-10-19T13:08:42Z",
-  "stand_berlin": "19.10.2026, 15:08",
+  "generated_at": "2026-10-19T13:44:00Z",
+  "stand_berlin": "19.10.2026, 15:44",
   "source": "google_sheets",
   "source_file": "DawN - Base + Tabs (live)",
-  "snapshot": "2026-10-19T13:08:42",
+  "snapshot": "2026-10-19T13:44:00",
   "links": {
     "title": "DawN",
     "tagline": "Important links",
