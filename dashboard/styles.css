@@ -133,6 +133,37 @@ body {
   text-shadow: 0 0 24px rgba(232, 120, 60, 0.15);
 }
 
+.head-tools {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px 16px;
+}
+
+.tool-link {
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--ember);
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(232, 120, 60, 0.35);
+  background: rgba(232, 120, 60, 0.08);
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.tool-link:hover,
+.tool-link:focus-visible {
+  color: var(--ink);
+  border-color: rgba(232, 120, 60, 0.65);
+  background: rgba(232, 120, 60, 0.18);
+  outline: none;
+}
+
 .stamp {
   font-size: 0.8rem;
   color: var(--muted);
