@@ -1,82 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>DawN — Important Links</title>
+  <title>DawN — Last War Dashboard</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=20261019-root1">
 </head>
 <body>
-  <div class="atmosphere" aria-hidden="true"></div>
-
-  <main class="stage">
-    <header class="hero">
-      <img class="hero-art" src="assets/dawn.png" alt="DawN — It's always darkest before DAWN" width="1024" height="1024">
-      <div class="hero-copy">
-        <p class="brand" id="brand">DawN</p>
-        <p class="tagline" id="tagline">Important links</p>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow" aria-hidden="true"></div>
+  <div class="wrap" id="wrap">
+    <header class="site-head glass">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">☀</span>
+        <div>
+          <p class="brand-kicker">Alliance Ops</p>
+          <h1 class="brand-title">DawN</h1>
+        </div>
+      </div>
+      <div class="head-tools">
+        <a class="tool-link" href="/links/" target="_blank" rel="noopener noreferrer">Important Links</a>
+        <a class="tool-link" href="https://lastwar-daily-anno.pages.dev/" target="_blank" rel="noopener noreferrer">DawN Anno</a>
+        <div class="stamp" id="stamp">Lade Daten…</div>
       </div>
     </header>
 
-    <section class="links" aria-label="Important links">
-      <p id="err" class="err" hidden></p>
-      <ul id="list" class="link-list">
-        <li class="loading">Loading…</li>
-      </ul>
-    </section>
-
-    <section class="weeks" aria-label="VS weeks">
-      <h2>VS weeks</h2>
-      <p class="hint">ISO week Mon–Sun. Save or Push plus max (e.g. 12M). Tracker KPI reads this list.</p>
-      <p id="weekNow" class="hint"></p>
-      <div id="weekList" class="week-list"></div>
-      <form id="weekForm" class="add-form week-form">
-        <div class="week-fields">
-          <label>
-            <span>Year</span>
-            <input type="number" id="vsYear" name="year" min="2020" max="2100" required>
-          </label>
-          <label>
-            <span>Week</span>
-            <input type="number" id="vsWeek" name="week" min="1" max="53" required>
-          </label>
-          <label>
-            <span>Mode</span>
-            <select id="vsMode" name="mode">
-              <option value="save" selected>Save</option>
-              <option value="push">Push</option>
-            </select>
-          </label>
-          <label>
-            <span>Max</span>
-            <input type="text" id="vsMax" name="max" value="12M" placeholder="12M">
-          </label>
+    <div class="bar glass">
+      <div class="row">
+        <div class="tabs" role="tablist" aria-label="Dashboard-Bereiche">
+          <button class="tab" role="tab" id="tab-overview" aria-selected="true" aria-controls="view-overview" data-view="overview">Overview</button>
+          <button class="tab" role="tab" id="tab-kills" aria-selected="false" aria-controls="view-kills" data-view="kills">Kills</button>
+          <button class="tab" role="tab" id="tab-donations" aria-selected="false" aria-controls="view-donations" data-view="donations">Donations</button>
+          <button class="tab" role="tab" id="tab-vs" aria-selected="false" aria-controls="view-vs" data-view="vs">VS</button>
+          <button class="tab" role="tab" id="tab-season" aria-selected="false" aria-controls="view-season" data-view="season">Season</button>
+          <button class="tab" role="tab" id="tab-events" aria-selected="false" aria-controls="view-events" data-view="events">Events</button>
+          <button class="tab" role="tab" id="tab-activity" aria-selected="false" aria-controls="view-activity" data-view="activity">Activity</button>
+          <button class="tab" role="tab" id="tab-links" aria-selected="false" aria-controls="view-links" data-view="links">Links</button>
+          <button class="tab" role="tab" id="tab-config" aria-selected="false" aria-controls="view-config" data-view="config">Config</button>
         </div>
-        <button type="submit" id="btnSaveWeek">Save week</button>
-      </form>
-      <p id="weekStatus" class="status" hidden></p>
-    </section>
+      </div>
+    </div>
 
-    <section class="add" aria-label="Add a link">
-      <h2>Add link</h2>
-      <form id="addForm" class="add-form">
-        <label>
-          <span>Name / Description</span>
-          <input type="text" id="fieldName" name="name" required placeholder="e.g. DawN Tracker" autocomplete="off">
-        </label>
-        <label>
-          <span>Link</span>
-          <input type="url" id="fieldUrl" name="url" required placeholder="https://…" autocomplete="off">
-        </label>
-        <button type="submit" id="btnAdd">Add</button>
-      </form>
-      <p id="addStatus" class="status" hidden></p>
-    </section>
-  </main>
+    <div id="filterMount" class="filter-mount" hidden aria-label="Mitglieder-Filter"></div>
 
-  <script src="app.js"></script>
+    <div id="bootErr" class="err glass" hidden></div>
+
+    <div class="view" id="view-overview" role="tabpanel" aria-labelledby="tab-overview"></div>
+    <div class="view" id="view-kills" role="tabpanel" aria-labelledby="tab-kills" hidden></div>
+    <div class="view" id="view-donations" role="tabpanel" aria-labelledby="tab-donations" hidden></div>
+    <div class="view" id="view-vs" role="tabpanel" aria-labelledby="tab-vs" hidden></div>
+    <div class="view" id="view-season" role="tabpanel" aria-labelledby="tab-season" hidden></div>
+    <div class="view" id="view-events" role="tabpanel" aria-labelledby="tab-events" hidden></div>
+    <div class="view" id="view-activity" role="tabpanel" aria-labelledby="tab-activity" hidden></div>
+    <div class="view" id="view-links" role="tabpanel" aria-labelledby="tab-links" hidden></div>
+    <div class="view" id="view-config" role="tabpanel" aria-labelledby="tab-config" hidden></div>
+
+    <footer class="foot glass" id="foot"></footer>
+  </div>
+  <script src="app.js?v=20261019-root1"></script>
 </body>
 </html>
