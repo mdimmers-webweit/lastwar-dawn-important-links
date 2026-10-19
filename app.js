@@ -818,22 +818,9 @@ function renderOverviewWidgets() {
 
   const compare = sheetBlock("vs_compare");
   const days = (compare && compare.days) || [];
-  const recentDays = days.slice(-4);
   const compareWidget =
-    recentDays.length > 0
-      ? `<article class="widget span-8 glass"><h3>VS-Vergleich</h3><p class="sub">Letzte Tage</p>` +
-        '<div class="vs-compare-mini">' +
-        recentDays
-          .map((d) => {
-            const win = String(d.result || "").toLowerCase() === "win";
-            return (
-              `<div class="vs-day-chip ${win ? "win" : "loss"}">` +
-              `<div class="d">${esc(d.date)} · ${esc(d.result || "—")}</div>` +
-              `<div>Δ ${fmtPts(d.delta)}</div></div>`
-            );
-          })
-          .join("") +
-        "</div></article>"
+    days.length > 0
+      ? `<article class="widget span-12 glass vs-overview-compare">${renderVsCompareDays(days)}</article>`
       : "";
 
   const vsPulse = vsPulseCounts(members);
@@ -1079,11 +1066,15 @@ function renderKpiCards() {
 }
 
 function memberTable(columns, rows, extraClass) {
-  const head = columns.map((c) => `<th>${esc(c.label)}</th>`).join("");
+  const head = columns
+    .map((c) => `<th class="${esc(c.class || "")}">${esc(c.label)}</th>`)
+    .join("");
   const body = rows
     .map((row) => {
       const cls = row._inactive ? ' class="inactive"' : "";
-      return `<tr${cls}>${columns.map((c) => `<td class="${c.class || ""}">${row[c.key]}</td>`).join("")}</tr>`;
+      return `<tr${cls}>${columns
+        .map((c) => `<td class="${esc(c.class || "")}">${row[c.key]}</td>`)
+        .join("")}</tr>`;
     })
     .join("");
   const tbl = extraClass ? ` ${extraClass}` : "";
@@ -1204,25 +1195,121 @@ function renderDonations(el) {
     "</section>";
 }
 
+function vsCompareDaysSorted(days) {
+  return [...(days || [])].sort((a, b) => String(a.date || "").localeCompare(String(b.date || "")));
+}
+
+/** Burn-up: kumulierte DawN- vs. Gegner-Punkte über VS-Tage (SVG, kein Chart-Lib). */
+function renderVsBurnupChart(days) {
+  const sorted = vsCompareDaysSorted(days);
+  if (!sorted.length) return "";
+  let cumDawn = 0;
+  let cumOpp = 0;
+  const series = sorted.map((d) => {
+    cumDawn += Number(d.dawn) || 0;
+    cumOpp += Number(d.opponent) || 0;
+    return {
+      date: d.date,
+      dawn: cumDawn,
+      opp: cumOpp,
+      dayDawn: Number(d.dawn) || 0,
+      dayOpp: Number(d.opponent) || 0,
+      result: d.result,
+    };
+  });
+  const maxY = Math.max(...series.map((p) => Math.max(p.dawn, p.opp)), 1);
+  const W = 640;
+  const H = 220;
+  const pad = { t: 18, r: 16, b: 36, l: 48 };
+  const iw = W - pad.l - pad.r;
+  const ih = H - pad.t - pad.b;
+  const n = series.length;
+  const xAt = (i) => pad.l + (n === 1 ? iw / 2 : (i / (n - 1)) * iw);
+  const yAt = (v) => pad.t + ih - (v / maxY) * ih;
+  const pathFor = (key) =>
+    series
+      .map((p, i) => `${i ? "L" : "M"}${xAt(i).toFixed(1)},${yAt(p[key]).toFixed(1)}`)
+      .join(" ");
+  const areaDawn =
+    `M${xAt(0).toFixed(1)},${yAt(0).toFixed(1)} ` +
+    series.map((p, i) => `L${xAt(i).toFixed(1)},${yAt(p.dawn).toFixed(1)}`).join(" ") +
+    ` L${xAt(n - 1).toFixed(1)},${yAt(0).toFixed(1)} Z`;
+  const ticks = [0, 0.25, 0.5, 0.75, 1].map((t) => {
+    const v = maxY * t;
+    const y = yAt(v);
+    return (
+      `<line class="chart-grid" x1="${pad.l}" y1="${y.toFixed(1)}" x2="${W - pad.r}" y2="${y.toFixed(1)}" />` +
+      `<text class="chart-tick" x="${pad.l - 6}" y="${(y + 3).toFixed(1)}" text-anchor="end">${esc(fmtPts(v))}</text>`
+    );
+  });
+  const labels = series
+    .map((p, i) => {
+      const label = String(p.date || "").slice(5); // MM-DD
+      return `<text class="chart-x" x="${xAt(i).toFixed(1)}" y="${H - 12}" text-anchor="middle">${esc(label)}</text>`;
+    })
+    .join("");
+  const dots = series
+    .map((p, i) => {
+      return (
+        `<circle class="chart-dot dawn" cx="${xAt(i).toFixed(1)}" cy="${yAt(p.dawn).toFixed(1)}" r="4">` +
+        `<title>${esc(p.date)} DawN ${fmtPts(p.dawn)}</title></circle>` +
+        `<circle class="chart-dot opp" cx="${xAt(i).toFixed(1)}" cy="${yAt(p.opp).toFixed(1)}" r="4">` +
+        `<title>${esc(p.date)} Gegner ${fmtPts(p.opp)}</title></circle>`
+      );
+    })
+    .join("");
+  const last = series[series.length - 1];
+  const gap = last.opp - last.dawn;
+  const summary =
+    gap > 0
+      ? `Rückstand ${fmtPts(gap)} · Burn-up`
+      : gap < 0
+        ? `Vorsprung ${fmtPts(-gap)} · Burn-up`
+        : `Gleichstand · Burn-up`;
+  return (
+    '<div class="vs-chart glass">' +
+    `<div class="vs-chart-head"><h3>VS Burn-up</h3><p class="sub">${esc(summary)}</p></div>` +
+    '<div class="vs-chart-legend" aria-hidden="true">' +
+    '<span class="lg dawn">DawN kumuliert</span><span class="lg opp">Gegner kumuliert</span></div>' +
+    `<svg class="vs-burnup" viewBox="0 0 ${W} ${H}" role="img" aria-label="Burn-up Chart DawN gegen Gegner">` +
+    ticks.join("") +
+    `<path class="chart-area dawn" d="${areaDawn}" />` +
+    `<path class="chart-line dawn" d="${pathFor("dawn")}" fill="none" />` +
+    `<path class="chart-line opp" d="${pathFor("opp")}" fill="none" />` +
+    dots +
+    labels +
+    "</svg></div>"
+  );
+}
+
 function renderVsCompareDays(days) {
   if (!days || !days.length) return "";
-  const cols = [
-    { key: "date", label: "Datum" },
-    { key: "result", label: "Ergebnis" },
-    { key: "dawn", label: "DawN", class: "num" },
-    { key: "opponent", label: "Gegner", class: "num" },
-    { key: "delta", label: "Delta", class: "num" },
-    { key: "unnecessary", label: "Unnötig", class: "num" },
-  ];
-  const rows = days.map((d) => ({
-    date: esc(d.date),
-    result: esc(d.result),
-    dawn: fmtPts(d.dawn),
-    opponent: fmtPts(d.opponent),
-    delta: fmtPts(d.delta),
-    unnecessary: fmtPts(d.unnecessary),
-  }));
-  return "<h3>VS-Vergleich · Tage</h3>" + memberTable(cols, rows, "compact");
+  const sorted = vsCompareDaysSorted(days);
+  const cards = sorted
+    .map((d) => {
+      const win = /win/i.test(String(d.result || ""));
+      const loss = /loss/i.test(String(d.result || ""));
+      const tone = win ? "win" : loss ? "loss" : "";
+      return (
+        `<article class="vs-day-card ${tone}">` +
+        `<header><span class="d">${esc(d.date)}</span>` +
+        `<span class="res">${esc(d.result || "—")}</span></header>` +
+        '<dl class="vs-day-metrics">' +
+        `<div><dt>DawN</dt><dd>${fmtPts(d.dawn)}</dd></div>` +
+        `<div><dt>Gegner</dt><dd>${fmtPts(d.opponent)}</dd></div>` +
+        `<div><dt>Delta</dt><dd class="num">${fmtPts(d.delta)}</dd></div>` +
+        `<div><dt>Unnötig</dt><dd class="num">${fmtPts(d.unnecessary)}</dd></div>` +
+        "</dl></article>"
+      );
+    })
+    .join("");
+  return (
+    '<div class="vs-compare-block">' +
+    "<h3>VS-Vergleich · Tage</h3>" +
+    `<div class="vs-day-cards">${cards}</div>` +
+    renderVsBurnupChart(sorted) +
+    "</div>"
+  );
 }
 
 function renderVsMetaSummary() {
@@ -1276,7 +1363,10 @@ function renderVs(el) {
     '<p class="lead">VS-Punkte und Flags — Zeitraum wie in Overview (Tag/Woche/Gesamt).</p>' +
     renderVsMetaSummary() +
     (compareDays ? renderVsCompareDays(compareDays) : "") +
-    (vsBlock ? `<h3>VS-Sheet · ${esc((vsBlock.columns || []).join(", "))}</h3>` + matrixTable(vsBlock, { maxRows: 35 }) : "") +
+    (vsBlock
+      ? `<h3>VS-Sheet · ${esc((vsBlock.columns || []).join(", "))}</h3>` +
+        matrixTable(vsBlock, { maxRows: 35 })
+      : "") +
     memberTable(cols, rows) +
     "</section>";
 }
