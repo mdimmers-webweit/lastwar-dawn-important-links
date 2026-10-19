@@ -9,7 +9,16 @@ const REPO = 'mdimmers-webweit/lastwar-dawn-important-links';
 const PATH = 'config.json';
 const BRANCH = 'main';
 
+const CORS_HEADERS = {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Methods': 'POST, OPTIONS',
+  'Access-Control-Allow-Headers': 'Content-Type',
+};
+
 export async function onRequest(context) {
+  if (context.request.method === 'OPTIONS') {
+    return new Response(null, { status: 204, headers: CORS_HEADERS });
+  }
   if (context.request.method !== 'POST') {
     return json({ ok: false, error: 'POST only' }, 405);
   }
@@ -177,6 +186,7 @@ function json(obj, status) {
     headers: {
       'Content-Type': 'application/json; charset=utf-8',
       'Cache-Control': 'no-store',
+      ...CORS_HEADERS,
     },
   });
 }
