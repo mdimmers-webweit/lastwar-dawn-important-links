@@ -867,7 +867,7 @@
     {
       "role": "R3",
       "name": "Baby Bax Baba Bax",
-      "active": true,
+      "active": false,
       "t1": "43,07",
       "thp": 136800000,
       "thp_display": "136.800.000",
@@ -2765,11 +2765,11 @@
     },
     {
       "role": "R3",
-      "name": "Ref1exX",
+      "name": "ReflexX",
       "active": true,
-      "t1": "0",
-      "thp": 103300000,
-      "thp_display": "103.300.000",
+      "t1": "",
+      "thp": 130500000,
+      "thp_display": "130500000",
       "donations": 7350,
       "kills": "",
       "kills_pct": null,
@@ -2782,7 +2782,7 @@
       "activity_display": "43,5%",
       "vs_flag": "OK",
       "ds_master": {
-        "name": "Ref1exX",
+        "name": "ReflexX",
         "role": "R3",
         "thp": 130500000,
         "thp_display": "130500000",
@@ -2796,7 +2796,7 @@
         "comment": ""
       },
       "cs_master": {
-        "name": "Ref1exX",
+        "name": "ReflexX",
         "role": "R3",
         "thp": null,
         "thp_display": "",
@@ -3423,7 +3423,7 @@
     },
     {
       "role": "R3",
-      "name": "RvE x",
+      "name": "Xx RvE Xx",
       "active": true,
       "t1": "",
       "thp": 130500000,
@@ -3440,7 +3440,7 @@
       "activity_display": "31,4%",
       "vs_flag": "OK",
       "ds_master": {
-        "name": "RvE x",
+        "name": "Xx RvE Xx",
         "role": "R3",
         "thp": 130500000,
         "thp_display": "130500000",
@@ -3454,7 +3454,7 @@
         "comment": ""
       },
       "cs_master": {
-        "name": "RvE x",
+        "name": "Xx RvE Xx",
         "role": "R3",
         "thp": null,
         "thp_display": "",
@@ -4269,7 +4269,7 @@
     },
     {
       "role": "R3",
-      "name": "i k k i",
+      "name": "ikki",
       "active": true,
       "t1": "",
       "thp": 130500000,
@@ -4286,7 +4286,7 @@
       "activity_display": "14,1%",
       "vs_flag": "1/1 below",
       "ds_master": {
-        "name": "i k k i",
+        "name": "ikki",
         "role": "R3",
         "thp": 130500000,
         "thp_display": "130500000",
@@ -4300,7 +4300,7 @@
         "comment": ""
       },
       "cs_master": {
-        "name": "i k k i",
+        "name": "ikki",
         "role": "R3",
         "thp": null,
         "thp_display": "",
@@ -4645,7 +4645,7 @@
     },
     {
       "role": "R3",
-      "name": "ClovE",
+      "name": "Clone",
       "active": true,
       "t1": "",
       "thp": 130500000,
@@ -4662,7 +4662,7 @@
       "activity_display": "37,2%",
       "vs_flag": "OK",
       "ds_master": {
-        "name": "ClovE",
+        "name": "Clone",
         "role": "R3",
         "thp": 130500000,
         "thp_display": "130500000",
@@ -4676,7 +4676,7 @@
         "comment": ""
       },
       "cs_master": {
-        "name": "ClovE",
+        "name": "Clone",
         "role": "R3",
         "thp": null,
         "thp_display": "",
@@ -4692,8 +4692,8 @@
     },
     {
       "role": "R3",
-      "name": "CTPAHHIK",
-      "active": true,
+      "name": "CTPAHНИК",
+      "active": false,
       "t1": "",
       "thp": 130500000,
       "thp_display": "130500000",
@@ -4709,7 +4709,7 @@
       "activity_display": "0,0%",
       "vs_flag": "",
       "ds_master": {
-        "name": "CTPAHHIK",
+        "name": "CTPAHНИК",
         "role": "R3",
         "thp": 130500000,
         "thp_display": "130500000",
@@ -4723,7 +4723,7 @@
         "comment": ""
       },
       "cs_master": {
-        "name": "CTPAHHIK",
+        "name": "CTPAHНИК",
         "role": "R3",
         "thp": null,
         "thp_display": "",
@@ -4881,7 +4881,7 @@
     {
       "role": "R3",
       "name": "Omori UO>",
-      "active": true,
+      "active": false,
       "t1": "",
       "thp": 130500000,
       "thp_display": "130500000",
@@ -4928,7 +4928,7 @@
     {
       "role": "R2",
       "name": "Pepsi ZeR0",
-      "active": true,
+      "active": false,
       "t1": "",
       "thp": 130500000,
       "thp_display": "130500000",
@@ -4975,7 +4975,7 @@
     {
       "role": "R3",
       "name": "Nraurn uw?",
-      "active": true,
+      "active": false,
       "t1": "",
       "thp": 130500000,
       "thp_display": "130500000",
@@ -5022,7 +5022,7 @@
   ],
   "summary": {
     "members_total": 101,
-    "members_active": 101,
+    "members_active": 96,
     "activity_avg": 0.3,
     "vs_ok": 36,
     "vs_other": 0,
@@ -5180,7 +5180,7 @@
           }
         },
         {
-          "name": "RvE x",
+          "name": "Xx RvE Xx",
           "latest": 10234271,
           "weekly_avg": 10234271,
           "values": {
@@ -5212,7 +5212,7 @@
           }
         },
         {
-          "name": "ClovE",
+          "name": "Clone",
           "latest": 9683438,
           "weekly_avg": 9683438,
           "values": {
@@ -5244,7 +5244,7 @@
           }
         },
         {
-          "name": "Ref1exX",
+          "name": "ReflexX",
           "latest": 7900011,
           "weekly_avg": 7900011,
           "values": {
@@ -5700,7 +5700,7 @@
           }
         },
         {
-          "name": "i k k i",
+          "name": "ikki",
           "latest": 2027814,
           "weekly_avg": 2027814,
           "values": {
@@ -5844,7 +5844,7 @@
           }
         },
         {
-          "name": "CTPAHHIK",
+          "name": "CTPAHНИК",
           "latest": 0,
           "weekly_avg": 0,
           "values": {
@@ -6098,7 +6098,7 @@
           }
         },
         {
-          "name": "ClovE",
+          "name": "Clone",
           "necessary": 9683438,
           "unnecessary": null,
           "verdict": "Necessary",
@@ -6218,7 +6218,7 @@
           }
         },
         {
-          "name": "Ref1exX",
+          "name": "ReflexX",
           "necessary": 7900011,
           "unnecessary": null,
           "verdict": "Necessary",
@@ -6228,7 +6228,7 @@
           }
         },
         {
-          "name": "RvE x",
+          "name": "Xx RvE Xx",
           "necessary": 10234271,
           "unnecessary": null,
           "verdict": "Necessary",
@@ -6258,7 +6258,7 @@
           }
         },
         {
-          "name": "i k k i",
+          "name": "ikki",
           "necessary": 2027814,
           "unnecessary": null,
           "verdict": "Needed more",
@@ -6728,7 +6728,7 @@
           }
         },
         {
-          "name": "CTPAHHIK",
+          "name": "CTPAHНИК",
           "necessary": null,
           "unnecessary": null,
           "verdict": "",
@@ -6808,7 +6808,7 @@
           }
         },
         {
-          "name": "CTPAHHIK",
+          "name": "CTPAHНИК",
           "necessary": null,
           "unnecessary": null,
           "verdict": "",
@@ -6958,7 +6958,7 @@
           }
         },
         {
-          "name": "Ref1exX",
+          "name": "ReflexX",
           "latest": 7350,
           "weekly_avg": 7350,
           "values": {
@@ -7254,7 +7254,7 @@
           }
         },
         {
-          "name": "ClovE",
+          "name": "Clone",
           "latest": 3900,
           "weekly_avg": 3900,
           "values": {
@@ -7422,7 +7422,7 @@
           }
         },
         {
-          "name": "i k k i",
+          "name": "ikki",
           "latest": 3100,
           "weekly_avg": 3100,
           "values": {
@@ -7566,7 +7566,7 @@
           }
         },
         {
-          "name": "RvE x",
+          "name": "Xx RvE Xx",
           "latest": 750,
           "weekly_avg": 750,
           "values": {
@@ -8460,7 +8460,7 @@
           "comment": ""
         },
         {
-          "name": "Ref1exX",
+          "name": "ReflexX",
           "role": "R3",
           "thp": 130500000,
           "thp_display": "130500000",
@@ -8656,7 +8656,7 @@
           "comment": ""
         },
         {
-          "name": "RvE x",
+          "name": "Xx RvE Xx",
           "role": "R3",
           "thp": 130500000,
           "thp_display": "130500000",
@@ -8908,7 +8908,7 @@
           "comment": ""
         },
         {
-          "name": "i k k i",
+          "name": "ikki",
           "role": "R3",
           "thp": 130500000,
           "thp_display": "130500000",
@@ -9020,7 +9020,7 @@
           "comment": ""
         },
         {
-          "name": "ClovE",
+          "name": "Clone",
           "role": "R3",
           "thp": 130500000,
           "thp_display": "130500000",
@@ -9034,7 +9034,7 @@
           "comment": ""
         },
         {
-          "name": "CTPAHHIK",
+          "name": "CTPAHНИК",
           "role": "R3",
           "thp": 130500000,
           "thp_display": "130500000",
@@ -9132,7 +9132,7 @@
           "comment": ""
         },
         {
-          "name": "CTPAHHIK",
+          "name": "CTPAHНИК",
           "role": "R3",
           "thp": 130500000,
           "thp_display": "130500000",
@@ -9903,7 +9903,7 @@
           "comment": ""
         },
         {
-          "name": "Ref1exX",
+          "name": "ReflexX",
           "role": "R3",
           "thp": null,
           "thp_display": "",
@@ -10099,7 +10099,7 @@
           "comment": ""
         },
         {
-          "name": "RvE x",
+          "name": "Xx RvE Xx",
           "role": "R3",
           "thp": null,
           "thp_display": "",
@@ -10351,7 +10351,7 @@
           "comment": ""
         },
         {
-          "name": "i k k i",
+          "name": "ikki",
           "role": "R3",
           "thp": null,
           "thp_display": "",
@@ -10463,7 +10463,7 @@
           "comment": ""
         },
         {
-          "name": "ClovE",
+          "name": "Clone",
           "role": "R3",
           "thp": null,
           "thp_display": "",
@@ -10477,7 +10477,7 @@
           "comment": ""
         },
         {
-          "name": "CTPAHHIK",
+          "name": "CTPAHНИК",
           "role": "R3",
           "thp": null,
           "thp_display": "",
@@ -10575,7 +10575,7 @@
           "comment": ""
         },
         {
-          "name": "CTPAHHIK",
+          "name": "CTPAHНИК",
           "role": "R3",
           "thp": null,
           "thp_display": "",
@@ -11097,11 +11097,11 @@
       ]
     }
   },
-  "generated_at": "2026-10-19T16:55:48Z",
-  "stand_berlin": "19.10.2026, 18:55",
+  "generated_at": "2026-10-19T17:17:18Z",
+  "stand_berlin": "19.10.2026, 19:17",
   "source": "google_sheets",
   "source_file": "DawN - Base + Tabs (live)",
-  "snapshot": "2026-10-19T16:55:48",
+  "snapshot": "2026-10-19T17:17:18",
   "links": {
     "title": "DawN",
     "tagline": "Important links",
