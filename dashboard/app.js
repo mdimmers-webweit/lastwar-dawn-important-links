@@ -3,9 +3,20 @@
 let DATA = null;
 
 const ROLE_OPTIONS = ["R5", "R4", "R3", "R2", "R1"];
-const CACHE_BUST = "20261019-save72";
+const CACHE_BUST = "20261019-anno1";
 const FILTER_STORAGE_KEY = "dawn-dashboard-filters";
 const PERIOD_STORAGE_KEY = "dawn-dashboard-period";
+
+/** Member-Filter nur auf Tabs mit Mitgliederdaten — nicht Links/Config. */
+const FILTERABLE_VIEWS = new Set([
+  "overview",
+  "kills",
+  "donations",
+  "vs",
+  "season",
+  "events",
+  "activity",
+]);
 
 /** @type {{ roles: string[], activeOnly: boolean, vsFlag: string, search: string }} */
 let filters = { roles: [], activeOnly: true, vsFlag: "all", search: "" };
@@ -970,10 +981,22 @@ function bindFilterBarOnce(mount) {
   });
 }
 
+function currentDashboardView() {
+  const v = document.querySelector(".view:not([hidden])");
+  return v ? v.id.slice(5) : "overview";
+}
+
+function syncFilterVisibility(view) {
+  const mount = document.getElementById("filterMount");
+  if (!mount) return;
+  const v = view || currentDashboardView();
+  mount.hidden = !FILTERABLE_VIEWS.has(v);
+}
+
 function renderFilterBar() {
   const mount = document.getElementById("filterMount");
   if (!mount || !DATA) return;
-  mount.hidden = false;
+  syncFilterVisibility();
   bindFilterBarOnce(mount);
   const roleChips = ROLE_OPTIONS.map(
     (r) =>
@@ -1659,6 +1682,7 @@ function initRouter() {
     document.querySelectorAll(".tab").forEach((t) => {
       t.setAttribute("aria-selected", String(t.dataset.view === view));
     });
+    syncFilterVisibility(view);
     try {
       if (routed && prev !== view) {
         history.replaceState({ y: window.scrollY }, "", urlForView(prev));
