@@ -135,11 +135,17 @@ function applyVsWeek(config, body) {
   }
   let maxPoints;
   try {
-    maxPoints = parseMaxPoints(body.max);
+    maxPoints = parseMaxPoints(body.max, mode);
   } catch (err) {
     return { error: String(err.message || err), status: 400 };
   }
-  const entry = { year, week, mode, max: maxPoints };
+  const entry = { year, week, mode };
+  // JSON key ``max``: push = optional elevated daily min; save = Mon–Thu outlier cap.
+  if (mode === 'push') {
+    if (maxPoints != null && maxPoints > 7_200_000) entry.max = maxPoints;
+  } else {
+    entry.max = maxPoints != null ? maxPoints : 12_000_000;
+  }
   const idx = config.vsWeeks.findIndex(
     (item) => Number(item.year) === year && Number(item.week) === week
   );
@@ -149,13 +155,13 @@ function applyVsWeek(config, body) {
   return { message: `Set VS week ${year}-W${String(week).padStart(2, '0')} to ${mode}` };
 }
 
-function parseMaxPoints(raw) {
+function parseMaxPoints(raw, mode) {
   const s = String(raw ?? '')
     .trim()
     .toLowerCase()
     .replace(/\s/g, '')
     .replace(/,/g, '');
-  if (!s) return 12000000;
+  if (!s) return mode === 'push' ? null : 12000000;
   if (s.endsWith('m')) {
     const n = parseFloat(s.slice(0, -1));
     if (!Number.isFinite(n) || n <= 0) throw new Error('Invalid max');
