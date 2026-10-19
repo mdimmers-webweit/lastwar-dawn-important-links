@@ -1,0 +1,30 @@
+{
+  "title": "DawN",
+  "tagline": "Important links",
+  "links": [
+    {
+      "name": "DawN Tracker",
+      "url": "https://docs.google.com/spreadsheets/d/1ZxFqpFo6xKiYXrH2McmjHmGSF1w2zUesdleq5zh7nsU/edit?gid=447024173#gid=447024173",
+      "desc": "Alliance spreadsheet — members, kills, donations, VS"
+    },
+    {
+      "name": "DawN Templates",
+      "url": "https://docs.google.com/document/d/1t7S3lzd-xPagfbg4Xiz9fV9vWqHfyCVfwSWEUiicAQA/edit?tab=t.0#heading=h.157w8v5aovlu",
+      "desc": "Announcement and post templates"
+    },
+    {
+      "name": "Daily Anno",
+      "url": "https://lastwar-daily-anno.pages.dev/",
+      "desc": "VS daily announcement generator"
+    },
+    {
+      "name": "Plan Tool",
+      "url": "https://dracgon.tech/en/",
+      "desc": "dracgon shiny / server tools"
+    },
+    {
+      "name": "CBT Hedge - Plan Tool 2",
+      "url": "https://cpt-hedge.com/"
+    }
+  ]
+}
