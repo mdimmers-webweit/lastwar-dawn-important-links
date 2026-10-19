@@ -4,6 +4,12 @@
   "vsWeeks": [
     {
       "year": 2026,
+      "week": 43,
+      "mode": "push",
+      "max": 12000000
+    },
+    {
+      "year": 2026,
       "week": 34,
       "mode": "save",
       "max": 12000000
