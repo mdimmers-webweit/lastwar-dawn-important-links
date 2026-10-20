@@ -747,12 +747,14 @@ table.t.compact {
 }
 
 .widget.span-4 { grid-column: span 4; }
+.widget.span-6 { grid-column: span 6; }
 .widget.span-8 { grid-column: span 8; }
 .widget.span-12 { grid-column: span 12; }
 
 @media (max-width: 900px) {
   .widget,
   .widget.span-4,
+  .widget.span-6,
   .widget.span-8 {
     grid-column: span 12;
   }
@@ -808,17 +810,33 @@ table.t.compact {
   white-space: nowrap;
 }
 
-.champ-widget .champ-section-label {
-  margin: 0.85rem 0 0.35rem;
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--muted);
+/* One Champion card: two related blocks, not two competing widgets. */
+.champ-widget .champ-blocks {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 0.35rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.18);
 }
 
-.champ-widget .champ-section-label:first-of-type {
-  margin-top: 0.35rem;
+.champ-widget .champ-block {
+  padding: 0.75rem 0.9rem 0.85rem;
+}
+
+.champ-widget .champ-block + .champ-block {
+  border-top: 1px solid var(--line);
+}
+
+.champ-widget .champ-section-label {
+  margin: 0 0 0.4rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: none;
+  color: var(--ink);
 }
 
 /* Champion lists: never truncate names — show every exact hit / tie. */

@@ -3,7 +3,7 @@
 let DATA = null;
 
 const ROLE_OPTIONS = ["R5", "R4", "R3", "R2", "R1"];
-const CACHE_BUST = "20261020-champion-exact";
+const CACHE_BUST = "20261020-champ-quota";
 const FILTER_STORAGE_KEY = "dawn-dashboard-filters";
 const PERIOD_STORAGE_KEY = "dawn-dashboard-period";
 
@@ -1075,18 +1075,23 @@ function renderChampionWidget(champState, vsReady, vsEmptyMsg) {
       .join("");
     return (
       `<article class="widget span-12 glass champ-widget"><h3>Champion</h3>` +
-      `<p class="sub">Exact ${esc(targetLabel)} / Tag · alle Treffer · ${esc(
-        weekDaysLabel
-      )} Summe nächste ${esc(targetLabel)}</p>` +
-      `<p class="champ-section-label">Exact ${esc(targetLabel)}</p>` +
+      `<p class="sub">Save-Woche: Tagesziel ${esc(targetLabel)} exakt treffen · ` +
+      `Wochen-Summe (${esc(weekDaysLabel)}) möglichst nah an ${esc(targetLabel)}</p>` +
+      `<div class="champ-blocks">` +
+      `<div class="champ-block">` +
+      `<p class="champ-section-label">Tages-Treffer · exakt ${esc(targetLabel)}</p>` +
       (exactRows
         ? `<ul class="rank-list champ-list">${exactRows}</ul>`
         : `<p class="sub">Noch kein Exact-Treffer.</p>`) +
-      `<p class="champ-section-label">Woche (${esc(weekDaysLabel)}) · nächste Summe</p>` +
+      `</div>` +
+      `<div class="champ-block">` +
+      `<p class="champ-section-label">Wochen-Sieger · Summe ${esc(
+        weekDaysLabel
+      )} am nächsten an ${esc(targetLabel)}</p>` +
       (weekRows
         ? `<ul class="rank-list champ-list">${weekRows}</ul>`
         : `<p class="sub">${esc(vsEmptyMsg)}</p>`) +
-      `</article>`
+      `</div></div></article>`
     );
   }
   if (rule.type === "day_min") {
@@ -1157,8 +1162,7 @@ function renderOverviewWidgets() {
   const champState = computeChampionState(members);
   const underQuota = members
     .filter((m) => memberBelowQuotaForPeriod(m))
-    .sort((a, b) => String(a.name).localeCompare(String(b.name), "de"))
-    .slice(0, 8);
+    .sort((a, b) => String(a.name).localeCompare(String(b.name), "de"));
   const topDon = members
     .map((m) => ({ m, pts: donationMetric(m) }))
     .filter((x) => x.pts > 0)
@@ -1199,7 +1203,10 @@ function renderOverviewWidgets() {
     `<p class="sub">${esc(periodHint)} · ${members.length} Mitglieder nach Filter</p>` +
     '<div class="widget-grid">' +
     renderChampionWidget(champState, vsReady, vsEmptyMsg) +
-    `<article class="widget span-4 glass"><h3>Unter Quote</h3><p class="sub">${vsBelow} gesamt</p>` +
+    `<article class="widget span-6 glass"><h3>Unter Quote</h3>` +
+    `<p class="sub">${underQuota.length} ${
+      underQuota.length === 1 ? "Mitglied" : "Mitglieder"
+    } · vollständige Liste</p>` +
     (underQuota.length
       ? "<ul class=\"rank-list\">" +
         underQuota
@@ -1212,8 +1219,8 @@ function renderOverviewWidgets() {
         "</ul>"
       : `<p class="sub">Keine unter Quote im Filter.</p>`) +
     "</article>" +
-    `<article class="widget span-4 glass"><h3>Top Spende</h3><p class="sub">${
-      periodMode === "woche" ? "Wochensumme" : "Gesamt"
+    `<article class="widget span-6 glass"><h3>Top Spende</h3><p class="sub">${
+      periodMode === "woche" ? "Wochensumme · Top 5" : "Gesamt · Top 5"
     }</p>` +
     renderRankList(topDon, (m) => fmtNum(donationMetric(m)), noDonationDataMessage()) +
     "</article>" +
@@ -1623,8 +1630,9 @@ function renderVsBurnupChart(days) {
   );
 }
 
-function renderVsCompareDays(days) {
+function renderVsCompareDays(days, options) {
   if (!days || !days.length) return "";
+  const includeBurnup = !options || options.includeBurnup !== false;
   const sorted = vsCompareDaysSorted(days);
   const cards = sorted
     .map((d) => {
@@ -1648,7 +1656,7 @@ function renderVsCompareDays(days) {
     '<div class="vs-compare-block">' +
     "<h3>VS-Vergleich · Tage</h3>" +
     `<div class="vs-day-cards">${cards}</div>` +
-    renderVsBurnupChart(sorted) +
+    (includeBurnup ? renderVsBurnupChart(sorted) : "") +
     "</div>"
   );
 }
@@ -1706,7 +1714,7 @@ function renderVs(el) {
     '<section class="panel glass"><h2>VS</h2>' +
     '<p class="lead">VS-Punkte und Flags — Zeitraum wie in Overview (Woche/Gesamt).</p>' +
     renderVsMetaSummary() +
-    (compareDays ? renderVsCompareDays(compareDays) : "") +
+    (compareDays ? renderVsCompareDays(compareDays, { includeBurnup: false }) : "") +
     (vsBlock
       ? `<h3>VS-Sheet · ${esc((vsBlock.columns || []).join(", "))}</h3>` +
         matrixTable(vsBlock, { maxRows: 35 })
