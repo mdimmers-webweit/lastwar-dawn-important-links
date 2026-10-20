@@ -3,7 +3,7 @@
 let DATA = null;
 
 const ROLE_OPTIONS = ["R5", "R4", "R3", "R2", "R1"];
-const CACHE_BUST = "20261020-save-weekday-mins";
+const CACHE_BUST = "20261020-save-champion-cap";
 const FILTER_STORAGE_KEY = "dawn-dashboard-filters";
 const PERIOD_STORAGE_KEY = "dawn-dashboard-period";
 
@@ -34,6 +34,8 @@ const VS_DAILY_MIN = 7200000;
 const VS_SAVE_MON_MIN = 12000000;
 /** Save/Economy Di–Do-Tagesminimum. Fr–Sa offen (kein under/over). */
 const VS_SAVE_MIN = 7200000;
+/** Save/Economy: ≥ this = Push-scale outlier — never Champion. */
+const VS_SAVE_CHAMPION_MAX = 20_000_000;
 
 function parsePointsInput(raw) {
   const s = String(raw ?? "")
@@ -479,6 +481,42 @@ function activeVsWeekKey() {
   return isoWeekKey(currentGameDate());
 }
 
+function activeVsWeekMode() {
+  const meta = (DATA && DATA.meta) || {};
+  const fromMeta = String(meta.VSWeekMode || "").toLowerCase();
+  if (fromMeta === "save" || fromMeta === "push") return fromMeta;
+  const wk = activeVsWeekKey();
+  const list = (DATA && DATA.vs_weeks) || [];
+  const hit = list.find((item) => Number(item.year) === wk.year && Number(item.week) === wk.week);
+  const mode = String((hit && hit.mode) || "push").toLowerCase();
+  return mode === "save" ? "save" : "push";
+}
+
+/** Quota met for Champion candidacy (open days: any positive score). */
+function memberMeetsVsQuotaForChampion(m) {
+  if (periodMode === "tag") {
+    const lab = currentGameDateLabel();
+    if (!hasSheetDateColumn("vs", lab)) return false;
+    const pts = vsPointsAtLabel(m, lab);
+    if (pts == null || pts <= 0) return false;
+    const min = vsMinForGameDate(parseIsoDate(lab));
+    if (min <= 0) return true;
+    return pts >= min;
+  }
+  return m.vs_flag === "OK";
+}
+
+/** Champion pool: no over-flag; Save also excludes ≥20M outliers and below-quota. */
+function isChampionEligible(m, pts) {
+  if (pts == null || pts <= 0) return false;
+  if (/over/i.test(String(m.vs_flag || ""))) return false;
+  if (activeVsWeekMode() === "save") {
+    if (pts >= VS_SAVE_CHAMPION_MAX) return false;
+    if (!memberMeetsVsQuotaForChampion(m)) return false;
+  }
+  return true;
+}
+
 function vsWeeksEntryForDate(d) {
   const wk = isoWeekKey(d);
   const list = (DATA && DATA.vs_weeks) || [];
@@ -808,9 +846,9 @@ function renderOverviewWidgets() {
     .map((m) => ({ m, pts: vsMetric(m) }))
     .filter((x) => x.pts != null && x.pts > 0)
     .sort((a, b) => b.pts - a.pts);
-  // Champion = höchste Punkte; „over“ nur noch Restflags (Save hat kein Over-Cap).
+  // Champion: höchste Punkte unter Eligible; Save schließt ≥20M Push-Outliers aus.
   const topVsChamp = topVsAll
-    .filter((x) => !/over/i.test(String(x.m.vs_flag || "")))
+    .filter((x) => isChampionEligible(x.m, x.pts))
     .slice(0, 5)
     .map((x) => x.m);
   const topVs = topVsAll.slice(0, 5).map((x) => x.m);
@@ -861,7 +899,7 @@ function renderOverviewWidgets() {
 
   const champHtml = champ
     ? `<p class="sub">${esc(champ.name)} · ${fmtPts(vsMetric(champ))}</p>`
-    : `<p class="sub">${esc(vsEmptyMsg)}</p>`;
+    : `<p class="sub">${esc(vsReady ? "—" : vsEmptyMsg)}</p>`;
 
   return (
     `<p class="sub">${esc(periodHint)} · ${members.length} Mitglieder nach Filter</p>` +
