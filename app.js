@@ -249,7 +249,7 @@ function filteredNameSet() {
 }
 
 function defaultFilters() {
-  return { roles: [], activeOnly: true, vsFlag: "all", search: "" };
+  return { roles: [], activeOnly: false, vsFlag: "all", search: "" };
 }
 
 function sanitizeFilters(raw) {
