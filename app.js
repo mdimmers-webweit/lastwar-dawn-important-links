@@ -704,33 +704,96 @@ function donationMetric(member) {
   return sum;
 }
 
-function vsMetric(member) {
-  const row = vsSheetRow(member.name);
+function memberVsDayPoints(member, isoLabel) {
+  const days = member && member.vs_days;
+  if (days && days[isoLabel] != null) {
+    const v = Number(days[isoLabel]);
+    return Number.isNaN(v) ? null : v;
+  }
+  const row = vsSheetRow(member && member.name);
+  if (!row || !row.values || row.values[isoLabel] == null) return null;
+  const v = Number(row.values[isoLabel]);
+  return Number.isNaN(v) ? null : v;
+}
+
+function memberVsWeekSum(member, dayLabels) {
+  if (member && member.vs_week_sum != null) {
+    const v = Number(member.vs_week_sum);
+    if (!Number.isNaN(v) && v > 0) return v;
+  }
+  let sum = 0;
+  let any = false;
+  for (const lab of dayLabels || []) {
+    const v = memberVsDayPoints(member, lab);
+    if (v == null) continue;
+    sum += v;
+    any = true;
+  }
+  if (any) return sum;
+  if (member && member.vs_latest != null) {
+    const v = Number(member.vs_latest);
+    return Number.isNaN(v) ? null : v;
+  }
+  const row = vsSheetRow(member && member.name);
   if (!row) return null;
+  if (row.latest != null) return Number(row.latest) || 0;
+  return 0;
+}
+
+function vsWeekDayLabels() {
+  const block = sheetBlock("vs");
+  const cols = (block && block.columns) || [];
+  const refWeek = activeVsWeekKey();
+  const inWeek = cols.filter((lab) => {
+    const d = parseIsoDate(lab);
+    if (!d) return false;
+    const wk = isoWeekKey(d);
+    return wk.year === refWeek.year && wk.week === refWeek.week;
+  });
+  return inWeek.length ? inWeek : cols.filter((lab) => !!parseIsoDate(lab));
+}
+
+function vsDayHeaderLabel(iso) {
+  const d = parseIsoDate(iso);
+  if (!d) return String(iso || "");
+  const wd = ["So", "Mo", "Di", "Mi", "Do", "Fr", "Sa"][d.getUTCDay()];
+  const dd = String(d.getUTCDate()).padStart(2, "0");
+  const mm = String(d.getUTCMonth() + 1).padStart(2, "0");
+  return `${wd} ${dd}.${mm}`;
+}
+
+function vsTabLead() {
+  const meta = DATA.meta || {};
+  const mode = String(meta.VSWeekMode || "push").toLowerCase();
+  if (mode === "save") {
+    return (
+      `Save-Woche: Mo–Do Quote ${formatPointsDe(VS_SAVE_MIN)} · Fr–Sa offen. ` +
+      "Zahlen = exakte Tageswerte + Wochensumme."
+    );
+  }
+  const minLabel = meta.VSWeekMin || formatPointsDe(VS_DAILY_MIN);
+  return `Push-Woche: Quote ${minLabel}. Zahlen = exakte Tageswerte + Wochensumme.`;
+}
+
+function vsMetric(member) {
+  const dayLabs = vsWeekDayLabels();
 
   if (periodMode === "tag") {
     const today = currentGameDateLabel();
-    if (!hasSheetDateColumn("vs", today)) return null;
-    if (!row.values || row.values[today] == null) return null;
-    const v = Number(row.values[today]);
-    return Number.isNaN(v) ? null : v;
+    return memberVsDayPoints(member, today);
   }
 
   if (periodMode === "woche") {
-    const refWeek = activeVsWeekKey();
-    const weekSum = sumVsRowValues(row, (lab) => {
-      const d = parseIsoDate(lab);
-      if (!d) return false;
-      const wk = isoWeekKey(d);
-      return wk.year === refWeek.year && wk.week === refWeek.week;
-    });
-    if (weekSum > 0) return weekSum;
-    if (row.latest != null) return Number(row.latest) || 0;
-    if (row.weekly_avg != null) return Number(row.weekly_avg) || 0;
-    return 0;
+    return memberVsWeekSum(member, dayLabs);
   }
 
-  // Gesamt = Sheet-Stand (VS-Spalte „Latest“, nicht Summe aller Tage)
+  // Gesamt = Sheet-Stand (Latest), sonst Wochensumme / Tagessumme
+  if (member && member.vs_latest != null) {
+    const v = Number(member.vs_latest);
+    if (!Number.isNaN(v) && v > 0) return v;
+  }
+  const row = vsSheetRow(member && member.name);
+  if (!row) return memberVsWeekSum(member, dayLabs);
   if (row.latest != null) {
     const v = Number(row.latest);
     if (!Number.isNaN(v) && v > 0) return v;
@@ -738,11 +801,12 @@ function vsMetric(member) {
   const meta = DATA.meta || {};
   const refDate = parseMetaVsDate(meta.VSLastDate);
   const refLabel = refDate ? isoDateLabel(refDate) : String(meta.VSLastDate || "").trim();
-  if (refLabel && row.values && row.values[refLabel] != null) {
-    return Number(row.values[refLabel]) || 0;
+  if (refLabel) {
+    const dayPts = memberVsDayPoints(member, refLabel);
+    if (dayPts != null) return dayPts;
   }
   if (row.weekly_avg != null) return Number(row.weekly_avg) || 0;
-  return 0;
+  return memberVsWeekSum(member, dayLabs) || 0;
 }
 
 function vsMetricSort(member) {
@@ -1677,27 +1741,43 @@ function renderVsMetaSummary() {
 function renderVs(el) {
   const compare = sheetBlock("vs_compare");
   const compareDays = compare && compare.days && compare.days.length ? compare.days : null;
+  const dayLabs = vsWeekDayLabels();
   const cols = [
     { key: "role", label: "Rolle" },
     { key: "name", label: "Name" },
-    { key: "vs_pts", label: "VS Punkte", class: "num" },
+    ...dayLabs.map((lab) => ({
+      key: "d_" + lab,
+      label: vsDayHeaderLabel(lab),
+      class: "num",
+    })),
+    { key: "week_sum", label: "Wochensumme", class: "num" },
     { key: "vs", label: "VS Flag" },
   ];
-  const rows = sortedMembers((a, b) => vsMetricSort(b) - vsMetricSort(a)).map((m) => ({
-    _inactive: !m.active,
-    role: esc(m.role),
-    name: `<span class="name">${esc(m.name)}</span>`,
-    vs_pts: fmtPts(vsMetric(m)),
-    vs: vsBadge(m.vs_flag),
-  }));
-  // VS tab only: week quote + day compare (no burn-up) + one roster table. No Champion / Activity / matrix.
+  const rows = sortedMembers((a, b) => {
+    const wa = memberVsWeekSum(a, dayLabs);
+    const wb = memberVsWeekSum(b, dayLabs);
+    return (wb == null ? -1 : wb) - (wa == null ? -1 : wa);
+  }).map((m) => {
+    const out = {
+      _inactive: !m.active,
+      role: esc(m.role),
+      name: `<span class="name">${esc(m.name)}</span>`,
+      week_sum: fmtPts(memberVsWeekSum(m, dayLabs)),
+      vs: vsBadge(m.vs_flag),
+    };
+    for (const lab of dayLabs) {
+      out["d_" + lab] = fmtPts(memberVsDayPoints(m, lab));
+    }
+    return out;
+  });
+  // VS tab: quote + day compare (no burn-up) + day columns + Wochensumme + Flag. No Champion / Activity.
   el.innerHTML =
     '<section class="panel glass"><h2>VS</h2>' +
-    `<p class="lead">Wochenquote: ${esc(vsWeekModeLabel())}</p>` +
+    `<p class="lead">${esc(vsTabLead())}</p>` +
     renderVsMetaSummary() +
     (compareDays ? renderVsCompareDays(compareDays, { includeBurnup: false }) : "") +
-    "<h3>Mitglieder · VS Punkte &amp; Flags</h3>" +
-    '<p class="sub">Exakte Punkte · sortiert nach VS · vollständige Liste</p>' +
+    "<h3>Mitglieder · Tagespunkte &amp; Wochensumme</h3>" +
+    '<p class="sub">Eine Spalte pro VS-Tag · Wochensumme · Flag · sortiert nach Wochensumme</p>' +
     memberTable(cols, rows) +
     "</section>";
 }
