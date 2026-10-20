@@ -3,7 +3,7 @@
 let DATA = null;
 
 const ROLE_OPTIONS = ["R5", "R4", "R3", "R2", "R1"];
-const CACHE_BUST = "20261020-champ-quota";
+const CACHE_BUST = "20261020-vs-tab";
 const FILTER_STORAGE_KEY = "dawn-dashboard-filters";
 const PERIOD_STORAGE_KEY = "dawn-dashboard-period";
 
@@ -1174,7 +1174,9 @@ function renderOverviewWidgets() {
   const days = (compare && compare.days) || [];
   const compareWidget =
     days.length > 0
-      ? `<article class="widget span-12 glass vs-overview-compare">${renderVsCompareDays(days)}</article>`
+      ? `<article class="widget span-12 glass vs-overview-compare">${renderVsCompareDays(days, {
+          includeBurnup: true,
+        })}</article>`
       : "";
 
   const vsPulse = vsPulseCounts(members);
@@ -1692,13 +1694,8 @@ function renderVsMetaSummary() {
 }
 
 function renderVs(el) {
-  const vsBlock = sheetBlock("vs");
   const compare = sheetBlock("vs_compare");
   const compareDays = compare && compare.days && compare.days.length ? compare.days : null;
-  const members = filteredMembers();
-  const vsReady = hasVsSheetData();
-  const vsEmptyMsg = !vsReady ? "Keine VS-Daten verfügbar" : noVsDataMessage();
-  const champState = computeChampionState(members);
   const cols = [
     { key: "role", label: "Rolle" },
     { key: "name", label: "Name" },
@@ -1714,18 +1711,14 @@ function renderVs(el) {
     vs: vsBadge(m.vs_flag),
     activity: esc(m.activity_display || fmtPct(m.activity)),
   }));
+  // VS tab: meta + day compare (no burn-up) + full roster. Champion / Unter Quote live on Overview only.
   el.innerHTML =
     '<section class="panel glass"><h2>VS</h2>' +
-    '<p class="lead">VS-Punkte und Flags — Zeitraum wie in Overview (Woche/Gesamt).</p>' +
-    '<div class="widget-grid">' +
-    renderChampionWidget(champState, vsReady, vsEmptyMsg) +
-    "</div>" +
+    '<p class="lead">Tagesvergleich DawN vs. Gegner und Mitglieder-Punkte/Flags (Woche/Gesamt wie oben). Champion und Unter Quote stehen unter Overview.</p>' +
     renderVsMetaSummary() +
     (compareDays ? renderVsCompareDays(compareDays, { includeBurnup: false }) : "") +
-    (vsBlock
-      ? `<h3>VS-Sheet · ${esc((vsBlock.columns || []).join(", "))}</h3>` +
-        matrixTable(vsBlock, { maxRows: 35 })
-      : "") +
+    "<h3>Mitglieder · VS Punkte &amp; Flags</h3>" +
+    '<p class="sub">Exakte Punkte · sortiert nach VS · vollständige Liste (kein Ausschnitt)</p>' +
     memberTable(cols, rows) +
     "</section>";
 }
