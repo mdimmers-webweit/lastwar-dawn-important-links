@@ -29,8 +29,7 @@
     "VSWeekYear": "2026",
     "VSWeekNumber": "43",
     "VSWeekMin": "MO–DO 7.200.000 · FR–SA OFFEN",
-    "GameDate": "2026-10-20",
-    "KillsDelta": "KW-Δ ab 2. KW-Spalte; aktuell nur Stand (1 Spalte nach Fresh Start)"
+    "GameDate": "2026-10-20"
   },
   "members": [
     {
@@ -114,15 +113,15 @@
         "level": "10/10",
         "damage": "1.87G"
       },
+      "kills_abs": 7522458,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 8553888,
       "vs_week_sum": 8553888,
       "vs_days": {
         "2026-10-19": 8553888
-      },
-      "kills_abs": 7522458,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R4",
@@ -205,15 +204,15 @@
         "level": "10/10",
         "damage": "—"
       },
+      "kills_abs": 12333685,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 24929280,
       "vs_week_sum": 24929280,
       "vs_days": {
         "2026-10-19": 24929280
-      },
-      "kills_abs": 12333685,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R4",
@@ -296,15 +295,15 @@
         "level": "10/10",
         "damage": "3.07G"
       },
+      "kills_abs": 10307828,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 7572770,
       "vs_week_sum": 7572770,
       "vs_days": {
         "2026-10-19": 7572770
-      },
-      "kills_abs": 10307828,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R4",
@@ -387,15 +386,15 @@
         "level": "10/10",
         "damage": "7.65G"
       },
+      "kills_abs": 7149574,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 10629690,
       "vs_week_sum": 10629690,
       "vs_days": {
         "2026-10-19": 10629690
-      },
-      "kills_abs": 7149574,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R4",
@@ -478,15 +477,15 @@
         "level": "10/10",
         "damage": "—"
       },
+      "kills_abs": 2745492,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 7002084,
       "vs_week_sum": 7002084,
       "vs_days": {
         "2026-10-19": 7002084
-      },
-      "kills_abs": 2745492,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R3",
@@ -569,15 +568,15 @@
         "level": "10/10",
         "damage": "1.80G"
       },
+      "kills_abs": 13024093,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 7318534,
       "vs_week_sum": 7318534,
       "vs_days": {
         "2026-10-19": 7318534
-      },
-      "kills_abs": 13024093,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R4",
@@ -655,15 +654,15 @@
         "played_display": "Yes",
         "comment": ""
       },
+      "kills_abs": 7769391,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 11105852,
       "vs_week_sum": 11105852,
       "vs_days": {
         "2026-10-19": 11105852
-      },
-      "kills_abs": 7769391,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R3",
@@ -746,15 +745,15 @@
         "level": "10/10",
         "damage": "4.05G"
       },
+      "kills_abs": 8977491,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 8686165,
       "vs_week_sum": 8686165,
       "vs_days": {
         "2026-10-19": 8686165
-      },
-      "kills_abs": 8977491,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R4",
@@ -837,15 +836,15 @@
         "level": "10/10",
         "damage": "3.51G"
       },
+      "kills_abs": 6861018,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 8479577,
       "vs_week_sum": 8479577,
       "vs_days": {
         "2026-10-19": 8479577
-      },
-      "kills_abs": 6861018,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R3",
@@ -928,15 +927,15 @@
         "level": "10/10",
         "damage": "—"
       },
+      "kills_abs": 5418141,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 7201666,
       "vs_week_sum": 7201666,
       "vs_days": {
         "2026-10-19": 7201666
-      },
-      "kills_abs": 5418141,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R3",
@@ -1019,15 +1018,15 @@
         "level": "10/10",
         "damage": "851M"
       },
+      "kills_abs": 5781900,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 7202151,
       "vs_week_sum": 7202151,
       "vs_days": {
         "2026-10-19": 7202151
-      },
-      "kills_abs": 5781900,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R3",
@@ -1110,15 +1109,15 @@
         "level": "10/10",
         "damage": "—"
       },
+      "kills_abs": 4632643,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 7200023,
       "vs_week_sum": 7200023,
       "vs_days": {
         "2026-10-19": 7200023
-      },
-      "kills_abs": 4632643,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R3",
@@ -1201,15 +1200,15 @@
         "level": "10/10",
         "damage": "1.63G"
       },
+      "kills_abs": 3640645,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 13048348,
       "vs_week_sum": 13048348,
       "vs_days": {
         "2026-10-19": 13048348
-      },
-      "kills_abs": 3640645,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R3",
@@ -1292,15 +1291,15 @@
         "level": "10/10",
         "damage": "2.00G"
       },
+      "kills_abs": 3874380,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 4940293,
       "vs_week_sum": 4940293,
       "vs_days": {
         "2026-10-19": 4940293
-      },
-      "kills_abs": 3874380,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R3",
@@ -1347,9 +1346,9 @@
           "weight": 0.3
         }
       },
-      "activity": 0.30794954128440366,
-      "activity_display": "30,8%",
-      "vs_flag": "1/1 below",
+      "activity": 0.33944954128440363,
+      "activity_display": "33,9%",
+      "vs_flag": "OK",
       "ds_master": {
         "name": "Cmdr William T Riker",
         "role": "R3",
@@ -1383,15 +1382,15 @@
         "level": "10/10",
         "damage": "429M"
       },
-      "vs_latest": 6444000,
-      "vs_week_sum": 6444000,
-      "vs_days": {
-        "2026-10-19": 6444000
-      },
       "kills_abs": 6384949,
       "kills_delta": null,
       "kills_trend": "unknown",
-      "kills_steep": null
+      "kills_steep": null,
+      "vs_latest": 7200000,
+      "vs_week_sum": 7200000,
+      "vs_days": {
+        "2026-10-19": 7200000
+      }
     },
     {
       "role": "R3",
@@ -1474,15 +1473,15 @@
         "level": "10/10",
         "damage": "—"
       },
+      "kills_abs": 3365108,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 8271563,
       "vs_week_sum": 8271563,
       "vs_days": {
         "2026-10-19": 8271563
-      },
-      "kills_abs": 3365108,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R4",
@@ -1565,15 +1564,15 @@
         "level": "10/10",
         "damage": "—"
       },
+      "kills_abs": 4916815,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 12064536,
       "vs_week_sum": 12064536,
       "vs_days": {
         "2026-10-19": 12064536
-      },
-      "kills_abs": 4916815,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R3",
@@ -1656,15 +1655,15 @@
         "level": "10/10",
         "damage": "720M"
       },
+      "kills_abs": 3094875,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 7592327,
       "vs_week_sum": 7592327,
       "vs_days": {
         "2026-10-19": 7592327
-      },
-      "kills_abs": 3094875,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R3",
@@ -1742,15 +1741,15 @@
         "played_display": "Yes",
         "comment": ""
       },
+      "kills_abs": 2932014,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 7660190,
       "vs_week_sum": 7660190,
       "vs_days": {
         "2026-10-19": 7660190
-      },
-      "kills_abs": 2932014,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R3",
@@ -1833,15 +1832,15 @@
         "level": "10/10",
         "damage": "4.04G"
       },
+      "kills_abs": 3132014,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 22118498,
       "vs_week_sum": 22118498,
       "vs_days": {
         "2026-10-19": 22118498
-      },
-      "kills_abs": 3132014,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R4",
@@ -1924,15 +1923,15 @@
         "level": "10/10",
         "damage": "2.41G"
       },
+      "kills_abs": 3774494,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 7243454,
       "vs_week_sum": 7243454,
       "vs_days": {
         "2026-10-19": 7243454
-      },
-      "kills_abs": 3774494,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R3",
@@ -2015,15 +2014,15 @@
         "level": "10/10",
         "damage": "—"
       },
+      "kills_abs": 3218773,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 7288786,
       "vs_week_sum": 7288786,
       "vs_days": {
         "2026-10-19": 7288786
-      },
-      "kills_abs": 3218773,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R3",
@@ -2106,15 +2105,15 @@
         "level": "10/10",
         "damage": "384M"
       },
+      "kills_abs": 3354251,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 14860319,
       "vs_week_sum": 14860319,
       "vs_days": {
         "2026-10-19": 14860319
-      },
-      "kills_abs": 3354251,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R3",
@@ -2197,15 +2196,15 @@
         "level": "10/10",
         "damage": "1.84G"
       },
+      "kills_abs": 3063584,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 7281357,
       "vs_week_sum": 7281357,
       "vs_days": {
         "2026-10-19": 7281357
-      },
-      "kills_abs": 3063584,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R4",
@@ -2288,15 +2287,15 @@
         "level": "10/10",
         "damage": "1.85G"
       },
+      "kills_abs": 2160839,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 7779111,
       "vs_week_sum": 7779111,
       "vs_days": {
         "2026-10-19": 7779111
-      },
-      "kills_abs": 2160839,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R3",
@@ -2374,15 +2373,15 @@
         "played_display": "",
         "comment": ""
       },
+      "kills_abs": 1708229,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 5127608,
       "vs_week_sum": 5127608,
       "vs_days": {
         "2026-10-19": 5127608
-      },
-      "kills_abs": 1708229,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R3",
@@ -2465,15 +2464,15 @@
         "level": "10/10",
         "damage": "—"
       },
+      "kills_abs": 1769832,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 8341000,
       "vs_week_sum": 8341000,
       "vs_days": {
         "2026-10-19": 8341000
-      },
-      "kills_abs": 1769832,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R3",
@@ -2556,15 +2555,15 @@
         "level": "10/10",
         "damage": "604M"
       },
+      "kills_abs": 3235937,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 15836223,
       "vs_week_sum": 15836223,
       "vs_days": {
         "2026-10-19": 15836223
-      },
-      "kills_abs": 3235937,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R3",
@@ -2647,15 +2646,15 @@
         "level": "10/10",
         "damage": "—"
       },
+      "kills_abs": 1686650,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 8672783,
       "vs_week_sum": 8672783,
       "vs_days": {
         "2026-10-19": 8672783
-      },
-      "kills_abs": 1686650,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R3",
@@ -2738,15 +2737,15 @@
         "level": "10/10",
         "damage": "1.74G"
       },
+      "kills_abs": 2324872,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 7200004,
       "vs_week_sum": 7200004,
       "vs_days": {
         "2026-10-19": 7200004
-      },
-      "kills_abs": 2324872,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R3",
@@ -2829,15 +2828,15 @@
         "level": "10/10",
         "damage": "—"
       },
+      "kills_abs": 1814707,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 7200002,
       "vs_week_sum": 7200002,
       "vs_days": {
         "2026-10-19": 7200002
-      },
-      "kills_abs": 1814707,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R3",
@@ -2920,15 +2919,15 @@
         "level": "10/10",
         "damage": "1.96G"
       },
+      "kills_abs": 2059415,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 7384688,
       "vs_week_sum": 7384688,
       "vs_days": {
         "2026-10-19": 7384688
-      },
-      "kills_abs": 2059415,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R3",
@@ -3011,15 +3010,15 @@
         "level": "10/10",
         "damage": "3.02G"
       },
+      "kills_abs": 1817708,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 10148438,
       "vs_week_sum": 10148438,
       "vs_days": {
         "2026-10-19": 10148438
-      },
-      "kills_abs": 1817708,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R3",
@@ -3102,15 +3101,15 @@
         "level": "10/10",
         "damage": "34M"
       },
+      "kills_abs": 1344924,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 9875436,
       "vs_week_sum": 9875436,
       "vs_days": {
         "2026-10-19": 9875436
-      },
-      "kills_abs": 1344924,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R3",
@@ -3193,15 +3192,15 @@
         "level": "10/10",
         "damage": "1.28G"
       },
+      "kills_abs": 1603837,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 7364257,
       "vs_week_sum": 7364257,
       "vs_days": {
         "2026-10-19": 7364257
-      },
-      "kills_abs": 1603837,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R3",
@@ -3284,15 +3283,15 @@
         "level": "10/10",
         "damage": "—"
       },
+      "kills_abs": 1597930,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 8002107,
       "vs_week_sum": 8002107,
       "vs_days": {
         "2026-10-19": 8002107
-      },
-      "kills_abs": 1597930,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R3",
@@ -3375,15 +3374,15 @@
         "level": "10/10",
         "damage": "948M"
       },
+      "kills_abs": 1620978,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 8687678,
       "vs_week_sum": 8687678,
       "vs_days": {
         "2026-10-19": 8687678
-      },
-      "kills_abs": 1620978,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R3",
@@ -3466,15 +3465,15 @@
         "level": "10/10",
         "damage": "1.56G"
       },
+      "kills_abs": 1738100,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 7407790,
       "vs_week_sum": 7407790,
       "vs_days": {
         "2026-10-19": 7407790
-      },
-      "kills_abs": 1738100,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R3",
@@ -3557,15 +3556,15 @@
         "level": "10/10",
         "damage": "574M"
       },
+      "kills_abs": 1431012,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 7200003,
       "vs_week_sum": 7200003,
       "vs_days": {
         "2026-10-19": 7200003
-      },
-      "kills_abs": 1431012,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R3",
@@ -3648,15 +3647,15 @@
         "level": "10/10",
         "damage": "941M"
       },
+      "kills_abs": 1673301,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 4568085,
       "vs_week_sum": 4568085,
       "vs_days": {
         "2026-10-19": 4568085
-      },
-      "kills_abs": 1673301,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R3",
@@ -3739,15 +3738,15 @@
         "level": "10/10",
         "damage": "—"
       },
+      "kills_abs": 1449300,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 8647240,
       "vs_week_sum": 8647240,
       "vs_days": {
         "2026-10-19": 8647240
-      },
-      "kills_abs": 1449300,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R3",
@@ -3830,15 +3829,15 @@
         "level": "10/10",
         "damage": "—"
       },
+      "kills_abs": 1300540,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 20427207,
       "vs_week_sum": 20427207,
       "vs_days": {
         "2026-10-19": 20427207
-      },
-      "kills_abs": 1300540,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R3",
@@ -3921,15 +3920,15 @@
         "level": "10/10",
         "damage": "—"
       },
+      "kills_abs": 1840230,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 7491620,
       "vs_week_sum": 7491620,
       "vs_days": {
         "2026-10-19": 7491620
-      },
-      "kills_abs": 1840230,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R3",
@@ -4012,15 +4011,15 @@
         "level": "10/10",
         "damage": "1.11G"
       },
+      "kills_abs": 1007321,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 17509077,
       "vs_week_sum": 17509077,
       "vs_days": {
         "2026-10-19": 17509077
-      },
-      "kills_abs": 1007321,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R3",
@@ -4103,15 +4102,15 @@
         "level": "10/10",
         "damage": "950M"
       },
+      "kills_abs": 1145232,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 8884204,
       "vs_week_sum": 8884204,
       "vs_days": {
         "2026-10-19": 8884204
-      },
-      "kills_abs": 1145232,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R3",
@@ -4194,15 +4193,15 @@
         "level": "10/10",
         "damage": "440M"
       },
+      "kills_abs": 717622,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 7292001,
       "vs_week_sum": 7292001,
       "vs_days": {
         "2026-10-19": 7292001
-      },
-      "kills_abs": 717622,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R3",
@@ -4285,15 +4284,15 @@
         "level": "10/10",
         "damage": "437M"
       },
+      "kills_abs": 911970,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 9285367,
       "vs_week_sum": 9285367,
       "vs_days": {
         "2026-10-19": 9285367
-      },
-      "kills_abs": 911970,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R3",
@@ -4376,15 +4375,15 @@
         "level": "—",
         "damage": "205M"
       },
+      "kills_abs": 915506,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 9165362,
       "vs_week_sum": 9165362,
       "vs_days": {
         "2026-10-19": 9165362
-      },
-      "kills_abs": 915506,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R3",
@@ -4467,15 +4466,15 @@
         "level": "10/10",
         "damage": "714M"
       },
+      "kills_abs": 675741,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 10616116,
       "vs_week_sum": 10616116,
       "vs_days": {
         "2026-10-19": 10616116
-      },
-      "kills_abs": 675741,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R3",
@@ -4553,15 +4552,15 @@
         "played_display": "",
         "comment": ""
       },
+      "kills_abs": 2242282,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 10647564,
       "vs_week_sum": 10647564,
       "vs_days": {
         "2026-10-19": 10647564
-      },
-      "kills_abs": 2242282,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R3",
@@ -4644,15 +4643,15 @@
         "level": "10/10",
         "damage": "449M"
       },
+      "kills_abs": 1231654,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 3177188,
       "vs_week_sum": 3177188,
       "vs_days": {
         "2026-10-19": 3177188
-      },
-      "kills_abs": 1231654,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R3",
@@ -4730,15 +4729,15 @@
         "played_display": "",
         "comment": "N"
       },
+      "kills_abs": 2506117,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 7900011,
       "vs_week_sum": 7900011,
       "vs_days": {
         "2026-10-19": 7900011
-      },
-      "kills_abs": 2506117,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R3",
@@ -4816,15 +4815,15 @@
         "played_display": "",
         "comment": ""
       },
+      "kills_abs": 1892447,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 8200875,
       "vs_week_sum": 8200875,
       "vs_days": {
         "2026-10-19": 8200875
-      },
-      "kills_abs": 1892447,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R3",
@@ -4902,15 +4901,15 @@
         "played_display": "Yes",
         "comment": "S"
       },
+      "kills_abs": 2714535,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 7200005,
       "vs_week_sum": 7200005,
       "vs_days": {
         "2026-10-19": 7200005
-      },
-      "kills_abs": 2714535,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R3",
@@ -4988,15 +4987,15 @@
         "played_display": "",
         "comment": ""
       },
+      "kills_abs": 552046,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 19751403,
       "vs_week_sum": 19751403,
       "vs_days": {
         "2026-10-19": 19751403
-      },
-      "kills_abs": 552046,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R3",
@@ -5074,15 +5073,15 @@
         "played_display": "",
         "comment": ""
       },
+      "kills_abs": 999756,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 14441028,
       "vs_week_sum": 14441028,
       "vs_days": {
         "2026-10-19": 14441028
-      },
-      "kills_abs": 999756,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R3",
@@ -5160,15 +5159,15 @@
         "played_display": "No",
         "comment": "S"
       },
+      "kills_abs": 1516676,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 8651625,
       "vs_week_sum": 8651625,
       "vs_days": {
         "2026-10-19": 8651625
-      },
-      "kills_abs": 1516676,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R4",
@@ -5246,15 +5245,15 @@
         "played_display": "Yes",
         "comment": ""
       },
+      "kills_abs": 1639092,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 8601357,
       "vs_week_sum": 8601357,
       "vs_days": {
         "2026-10-19": 8601357
-      },
-      "kills_abs": 1639092,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R3",
@@ -5332,23 +5331,23 @@
         "played_display": "",
         "comment": ""
       },
+      "kills_abs": 375643,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 7200000,
       "vs_week_sum": 7200000,
       "vs_days": {
         "2026-10-19": 7200000
-      },
-      "kills_abs": 375643,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R3",
       "name": "YaneZ",
       "active": true,
       "t1": "",
-      "thp": null,
-      "thp_display": "",
+      "thp": 103800000,
+      "thp_display": "103.800.000",
       "donations": 5600,
       "kills": "1.074.717",
       "kills_pct": null,
@@ -5393,8 +5392,8 @@
       "ds_master": {
         "name": "YaneZ",
         "role": "R3",
-        "thp": null,
-        "thp_display": "",
+        "thp": 103800000,
+        "thp_display": "103800000",
         "preferred_team": "Team B",
         "preferred_slot": "09:00",
         "request": "Yes",
@@ -5418,15 +5417,15 @@
         "played_display": "Yes",
         "comment": "S"
       },
+      "kills_abs": 1074717,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 12018212,
       "vs_week_sum": 12018212,
       "vs_days": {
         "2026-10-19": 12018212
-      },
-      "kills_abs": 1074717,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R3",
@@ -5504,15 +5503,15 @@
         "played_display": "No",
         "comment": "S"
       },
+      "kills_abs": 495095,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 5786003,
       "vs_week_sum": 5786003,
       "vs_days": {
         "2026-10-19": 5786003
-      },
-      "kills_abs": 495095,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R3",
@@ -5590,15 +5589,15 @@
         "played_display": "Yes",
         "comment": "S"
       },
+      "kills_abs": 217089,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 1950908,
       "vs_week_sum": 1950908,
       "vs_days": {
         "2026-10-19": 1950908
-      },
-      "kills_abs": 217089,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R3",
@@ -5676,15 +5675,15 @@
         "played_display": "No",
         "comment": "S"
       },
+      "kills_abs": 1662225,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 14999958,
       "vs_week_sum": 14999958,
       "vs_days": {
         "2026-10-19": 14999958
-      },
-      "kills_abs": 1662225,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R3",
@@ -5762,15 +5761,15 @@
         "played_display": "",
         "comment": "N"
       },
+      "kills_abs": 613727,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 8591503,
       "vs_week_sum": 8591503,
       "vs_days": {
         "2026-10-19": 8591503
-      },
-      "kills_abs": 613727,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R3",
@@ -5848,15 +5847,15 @@
         "played_display": "",
         "comment": ""
       },
+      "kills_abs": 6058688,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 17288967,
       "vs_week_sum": 17288967,
       "vs_days": {
         "2026-10-19": 17288967
-      },
-      "kills_abs": 6058688,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R3",
@@ -5934,15 +5933,15 @@
         "played_display": "",
         "comment": ""
       },
+      "kills_abs": 5683735,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 10605521,
       "vs_week_sum": 10605521,
       "vs_days": {
         "2026-10-19": 10605521
-      },
-      "kills_abs": 5683735,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R3",
@@ -6020,15 +6019,15 @@
         "played_display": "Yes",
         "comment": ""
       },
+      "kills_abs": 6184899,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 15312758,
       "vs_week_sum": 15312758,
       "vs_days": {
         "2026-10-19": 15312758
-      },
-      "kills_abs": 6184899,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R3",
@@ -6106,15 +6105,15 @@
         "played_display": "Yes",
         "comment": ""
       },
+      "kills_abs": 5653395,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 5048532,
       "vs_week_sum": 5048532,
       "vs_days": {
         "2026-10-19": 5048532
-      },
-      "kills_abs": 5653395,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R3",
@@ -6192,15 +6191,15 @@
         "played_display": "Yes",
         "comment": ""
       },
+      "kills_abs": 4270716,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 2259553,
       "vs_week_sum": 2259553,
       "vs_days": {
         "2026-10-19": 2259553
-      },
-      "kills_abs": 4270716,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R3",
@@ -6247,9 +6246,9 @@
           "weight": 0.3
         }
       },
-      "activity": 0.3332097251529052,
-      "activity_display": "33,3%",
-      "vs_flag": "1/1 below",
+      "activity": 0.3642201834862385,
+      "activity_display": "36,4%",
+      "vs_flag": "OK",
       "ds_master": {
         "name": "WT1110",
         "role": "R3",
@@ -6278,15 +6277,15 @@
         "played_display": "Yes",
         "comment": ""
       },
-      "vs_latest": 6455749,
-      "vs_week_sum": 6455749,
-      "vs_days": {
-        "2026-10-19": 6455749
-      },
       "kills_abs": 3378648,
       "kills_delta": null,
       "kills_trend": "unknown",
-      "kills_steep": null
+      "kills_steep": null,
+      "vs_latest": 7200001,
+      "vs_week_sum": 7200001,
+      "vs_days": {
+        "2026-10-19": 7200001
+      }
     },
     {
       "role": "R3",
@@ -6364,15 +6363,15 @@
         "played_display": "Yes",
         "comment": ""
       },
+      "kills_abs": 2734183,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 7257254,
       "vs_week_sum": 7257254,
       "vs_days": {
         "2026-10-19": 7257254
-      },
-      "kills_abs": 2734183,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R3",
@@ -6450,15 +6449,15 @@
         "played_display": "Yes",
         "comment": "S"
       },
+      "kills_abs": 2496526,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 21976991,
       "vs_week_sum": 21976991,
       "vs_days": {
         "2026-10-19": 21976991
-      },
-      "kills_abs": 2496526,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R3",
@@ -6536,15 +6535,15 @@
         "played_display": "",
         "comment": "N"
       },
+      "kills_abs": 1390019,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 14087160,
       "vs_week_sum": 14087160,
       "vs_days": {
         "2026-10-19": 14087160
-      },
-      "kills_abs": 1390019,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R3",
@@ -6622,15 +6621,15 @@
         "played_display": "Yes",
         "comment": "S"
       },
+      "kills_abs": 1289481,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 7201613,
       "vs_week_sum": 7201613,
       "vs_days": {
         "2026-10-19": 7201613
-      },
-      "kills_abs": 1289481,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R3",
@@ -6708,15 +6707,15 @@
         "played_display": "",
         "comment": ""
       },
+      "kills_abs": 1216282,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 4117500,
       "vs_week_sum": 4117500,
       "vs_days": {
         "2026-10-19": 4117500
-      },
-      "kills_abs": 1216282,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R3",
@@ -6794,15 +6793,15 @@
         "played_display": "",
         "comment": ""
       },
+      "kills_abs": 1108071,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 17937183,
       "vs_week_sum": 17937183,
       "vs_days": {
         "2026-10-19": 17937183
-      },
-      "kills_abs": 1108071,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R3",
@@ -6880,15 +6879,15 @@
         "played_display": "Yes",
         "comment": "S"
       },
+      "kills_abs": 1161580,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 12272402,
       "vs_week_sum": 12272402,
       "vs_days": {
         "2026-10-19": 12272402
-      },
-      "kills_abs": 1161580,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R3",
@@ -6966,15 +6965,15 @@
         "played_display": "Yes",
         "comment": "S"
       },
+      "kills_abs": 863473,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 7616473,
       "vs_week_sum": 7616473,
       "vs_days": {
         "2026-10-19": 7616473
-      },
-      "kills_abs": 863473,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R3",
@@ -7052,15 +7051,15 @@
         "played_display": "",
         "comment": ""
       },
+      "kills_abs": 897291,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 23518208,
       "vs_week_sum": 23518208,
       "vs_days": {
         "2026-10-19": 23518208
-      },
-      "kills_abs": 897291,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R3",
@@ -7138,15 +7137,15 @@
         "played_display": "Yes",
         "comment": ""
       },
+      "kills_abs": 12380647,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 9266794,
       "vs_week_sum": 9266794,
       "vs_days": {
         "2026-10-19": 9266794
-      },
-      "kills_abs": 12380647,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R3",
@@ -7224,15 +7223,15 @@
         "played_display": "No",
         "comment": ""
       },
+      "kills_abs": 8150180,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 10379405,
       "vs_week_sum": 10379405,
       "vs_days": {
         "2026-10-19": 10379405
-      },
-      "kills_abs": 8150180,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R3",
@@ -7310,15 +7309,15 @@
         "played_display": "",
         "comment": ""
       },
+      "kills_abs": 2497679,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 19799213,
       "vs_week_sum": 19799213,
       "vs_days": {
         "2026-10-19": 19799213
-      },
-      "kills_abs": 2497679,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R3",
@@ -7396,15 +7395,15 @@
         "played_display": "Yes",
         "comment": ""
       },
+      "kills_abs": 1527440,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 7685326,
       "vs_week_sum": 7685326,
       "vs_days": {
         "2026-10-19": 7685326
-      },
-      "kills_abs": 1527440,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R3",
@@ -7482,15 +7481,15 @@
         "played_display": "",
         "comment": ""
       },
+      "kills_abs": 2698268,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 5977814,
       "vs_week_sum": 5977814,
       "vs_days": {
         "2026-10-19": 5977814
-      },
-      "kills_abs": 2698268,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R3",
@@ -7568,15 +7567,15 @@
         "played_display": "No",
         "comment": "S"
       },
+      "kills_abs": 2281321,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 7365141,
       "vs_week_sum": 7365141,
       "vs_days": {
         "2026-10-19": 7365141
-      },
-      "kills_abs": 2281321,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R3",
@@ -7654,15 +7653,15 @@
         "played_display": "Yes",
         "comment": ""
       },
+      "kills_abs": 1683381,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 10728169,
       "vs_week_sum": 10728169,
       "vs_days": {
         "2026-10-19": 10728169
-      },
-      "kills_abs": 1683381,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R3",
@@ -7740,15 +7739,15 @@
         "played_display": "",
         "comment": ""
       },
+      "kills_abs": 1312599,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 7374705,
       "vs_week_sum": 7374705,
       "vs_days": {
         "2026-10-19": 7374705
-      },
-      "kills_abs": 1312599,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R2",
@@ -7826,15 +7825,15 @@
         "played_display": "",
         "comment": ""
       },
+      "kills_abs": 4418573,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 12030069,
       "vs_week_sum": 12030069,
       "vs_days": {
         "2026-10-19": 12030069
-      },
-      "kills_abs": 4418573,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R3",
@@ -7912,15 +7911,15 @@
         "played_display": "Yes",
         "comment": ""
       },
+      "kills_abs": 4344872,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 14058408,
       "vs_week_sum": 14058408,
       "vs_days": {
         "2026-10-19": 14058408
-      },
-      "kills_abs": 4344872,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R3",
@@ -7998,15 +7997,15 @@
         "played_display": "Yes",
         "comment": ""
       },
+      "kills_abs": 17743025,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 12563171,
       "vs_week_sum": 12563171,
       "vs_days": {
         "2026-10-19": 12563171
-      },
-      "kills_abs": 17743025,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R3",
@@ -8084,15 +8083,15 @@
         "played_display": "",
         "comment": ""
       },
+      "kills_abs": 14261420,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 10929893,
       "vs_week_sum": 10929893,
       "vs_days": {
         "2026-10-19": 10929893
-      },
-      "kills_abs": 14261420,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R3",
@@ -8170,15 +8169,15 @@
         "played_display": "Yes",
         "comment": ""
       },
+      "kills_abs": 14392917,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 13634063,
       "vs_week_sum": 13634063,
       "vs_days": {
         "2026-10-19": 13634063
-      },
-      "kills_abs": 14392917,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R3",
@@ -8256,15 +8255,15 @@
         "played_display": "No",
         "comment": "S"
       },
+      "kills_abs": 1184618,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 7170055,
       "vs_week_sum": 7170055,
       "vs_days": {
         "2026-10-19": 7170055
-      },
-      "kills_abs": 1184618,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R3",
@@ -8342,15 +8341,15 @@
         "played_display": "",
         "comment": ""
       },
+      "kills_abs": 2352577,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 13619689,
       "vs_week_sum": 13619689,
       "vs_days": {
         "2026-10-19": 13619689
-      },
-      "kills_abs": 2352577,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R3",
@@ -8428,15 +8427,15 @@
         "played_display": "No",
         "comment": ""
       },
+      "kills_abs": 24841352,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 8991835,
       "vs_week_sum": 8991835,
       "vs_days": {
         "2026-10-19": 8991835
-      },
-      "kills_abs": 24841352,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R3",
@@ -8514,15 +8513,15 @@
         "played_display": "",
         "comment": ""
       },
+      "kills_abs": 3356861,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 9982500,
       "vs_week_sum": 9982500,
       "vs_days": {
         "2026-10-19": 9982500
-      },
-      "kills_abs": 3356861,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R3",
@@ -8600,15 +8599,15 @@
         "played_display": "",
         "comment": ""
       },
+      "kills_abs": 421954,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 7865001,
       "vs_week_sum": 7865001,
       "vs_days": {
         "2026-10-19": 7865001
-      },
-      "kills_abs": 421954,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R2",
@@ -8686,15 +8685,15 @@
         "played_display": "",
         "comment": ""
       },
+      "kills_abs": 414572,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 0,
       "vs_week_sum": 0,
       "vs_days": {
         "2026-10-19": 0
-      },
-      "kills_abs": 414572,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R2",
@@ -8772,21 +8771,21 @@
         "played_display": "",
         "comment": ""
       },
+      "kills_abs": 4335865,
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null,
       "vs_latest": 12536856,
       "vs_week_sum": 12536856,
       "vs_days": {
         "2026-10-19": 12536856
-      },
-      "kills_abs": 4335865,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     },
     {
       "role": "R3",
       "name": "Kaizennnnnnnnnnnn",
       "active": true,
-      "t1": "",
+      "t1": "37,53",
       "thp": 103800000,
       "thp_display": "103.800.000",
       "donations": 0,
@@ -8830,82 +8829,52 @@
       "activity": 0.0,
       "activity_display": "0,0%",
       "vs_flag": "",
-      "vs_latest": 0,
-      "vs_week_sum": 0,
-      "vs_days": {
-        "2026-10-19": 0
+      "ds_master": {
+        "name": "Kaizennnnnnnnnnnn",
+        "role": "R3",
+        "thp": 103800000,
+        "thp_display": "103800000",
+        "preferred_team": "",
+        "preferred_slot": "",
+        "request": "",
+        "registered": null,
+        "registered_display": "",
+        "played": null,
+        "played_display": "",
+        "comment": ""
+      },
+      "cs_master": {
+        "name": "Kaizennnnnnnnnnnn",
+        "role": "R3",
+        "thp": 103800000,
+        "thp_display": "103800000",
+        "preferred_team": "",
+        "preferred_slot": "",
+        "request": "",
+        "registered": null,
+        "registered_display": "",
+        "played": null,
+        "played_display": "",
+        "comment": ""
       },
       "kills_abs": 800300,
       "kills_delta": null,
       "kills_trend": "unknown",
-      "kills_steep": null
-    },
-    {
-      "role": "R3",
-      "name": "YaneRay",
-      "active": false,
-      "t1": "",
-      "thp": 103800000,
-      "thp_display": "103.800.000",
-      "donations": 0,
-      "kills": "1.074.717",
-      "kills_pct": null,
-      "events": "",
-      "ds": null,
-      "cs": null,
-      "season_activity": 0.0,
-      "season_display": "0,0%",
-      "season_cats": {
-        "support": {
-          "label": "Mutual Assistance",
-          "tab": "Season - Mutual Assistance",
-          "pts": null,
-          "pct": null,
-          "weight": 0.2
-        },
-        "cleanup": {
-          "label": "Clean Up",
-          "tab": "Season - Clean Up",
-          "pts": null,
-          "pct": null,
-          "weight": 0.2
-        },
-        "conquest": {
-          "label": "Conquest",
-          "tab": "Season - Conquest",
-          "pts": null,
-          "pct": null,
-          "weight": 0.3
-        },
-        "defeat": {
-          "label": "Defeat",
-          "tab": "Season - Defeat",
-          "pts": null,
-          "pct": null,
-          "weight": 0.3
-        }
-      },
-      "activity": 0.0,
-      "activity_display": "0,0%",
-      "vs_flag": "",
+      "kills_steep": null,
       "vs_latest": 0,
       "vs_week_sum": 0,
       "vs_days": {
         "2026-10-19": 0
-      },
-      "kills_abs": 1074717,
-      "kills_delta": null,
-      "kills_trend": "unknown",
-      "kills_steep": null
+      }
     }
   ],
   "summary": {
-    "members_total": 101,
-    "members_active": 101,
-    "activity_avg": 0.3773,
-    "vs_ok": 84,
+    "members_total": 100,
+    "members_active": 100,
+    "activity_avg": 0.3817,
+    "vs_ok": 86,
     "vs_other": 0,
-    "vs_below_quota": 14,
+    "vs_below_quota": 12,
     "ds_registered": 56,
     "cs_registered": 58,
     "ds_played": 54,
@@ -9612,18 +9581,18 @@
         },
         {
           "name": "WT1110",
-          "latest": 6455749,
-          "weekly_avg": 6455749,
+          "latest": 7200001,
+          "weekly_avg": 7200001,
           "values": {
-            "2026-10-19": 6455749
+            "2026-10-19": 7200001
           }
         },
         {
           "name": "Cmdr William T Riker",
-          "latest": 6444000,
-          "weekly_avg": 6444000,
+          "latest": 7200000,
+          "weekly_avg": 7200000,
           "values": {
-            "2026-10-19": 6444000
+            "2026-10-19": 7200000
           }
         },
         {
@@ -9708,14 +9677,6 @@
         },
         {
           "name": "MAJØR",
-          "latest": 0,
-          "weekly_avg": 0,
-          "values": {
-            "2026-10-19": 0
-          }
-        },
-        {
-          "name": "YaneRay",
           "latest": 0,
           "weekly_avg": 0,
           "values": {
@@ -10067,7 +10028,7 @@
           }
         },
         {
-          "name": "YaneRay",
+          "name": "YaneZ",
           "necessary": null,
           "unnecessary": null,
           "verdict": "",
@@ -10707,7 +10668,7 @@
           }
         },
         {
-          "name": "Kaizennnnnnnnnn",
+          "name": "Kaizennnnnnnnnnnn",
           "necessary": 10476319,
           "unnecessary": null,
           "verdict": "Necessary",
@@ -11275,13 +11236,9 @@
           "name": "YaneZ",
           "values": {
             "2026-KW43": 1074717
-          }
-        },
-        {
-          "name": "YaneRay",
-          "values": {
-            "2026-KW43": 1074717
-          }
+          },
+          "latest": null,
+          "weekly_avg": null
         },
         {
           "name": "IGU7",
@@ -11320,7 +11277,7 @@
           }
         },
         {
-          "name": "Kaizennnnnnnnnn",
+          "name": "Kaizennnnnnnnnnnn",
           "values": {
             "2026-KW43": 800300
           }
@@ -12890,8 +12847,8 @@
         {
           "name": "Kaizennnnnnnnnnnn",
           "role": "R3",
-          "thp": null,
-          "thp_display": "",
+          "thp": 103800000,
+          "thp_display": "103800000",
           "preferred_team": "",
           "preferred_slot": "",
           "request": "",
@@ -13058,8 +13015,8 @@
         {
           "name": "YaneZ",
           "role": "R3",
-          "thp": null,
-          "thp_display": "",
+          "thp": 103800000,
+          "thp_display": "103800000",
           "preferred_team": "Team B",
           "preferred_slot": "09:00",
           "request": "Yes",
@@ -15539,11 +15496,11 @@
       ]
     }
   },
-  "generated_at": "2026-10-20T09:14:14Z",
-  "stand_berlin": "20.10.2026, 11:14",
+  "generated_at": "2026-10-20T10:21:10Z",
+  "stand_berlin": "20.10.2026, 12:21",
   "source": "google_sheets",
   "source_file": "DawN - Base + Tabs (live)",
-  "snapshot": "2026-10-20T09:14:14",
+  "snapshot": "2026-10-20T10:21:10",
   "links": {
     "title": "DawN",
     "tagline": "Important links",
@@ -15809,7 +15766,7 @@
     },
     {
       "date": "2026-10-20",
-      "avg": 0.3811,
+      "avg": 0.3817,
       "n": 100,
       "source": "live"
     }

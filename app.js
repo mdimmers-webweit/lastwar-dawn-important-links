@@ -3,7 +3,7 @@
 let DATA = null;
 
 const ROLE_OPTIONS = ["R5", "R4", "R3", "R2", "R1"];
-const CACHE_BUST = "20261020-overview-restore";
+const CACHE_BUST = "20261020-champ-fix";
 
 /** Season contribution columns — mirrors Sheet tabs / SEASON_CATEGORIES. */
 const SEASON_CATS = [
@@ -1090,6 +1090,12 @@ function formatChampDayLabel(slot) {
   return `${short} ${dd}.${mm}.`;
 }
 
+/** Wochen-Sieger erst Sonntag (Spieltag) — vorher nur Tages-Treffer. */
+function championWeekReady(now = new Date()) {
+  const d = parseIsoDate(currentGameDateLabel(now)) || currentGameDate();
+  return pythonWeekday(d) === 6;
+}
+
 function computeChampionState(members) {
   const rule = activeChampionRule();
   if (rule.type === "manual") {
@@ -1139,28 +1145,33 @@ function computeChampionState(members) {
         a.slot.weekday - b.slot.weekday ||
         String(a.m.name).localeCompare(String(b.m.name), "de")
     );
-    const sums = members
-      .map((m) => {
-        let sum = 0;
-        let n = 0;
-        for (const slot of weekSlots) {
-          if (!slot.label) continue;
-          const pts = vsPointsAtLabel(m, slot.label);
-          if (pts == null) continue;
-          sum += pts;
-          n += 1;
-        }
-        return { m, sum, n, dist: Math.abs(sum - target) };
-      })
-      .filter((x) => x.n > 0);
-    let best = Infinity;
-    for (const x of sums) if (x.dist < best) best = x.dist;
-    const weekWinners =
-      best === Infinity
-        ? []
-        : sums
-            .filter((x) => x.dist === best)
-            .sort((a, b) => String(a.m.name).localeCompare(String(b.m.name), "de"));
+    // Wochen-Sieger erst am Sonntag (nach kompletter VS-Woche) — vorher nur Tages-Treffer.
+    const weekReady = championWeekReady();
+    let weekWinners = [];
+    if (weekReady) {
+      const sums = members
+        .map((m) => {
+          let sum = 0;
+          let n = 0;
+          for (const slot of weekSlots) {
+            if (!slot.label) continue;
+            const pts = vsPointsAtLabel(m, slot.label);
+            if (pts == null) continue;
+            sum += pts;
+            n += 1;
+          }
+          return { m, sum, n, dist: Math.abs(sum - target) };
+        })
+        .filter((x) => x.n > 0);
+      let best = Infinity;
+      for (const x of sums) if (x.dist < best) best = x.dist;
+      weekWinners =
+        best === Infinity
+          ? []
+          : sums
+              .filter((x) => x.dist === best)
+              .sort((a, b) => String(a.m.name).localeCompare(String(b.m.name), "de"));
+    }
     return {
       rule,
       exactHits,
@@ -1168,8 +1179,9 @@ function computeChampionState(members) {
       dayHits: [],
       weekWinners,
       weekSlots,
+      weekReady,
       topList: [],
-      pulsePts: weekWinners[0] ? weekWinners[0].sum : null,
+      pulsePts: weekWinners[0] ? weekWinners[0].sum : exactHits[0] ? exactHits[0].pts : null,
     };
   }
   if (rule.type === "day_min") {
@@ -1268,6 +1280,7 @@ function renderChampionWidget(champState, vsReady, vsEmptyMsg) {
           `<span class="val">${fmtPts(h.pts)} · Δ ${fmtPts(h.dist)}</span></li>`
       )
       .join("");
+    const weekReady = !!champState.weekReady;
     const weekRows = (champState.weekWinners || [])
       .map(
         (w) =>
@@ -1276,10 +1289,17 @@ function renderChampionWidget(champState, vsReady, vsEmptyMsg) {
           `<span class="val">${fmtPts(w.sum)} · Δ ${fmtPts(w.dist)}</span></li>`
       )
       .join("");
+    const weekBody = !weekReady
+      ? `<p class="sub">Erst Sonntag — Summe ${esc(weekDaysLabel)} am nächsten an ${esc(
+          targetLabel
+        )}</p>`
+      : weekRows
+        ? `<ul class="rank-list champ-list">${weekRows}</ul>`
+        : `<p class="sub">${esc(vsEmptyMsg)}</p>`;
     return (
       `<article class="widget span-12 glass champ-widget"><h3>Champion</h3>` +
-      `<p class="sub">Save-Woche: Tagesziel ${esc(targetLabel)} exakt treffen · ` +
-      `Wochen-Summe (${esc(weekDaysLabel)}) möglichst nah an ${esc(targetLabel)}</p>` +
+      `<p class="sub">Save-Woche: Tagesziel ${esc(targetLabel)} exakt · ` +
+      `Wochen-Sieger erst Sonntag (Summe ${esc(weekDaysLabel)} nah an ${esc(targetLabel)})</p>` +
       `<div class="champ-blocks">` +
       `<div class="champ-block">` +
       `<p class="champ-section-label">Tages-Treffer · exakt ${esc(targetLabel)}</p>` +
@@ -1292,12 +1312,8 @@ function renderChampionWidget(champState, vsReady, vsEmptyMsg) {
         : "") +
       `</div>` +
       `<div class="champ-block">` +
-      `<p class="champ-section-label">Wochen-Sieger · Summe ${esc(
-        weekDaysLabel
-      )} am nächsten an ${esc(targetLabel)}</p>` +
-      (weekRows
-        ? `<ul class="rank-list champ-list">${weekRows}</ul>`
-        : `<p class="sub">${esc(vsEmptyMsg)}</p>`) +
+      `<p class="champ-section-label">Wochen-Sieger</p>` +
+      weekBody +
       `</div></div></article>`
     );
   }
