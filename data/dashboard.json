@@ -47,6 +47,36 @@
       "cs": null,
       "season_activity": 0.3,
       "season_display": "30,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.7477064220183487,
       "activity_display": "74,8%",
       "vs_flag": "OK",
@@ -104,6 +134,36 @@
       "cs": null,
       "season_activity": 0.3,
       "season_display": "30,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.6522935779816514,
       "activity_display": "65,2%",
       "vs_flag": "OK",
@@ -161,6 +221,36 @@
       "cs": true,
       "season_activity": 0.3,
       "season_display": "30,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.7110091743119267,
       "activity_display": "71,1%",
       "vs_flag": "OK",
@@ -218,6 +308,36 @@
       "cs": true,
       "season_activity": 0.3,
       "season_display": "30,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.8,
       "activity_display": "80,0%",
       "vs_flag": "OK",
@@ -275,6 +395,36 @@
       "cs": null,
       "season_activity": 0.3,
       "season_display": "30,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.6935883623853211,
       "activity_display": "69,4%",
       "vs_flag": "1/1 below",
@@ -332,6 +482,36 @@
       "cs": true,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.3642201834862385,
       "activity_display": "36,4%",
       "vs_flag": "OK",
@@ -389,6 +569,36 @@
       "cs": true,
       "season_activity": 0.3,
       "season_display": "30,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.6715596330275229,
       "activity_display": "67,2%",
       "vs_flag": "OK",
@@ -441,6 +651,36 @@
       "cs": true,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.39541284403669724,
       "activity_display": "39,5%",
       "vs_flag": "OK",
@@ -498,6 +738,36 @@
       "cs": true,
       "season_activity": 0.3,
       "season_display": "30,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.775229357798165,
       "activity_display": "77,5%",
       "vs_flag": "OK",
@@ -555,6 +825,36 @@
       "cs": true,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.42844036697247706,
       "activity_display": "42,8%",
       "vs_flag": "OK",
@@ -612,6 +912,36 @@
       "cs": true,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.3238532110091743,
       "activity_display": "32,4%",
       "vs_flag": "OK",
@@ -669,6 +999,36 @@
       "cs": true,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.39541284403669724,
       "activity_display": "39,5%",
       "vs_flag": "OK",
@@ -726,6 +1086,36 @@
       "cs": true,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.3,
       "activity_display": "30,0%",
       "vs_flag": "OK",
@@ -783,6 +1173,36 @@
       "cs": true,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.20584554166666666,
       "activity_display": "20,6%",
       "vs_flag": "1/1 below",
@@ -840,6 +1260,36 @@
       "cs": true,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.30794954128440366,
       "activity_display": "30,8%",
       "vs_flag": "1/1 below",
@@ -897,6 +1347,36 @@
       "cs": true,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.3743119266055046,
       "activity_display": "37,4%",
       "vs_flag": "OK",
@@ -954,6 +1434,36 @@
       "cs": true,
       "season_activity": 0.3,
       "season_display": "30,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.6100917431192661,
       "activity_display": "61,0%",
       "vs_flag": "OK",
@@ -1011,6 +1521,36 @@
       "cs": true,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.3,
       "activity_display": "30,0%",
       "vs_flag": "OK",
@@ -1068,6 +1608,36 @@
       "cs": true,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.4,
       "activity_display": "40,0%",
       "vs_flag": "OK",
@@ -1120,6 +1690,36 @@
       "cs": true,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.3706422018348624,
       "activity_display": "37,1%",
       "vs_flag": "OK",
@@ -1177,6 +1777,36 @@
       "cs": true,
       "season_activity": 0.3,
       "season_display": "30,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.6825688073394496,
       "activity_display": "68,3%",
       "vs_flag": "OK",
@@ -1234,6 +1864,36 @@
       "cs": null,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.4165137614678899,
       "activity_display": "41,7%",
       "vs_flag": "OK",
@@ -1291,6 +1951,36 @@
       "cs": true,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.3339449541284404,
       "activity_display": "33,4%",
       "vs_flag": "OK",
@@ -1348,6 +2038,36 @@
       "cs": true,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.3697247706422018,
       "activity_display": "37,0%",
       "vs_flag": "OK",
@@ -1405,6 +2125,36 @@
       "cs": true,
       "season_activity": 0.3,
       "season_display": "30,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.7229357798165137,
       "activity_display": "72,3%",
       "vs_flag": "OK",
@@ -1462,6 +2212,36 @@
       "cs": null,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.2751182232415902,
       "activity_display": "27,5%",
       "vs_flag": "1/1 below",
@@ -1514,6 +2294,36 @@
       "cs": null,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.38623853211009174,
       "activity_display": "38,6%",
       "vs_flag": "OK",
@@ -1571,6 +2381,36 @@
       "cs": null,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.3697247706422018,
       "activity_display": "37,0%",
       "vs_flag": "OK",
@@ -1628,6 +2468,36 @@
       "cs": true,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.3,
       "activity_display": "30,0%",
       "vs_flag": "OK",
@@ -1685,6 +2555,36 @@
       "cs": true,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.42844036697247706,
       "activity_display": "42,8%",
       "vs_flag": "OK",
@@ -1742,6 +2642,36 @@
       "cs": null,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.3596330275229358,
       "activity_display": "36,0%",
       "vs_flag": "OK",
@@ -1799,6 +2729,36 @@
       "cs": true,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.35045871559633024,
       "activity_display": "35,0%",
       "vs_flag": "OK",
@@ -1856,6 +2816,36 @@
       "cs": true,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.3513761467889908,
       "activity_display": "35,1%",
       "vs_flag": "OK",
@@ -1913,6 +2903,36 @@
       "cs": null,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.3,
       "activity_display": "30,0%",
       "vs_flag": "OK",
@@ -1970,6 +2990,36 @@
       "cs": null,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.3889908256880734,
       "activity_display": "38,9%",
       "vs_flag": "OK",
@@ -2027,6 +3077,36 @@
       "cs": null,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.3,
       "activity_display": "30,0%",
       "vs_flag": "OK",
@@ -2084,6 +3164,36 @@
       "cs": true,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.36146788990825685,
       "activity_display": "36,1%",
       "vs_flag": "OK",
@@ -2141,6 +3251,36 @@
       "cs": true,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.4128440366972477,
       "activity_display": "41,3%",
       "vs_flag": "OK",
@@ -2198,6 +3338,36 @@
       "cs": null,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.37614678899082565,
       "activity_display": "37,6%",
       "vs_flag": "OK",
@@ -2255,6 +3425,36 @@
       "cs": true,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.22886898509174314,
       "activity_display": "22,9%",
       "vs_flag": "1/1 below",
@@ -2312,6 +3512,36 @@
       "cs": true,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.38990825688073394,
       "activity_display": "39,0%",
       "vs_flag": "OK",
@@ -2369,6 +3599,36 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.39449541284403666,
       "activity_display": "39,4%",
       "vs_flag": "OK",
@@ -2426,6 +3686,36 @@
       "cs": true,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.3,
       "activity_display": "30,0%",
       "vs_flag": "OK",
@@ -2483,6 +3773,36 @@
       "cs": null,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.40642201834862385,
       "activity_display": "40,6%",
       "vs_flag": "OK",
@@ -2540,6 +3860,36 @@
       "cs": null,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.3486238532110092,
       "activity_display": "34,9%",
       "vs_flag": "OK",
@@ -2597,6 +3947,36 @@
       "cs": null,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.3706422018348624,
       "activity_display": "37,1%",
       "vs_flag": "OK",
@@ -2654,6 +4034,36 @@
       "cs": true,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.44770642201834865,
       "activity_display": "44,8%",
       "vs_flag": "OK",
@@ -2711,6 +4121,36 @@
       "cs": true,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.39357798165137614,
       "activity_display": "39,4%",
       "vs_flag": "OK",
@@ -2768,6 +4208,36 @@
       "cs": null,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.3532110091743119,
       "activity_display": "35,3%",
       "vs_flag": "OK",
@@ -2825,6 +4295,36 @@
       "cs": null,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.39357798165137614,
       "activity_display": "39,4%",
       "vs_flag": "OK",
@@ -2877,6 +4377,36 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.18926356727828744,
       "activity_display": "18,9%",
       "vs_flag": "1/1 below",
@@ -2934,6 +4464,36 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.4348623853211009,
       "activity_display": "43,5%",
       "vs_flag": "OK",
@@ -2986,6 +4546,36 @@
       "cs": null,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.3596330275229358,
       "activity_display": "36,0%",
       "vs_flag": "OK",
@@ -3038,6 +4628,36 @@
       "cs": true,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.39174311926605504,
       "activity_display": "39,2%",
       "vs_flag": "OK",
@@ -3090,6 +4710,36 @@
       "cs": null,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.3568807339449541,
       "activity_display": "35,7%",
       "vs_flag": "OK",
@@ -3142,6 +4792,36 @@
       "cs": null,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.36146788990825685,
       "activity_display": "36,1%",
       "vs_flag": "OK",
@@ -3194,6 +4874,36 @@
       "cs": true,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.3963302752293578,
       "activity_display": "39,6%",
       "vs_flag": "OK",
@@ -3246,6 +4956,36 @@
       "cs": true,
       "season_activity": 0.3,
       "season_display": "30,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.6853211009174311,
       "activity_display": "68,5%",
       "vs_flag": "OK",
@@ -3298,6 +5038,36 @@
       "cs": null,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.37706422018348623,
       "activity_display": "37,7%",
       "vs_flag": "OK",
@@ -3350,6 +5120,36 @@
       "cs": true,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.40275229357798165,
       "activity_display": "40,3%",
       "vs_flag": "OK",
@@ -3402,6 +5202,36 @@
       "cs": true,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.3126430913608563,
       "activity_display": "31,3%",
       "vs_flag": "1/1 below",
@@ -3454,6 +5284,36 @@
       "cs": true,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.10972820030581039,
       "activity_display": "11,0%",
       "vs_flag": "1/1 below",
@@ -3506,6 +5366,36 @@
       "cs": true,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.3458715596330275,
       "activity_display": "34,6%",
       "vs_flag": "OK",
@@ -3558,6 +5448,36 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.3522935779816514,
       "activity_display": "35,2%",
       "vs_flag": "OK",
@@ -3610,6 +5530,36 @@
       "cs": null,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.41467889908256883,
       "activity_display": "41,5%",
       "vs_flag": "OK",
@@ -3662,6 +5612,36 @@
       "cs": null,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.3137614678899082,
       "activity_display": "31,4%",
       "vs_flag": "OK",
@@ -3714,6 +5694,36 @@
       "cs": true,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.3,
       "activity_display": "30,0%",
       "vs_flag": "OK",
@@ -3766,6 +5776,36 @@
       "cs": true,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.2965940321100917,
       "activity_display": "29,7%",
       "vs_flag": "1/1 below",
@@ -3818,6 +5858,36 @@
       "cs": true,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.09414804166666665,
       "activity_display": "9,4%",
       "vs_flag": "1/1 below",
@@ -3870,6 +5940,36 @@
       "cs": true,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.3332097251529052,
       "activity_display": "33,3%",
       "vs_flag": "1/1 below",
@@ -3922,6 +6022,36 @@
       "cs": true,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.40275229357798165,
       "activity_display": "40,3%",
       "vs_flag": "OK",
@@ -3974,6 +6104,36 @@
       "cs": true,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.40091743119266054,
       "activity_display": "40,1%",
       "vs_flag": "OK",
@@ -4026,6 +6186,36 @@
       "cs": false,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.39357798165137614,
       "activity_display": "39,4%",
       "vs_flag": "OK",
@@ -4078,6 +6268,36 @@
       "cs": true,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.3,
       "activity_display": "30,0%",
       "vs_flag": "OK",
@@ -4130,6 +6350,36 @@
       "cs": null,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.22844323394495414,
       "activity_display": "22,8%",
       "vs_flag": "1/1 below",
@@ -4182,6 +6432,36 @@
       "cs": null,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.38715596330275226,
       "activity_display": "38,7%",
       "vs_flag": "OK",
@@ -4234,6 +6514,36 @@
       "cs": true,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.3,
       "activity_display": "30,0%",
       "vs_flag": "OK",
@@ -4286,6 +6596,36 @@
       "cs": true,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.44403669724770645,
       "activity_display": "44,4%",
       "vs_flag": "OK",
@@ -4338,6 +6678,36 @@
       "cs": null,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.355045871559633,
       "activity_display": "35,5%",
       "vs_flag": "OK",
@@ -4390,6 +6760,36 @@
       "cs": true,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.3853211009174312,
       "activity_display": "38,5%",
       "vs_flag": "OK",
@@ -4442,6 +6842,36 @@
       "cs": true,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.33577981651376143,
       "activity_display": "33,6%",
       "vs_flag": "OK",
@@ -4494,6 +6924,36 @@
       "cs": null,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.3568807339449541,
       "activity_display": "35,7%",
       "vs_flag": "OK",
@@ -4546,6 +7006,36 @@
       "cs": true,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.34311926605504584,
       "activity_display": "34,3%",
       "vs_flag": "OK",
@@ -4598,6 +7088,36 @@
       "cs": null,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.3059563172782874,
       "activity_display": "30,6%",
       "vs_flag": "1/1 below",
@@ -4650,6 +7170,36 @@
       "cs": true,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.44403669724770645,
       "activity_display": "44,4%",
       "vs_flag": "OK",
@@ -4702,6 +7252,36 @@
       "cs": true,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.3623853211009174,
       "activity_display": "36,2%",
       "vs_flag": "OK",
@@ -4754,6 +7334,36 @@
       "cs": null,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.3743119266055046,
       "activity_display": "37,4%",
       "vs_flag": "OK",
@@ -4806,6 +7416,36 @@
       "cs": null,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.3522935779816514,
       "activity_display": "35,2%",
       "vs_flag": "OK",
@@ -4858,6 +7498,36 @@
       "cs": true,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.38990825688073394,
       "activity_display": "39,0%",
       "vs_flag": "OK",
@@ -4910,6 +7580,36 @@
       "cs": true,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.3963302752293578,
       "activity_display": "39,6%",
       "vs_flag": "OK",
@@ -4962,6 +7662,36 @@
       "cs": null,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.3568807339449541,
       "activity_display": "35,7%",
       "vs_flag": "OK",
@@ -5014,6 +7744,36 @@
       "cs": true,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.37155963302752293,
       "activity_display": "37,2%",
       "vs_flag": "OK",
@@ -5066,6 +7826,36 @@
       "cs": true,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.29875229166666667,
       "activity_display": "29,9%",
       "vs_flag": "1/1 below",
@@ -5118,6 +7908,36 @@
       "cs": null,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.36146788990825685,
       "activity_display": "36,1%",
       "vs_flag": "OK",
@@ -5170,6 +7990,36 @@
       "cs": true,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.3,
       "activity_display": "30,0%",
       "vs_flag": "OK",
@@ -5222,6 +8072,36 @@
       "cs": null,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.3,
       "activity_display": "30,0%",
       "vs_flag": "OK",
@@ -5274,6 +8154,36 @@
       "cs": null,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.35412844036697244,
       "activity_display": "35,4%",
       "vs_flag": "OK",
@@ -5326,6 +8236,36 @@
       "cs": null,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.0,
       "activity_display": "0,0%",
       "vs_flag": "",
@@ -5378,6 +8318,36 @@
       "cs": null,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.3403669724770642,
       "activity_display": "34,0%",
       "vs_flag": "OK",
@@ -5430,6 +8400,36 @@
       "cs": null,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.0,
       "activity_display": "0,0%",
       "vs_flag": "",
@@ -5454,6 +8454,36 @@
       "cs": null,
       "season_activity": 0.0,
       "season_display": "0,0%",
+      "season_cats": {
+        "support": {
+          "label": "Mutual Assistance",
+          "tab": "Season - Mutual Assistance",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "cleanup": {
+          "label": "Clean Up",
+          "tab": "Season - Clean Up",
+          "pts": null,
+          "pct": null,
+          "weight": 0.2
+        },
+        "conquest": {
+          "label": "Conquest",
+          "tab": "Season - Conquest",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        },
+        "defeat": {
+          "label": "Defeat",
+          "tab": "Season - Defeat",
+          "pts": null,
+          "pct": null,
+          "weight": 0.3
+        }
+      },
       "activity": 0.0,
       "activity_display": "0,0%",
       "vs_flag": "",
@@ -12104,11 +15134,11 @@
       ]
     }
   },
-  "generated_at": "2026-10-20T08:58:06Z",
-  "stand_berlin": "20.10.2026, 10:58",
+  "generated_at": "2026-10-20T09:14:14Z",
+  "stand_berlin": "20.10.2026, 11:14",
   "source": "google_sheets",
   "source_file": "DawN - Base + Tabs (live)",
-  "snapshot": "2026-10-20T08:58:06",
+  "snapshot": "2026-10-20T09:14:14",
   "links": {
     "title": "DawN",
     "tagline": "Important links",

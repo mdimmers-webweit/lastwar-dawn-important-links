@@ -3,7 +3,15 @@
 let DATA = null;
 
 const ROLE_OPTIONS = ["R5", "R4", "R3", "R2", "R1"];
-const CACHE_BUST = "20261020-vs-days";
+const CACHE_BUST = "20261020-season-cats";
+
+/** Season contribution columns — mirrors Sheet tabs / SEASON_CATEGORIES. */
+const SEASON_CATS = [
+  { key: "support", label: "Assistance", legend: "Season Mutual Assistance" },
+  { key: "cleanup", label: "Clean Up", legend: "Season Clean Up" },
+  { key: "conquest", label: "Conquest", legend: "Season Conquest" },
+  { key: "defeat", label: "Defeat", legend: "Season Defeat" },
+];
 const FILTER_STORAGE_KEY = "dawn-dashboard-filters";
 const PERIOD_STORAGE_KEY = "dawn-dashboard-period";
 
@@ -1902,41 +1910,74 @@ function renderEvents(el) {
     "</section>";
 }
 
+function memberSeasonCat(m, key) {
+  const cats = m && m.season_cats;
+  if (!cats || typeof cats !== "object") return null;
+  return cats[key] || null;
+}
+
+function memberSeasonPts(m, key) {
+  const cat = memberSeasonCat(m, key);
+  if (!cat || cat.pts == null) return null;
+  const n = Number(cat.pts);
+  return Number.isFinite(n) ? n : null;
+}
+
+function seasonCatCell(m, key) {
+  const pts = memberSeasonPts(m, key);
+  if (pts != null) return fmtPts(pts);
+  const cat = memberSeasonCat(m, key);
+  if (cat && cat.pct != null) return fmtPct(cat.pct);
+  return "—";
+}
+
+function seasonDataReady() {
+  const members = DATA.members || [];
+  return members.some((m) =>
+    SEASON_CATS.some((c) => memberSeasonPts(m, c.key) != null)
+  );
+}
+
 function renderSeason(el) {
   const leg = DATA.legend || {};
-  const seasonLegend = [
-    "Season Mutual Assistance",
-    "Season Clean Up",
-    "Season Conquest",
-    "Season Defeat",
-  ]
-    .filter((k) => leg[k])
-    .map(
-      (k) =>
-        `<div class="meta-chip"><span class="k">${esc(k)}</span><span class="v">${esc(leg[k])}</span></div>`
-    )
+  const seasonLegend = SEASON_CATS.map((c) => {
+    const weight = leg[c.legend];
+    if (!weight) return "";
+    return `<div class="meta-chip"><span class="k">${esc(c.label)}</span><span class="v">${esc(weight)}</span></div>`;
+  })
+    .filter(Boolean)
     .join("");
+  const hasPts = seasonDataReady();
   const cols = [
     { key: "role", label: "Rolle" },
     { key: "name", label: "Name" },
-    { key: "season", label: "Season Activity", class: "num" },
-    { key: "ds", label: "DS" },
-    { key: "cs", label: "CS" },
-    { key: "events", label: "Events" },
+    ...SEASON_CATS.map((c) => ({ key: "s_" + c.key, label: c.label, class: "num" })),
+    { key: "season", label: "Season %", class: "num" },
   ];
-  const rows = sortedMembers((a, b) => (b.season_activity ?? 0) - (a.season_activity ?? 0)).map((m) => ({
-    _inactive: !m.active,
-    role: esc(m.role),
-    name: `<span class="name">${esc(m.name)}</span>`,
-    season: esc(m.season_display || fmtPct(m.season_activity)),
-    ds: regPlayedCell(m.ds_master) || (m.ds === true ? "Yes" : m.ds === false ? "No" : "—"),
-    cs: regPlayedCell(m.cs_master) || (m.cs === true ? "Yes" : m.cs === false ? "No" : "—"),
-    events: esc(m.events || "—"),
-  }));
+  const rows = sortedMembers((a, b) => (b.season_activity ?? 0) - (a.season_activity ?? 0)).map(
+    (m) => {
+      const out = {
+        _inactive: !m.active,
+        role: esc(m.role),
+        name: `<span class="name">${esc(m.name)}</span>`,
+        season: esc(m.season_display || fmtPct(m.season_activity)),
+      };
+      for (const c of SEASON_CATS) {
+        out["s_" + c.key] = seasonCatCell(m, c.key);
+      }
+      return out;
+    }
+  );
+  // Season tab: four Sheet categories + Season Activity only. No CS/DS/Events/Activity.
   el.innerHTML =
     '<section class="panel glass"><h2>Season</h2>' +
-    '<p class="lead">Aggregierte Season Activity und Legend-Gewichte aus dem Dashboard.</p>' +
+    '<p class="lead">Mutual Assistance · Clean Up · Conquest · Defeat — Punkte aus den Season-Tabs, Season % gewichtet.</p>' +
     (seasonLegend ? `<div class="meta-grid">${seasonLegend}</div>` : "") +
+    (hasPts
+      ? ""
+      : '<p class="sub">Season-Tabs sind leer (noch keine Beiträge nach Fresh Start). Spalten stehen bereit.</p>') +
+    "<h3>Mitglieder · Season-Kategorien</h3>" +
+    '<p class="sub">Eine Spalte pro Kategorie · Season % · sortiert nach Season %</p>' +
     memberTable(cols, rows) +
     "</section>";
 }
