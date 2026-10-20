@@ -3,7 +3,20 @@
     {
       "year": 2026,
       "week": 43,
-      "mode": "push"
+      "mode": "save",
+      "max": 72000000
+    },
+    {
+      "year": 2026,
+      "week": 42,
+      "mode": "save",
+      "max": 12000000
+    },
+    {
+      "year": 2026,
+      "week": 34,
+      "mode": "save",
+      "max": 12000000
     }
   ]
 }

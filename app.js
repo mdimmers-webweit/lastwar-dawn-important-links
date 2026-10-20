@@ -3,7 +3,7 @@
 let DATA = null;
 
 const ROLE_OPTIONS = ["R5", "R4", "R3", "R2", "R1"];
-const CACHE_BUST = "20261019-anno1";
+const CACHE_BUST = "20261020-save-outlier";
 const FILTER_STORAGE_KEY = "dawn-dashboard-filters";
 const PERIOD_STORAGE_KEY = "dawn-dashboard-period";
 
@@ -30,10 +30,12 @@ const IMPORTANT_LINKS_ORIGIN = "https://lastwar-dawn-important-links.pages.dev";
 const IMPORTANT_LINKS_CONFIG_URL = IMPORTANT_LINKS_ORIGIN + "/config.json";
 const IMPORTANT_LINKS_API_URL = IMPORTANT_LINKS_ORIGIN + "/api/config";
 const VS_DAILY_MIN = 7200000;
-/** Save = dieselbe Quote wie Push-Basis; fest 7.2M. */
+/** Save/Economy = Tagesquote wie Push-Basis; fest 7.2M. */
 const VS_SAVE_MIN = 7200000;
-/** Legacy 12M — nur um alte Config-Werte als Push-Elevated zu ignorieren. */
+/** Save Mo–Do Outlier-Cap (darüber = „over“, kein Champion). */
 const VS_OUTLIER_MAX = 12000000;
+/** Config ≥20M = Champion/Push-Schwelle — nie als Save-Outlier. */
+const VS_SAVE_OUTLIER_EXTREME = 20000000;
 
 function parsePointsInput(raw) {
   const s = String(raw ?? "")
@@ -59,6 +61,16 @@ function pushElevatedMinFromEntry(entry) {
   const n = Number(entry.max);
   if (!Number.isFinite(n) || n <= VS_DAILY_MIN) return null;
   if (n === VS_OUTLIER_MAX) return null;
+  return n;
+}
+
+/** Save/Economy Mo–Thu outlier; extreme ≥20M configs clamp to 12M. */
+function saveOutlierMaxFromEntry(entry) {
+  if (!entry || String(entry.mode || "").toLowerCase() !== "save") return null;
+  const n = Number(entry.max);
+  if (!Number.isFinite(n) || n <= VS_SAVE_MIN || n >= VS_SAVE_OUTLIER_EXTREME) {
+    return VS_OUTLIER_MAX;
+  }
   return n;
 }
 
@@ -180,6 +192,7 @@ function vsBadge(flag) {
   if (!f) return '<span class="badge off">—</span>';
   if (f === "OK") return '<span class="badge ok">OK</span>';
   if (/below/i.test(f)) return `<span class="badge warn">${esc(f)}</span>`;
+  if (/over/i.test(f)) return `<span class="badge bad" title="Save/Economy over outlier">${esc(f)}</span>`;
   return `<span class="badge bad">${esc(f)}</span>`;
 }
 
@@ -735,7 +748,8 @@ function vsWeekModeLabel() {
     const minLabel = meta.VSWeekMin || formatPointsDe(VS_DAILY_MIN);
     return `PUSH · Min ${minLabel}`;
   }
-  return `SAVE · Min ${formatPointsDe(VS_SAVE_MIN)}`;
+  const outlier = meta.VSWeekOutlierMax || formatPointsDe(VS_OUTLIER_MAX);
+  return `SAVE · Min ${formatPointsDe(VS_SAVE_MIN)} · Outlier ${outlier}`;
 }
 
 function sheetBlock(key) {
@@ -798,13 +812,17 @@ function renderOverviewWidgets() {
   const members = filteredMembers();
   const vsReady = hasVsSheetData();
   const vsEmptyMsg = !vsReady ? "Keine VS-Daten verfügbar" : noVsDataMessage();
-  const topVs = members
+  const topVsAll = members
     .map((m) => ({ m, pts: vsMetric(m) }))
     .filter((x) => x.pts != null && x.pts > 0)
-    .sort((a, b) => b.pts - a.pts)
+    .sort((a, b) => b.pts - a.pts);
+  // Save/Economy „over“: kein Champion (z. B. >12M am Economy-Tag).
+  const topVsChamp = topVsAll
+    .filter((x) => !/over/i.test(String(x.m.vs_flag || "")))
     .slice(0, 5)
     .map((x) => x.m);
-  const champ = topVs[0];
+  const topVs = topVsAll.slice(0, 5).map((x) => x.m);
+  const champ = topVsChamp[0];
   const underQuota = members
     .filter((m) => memberBelowQuotaForPeriod(m))
     .sort((a, b) => String(a.name).localeCompare(String(b.name), "de"))
@@ -857,7 +875,11 @@ function renderOverviewWidgets() {
     `<p class="sub">${esc(periodHint)} · ${members.length} Mitglieder nach Filter</p>` +
     '<div class="widget-grid">' +
     `<article class="widget span-4 glass"><h3>Champion VS</h3>${champHtml}` +
-    renderRankList(vsReady && champ ? topVs.slice(1) : [], (m) => fmtPts(vsMetric(m)), vsEmptyMsg) +
+    renderRankList(
+      vsReady && champ ? topVsChamp.slice(1) : [],
+      (m) => fmtPts(vsMetric(m)),
+      vsEmptyMsg
+    ) +
     "</article>" +
     `<article class="widget span-4 glass"><h3>Top VS</h3><p class="sub">${
       periodMode === "gesamt" ? "Wochenstand (Sheet Latest)" : periodMode === "woche" ? "Wochensumme" : "Heute"
@@ -1324,6 +1346,10 @@ function renderVsMetaSummary() {
     pairs.push(["Push-Minimum", meta.VSWeekMin || formatPointsDe(VS_DAILY_MIN)]);
   } else {
     pairs.push(["Save-Minimum", meta.VSWeekMin || formatPointsDe(VS_SAVE_MIN)]);
+    pairs.push([
+      "Save-Outlier Mo–Do",
+      meta.VSWeekOutlierMax || formatPointsDe(VS_OUTLIER_MAX),
+    ]);
   }
   const visible = pairs.filter(([, v]) => v != null && String(v).trim());
   if (!visible.length) return "";
@@ -1571,7 +1597,8 @@ function configDraftForWeek(cfg, year, week) {
     if (mode !== "push" && mode !== "save") mode = "push";
   }
   const elevatedMin = entry ? pushElevatedMinFromEntry(entry) : null;
-  return { year, week, mode, elevatedMin };
+  const outlierMax = entry ? saveOutlierMaxFromEntry(entry) : null;
+  return { year, week, mode, elevatedMin, outlierMax };
 }
 
 function applyVsWeekToDashboard(cfg) {
@@ -1591,6 +1618,8 @@ function applyVsWeekToDashboard(cfg) {
     meta.VSWeekMin = formatPointsDe(effective);
   } else {
     meta.VSWeekMin = formatPointsDe(VS_SAVE_MIN);
+    const outlier = draft.outlierMax || VS_OUTLIER_MAX;
+    meta.VSWeekOutlierMax = formatPointsDe(outlier);
   }
   DATA.meta = meta;
 }
@@ -1667,6 +1696,7 @@ function renderConfigForm(el, cfg, draft, loadError) {
     )}"></div></div>` +
     '<div id="cfgSaveBlock" hidden>' +
     '<p class="config-hint">Minimum fest: <strong>7,2 Mio</strong> Punkte (Mo–Sa).</p>' +
+    '<p class="config-hint">Outlier-Max Mo–Do: <strong>12 Mio</strong> (darüber = over; ≥20M-Config wird gekappt).</p>' +
     "</div>" +
     '<div class="btn-row">' +
     '<button type="submit" class="btn" id="cfgSave">Speichern</button>' +

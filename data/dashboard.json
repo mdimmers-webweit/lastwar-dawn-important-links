@@ -25,11 +25,12 @@
   },
   "meta": {
     "VSLastDate": "2026-10-19",
-    "VSWeekMode": "push",
+    "VSWeekMode": "save",
     "VSWeekYear": "2026",
     "VSWeekNumber": "43",
     "VSWeekMin": "7.200.000",
-    "GameDate": "2026-10-20"
+    "GameDate": "2026-10-20",
+    "VSWeekOutlierMax": "12.000.000"
   },
   "members": [
     {
@@ -101,7 +102,7 @@
       "season_display": "30,0%",
       "activity": 0.6522935779816514,
       "activity_display": "65,2%",
-      "vs_flag": "OK",
+      "vs_flag": "1/1 over",
       "ds_master": {
         "name": "Icey786",
         "role": "R4",
@@ -668,7 +669,7 @@
       "season_display": "0,0%",
       "activity": 0.3,
       "activity_display": "30,0%",
-      "vs_flag": "OK",
+      "vs_flag": "1/1 over",
       "ds_master": {
         "name": "Bruna Laïs",
         "role": "R3",
@@ -876,7 +877,7 @@
       "season_display": "30,0%",
       "activity": 0.6100917431192661,
       "activity_display": "61,0%",
-      "vs_flag": "OK",
+      "vs_flag": "1/1 over",
       "ds_master": {
         "name": "Eisen024",
         "role": "R4",
@@ -1027,7 +1028,7 @@
       "season_display": "0,0%",
       "activity": 0.3706422018348624,
       "activity_display": "37,1%",
-      "vs_flag": "OK",
+      "vs_flag": "1/1 over",
       "ds_master": {
         "name": "Rico 2026",
         "role": "R3",
@@ -1183,7 +1184,7 @@
       "season_display": "0,0%",
       "activity": 0.3339449541284404,
       "activity_display": "33,4%",
-      "vs_flag": "OK",
+      "vs_flag": "1/1 over",
       "ds_master": {
         "name": "Everton 123456",
         "role": "R3",
@@ -1438,7 +1439,7 @@
       "season_display": "0,0%",
       "activity": 0.3697247706422018,
       "activity_display": "37,0%",
-      "vs_flag": "OK",
+      "vs_flag": "1/1 over",
       "ds_master": {
         "name": "Filippos4Paok",
         "role": "R3",
@@ -2166,7 +2167,7 @@
       "season_display": "0,0%",
       "activity": 0.39449541284403666,
       "activity_display": "39,4%",
-      "vs_flag": "OK",
+      "vs_flag": "1/1 over",
       "ds_master": {
         "name": "Ringwraiths",
         "role": "R3",
@@ -2270,7 +2271,7 @@
       "season_display": "0,0%",
       "activity": 0.40642201834862385,
       "activity_display": "40,6%",
-      "vs_flag": "OK",
+      "vs_flag": "1/1 over",
       "ds_master": {
         "name": "IGU7",
         "role": "R3",
@@ -2822,7 +2823,7 @@
       "season_display": "0,0%",
       "activity": 0.3568807339449541,
       "activity_display": "35,7%",
-      "vs_flag": "OK",
+      "vs_flag": "1/1 over",
       "ds_master": {
         "name": "Zettovic",
         "role": "R3",
@@ -2869,7 +2870,7 @@
       "season_display": "0,0%",
       "activity": 0.36146788990825685,
       "activity_display": "36,1%",
-      "vs_flag": "OK",
+      "vs_flag": "1/1 over",
       "ds_master": {
         "name": "Buckioio",
         "role": "R3",
@@ -3057,7 +3058,7 @@
       "season_display": "0,0%",
       "activity": 0.40275229357798165,
       "activity_display": "40,3%",
-      "vs_flag": "OK",
+      "vs_flag": "1/1 over",
       "ds_master": {
         "name": "YaneZ",
         "role": "R3",
@@ -3198,7 +3199,7 @@
       "season_display": "0,0%",
       "activity": 0.3458715596330275,
       "activity_display": "34,6%",
-      "vs_flag": "OK",
+      "vs_flag": "1/1 over",
       "ds_master": {
         "name": "Draurg v2",
         "role": "R3",
@@ -3292,7 +3293,7 @@
       "season_display": "0,0%",
       "activity": 0.41467889908256883,
       "activity_display": "41,5%",
-      "vs_flag": "OK",
+      "vs_flag": "1/1 over",
       "ds_master": {
         "name": "Jhow09",
         "role": "R3",
@@ -3386,7 +3387,7 @@
       "season_display": "0,0%",
       "activity": 0.3,
       "activity_display": "30,0%",
-      "vs_flag": "OK",
+      "vs_flag": "1/1 over",
       "ds_master": {
         "name": "The phantom 0",
         "role": "R3",
@@ -3621,7 +3622,7 @@
       "season_display": "0,0%",
       "activity": 0.40091743119266054,
       "activity_display": "40,1%",
-      "vs_flag": "OK",
+      "vs_flag": "1/1 over",
       "ds_master": {
         "name": "PALADINO BR",
         "role": "R3",
@@ -3668,7 +3669,7 @@
       "season_display": "0,0%",
       "activity": 0.39357798165137614,
       "activity_display": "39,4%",
-      "vs_flag": "OK",
+      "vs_flag": "1/1 over",
       "ds_master": {
         "name": "Valério",
         "role": "R3",
@@ -3809,7 +3810,7 @@
       "season_display": "0,0%",
       "activity": 0.38715596330275226,
       "activity_display": "38,7%",
-      "vs_flag": "OK",
+      "vs_flag": "1/1 over",
       "ds_master": {
         "name": "Noxnanni",
         "role": "R3",
@@ -3856,7 +3857,7 @@
       "season_display": "0,0%",
       "activity": 0.3,
       "activity_display": "30,0%",
-      "vs_flag": "OK",
+      "vs_flag": "1/1 over",
       "ds_master": {
         "name": "CANONDA",
         "role": "R3",
@@ -3950,7 +3951,7 @@
       "season_display": "0,0%",
       "activity": 0.355045871559633,
       "activity_display": "35,5%",
-      "vs_flag": "OK",
+      "vs_flag": "1/1 over",
       "ds_master": {
         "name": "Lawima",
         "role": "R3",
@@ -4091,7 +4092,7 @@
       "season_display": "0,0%",
       "activity": 0.3568807339449541,
       "activity_display": "35,7%",
-      "vs_flag": "OK",
+      "vs_flag": "1/1 over",
       "ds_master": {
         "name": "BlackHeiX",
         "role": "R3",
@@ -4373,7 +4374,7 @@
       "season_display": "0,0%",
       "activity": 0.3522935779816514,
       "activity_display": "35,2%",
-      "vs_flag": "OK",
+      "vs_flag": "1/1 over",
       "ds_master": {
         "name": "Inlv1",
         "role": "R3",
@@ -4420,7 +4421,7 @@
       "season_display": "0,0%",
       "activity": 0.38990825688073394,
       "activity_display": "39,0%",
-      "vs_flag": "OK",
+      "vs_flag": "1/1 over",
       "ds_master": {
         "name": "AnnoraX",
         "role": "R3",
@@ -4467,7 +4468,7 @@
       "season_display": "0,0%",
       "activity": 0.3963302752293578,
       "activity_display": "39,6%",
-      "vs_flag": "OK",
+      "vs_flag": "1/1 over",
       "ds_master": {
         "name": "rePlay",
         "role": "R3",
@@ -4561,7 +4562,7 @@
       "season_display": "0,0%",
       "activity": 0.37155963302752293,
       "activity_display": "37,2%",
-      "vs_flag": "OK",
+      "vs_flag": "1/1 over",
       "ds_master": {
         "name": "Clone",
         "role": "R3",
@@ -4655,7 +4656,7 @@
       "season_display": "0,0%",
       "activity": 0.36146788990825685,
       "activity_display": "36,1%",
-      "vs_flag": "OK",
+      "vs_flag": "1/1 over",
       "ds_master": {
         "name": "HeinselHH",
         "role": "R3",
@@ -4890,7 +4891,7 @@
       "season_display": "0,0%",
       "activity": 0.3403669724770642,
       "activity_display": "34,0%",
-      "vs_flag": "OK",
+      "vs_flag": "1/1 over",
       "ds_master": {
         "name": "Neritoo",
         "role": "R3",
@@ -4963,8 +4964,8 @@
     "members_total": 101,
     "members_active": 101,
     "activity_avg": 0.3773,
-    "vs_ok": 84,
-    "vs_other": 0,
+    "vs_ok": 58,
+    "vs_other": 26,
     "vs_below_quota": 14,
     "ds_registered": 56,
     "cs_registered": 58,
@@ -11599,11 +11600,11 @@
       ]
     }
   },
-  "generated_at": "2026-10-20T06:20:52Z",
-  "stand_berlin": "20.10.2026, 08:20",
+  "generated_at": "2026-10-20T06:37:30Z",
+  "stand_berlin": "20.10.2026, 08:37",
   "source": "google_sheets",
   "source_file": "DawN - Base + Tabs (live)",
-  "snapshot": "2026-10-20T06:20:52",
+  "snapshot": "2026-10-20T06:37:30",
   "links": {
     "title": "DawN",
     "tagline": "Important links",
@@ -11638,7 +11639,20 @@
     {
       "year": 2026,
       "week": 43,
-      "mode": "push"
+      "mode": "save",
+      "max": 72000000
+    },
+    {
+      "year": 2026,
+      "week": 42,
+      "mode": "save",
+      "max": 12000000
+    },
+    {
+      "year": 2026,
+      "week": 34,
+      "mode": "save",
+      "max": 12000000
     }
   ]
 }

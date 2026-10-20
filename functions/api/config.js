@@ -141,10 +141,13 @@ function applyVsWeek(config, body) {
   }
   const entry = { year, week, mode };
   // JSON key ``max``: push = optional elevated daily min; save = Mon–Thu outlier cap.
+  // Save/Economy: never store extreme ≥20M (champion/push thresholds) as outlier.
   if (mode === 'push') {
     if (maxPoints != null && maxPoints > 7_200_000) entry.max = maxPoints;
   } else {
-    entry.max = maxPoints != null ? maxPoints : 12_000_000;
+    let cap = maxPoints != null ? maxPoints : 12_000_000;
+    if (cap >= 20_000_000) cap = 12_000_000;
+    entry.max = cap;
   }
   const idx = config.vsWeeks.findIndex(
     (item) => Number(item.year) === year && Number(item.week) === week
