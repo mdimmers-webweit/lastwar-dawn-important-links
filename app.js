@@ -1735,7 +1735,8 @@ function renderKills(el) {
   }));
   el.innerHTML =
     '<section class="panel glass"><h2>Kills</h2>' +
-    '<p class="lead">Dashboard-Spalte Kills (WoW-Δ) plus Kalenderwochen aus dem Kills-Tab.</p>' +
+    '<p class="lead">Kill-Stand bzw. Wochen-Δ (Wachstum = Kämpfe/Verteidigung). Activity nutzt nur echtes Δ ab zwei KW-Spalten.</p>' +
+
     (block
       ? `<h3>Kills-Sheet · ${esc(block.columns.join(", "))}</h3>` + matrixTable(block)
       : "") +
