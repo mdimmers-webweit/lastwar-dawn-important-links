@@ -3,7 +3,7 @@
 let DATA = null;
 
 const ROLE_OPTIONS = ["R5", "R4", "R3", "R2", "R1"];
-const CACHE_BUST = "20261020-vs-tab";
+const CACHE_BUST = "20261020-vs-clean";
 const FILTER_STORAGE_KEY = "dawn-dashboard-filters";
 const PERIOD_STORAGE_KEY = "dawn-dashboard-period";
 
@@ -1701,7 +1701,6 @@ function renderVs(el) {
     { key: "name", label: "Name" },
     { key: "vs_pts", label: "VS Punkte", class: "num" },
     { key: "vs", label: "VS Flag" },
-    { key: "activity", label: "Activity", class: "num" },
   ];
   const rows = sortedMembers((a, b) => vsMetricSort(b) - vsMetricSort(a)).map((m) => ({
     _inactive: !m.active,
@@ -1709,16 +1708,15 @@ function renderVs(el) {
     name: `<span class="name">${esc(m.name)}</span>`,
     vs_pts: fmtPts(vsMetric(m)),
     vs: vsBadge(m.vs_flag),
-    activity: esc(m.activity_display || fmtPct(m.activity)),
   }));
-  // VS tab: meta + day compare (no burn-up) + full roster. Champion / quota widgets live on Overview only.
+  // VS tab only: week quote + day compare (no burn-up) + one roster table. No Champion / Activity / matrix.
   el.innerHTML =
     '<section class="panel glass"><h2>VS</h2>' +
-    '<p class="lead">Tagesvergleich DawN vs. Gegner und Mitglieder-Punkte/Flags (Woche/Gesamt wie oben). Champion und Quoten-Listen stehen unter Overview.</p>' +
+    `<p class="lead">Wochenquote: ${esc(vsWeekModeLabel())}</p>` +
     renderVsMetaSummary() +
     (compareDays ? renderVsCompareDays(compareDays, { includeBurnup: false }) : "") +
     "<h3>Mitglieder · VS Punkte &amp; Flags</h3>" +
-    '<p class="sub">Exakte Punkte · sortiert nach VS · vollständige Liste (kein Ausschnitt)</p>' +
+    '<p class="sub">Exakte Punkte · sortiert nach VS · vollständige Liste</p>' +
     memberTable(cols, rows) +
     "</section>";
 }
