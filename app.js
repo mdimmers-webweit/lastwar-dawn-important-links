@@ -1743,11 +1743,7 @@ function killsDeltaCell(m) {
 }
 
 function renderKills(el) {
-  const block = sheetBlock("kills");
-  const colsCount = block && block.columns ? block.columns.length : 0;
-  const hasDelta = colsCount >= 2 || (DATA.members || []).some((m) => m.kills_delta != null);
   const cols = [
-    { key: "role", label: "Rolle" },
     { key: "name", label: "Name" },
     { key: "stand", label: "Kills", class: "num" },
     { key: "delta", label: "Δ", class: "num" },
@@ -1761,22 +1757,14 @@ function renderKills(el) {
     return (Number(b.kills_abs) || 0) - (Number(a.kills_abs) || 0);
   }).map((m) => ({
     _inactive: !m.active,
-    role: esc(m.role),
     name: `<span class="name">${esc(m.name)}</span>`,
     stand: m.kills_abs != null ? fmtPts(m.kills_abs) : "—",
     delta: killsDeltaCell(m),
     trend: killsTrendBadge(m),
     steep: killsSteepLabel(m),
   }));
-  const lead = hasDelta
-    ? "Kill-Stand, Wochen-Δ (+XXXX), Tendenz ↑/→ und wie steil der Anstieg relativ zur Allianz."
-    : "Aktuell nur eine KW-Spalte — Stand sichtbar, Tendenz/Δ/Anstieg ab dem zweiten Kill-Stand.";
   el.innerHTML =
     '<section class="panel glass"><h2>Kills</h2>' +
-    `<p class="lead">${esc(lead)}</p>` +
-    (block && block.columns && block.columns.length
-      ? `<p class="sub">Sheet-Spalten: ${esc(block.columns.join(" · "))}</p>`
-      : "") +
     memberTable(cols, rows) +
     "</section>";
 }
