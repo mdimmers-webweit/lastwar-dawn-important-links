@@ -3,7 +3,7 @@
 let DATA = null;
 
 const ROLE_OPTIONS = ["R5", "R4", "R3", "R2", "R1"];
-const CACHE_BUST = "20261020-wenig-fix";
+const CACHE_BUST = "20261020-kills-delta";
 
 /** Season contribution columns — mirrors Sheet tabs / SEASON_CATEGORIES. */
 const SEASON_CATS = [
@@ -1235,7 +1235,11 @@ function hasActivitySignal(m) {
   if ((Number(m.donations) || 0) > 0) return true;
   if ((Number(m.vs_week_sum) || Number(m.vs_latest) || 0) > 0) return true;
   if ((Number(m.season_activity) || 0) > 0) return true;
-  if (m.kills_pct != null && !Number.isNaN(Number(m.kills_pct))) return true;
+  // Kill-Wachstum (Kämpfe/Verteidigung) — nur echtes Δ, kein Fake-+100%.
+  if ((Number(m.kills_delta) || 0) > 0) return true;
+  if (m.kills_pct != null && !Number.isNaN(Number(m.kills_pct)) && Number(m.kills_pct) > 0) {
+    return true;
+  }
   const cats = m.season_cats || {};
   for (const key of Object.keys(cats)) {
     if ((Number(cats[key] && cats[key].pts) || 0) > 0) return true;

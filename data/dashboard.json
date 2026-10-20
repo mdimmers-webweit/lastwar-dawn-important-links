@@ -29,7 +29,8 @@
     "VSWeekYear": "2026",
     "VSWeekNumber": "43",
     "VSWeekMin": "MO–DO 7.200.000 · FR–SA OFFEN",
-    "GameDate": "2026-10-20"
+    "GameDate": "2026-10-20",
+    "KillsDelta": "KW-Δ ab 2. KW-Spalte; aktuell nur Stand (1 Spalte nach Fresh Start)"
   },
   "members": [
     {
@@ -40,7 +41,7 @@
       "thp": 130500000,
       "thp_display": "130.500.000",
       "donations": 8050,
-      "kills": "+100%",
+      "kills": "7.522.458",
       "kills_pct": null,
       "events": "10/10",
       "ds": null,
@@ -117,7 +118,9 @@
       "vs_week_sum": 8553888,
       "vs_days": {
         "2026-10-19": 8553888
-      }
+      },
+      "kills_abs": 7522458,
+      "kills_delta": null
     },
     {
       "role": "R4",
@@ -127,7 +130,7 @@
       "thp": 121000000,
       "thp_display": "121.000.000",
       "donations": 2850,
-      "kills": "+100%",
+      "kills": "12.333.685",
       "kills_pct": null,
       "events": "10/10",
       "ds": null,
@@ -204,7 +207,9 @@
       "vs_week_sum": 24929280,
       "vs_days": {
         "2026-10-19": 24929280
-      }
+      },
+      "kills_abs": 12333685,
+      "kills_delta": null
     },
     {
       "role": "R4",
@@ -214,7 +219,7 @@
       "thp": 129200000,
       "thp_display": "129.200.000",
       "donations": 6050,
-      "kills": "+100%",
+      "kills": "10.307.828",
       "kills_pct": null,
       "events": "10/10",
       "ds": true,
@@ -291,7 +296,9 @@
       "vs_week_sum": 7572770,
       "vs_days": {
         "2026-10-19": 7572770
-      }
+      },
+      "kills_abs": 10307828,
+      "kills_delta": null
     },
     {
       "role": "R4",
@@ -301,7 +308,7 @@
       "thp": 166400000,
       "thp_display": "166.400.000",
       "donations": 10900,
-      "kills": "+100%",
+      "kills": "7.149.574",
       "kills_pct": null,
       "events": "10/10",
       "ds": true,
@@ -378,7 +385,9 @@
       "vs_week_sum": 10629690,
       "vs_days": {
         "2026-10-19": 10629690
-      }
+      },
+      "kills_abs": 7149574,
+      "kills_delta": null
     },
     {
       "role": "R4",
@@ -388,7 +397,7 @@
       "thp": 108800000,
       "thp_display": "108.800.000",
       "donations": 5550,
-      "kills": "+100%",
+      "kills": "2.745.492",
       "kills_pct": null,
       "events": "10/10",
       "ds": true,
@@ -465,7 +474,9 @@
       "vs_week_sum": 7002084,
       "vs_days": {
         "2026-10-19": 7002084
-      }
+      },
+      "kills_abs": 2745492,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -475,7 +486,7 @@
       "thp": 125400000,
       "thp_display": "125.400.000",
       "donations": 3500,
-      "kills": "+100%",
+      "kills": "13.024.093",
       "kills_pct": null,
       "events": "10/10",
       "ds": true,
@@ -552,7 +563,9 @@
       "vs_week_sum": 7318534,
       "vs_days": {
         "2026-10-19": 7318534
-      }
+      },
+      "kills_abs": 13024093,
+      "kills_delta": null
     },
     {
       "role": "R4",
@@ -562,7 +575,7 @@
       "thp": 136700000,
       "thp_display": "136.700.000",
       "donations": 3900,
-      "kills": "+100%",
+      "kills": "7.769.391",
       "kills_pct": null,
       "events": "",
       "ds": null,
@@ -634,7 +647,9 @@
       "vs_week_sum": 11105852,
       "vs_days": {
         "2026-10-19": 11105852
-      }
+      },
+      "kills_abs": 7769391,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -644,7 +659,7 @@
       "thp": 141800000,
       "thp_display": "141.800.000",
       "donations": 5200,
-      "kills": "+100%",
+      "kills": "8.977.491",
       "kills_pct": null,
       "events": "10/10",
       "ds": true,
@@ -721,7 +736,9 @@
       "vs_week_sum": 8686165,
       "vs_days": {
         "2026-10-19": 8686165
-      }
+      },
+      "kills_abs": 8977491,
+      "kills_delta": null
     },
     {
       "role": "R4",
@@ -731,7 +748,7 @@
       "thp": 143400000,
       "thp_display": "143.400.000",
       "donations": 9550,
-      "kills": "+100%",
+      "kills": "6.861.018",
       "kills_pct": null,
       "events": "10/10",
       "ds": null,
@@ -808,7 +825,9 @@
       "vs_week_sum": 8479577,
       "vs_days": {
         "2026-10-19": 8479577
-      }
+      },
+      "kills_abs": 6861018,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -818,7 +837,7 @@
       "thp": 131400000,
       "thp_display": "131.400.000",
       "donations": 7000,
-      "kills": "+100%",
+      "kills": "5.418.141",
       "kills_pct": null,
       "events": "10/10",
       "ds": true,
@@ -895,7 +914,9 @@
       "vs_week_sum": 7201666,
       "vs_days": {
         "2026-10-19": 7201666
-      }
+      },
+      "kills_abs": 5418141,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -905,7 +926,7 @@
       "thp": 129600000,
       "thp_display": "129.600.000",
       "donations": 1300,
-      "kills": "+100%",
+      "kills": "5.781.900",
       "kills_pct": null,
       "events": "10/10",
       "ds": true,
@@ -982,7 +1003,9 @@
       "vs_week_sum": 7202151,
       "vs_days": {
         "2026-10-19": 7202151
-      }
+      },
+      "kills_abs": 5781900,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -992,7 +1015,7 @@
       "thp": 131100000,
       "thp_display": "131.100.000",
       "donations": 5200,
-      "kills": "+100%",
+      "kills": "4.632.643",
       "kills_pct": null,
       "events": "10/10",
       "ds": true,
@@ -1069,7 +1092,9 @@
       "vs_week_sum": 7200023,
       "vs_days": {
         "2026-10-19": 7200023
-      }
+      },
+      "kills_abs": 4632643,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -1079,7 +1104,7 @@
       "thp": 116100000,
       "thp_display": "116.100.000",
       "donations": 0,
-      "kills": "+100%",
+      "kills": "3.640.645",
       "kills_pct": null,
       "events": "10/10",
       "ds": true,
@@ -1156,7 +1181,9 @@
       "vs_week_sum": 13048348,
       "vs_days": {
         "2026-10-19": 13048348
-      }
+      },
+      "kills_abs": 3640645,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -1166,7 +1193,7 @@
       "thp": 120400000,
       "thp_display": "120.400.000",
       "donations": 0,
-      "kills": "+100%",
+      "kills": "3.874.380",
       "kills_pct": null,
       "events": "10/10",
       "ds": false,
@@ -1243,7 +1270,9 @@
       "vs_week_sum": 4940293,
       "vs_days": {
         "2026-10-19": 4940293
-      }
+      },
+      "kills_abs": 3874380,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -1253,7 +1282,7 @@
       "thp": 126400000,
       "thp_display": "126.400.000",
       "donations": 2150,
-      "kills": "+100%",
+      "kills": "6.384.949",
       "kills_pct": null,
       "events": "10/10",
       "ds": true,
@@ -1330,7 +1359,9 @@
       "vs_week_sum": 6444000,
       "vs_days": {
         "2026-10-19": 6444000
-      }
+      },
+      "kills_abs": 6384949,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -1340,7 +1371,7 @@
       "thp": 107000000,
       "thp_display": "107.000.000",
       "donations": 4050,
-      "kills": "+100%",
+      "kills": "3.365.108",
       "kills_pct": null,
       "events": "10/10",
       "ds": true,
@@ -1417,7 +1448,9 @@
       "vs_week_sum": 8271563,
       "vs_days": {
         "2026-10-19": 8271563
-      }
+      },
+      "kills_abs": 3365108,
+      "kills_delta": null
     },
     {
       "role": "R4",
@@ -1427,7 +1460,7 @@
       "thp": 147100000,
       "thp_display": "147.100.000",
       "donations": 550,
-      "kills": "+100%",
+      "kills": "4.916.815",
       "kills_pct": null,
       "events": "10/10",
       "ds": true,
@@ -1504,7 +1537,9 @@
       "vs_week_sum": 12064536,
       "vs_days": {
         "2026-10-19": 12064536
-      }
+      },
+      "kills_abs": 4916815,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -1514,7 +1549,7 @@
       "thp": 113100000,
       "thp_display": "113.100.000",
       "donations": 0,
-      "kills": "+100%",
+      "kills": "3.094.875",
       "kills_pct": null,
       "events": "10/10",
       "ds": false,
@@ -1591,7 +1626,9 @@
       "vs_week_sum": 7592327,
       "vs_days": {
         "2026-10-19": 7592327
-      }
+      },
+      "kills_abs": 3094875,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -1601,7 +1638,7 @@
       "thp": 122600000,
       "thp_display": "122.600.000",
       "donations": 5450,
-      "kills": "+100%",
+      "kills": "2.932.014",
       "kills_pct": null,
       "events": "",
       "ds": true,
@@ -1673,7 +1710,9 @@
       "vs_week_sum": 7660190,
       "vs_days": {
         "2026-10-19": 7660190
-      }
+      },
+      "kills_abs": 2932014,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -1683,7 +1722,7 @@
       "thp": 139000000,
       "thp_display": "139.000.000",
       "donations": 3850,
-      "kills": "+100%",
+      "kills": "3.132.014",
       "kills_pct": null,
       "events": "10/10",
       "ds": true,
@@ -1760,7 +1799,9 @@
       "vs_week_sum": 22118498,
       "vs_days": {
         "2026-10-19": 22118498
-      }
+      },
+      "kills_abs": 3132014,
+      "kills_delta": null
     },
     {
       "role": "R4",
@@ -1770,7 +1811,7 @@
       "thp": 122500000,
       "thp_display": "122.500.000",
       "donations": 4500,
-      "kills": "+100%",
+      "kills": "3.774.494",
       "kills_pct": null,
       "events": "10/10",
       "ds": true,
@@ -1847,7 +1888,9 @@
       "vs_week_sum": 7243454,
       "vs_days": {
         "2026-10-19": 7243454
-      }
+      },
+      "kills_abs": 3774494,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -1857,7 +1900,7 @@
       "thp": 125900000,
       "thp_display": "125.900.000",
       "donations": 6350,
-      "kills": "+100%",
+      "kills": "3.218.773",
       "kills_pct": null,
       "events": "10/10",
       "ds": null,
@@ -1934,7 +1977,9 @@
       "vs_week_sum": 7288786,
       "vs_days": {
         "2026-10-19": 7288786
-      }
+      },
+      "kills_abs": 3218773,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -1944,7 +1989,7 @@
       "thp": 99500000,
       "thp_display": "99.500.000",
       "donations": 1850,
-      "kills": "+100%",
+      "kills": "3.354.251",
       "kills_pct": null,
       "events": "10/10",
       "ds": true,
@@ -2021,7 +2066,9 @@
       "vs_week_sum": 14860319,
       "vs_days": {
         "2026-10-19": 14860319
-      }
+      },
+      "kills_abs": 3354251,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -2031,7 +2078,7 @@
       "thp": 120400000,
       "thp_display": "120.400.000",
       "donations": 3800,
-      "kills": "+100%",
+      "kills": "3.063.584",
       "kills_pct": null,
       "events": "10/10",
       "ds": true,
@@ -2108,7 +2155,9 @@
       "vs_week_sum": 7281357,
       "vs_days": {
         "2026-10-19": 7281357
-      }
+      },
+      "kills_abs": 3063584,
+      "kills_delta": null
     },
     {
       "role": "R4",
@@ -2118,7 +2167,7 @@
       "thp": 139500000,
       "thp_display": "139.500.000",
       "donations": 6700,
-      "kills": "+100%",
+      "kills": "2.160.839",
       "kills_pct": null,
       "events": "10/10",
       "ds": true,
@@ -2195,7 +2244,9 @@
       "vs_week_sum": 7779111,
       "vs_days": {
         "2026-10-19": 7779111
-      }
+      },
+      "kills_abs": 2160839,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -2205,7 +2256,7 @@
       "thp": 103900000,
       "thp_display": "103.900.000",
       "donations": 3350,
-      "kills": "+100%",
+      "kills": "1.708.229",
       "kills_pct": null,
       "events": "",
       "ds": true,
@@ -2277,7 +2328,9 @@
       "vs_week_sum": 5127608,
       "vs_days": {
         "2026-10-19": 5127608
-      }
+      },
+      "kills_abs": 1708229,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -2287,7 +2340,7 @@
       "thp": 142000000,
       "thp_display": "142.000.000",
       "donations": 4700,
-      "kills": "+100%",
+      "kills": "1.769.832",
       "kills_pct": null,
       "events": "10/10",
       "ds": true,
@@ -2364,7 +2417,9 @@
       "vs_week_sum": 8341000,
       "vs_days": {
         "2026-10-19": 8341000
-      }
+      },
+      "kills_abs": 1769832,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -2374,7 +2429,7 @@
       "thp": 122400000,
       "thp_display": "122.400.000",
       "donations": 3800,
-      "kills": "+100%",
+      "kills": "3.235.937",
       "kills_pct": null,
       "events": "10/10",
       "ds": true,
@@ -2451,7 +2506,9 @@
       "vs_week_sum": 15836223,
       "vs_days": {
         "2026-10-19": 15836223
-      }
+      },
+      "kills_abs": 3235937,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -2461,7 +2518,7 @@
       "thp": 109400000,
       "thp_display": "109.400.000",
       "donations": 0,
-      "kills": "+100%",
+      "kills": "1.686.650",
       "kills_pct": null,
       "events": "10/10",
       "ds": true,
@@ -2538,7 +2595,9 @@
       "vs_week_sum": 8672783,
       "vs_days": {
         "2026-10-19": 8672783
-      }
+      },
+      "kills_abs": 1686650,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -2548,7 +2607,7 @@
       "thp": 122300000,
       "thp_display": "122.300.000",
       "donations": 7000,
-      "kills": "+100%",
+      "kills": "2.324.872",
       "kills_pct": null,
       "events": "10/10",
       "ds": true,
@@ -2625,7 +2684,9 @@
       "vs_week_sum": 7200004,
       "vs_days": {
         "2026-10-19": 7200004
-      }
+      },
+      "kills_abs": 2324872,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -2635,7 +2696,7 @@
       "thp": 107900000,
       "thp_display": "107.900.000",
       "donations": 3250,
-      "kills": "+100%",
+      "kills": "1.814.707",
       "kills_pct": null,
       "events": "10/10",
       "ds": null,
@@ -2712,7 +2773,9 @@
       "vs_week_sum": 7200002,
       "vs_days": {
         "2026-10-19": 7200002
-      }
+      },
+      "kills_abs": 1814707,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -2722,7 +2785,7 @@
       "thp": 124400000,
       "thp_display": "124.400.000",
       "donations": 2750,
-      "kills": "+100%",
+      "kills": "2.059.415",
       "kills_pct": null,
       "events": "10/10",
       "ds": true,
@@ -2799,7 +2862,9 @@
       "vs_week_sum": 7384688,
       "vs_days": {
         "2026-10-19": 7384688
-      }
+      },
+      "kills_abs": 2059415,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -2809,7 +2874,7 @@
       "thp": 135900000,
       "thp_display": "135.900.000",
       "donations": 2800,
-      "kills": "+100%",
+      "kills": "1.817.708",
       "kills_pct": null,
       "events": "10/10",
       "ds": true,
@@ -2886,7 +2951,9 @@
       "vs_week_sum": 10148438,
       "vs_days": {
         "2026-10-19": 10148438
-      }
+      },
+      "kills_abs": 1817708,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -2896,7 +2963,7 @@
       "thp": 98200000,
       "thp_display": "98.200.000",
       "donations": 0,
-      "kills": "+100%",
+      "kills": "1.344.924",
       "kills_pct": null,
       "events": "10/10",
       "ds": null,
@@ -2973,7 +3040,9 @@
       "vs_week_sum": 9875436,
       "vs_days": {
         "2026-10-19": 9875436
-      }
+      },
+      "kills_abs": 1344924,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -2983,7 +3052,7 @@
       "thp": 111900000,
       "thp_display": "111.900.000",
       "donations": 4850,
-      "kills": "+100%",
+      "kills": "1.603.837",
       "kills_pct": null,
       "events": "10/10",
       "ds": true,
@@ -3060,7 +3129,9 @@
       "vs_week_sum": 7364257,
       "vs_days": {
         "2026-10-19": 7364257
-      }
+      },
+      "kills_abs": 1603837,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -3070,7 +3141,7 @@
       "thp": 105100000,
       "thp_display": "105.100.000",
       "donations": 0,
-      "kills": "+100%",
+      "kills": "1.597.930",
       "kills_pct": null,
       "events": "10/10",
       "ds": false,
@@ -3147,7 +3218,9 @@
       "vs_week_sum": 8002107,
       "vs_days": {
         "2026-10-19": 8002107
-      }
+      },
+      "kills_abs": 1597930,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -3157,7 +3230,7 @@
       "thp": 146300000,
       "thp_display": "146.300.000",
       "donations": 3350,
-      "kills": "+100%",
+      "kills": "1.620.978",
       "kills_pct": null,
       "events": "10/10",
       "ds": null,
@@ -3234,7 +3307,9 @@
       "vs_week_sum": 8687678,
       "vs_days": {
         "2026-10-19": 8687678
-      }
+      },
+      "kills_abs": 1620978,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -3244,7 +3319,7 @@
       "thp": 119500000,
       "thp_display": "119.500.000",
       "donations": 6150,
-      "kills": "+100%",
+      "kills": "1.738.100",
       "kills_pct": null,
       "events": "10/10",
       "ds": false,
@@ -3321,7 +3396,9 @@
       "vs_week_sum": 7407790,
       "vs_days": {
         "2026-10-19": 7407790
-      }
+      },
+      "kills_abs": 1738100,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -3331,7 +3408,7 @@
       "thp": 109300000,
       "thp_display": "109.300.000",
       "donations": 4150,
-      "kills": "+100%",
+      "kills": "1.431.012",
       "kills_pct": null,
       "events": "10/10",
       "ds": null,
@@ -3408,7 +3485,9 @@
       "vs_week_sum": 7200003,
       "vs_days": {
         "2026-10-19": 7200003
-      }
+      },
+      "kills_abs": 1431012,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -3418,7 +3497,7 @@
       "thp": 106300000,
       "thp_display": "106.300.000",
       "donations": 2100,
-      "kills": "+100%",
+      "kills": "1.673.301",
       "kills_pct": null,
       "events": "10/10",
       "ds": true,
@@ -3495,7 +3574,9 @@
       "vs_week_sum": 4568085,
       "vs_days": {
         "2026-10-19": 4568085
-      }
+      },
+      "kills_abs": 1673301,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -3505,7 +3586,7 @@
       "thp": 121600000,
       "thp_display": "121.600.000",
       "donations": 4900,
-      "kills": "+100%",
+      "kills": "1.449.300",
       "kills_pct": null,
       "events": "10/10",
       "ds": true,
@@ -3582,7 +3663,9 @@
       "vs_week_sum": 8647240,
       "vs_days": {
         "2026-10-19": 8647240
-      }
+      },
+      "kills_abs": 1449300,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -3592,7 +3675,7 @@
       "thp": 108000000,
       "thp_display": "108.000.000",
       "donations": 5150,
-      "kills": "+100%",
+      "kills": "1.300.540",
       "kills_pct": null,
       "events": "10/10",
       "ds": true,
@@ -3669,7 +3752,9 @@
       "vs_week_sum": 20427207,
       "vs_days": {
         "2026-10-19": 20427207
-      }
+      },
+      "kills_abs": 1300540,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -3679,7 +3764,7 @@
       "thp": 121100000,
       "thp_display": "121.100.000",
       "donations": 0,
-      "kills": "+100%",
+      "kills": "1.840.230",
       "kills_pct": null,
       "events": "10/10",
       "ds": true,
@@ -3756,7 +3841,9 @@
       "vs_week_sum": 7491620,
       "vs_days": {
         "2026-10-19": 7491620
-      }
+      },
+      "kills_abs": 1840230,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -3766,7 +3853,7 @@
       "thp": 109700000,
       "thp_display": "109.700.000",
       "donations": 5800,
-      "kills": "+100%",
+      "kills": "1.007.321",
       "kills_pct": null,
       "events": "10/10",
       "ds": null,
@@ -3843,7 +3930,9 @@
       "vs_week_sum": 17509077,
       "vs_days": {
         "2026-10-19": 17509077
-      }
+      },
+      "kills_abs": 1007321,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -3853,7 +3942,7 @@
       "thp": 108900000,
       "thp_display": "108.900.000",
       "donations": 2650,
-      "kills": "+100%",
+      "kills": "1.145.232",
       "kills_pct": null,
       "events": "10/10",
       "ds": false,
@@ -3930,7 +4019,9 @@
       "vs_week_sum": 8884204,
       "vs_days": {
         "2026-10-19": 8884204
-      }
+      },
+      "kills_abs": 1145232,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -3940,7 +4031,7 @@
       "thp": 100500000,
       "thp_display": "100.500.000",
       "donations": 3850,
-      "kills": "+100%",
+      "kills": "717.622",
       "kills_pct": null,
       "events": "10/10",
       "ds": null,
@@ -4017,7 +4108,9 @@
       "vs_week_sum": 7292001,
       "vs_days": {
         "2026-10-19": 7292001
-      }
+      },
+      "kills_abs": 717622,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -4027,7 +4120,7 @@
       "thp": 120300000,
       "thp_display": "120.300.000",
       "donations": 8050,
-      "kills": "+100%",
+      "kills": "911.970",
       "kills_pct": null,
       "events": "10/10",
       "ds": null,
@@ -4104,7 +4197,9 @@
       "vs_week_sum": 9285367,
       "vs_days": {
         "2026-10-19": 9285367
-      }
+      },
+      "kills_abs": 911970,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -4114,7 +4209,7 @@
       "thp": 105400000,
       "thp_display": "105.400.000",
       "donations": 5100,
-      "kills": "+100%",
+      "kills": "915.506",
       "kills_pct": null,
       "events": "—",
       "ds": false,
@@ -4191,7 +4286,9 @@
       "vs_week_sum": 9165362,
       "vs_days": {
         "2026-10-19": 9165362
-      }
+      },
+      "kills_abs": 915506,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -4201,7 +4298,7 @@
       "thp": 109400000,
       "thp_display": "109.400.000",
       "donations": 2900,
-      "kills": "+100%",
+      "kills": "675.741",
       "kills_pct": null,
       "events": "10/10",
       "ds": null,
@@ -4278,7 +4375,9 @@
       "vs_week_sum": 10616116,
       "vs_days": {
         "2026-10-19": 10616116
-      }
+      },
+      "kills_abs": 675741,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -4288,7 +4387,7 @@
       "thp": 122600000,
       "thp_display": "122.600.000",
       "donations": 5100,
-      "kills": "+100%",
+      "kills": "2.242.282",
       "kills_pct": null,
       "events": "",
       "ds": null,
@@ -4360,7 +4459,9 @@
       "vs_week_sum": 10647564,
       "vs_days": {
         "2026-10-19": 10647564
-      }
+      },
+      "kills_abs": 2242282,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -4370,7 +4471,7 @@
       "thp": 103400000,
       "thp_display": "103.400.000",
       "donations": 3100,
-      "kills": "+100%",
+      "kills": "1.231.654",
       "kills_pct": null,
       "events": "10/10",
       "ds": null,
@@ -4447,7 +4548,9 @@
       "vs_week_sum": 3177188,
       "vs_days": {
         "2026-10-19": 3177188
-      }
+      },
+      "kills_abs": 1231654,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -4457,7 +4560,7 @@
       "thp": 103300000,
       "thp_display": "103.300.000",
       "donations": 7350,
-      "kills": "+100%",
+      "kills": "2.506.117",
       "kills_pct": null,
       "events": "",
       "ds": true,
@@ -4529,7 +4632,9 @@
       "vs_week_sum": 7900011,
       "vs_days": {
         "2026-10-19": 7900011
-      }
+      },
+      "kills_abs": 2506117,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -4539,7 +4644,7 @@
       "thp": 113100000,
       "thp_display": "113.100.000",
       "donations": 3250,
-      "kills": "+100%",
+      "kills": "1.892.447",
       "kills_pct": null,
       "events": "",
       "ds": false,
@@ -4611,7 +4716,9 @@
       "vs_week_sum": 8200875,
       "vs_days": {
         "2026-10-19": 8200875
-      }
+      },
+      "kills_abs": 1892447,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -4621,7 +4728,7 @@
       "thp": 128800000,
       "thp_display": "128.800.000",
       "donations": 5000,
-      "kills": "+100%",
+      "kills": "2.714.535",
       "kills_pct": null,
       "events": "",
       "ds": true,
@@ -4693,7 +4800,9 @@
       "vs_week_sum": 7200005,
       "vs_days": {
         "2026-10-19": 7200005
-      }
+      },
+      "kills_abs": 2714535,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -4703,7 +4812,7 @@
       "thp": null,
       "thp_display": "",
       "donations": 3100,
-      "kills": "+100%",
+      "kills": "552.046",
       "kills_pct": null,
       "events": "",
       "ds": null,
@@ -4775,7 +4884,9 @@
       "vs_week_sum": 19751403,
       "vs_days": {
         "2026-10-19": 19751403
-      }
+      },
+      "kills_abs": 552046,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -4785,7 +4896,7 @@
       "thp": null,
       "thp_display": "",
       "donations": 3350,
-      "kills": "+100%",
+      "kills": "999.756",
       "kills_pct": null,
       "events": "",
       "ds": null,
@@ -4857,7 +4968,9 @@
       "vs_week_sum": 14441028,
       "vs_days": {
         "2026-10-19": 14441028
-      }
+      },
+      "kills_abs": 999756,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -4867,7 +4980,7 @@
       "thp": null,
       "thp_display": "",
       "donations": 5250,
-      "kills": "+100%",
+      "kills": "1.516.676",
       "kills_pct": null,
       "events": "",
       "ds": true,
@@ -4939,7 +5052,9 @@
       "vs_week_sum": 8651625,
       "vs_days": {
         "2026-10-19": 8651625
-      }
+      },
+      "kills_abs": 1516676,
+      "kills_delta": null
     },
     {
       "role": "R4",
@@ -4949,7 +5064,7 @@
       "thp": null,
       "thp_display": "",
       "donations": 4650,
-      "kills": "+100%",
+      "kills": "1.639.092",
       "kills_pct": null,
       "events": "",
       "ds": true,
@@ -5021,7 +5136,9 @@
       "vs_week_sum": 8601357,
       "vs_days": {
         "2026-10-19": 8601357
-      }
+      },
+      "kills_abs": 1639092,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -5031,7 +5148,7 @@
       "thp": null,
       "thp_display": "",
       "donations": 4200,
-      "kills": "+100%",
+      "kills": "375.643",
       "kills_pct": null,
       "events": "",
       "ds": null,
@@ -5103,7 +5220,9 @@
       "vs_week_sum": 7200000,
       "vs_days": {
         "2026-10-19": 7200000
-      }
+      },
+      "kills_abs": 375643,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -5113,7 +5232,7 @@
       "thp": null,
       "thp_display": "",
       "donations": 5600,
-      "kills": "+100%",
+      "kills": "1.074.717",
       "kills_pct": null,
       "events": "",
       "ds": true,
@@ -5185,7 +5304,9 @@
       "vs_week_sum": 12018212,
       "vs_days": {
         "2026-10-19": 12018212
-      }
+      },
+      "kills_abs": 1074717,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -5195,7 +5316,7 @@
       "thp": null,
       "thp_display": "",
       "donations": 3900,
-      "kills": "+100%",
+      "kills": "495.095",
       "kills_pct": null,
       "events": "",
       "ds": true,
@@ -5267,7 +5388,9 @@
       "vs_week_sum": 5786003,
       "vs_days": {
         "2026-10-19": 5786003
-      }
+      },
+      "kills_abs": 495095,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -5277,7 +5400,7 @@
       "thp": null,
       "thp_display": "",
       "donations": 1550,
-      "kills": "+100%",
+      "kills": "217.089",
       "kills_pct": null,
       "events": "",
       "ds": null,
@@ -5349,7 +5472,9 @@
       "vs_week_sum": 1950908,
       "vs_days": {
         "2026-10-19": 1950908
-      }
+      },
+      "kills_abs": 217089,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -5359,7 +5484,7 @@
       "thp": null,
       "thp_display": "",
       "donations": 2500,
-      "kills": "+100%",
+      "kills": "1.662.225",
       "kills_pct": null,
       "events": "",
       "ds": true,
@@ -5431,7 +5556,9 @@
       "vs_week_sum": 14999958,
       "vs_days": {
         "2026-10-19": 14999958
-      }
+      },
+      "kills_abs": 1662225,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -5441,7 +5568,7 @@
       "thp": null,
       "thp_display": "",
       "donations": 2850,
-      "kills": "+100%",
+      "kills": "613.727",
       "kills_pct": null,
       "events": "",
       "ds": true,
@@ -5513,7 +5640,9 @@
       "vs_week_sum": 8591503,
       "vs_days": {
         "2026-10-19": 8591503
-      }
+      },
+      "kills_abs": 613727,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -5523,7 +5652,7 @@
       "thp": null,
       "thp_display": "",
       "donations": 6250,
-      "kills": "+100%",
+      "kills": "6.058.688",
       "kills_pct": null,
       "events": "",
       "ds": true,
@@ -5595,7 +5724,9 @@
       "vs_week_sum": 17288967,
       "vs_days": {
         "2026-10-19": 17288967
-      }
+      },
+      "kills_abs": 6058688,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -5605,7 +5736,7 @@
       "thp": null,
       "thp_display": "",
       "donations": 750,
-      "kills": "+100%",
+      "kills": "5.683.735",
       "kills_pct": null,
       "events": "",
       "ds": null,
@@ -5677,7 +5808,9 @@
       "vs_week_sum": 10605521,
       "vs_days": {
         "2026-10-19": 10605521
-      }
+      },
+      "kills_abs": 5683735,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -5687,7 +5820,7 @@
       "thp": null,
       "thp_display": "",
       "donations": 0,
-      "kills": "+100%",
+      "kills": "6.184.899",
       "kills_pct": null,
       "events": "",
       "ds": true,
@@ -5759,7 +5892,9 @@
       "vs_week_sum": 15312758,
       "vs_days": {
         "2026-10-19": 15312758
-      }
+      },
+      "kills_abs": 6184899,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -5769,7 +5904,7 @@
       "thp": null,
       "thp_display": "",
       "donations": 4700,
-      "kills": "+100%",
+      "kills": "5.653.395",
       "kills_pct": null,
       "events": "",
       "ds": true,
@@ -5841,7 +5976,9 @@
       "vs_week_sum": 5048532,
       "vs_days": {
         "2026-10-19": 5048532
-      }
+      },
+      "kills_abs": 5653395,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -5851,7 +5988,7 @@
       "thp": null,
       "thp_display": "",
       "donations": 0,
-      "kills": "+100%",
+      "kills": "4.270.716",
       "kills_pct": null,
       "events": "",
       "ds": true,
@@ -5923,7 +6060,9 @@
       "vs_week_sum": 2259553,
       "vs_days": {
         "2026-10-19": 2259553
-      }
+      },
+      "kills_abs": 4270716,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -5933,7 +6072,7 @@
       "thp": null,
       "thp_display": "",
       "donations": 3500,
-      "kills": "+100%",
+      "kills": "3.378.648",
       "kills_pct": null,
       "events": "",
       "ds": true,
@@ -6005,7 +6144,9 @@
       "vs_week_sum": 6455749,
       "vs_days": {
         "2026-10-19": 6455749
-      }
+      },
+      "kills_abs": 3378648,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -6015,7 +6156,7 @@
       "thp": null,
       "thp_display": "",
       "donations": 5600,
-      "kills": "+100%",
+      "kills": "2.734.183",
       "kills_pct": null,
       "events": "",
       "ds": true,
@@ -6087,7 +6228,9 @@
       "vs_week_sum": 7257254,
       "vs_days": {
         "2026-10-19": 7257254
-      }
+      },
+      "kills_abs": 2734183,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -6097,7 +6240,7 @@
       "thp": null,
       "thp_display": "",
       "donations": 5500,
-      "kills": "+100%",
+      "kills": "2.496.526",
       "kills_pct": null,
       "events": "",
       "ds": true,
@@ -6169,7 +6312,9 @@
       "vs_week_sum": 21976991,
       "vs_days": {
         "2026-10-19": 21976991
-      }
+      },
+      "kills_abs": 2496526,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -6179,7 +6324,7 @@
       "thp": null,
       "thp_display": "",
       "donations": 5100,
-      "kills": "+100%",
+      "kills": "1.390.019",
       "kills_pct": null,
       "events": "",
       "ds": false,
@@ -6251,7 +6396,9 @@
       "vs_week_sum": 14087160,
       "vs_days": {
         "2026-10-19": 14087160
-      }
+      },
+      "kills_abs": 1390019,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -6261,7 +6408,7 @@
       "thp": null,
       "thp_display": "",
       "donations": 0,
-      "kills": "+100%",
+      "kills": "1.289.481",
       "kills_pct": null,
       "events": "",
       "ds": false,
@@ -6333,7 +6480,9 @@
       "vs_week_sum": 7201613,
       "vs_days": {
         "2026-10-19": 7201613
-      }
+      },
+      "kills_abs": 1289481,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -6343,7 +6492,7 @@
       "thp": null,
       "thp_display": "",
       "donations": 3100,
-      "kills": "+100%",
+      "kills": "1.216.282",
       "kills_pct": null,
       "events": "",
       "ds": null,
@@ -6415,7 +6564,9 @@
       "vs_week_sum": 4117500,
       "vs_days": {
         "2026-10-19": 4117500
-      }
+      },
+      "kills_abs": 1216282,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -6425,7 +6576,7 @@
       "thp": null,
       "thp_display": "",
       "donations": 4750,
-      "kills": "+100%",
+      "kills": "1.108.071",
       "kills_pct": null,
       "events": "",
       "ds": null,
@@ -6497,7 +6648,9 @@
       "vs_week_sum": 17937183,
       "vs_days": {
         "2026-10-19": 17937183
-      }
+      },
+      "kills_abs": 1108071,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -6507,7 +6660,7 @@
       "thp": null,
       "thp_display": "",
       "donations": 0,
-      "kills": "+100%",
+      "kills": "1.161.580",
       "kills_pct": null,
       "events": "",
       "ds": false,
@@ -6579,7 +6732,9 @@
       "vs_week_sum": 12272402,
       "vs_days": {
         "2026-10-19": 12272402
-      }
+      },
+      "kills_abs": 1161580,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -6589,7 +6744,7 @@
       "thp": null,
       "thp_display": "",
       "donations": 7850,
-      "kills": "+100%",
+      "kills": "863.473",
       "kills_pct": null,
       "events": "",
       "ds": true,
@@ -6661,7 +6816,9 @@
       "vs_week_sum": 7616473,
       "vs_days": {
         "2026-10-19": 7616473
-      }
+      },
+      "kills_abs": 863473,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -6671,7 +6828,7 @@
       "thp": null,
       "thp_display": "",
       "donations": 3000,
-      "kills": "+100%",
+      "kills": "897.291",
       "kills_pct": null,
       "events": "",
       "ds": null,
@@ -6743,7 +6900,9 @@
       "vs_week_sum": 23518208,
       "vs_days": {
         "2026-10-19": 23518208
-      }
+      },
+      "kills_abs": 897291,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -6753,7 +6912,7 @@
       "thp": null,
       "thp_display": "",
       "donations": 4650,
-      "kills": "+100%",
+      "kills": "12.380.647",
       "kills_pct": null,
       "events": "",
       "ds": true,
@@ -6825,7 +6984,9 @@
       "vs_week_sum": 9266794,
       "vs_days": {
         "2026-10-19": 9266794
-      }
+      },
+      "kills_abs": 12380647,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -6835,7 +6996,7 @@
       "thp": null,
       "thp_display": "",
       "donations": 1950,
-      "kills": "+100%",
+      "kills": "8.150.180",
       "kills_pct": null,
       "events": "",
       "ds": true,
@@ -6907,7 +7068,9 @@
       "vs_week_sum": 10379405,
       "vs_days": {
         "2026-10-19": 10379405
-      }
+      },
+      "kills_abs": 8150180,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -6917,7 +7080,7 @@
       "thp": null,
       "thp_display": "",
       "donations": 3100,
-      "kills": "+100%",
+      "kills": "2.497.679",
       "kills_pct": null,
       "events": "",
       "ds": true,
@@ -6989,7 +7152,9 @@
       "vs_week_sum": 19799213,
       "vs_days": {
         "2026-10-19": 19799213
-      }
+      },
+      "kills_abs": 2497679,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -6999,7 +7164,7 @@
       "thp": null,
       "thp_display": "",
       "donations": 2350,
-      "kills": "+100%",
+      "kills": "1.527.440",
       "kills_pct": null,
       "events": "",
       "ds": true,
@@ -7071,7 +7236,9 @@
       "vs_week_sum": 7685326,
       "vs_days": {
         "2026-10-19": 7685326
-      }
+      },
+      "kills_abs": 1527440,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -7081,7 +7248,7 @@
       "thp": null,
       "thp_display": "",
       "donations": 3100,
-      "kills": "+100%",
+      "kills": "2.698.268",
       "kills_pct": null,
       "events": "",
       "ds": null,
@@ -7153,7 +7320,9 @@
       "vs_week_sum": 5977814,
       "vs_days": {
         "2026-10-19": 5977814
-      }
+      },
+      "kills_abs": 2698268,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -7163,7 +7332,7 @@
       "thp": null,
       "thp_display": "",
       "donations": 7850,
-      "kills": "+100%",
+      "kills": "2.281.321",
       "kills_pct": null,
       "events": "",
       "ds": false,
@@ -7235,7 +7404,9 @@
       "vs_week_sum": 7365141,
       "vs_days": {
         "2026-10-19": 7365141
-      }
+      },
+      "kills_abs": 2281321,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -7245,7 +7416,7 @@
       "thp": null,
       "thp_display": "",
       "donations": 3400,
-      "kills": "+100%",
+      "kills": "1.683.381",
       "kills_pct": null,
       "events": "",
       "ds": true,
@@ -7317,7 +7488,9 @@
       "vs_week_sum": 10728169,
       "vs_days": {
         "2026-10-19": 10728169
-      }
+      },
+      "kills_abs": 1683381,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -7327,7 +7500,7 @@
       "thp": null,
       "thp_display": "",
       "donations": 4050,
-      "kills": "+100%",
+      "kills": "1.312.599",
       "kills_pct": null,
       "events": "",
       "ds": false,
@@ -7399,7 +7572,9 @@
       "vs_week_sum": 7374705,
       "vs_days": {
         "2026-10-19": 7374705
-      }
+      },
+      "kills_abs": 1312599,
+      "kills_delta": null
     },
     {
       "role": "R2",
@@ -7409,7 +7584,7 @@
       "thp": null,
       "thp_display": "",
       "donations": 2850,
-      "kills": "+100%",
+      "kills": "4.418.573",
       "kills_pct": null,
       "events": "",
       "ds": null,
@@ -7481,7 +7656,9 @@
       "vs_week_sum": 12030069,
       "vs_days": {
         "2026-10-19": 12030069
-      }
+      },
+      "kills_abs": 4418573,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -7491,7 +7668,7 @@
       "thp": null,
       "thp_display": "",
       "donations": 4900,
-      "kills": "+100%",
+      "kills": "4.344.872",
       "kills_pct": null,
       "events": "",
       "ds": true,
@@ -7563,7 +7740,9 @@
       "vs_week_sum": 14058408,
       "vs_days": {
         "2026-10-19": 14058408
-      }
+      },
+      "kills_abs": 4344872,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -7573,7 +7752,7 @@
       "thp": null,
       "thp_display": "",
       "donations": 5250,
-      "kills": "+100%",
+      "kills": "17.743.025",
       "kills_pct": null,
       "events": "",
       "ds": true,
@@ -7645,7 +7824,9 @@
       "vs_week_sum": 12563171,
       "vs_days": {
         "2026-10-19": 12563171
-      }
+      },
+      "kills_abs": 17743025,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -7655,7 +7836,7 @@
       "thp": null,
       "thp_display": "",
       "donations": 3100,
-      "kills": "+100%",
+      "kills": "14.261.420",
       "kills_pct": null,
       "events": "",
       "ds": true,
@@ -7727,7 +7908,9 @@
       "vs_week_sum": 10929893,
       "vs_days": {
         "2026-10-19": 10929893
-      }
+      },
+      "kills_abs": 14261420,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -7737,7 +7920,7 @@
       "thp": null,
       "thp_display": "",
       "donations": 3900,
-      "kills": "+100%",
+      "kills": "14.392.917",
       "kills_pct": null,
       "events": "",
       "ds": true,
@@ -7809,7 +7992,9 @@
       "vs_week_sum": 13634063,
       "vs_days": {
         "2026-10-19": 13634063
-      }
+      },
+      "kills_abs": 14392917,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -7819,7 +8004,7 @@
       "thp": null,
       "thp_display": "",
       "donations": 0,
-      "kills": "+100%",
+      "kills": "1.184.618",
       "kills_pct": null,
       "events": "",
       "ds": true,
@@ -7891,7 +8076,9 @@
       "vs_week_sum": 7170055,
       "vs_days": {
         "2026-10-19": 7170055
-      }
+      },
+      "kills_abs": 1184618,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -7901,7 +8088,7 @@
       "thp": null,
       "thp_display": "",
       "donations": 3350,
-      "kills": "+100%",
+      "kills": "2.352.577",
       "kills_pct": null,
       "events": "",
       "ds": null,
@@ -7973,7 +8160,9 @@
       "vs_week_sum": 13619689,
       "vs_days": {
         "2026-10-19": 13619689
-      }
+      },
+      "kills_abs": 2352577,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -7983,7 +8172,7 @@
       "thp": null,
       "thp_display": "",
       "donations": 0,
-      "kills": "+100%",
+      "kills": "24.841.352",
       "kills_pct": null,
       "events": "",
       "ds": null,
@@ -8055,7 +8244,9 @@
       "vs_week_sum": 8991835,
       "vs_days": {
         "2026-10-19": 8991835
-      }
+      },
+      "kills_abs": 24841352,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -8065,7 +8256,7 @@
       "thp": 136800000,
       "thp_display": "136.800.000",
       "donations": 0,
-      "kills": "+100%",
+      "kills": "3.356.861",
       "kills_pct": null,
       "events": "",
       "ds": null,
@@ -8137,7 +8328,9 @@
       "vs_week_sum": 9982500,
       "vs_days": {
         "2026-10-19": 9982500
-      }
+      },
+      "kills_abs": 3356861,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -8147,7 +8340,7 @@
       "thp": null,
       "thp_display": "",
       "donations": 2950,
-      "kills": "+100%",
+      "kills": "421.954",
       "kills_pct": null,
       "events": "",
       "ds": null,
@@ -8219,7 +8412,9 @@
       "vs_week_sum": 7865001,
       "vs_days": {
         "2026-10-19": 7865001
-      }
+      },
+      "kills_abs": 421954,
+      "kills_delta": null
     },
     {
       "role": "R2",
@@ -8229,7 +8424,7 @@
       "thp": null,
       "thp_display": "",
       "donations": 0,
-      "kills": "+100%",
+      "kills": "414.572",
       "kills_pct": null,
       "events": "",
       "ds": null,
@@ -8301,7 +8496,9 @@
       "vs_week_sum": 0,
       "vs_days": {
         "2026-10-19": 0
-      }
+      },
+      "kills_abs": 414572,
+      "kills_delta": null
     },
     {
       "role": "R2",
@@ -8311,7 +8508,7 @@
       "thp": null,
       "thp_display": "",
       "donations": 2200,
-      "kills": "+100%",
+      "kills": "4.335.865",
       "kills_pct": null,
       "events": "",
       "ds": null,
@@ -8383,7 +8580,9 @@
       "vs_week_sum": 12536856,
       "vs_days": {
         "2026-10-19": 12536856
-      }
+      },
+      "kills_abs": 4335865,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -8393,7 +8592,7 @@
       "thp": 103800000,
       "thp_display": "103.800.000",
       "donations": 0,
-      "kills": "+100%",
+      "kills": "800.300",
       "kills_pct": null,
       "events": "",
       "ds": null,
@@ -8437,7 +8636,9 @@
       "vs_week_sum": 0,
       "vs_days": {
         "2026-10-19": 0
-      }
+      },
+      "kills_abs": 800300,
+      "kills_delta": null
     },
     {
       "role": "R3",
@@ -8447,7 +8648,7 @@
       "thp": 103800000,
       "thp_display": "103.800.000",
       "donations": 0,
-      "kills": "+100%",
+      "kills": "1.074.717",
       "kills_pct": null,
       "events": "",
       "ds": null,
@@ -8491,7 +8692,9 @@
       "vs_week_sum": 0,
       "vs_days": {
         "2026-10-19": 0
-      }
+      },
+      "kills_abs": 1074717,
+      "kills_delta": null
     }
   ],
   "summary": {
