@@ -8387,7 +8387,7 @@
     },
     {
       "role": "R3",
-      "name": "Kaizennnnnnnnnn",
+      "name": "Kaizennnnnnnnnnnn",
       "active": true,
       "t1": "",
       "thp": 103800000,
@@ -8442,7 +8442,7 @@
     {
       "role": "R3",
       "name": "YaneRay",
-      "active": true,
+      "active": false,
       "t1": "",
       "thp": 103800000,
       "thp_display": "103.800.000",
@@ -9318,7 +9318,7 @@
           }
         },
         {
-          "name": "Kaizennnnnnnnnn",
+          "name": "Kaizennnnnnnnnnnn",
           "latest": 0,
           "weekly_avg": 0,
           "values": {
@@ -15404,8 +15404,8 @@
     },
     {
       "date": "2026-10-20",
-      "avg": 0.3773,
-      "n": 101,
+      "avg": 0.3811,
+      "n": 100,
       "source": "live"
     }
   ]

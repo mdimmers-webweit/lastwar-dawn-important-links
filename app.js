@@ -3,7 +3,7 @@
 let DATA = null;
 
 const ROLE_OPTIONS = ["R5", "R4", "R3", "R2", "R1"];
-const CACHE_BUST = "20261020-overview";
+const CACHE_BUST = "20261020-wenig-fix";
 
 /** Season contribution columns — mirrors Sheet tabs / SEASON_CATEGORIES. */
 const SEASON_CATS = [
@@ -1230,10 +1230,29 @@ function renderRankList(items, valueFn, emptyMsg) {
   );
 }
 
+/** True if member has any KPI signal — not just a 0% ghost after Fresh Start / name miss. */
+function hasActivitySignal(m) {
+  if ((Number(m.donations) || 0) > 0) return true;
+  if ((Number(m.vs_week_sum) || Number(m.vs_latest) || 0) > 0) return true;
+  if ((Number(m.season_activity) || 0) > 0) return true;
+  if (m.kills_pct != null && !Number.isNaN(Number(m.kills_pct))) return true;
+  const cats = m.season_cats || {};
+  for (const key of Object.keys(cats)) {
+    if ((Number(cats[key] && cats[key].pts) || 0) > 0) return true;
+  }
+  return false;
+}
+
 function wenigAktivMembers(members) {
   const n = Math.min(10, Math.max(5, WENIG_AKTIV_COUNT));
   return members
-    .filter((m) => m.active && m.activity != null && !Number.isNaN(Number(m.activity)))
+    .filter(
+      (m) =>
+        m.active &&
+        m.activity != null &&
+        !Number.isNaN(Number(m.activity)) &&
+        hasActivitySignal(m)
+    )
     .slice()
     .sort(
       (a, b) =>
