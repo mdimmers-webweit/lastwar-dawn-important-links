@@ -451,6 +451,36 @@ table.t thead th {
   white-space: nowrap;
 }
 
+table.t thead th.sortable {
+  cursor: pointer;
+  user-select: none;
+  padding-right: 18px;
+}
+
+table.t thead th.sortable:hover {
+  color: var(--ink);
+  background: rgba(232, 120, 60, 0.12);
+}
+
+table.t thead th.sortable .sort-ind::after {
+  content: "↕";
+  margin-left: 4px;
+  opacity: 0.35;
+  font-size: 0.75em;
+}
+
+table.t thead th.sortable.sorted-asc .sort-ind::after {
+  content: "↑";
+  opacity: 1;
+  color: var(--ember);
+}
+
+table.t thead th.sortable.sorted-desc .sort-ind::after {
+  content: "↓";
+  opacity: 1;
+  color: var(--ember);
+}
+
 table.t tbody td {
   padding: 8px 12px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.04);
@@ -657,6 +687,23 @@ table.t.compact {
   accent-color: var(--ember);
   width: 1rem;
   height: 1rem;
+}
+
+.filter-reset {
+  margin-left: auto;
+  align-self: center;
+  padding: 6px 12px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--metal);
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.filter-reset:hover {
+  color: var(--ink);
+  border-color: var(--ember);
 }
 
 .filter-count {

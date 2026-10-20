@@ -3,7 +3,7 @@
 let DATA = null;
 
 const ROLE_OPTIONS = ["R5", "R4", "R3", "R2", "R1"];
-const CACHE_BUST = "20261020-filter-by-view-2";
+const CACHE_BUST = "20261020-table-sort";
 
 /** Season contribution columns — mirrors Sheet tabs / SEASON_CATEGORIES. */
 const SEASON_CATS = [
@@ -1596,6 +1596,12 @@ function bindFilterBarOnce(mount) {
     }
   });
   mount.addEventListener("click", (e) => {
+    if (e.target.closest("#filterReset")) {
+      filters = defaultFilters();
+      onFiltersChanged();
+      renderFilterBar();
+      return;
+    }
     const chip = e.target.closest(".role-chip");
     if (!chip || !chip.dataset.role) return;
     const role = chip.dataset.role;
@@ -1706,6 +1712,7 @@ function renderFilterBar() {
     '<div class="filter-bar glass">' +
     filterFieldsForView(view) +
     `<span class="filter-count">${n} / ${total} sichtbar</span>` +
+    '<button type="button" class="filter-reset" id="filterReset">Reset</button>' +
     "</div>";
   const vsSel = mount.querySelector("#filterVs");
   if (vsSel) vsSel.value = filters.vsFlag;
@@ -1775,25 +1782,138 @@ function renderKpiCards() {
   );
 }
 
+/** Attr-safe JSON for row sort payloads. */
+function attrJson(obj) {
+  return JSON.stringify(obj == null ? {} : obj)
+    .replace(/&/g, "&amp;")
+    .replace(/"/g, "&quot;");
+}
+
+function trendSortRank(t) {
+  if (t === "up") return 2;
+  if (t === "flat") return 1;
+  return 0;
+}
+
+function steepSortRank(s) {
+  if (s === "steep") return 3;
+  if (s === "mild") return 2;
+  if (s === "flat") return 1;
+  return 0;
+}
+
+function vsFlagSortRank(flag) {
+  const f = String(flag || "");
+  if (f === "OK") return 2;
+  if (/below/i.test(f)) return 0;
+  return 1;
+}
+
+let tableSortBound = false;
+
+function bindTableSortOnce() {
+  if (tableSortBound) return;
+  tableSortBound = true;
+  document.body.addEventListener("click", (e) => {
+    const th = e.target.closest("th.sortable");
+    if (!th) return;
+    const table = th.closest("table.t");
+    if (!table || !table.classList.contains("sortable-table")) return;
+    const key = th.dataset.sortKey;
+    if (!key) return;
+    const prev = table.dataset.sortKey;
+    let dir;
+    if (prev === key) {
+      dir = table.dataset.sortDir === "asc" ? "desc" : "asc";
+    } else {
+      dir = th.dataset.sortType === "num" ? "desc" : "asc";
+    }
+    table.dataset.sortKey = key;
+    table.dataset.sortDir = dir;
+    sortTableDom(table, key, dir);
+  });
+}
+
+function sortTableDom(table, key, dir) {
+  const tbody = table.tBodies[0];
+  if (!tbody) return;
+  const th = [...table.querySelectorAll("th.sortable")].find((h) => h.dataset.sortKey === key);
+  const type = (th && th.dataset.sortType) || "str";
+  const mult = dir === "asc" ? 1 : -1;
+  const rows = [...tbody.rows];
+  rows.sort((a, b) => {
+    let sa = {};
+    let sb = {};
+    try {
+      sa = JSON.parse(a.getAttribute("data-sort") || "{}");
+    } catch (err) {
+      sa = {};
+    }
+    try {
+      sb = JSON.parse(b.getAttribute("data-sort") || "{}");
+    } catch (err) {
+      sb = {};
+    }
+    let av = sa[key];
+    let bv = sb[key];
+    if (type === "num") {
+      const an = av == null || av === "" || Number.isNaN(Number(av)) ? null : Number(av);
+      const bn = bv == null || bv === "" || Number.isNaN(Number(bv)) ? null : Number(bv);
+      if (an == null && bn == null) return 0;
+      if (an == null) return 1;
+      if (bn == null) return -1;
+      if (an === bn) return 0;
+      return (an - bn) * mult;
+    }
+    return String(av ?? "").localeCompare(String(bv ?? ""), "de", { sensitivity: "base" }) * mult;
+  });
+  for (const r of rows) tbody.appendChild(r);
+  table.querySelectorAll("th.sortable").forEach((h) => {
+    const on = h.dataset.sortKey === key;
+    h.classList.toggle("sorted-asc", on && dir === "asc");
+    h.classList.toggle("sorted-desc", on && dir === "desc");
+    h.setAttribute("aria-sort", on ? (dir === "asc" ? "ascending" : "descending") : "none");
+  });
+}
+
+/**
+ * Interactive member/data table: click headers to sort.
+ * Row fields are display HTML; optional row._sort holds comparable values per column key.
+ */
 function memberTable(columns, rows, extraClass) {
+  bindTableSortOnce();
   const head = columns
-    .map((c) => `<th class="${esc(c.class || "")}">${esc(c.label)}</th>`)
+    .map((c) => {
+      const sortable = c.sortable !== false;
+      const sortType = c.sortType || (c.class === "num" ? "num" : "str");
+      const cls = [c.class || "", sortable ? "sortable" : ""].filter(Boolean).join(" ");
+      if (!sortable) return `<th class="${esc(cls)}">${esc(c.label)}</th>`;
+      return (
+        `<th class="${esc(cls)}" data-sort-key="${esc(c.key)}" data-sort-type="${esc(sortType)}" ` +
+        `role="columnheader" aria-sort="none" title="Klick: sortieren">` +
+        `${esc(c.label)}<span class="sort-ind" aria-hidden="true"></span></th>`
+      );
+    })
     .join("");
   const body = rows
     .map((row) => {
       const cls = row._inactive ? ' class="inactive"' : "";
-      return `<tr${cls}>${columns
+      const sortPayload = row._sort || {};
+      return `<tr${cls} data-sort="${attrJson(sortPayload)}">${columns
         .map((c) => `<td class="${esc(c.class || "")}">${row[c.key]}</td>`)
         .join("")}</tr>`;
     })
     .join("");
   const tbl = extraClass ? ` ${extraClass}` : "";
-  return `<div class="table-wrap"><table class="t${tbl}"><thead><tr>${head}</tr></thead><tbody>${body}</tbody></table></div>`;
+  return (
+    `<div class="table-wrap"><table class="t sortable-table${tbl}">` +
+    `<thead><tr>${head}</tr></thead><tbody>${body}</tbody></table></div>`
+  );
 }
 
 function matrixTable(block, opts) {
   if (!block || !block.columns || !block.rows) return "";
-  const maxRows = (opts && opts.maxRows) || 40;
+  const maxRows = opts && opts.maxRows != null ? opts.maxRows : 10000;
   const view = (opts && opts.view) || currentDashboardView();
   const cols = [{ key: "name", label: "Name", class: "name" }].concat(
     block.columns.map((c) => ({ key: c, label: c, class: "num" }))
@@ -1804,12 +1924,28 @@ function matrixTable(block, opts) {
     sourceRows = sourceRows.filter((r) => allowed.has(normalizeName(r.name)));
   }
   const rows = sourceRows.slice(0, maxRows).map((r) => {
-    const out = { name: `<span class="name">${esc(r.name)}</span>` };
+    const sort = { name: normalizeName(r.name) };
+    const out = {
+      name: `<span class="name">${esc(r.name)}</span>`,
+      _sort: sort,
+    };
     for (const c of block.columns) {
-      out[c] = fmtPts(r.values && r.values[c] != null ? r.values[c] : r.daily_scores && r.daily_scores[c]);
+      const raw =
+        r.values && r.values[c] != null
+          ? r.values[c]
+          : r.daily_scores && r.daily_scores[c];
+      out[c] = fmtPts(raw);
+      const n = raw == null || raw === "" ? null : Number(raw);
+      sort[c] = Number.isFinite(n) ? n : null;
     }
-    if (r.latest != null) out.latest = fmtPts(r.latest);
-    if (r.weekly_avg != null) out.weekly_avg = fmtPts(r.weekly_avg);
+    if (r.latest != null) {
+      out.latest = fmtPts(r.latest);
+      sort.latest = Number(r.latest);
+    }
+    if (r.weekly_avg != null) {
+      out.weekly_avg = fmtPts(r.weekly_avg);
+      sort.weekly_avg = Number(r.weekly_avg);
+    }
     return out;
   });
   if (block.summary_columns) {
@@ -1885,8 +2021,8 @@ function renderKills(el) {
     { key: "name", label: "Name" },
     { key: "stand", label: "Kills", class: "num" },
     { key: "delta", label: "Δ", class: "num" },
-    { key: "trend", label: "Tendenz" },
-    { key: "steep", label: "Anstieg" },
+    { key: "trend", label: "Tendenz", sortType: "num" },
+    { key: "steep", label: "Anstieg", sortType: "num" },
   ];
   const rows = sortedMembers((a, b) => {
     const da = a.kills_delta != null ? Number(a.kills_delta) : -1;
@@ -1900,9 +2036,17 @@ function renderKills(el) {
     delta: killsDeltaCell(m),
     trend: killsTrendBadge(m),
     steep: killsSteepLabel(m),
+    _sort: {
+      name: normalizeName(m.name),
+      stand: m.kills_abs != null ? Number(m.kills_abs) : null,
+      delta: m.kills_delta != null ? Number(m.kills_delta) : null,
+      trend: trendSortRank(m.kills_trend),
+      steep: steepSortRank(m.kills_steep),
+    },
   }));
   el.innerHTML =
     '<section class="panel glass"><h2>Kills</h2>' +
+    '<p class="sub">Header anklicken zum Sortieren · Filter oben</p>' +
     memberTable(cols, rows) +
     "</section>";
 }
@@ -1922,6 +2066,12 @@ function renderDonations(el) {
       name: `<span class="name">${esc(m.name)}</span>`,
       donations: fmtNum(donationMetric(m)),
       activity: esc(m.activity_display || fmtPct(m.activity)),
+      _sort: {
+        role: m.role || "",
+        name: normalizeName(m.name),
+        donations: donationMetric(m),
+        activity: m.activity != null ? Number(m.activity) : null,
+      },
     })
   );
   el.innerHTML =
@@ -2076,22 +2226,32 @@ function renderVs(el) {
       class: "num",
     })),
     { key: "week_sum", label: "Wochensumme", class: "num" },
-    { key: "vs", label: "VS Flag" },
+    { key: "vs", label: "VS Flag", sortType: "num" },
   ];
   const rows = sortedMembers((a, b) => {
     const wa = memberVsWeekSum(a, dayLabs);
     const wb = memberVsWeekSum(b, dayLabs);
     return (wb == null ? -1 : wb) - (wa == null ? -1 : wa);
   }, "vs").map((m) => {
+    const weekSum = memberVsWeekSum(m, dayLabs);
+    const sort = {
+      role: m.role || "",
+      name: normalizeName(m.name),
+      week_sum: weekSum,
+      vs: vsFlagSortRank(m.vs_flag),
+    };
     const out = {
       _inactive: !m.active,
       role: esc(m.role),
       name: `<span class="name">${esc(m.name)}</span>`,
-      week_sum: fmtPts(memberVsWeekSum(m, dayLabs)),
+      week_sum: fmtPts(weekSum),
       vs: vsBadge(m.vs_flag),
+      _sort: sort,
     };
     for (const lab of dayLabs) {
-      out["d_" + lab] = fmtPts(memberVsDayPoints(m, lab));
+      const pts = memberVsDayPoints(m, lab);
+      out["d_" + lab] = fmtPts(pts);
+      sort["d_" + lab] = pts;
     }
     return out;
   });
@@ -2102,7 +2262,7 @@ function renderVs(el) {
     renderVsMetaSummary() +
     (compareDays ? renderVsCompareDays(compareDays, { includeBurnup: false }) : "") +
     "<h3>Mitglieder · Tagespunkte &amp; Wochensumme</h3>" +
-    '<p class="sub">Eine Spalte pro VS-Tag · Wochensumme · Flag · sortiert nach Wochensumme</p>' +
+    '<p class="sub">Header anklicken zum Sortieren · eine Spalte pro VS-Tag · Wochensumme · Flag</p>' +
     memberTable(cols, rows) +
     "</section>";
 }
@@ -2122,18 +2282,31 @@ function renderMasterTable(block, title, view) {
   const allowed = filteredNameSet(view || "events");
   const rows = block.rows
     .filter((r) => allowed.has(normalizeName(r.name)))
-    .map((r) => ({
-      role: esc(r.role),
-      name: `<span class="name">${esc(r.name)}</span>`,
-      thp: esc(r.thp_display || fmtNum(r.thp)),
-      team: esc(r.preferred_team || "—"),
-      slot: esc(r.preferred_slot || "—"),
-      registered: esc(
-        r.registered_display || (r.registered === true ? "Yes" : r.registered === false ? "No" : "—")
-      ),
-      played: esc(r.played_display || (r.played === true ? "Yes" : r.played === false ? "No" : "—")),
-      comment: esc(r.comment || "—"),
-    }));
+    .map((r) => {
+      const thpNum = r.thp != null && r.thp !== "" ? Number(r.thp) : null;
+      return {
+        role: esc(r.role),
+        name: `<span class="name">${esc(r.name)}</span>`,
+        thp: esc(r.thp_display || fmtNum(r.thp)),
+        team: esc(r.preferred_team || "—"),
+        slot: esc(r.preferred_slot || "—"),
+        registered: esc(
+          r.registered_display || (r.registered === true ? "Yes" : r.registered === false ? "No" : "—")
+        ),
+        played: esc(r.played_display || (r.played === true ? "Yes" : r.played === false ? "No" : "—")),
+        comment: esc(r.comment || "—"),
+        _sort: {
+          role: r.role || "",
+          name: normalizeName(r.name),
+          thp: Number.isFinite(thpNum) ? thpNum : null,
+          team: r.preferred_team || "",
+          slot: r.preferred_slot || "",
+          registered: r.registered === true ? 1 : r.registered === false ? 0 : -1,
+          played: r.played === true ? 1 : r.played === false ? 0 : -1,
+          comment: r.comment || "",
+        },
+      };
+    });
   if (!rows.length) return "";
   return `<h3>${esc(title)}</h3>` + memberTable(cols, rows, "compact");
 }
@@ -2171,6 +2344,13 @@ function renderEvents(el) {
       result: esc(e.result || "—"),
       max: esc(e.max_participation || "—"),
       notes: esc(e.notes || "—"),
+      _sort: {
+        name: normalizeName(e.name),
+        level: e.level || "",
+        result: e.result || "",
+        max: e.max_participation || "",
+        notes: e.notes || "",
+      },
     }));
     catalogHtml = "<h3>Events · Katalog (Sheet links)</h3>" + memberTable(cols, rows, "compact");
   }
@@ -2186,12 +2366,23 @@ function renderEvents(el) {
     const allowed = filteredNameSet("events");
     const rows = eventsBlock.members
       .filter((r) => allowed.has(normalizeName(r.name)))
-      .map((r) => ({
-        name: `<span class="name">${esc(r.name)}</span>`,
-        difficulty: esc(r.difficulty || "—"),
-        level: esc(r.trial_level || "—"),
-        damage: esc(r.damage || "—"),
-      }));
+      .map((r) => {
+        const levelNum = r.trial_level != null && r.trial_level !== "" ? Number(r.trial_level) : null;
+        const dmgRaw = String(r.damage || "").replace(/[^\d.-]/g, "");
+        const dmgNum = dmgRaw ? Number(dmgRaw) : null;
+        return {
+          name: `<span class="name">${esc(r.name)}</span>`,
+          difficulty: esc(r.difficulty || "—"),
+          level: esc(r.trial_level || "—"),
+          damage: esc(r.damage || "—"),
+          _sort: {
+            name: normalizeName(r.name),
+            difficulty: r.difficulty || "",
+            level: Number.isFinite(levelNum) ? levelNum : null,
+            damage: Number.isFinite(dmgNum) ? dmgNum : null,
+          },
+        };
+      });
     if (rows.length) {
       trialHtml =
         "<h3>Generals Trial · Teilnehmer (Events-Sheet)</h3>" + memberTable(cols, rows, "compact");
@@ -2226,6 +2417,16 @@ function renderEvents(el) {
       trial: esc(trialParts.length ? trialParts.join(" · ") : "—"),
       team_ds: esc([ds.preferred_team, ds.preferred_slot].filter(Boolean).join(" · ") || "—"),
       team_cs: esc([cs.preferred_team, cs.preferred_slot].filter(Boolean).join(" · ") || "—"),
+      _sort: {
+        role: m.role || "",
+        name: normalizeName(m.name),
+        events: m.events || "",
+        ds: ds.registered === true ? 1 : ds.registered === false ? 0 : -1,
+        cs: cs.registered === true ? 1 : cs.registered === false ? 0 : -1,
+        trial: gt.level || "",
+        team_ds: [ds.preferred_team, ds.preferred_slot].filter(Boolean).join(" "),
+        team_cs: [cs.preferred_team, cs.preferred_slot].filter(Boolean).join(" "),
+      },
     };
   });
 
@@ -2290,14 +2491,21 @@ function renderSeason(el) {
     (a, b) => (b.season_activity ?? 0) - (a.season_activity ?? 0),
     "season"
   ).map((m) => {
+    const sort = {
+      role: m.role || "",
+      name: normalizeName(m.name),
+      season: m.season_activity != null ? Number(m.season_activity) : null,
+    };
     const out = {
       _inactive: !m.active,
       role: esc(m.role),
       name: `<span class="name">${esc(m.name)}</span>`,
       season: esc(m.season_display || fmtPct(m.season_activity)),
+      _sort: sort,
     };
     for (const c of SEASON_CATS) {
       out["s_" + c.key] = seasonCatCell(m, c.key);
+      sort["s_" + c.key] = memberSeasonPts(m, c.key);
     }
     return out;
   });
@@ -2310,7 +2518,7 @@ function renderSeason(el) {
       ? ""
       : '<p class="sub">Season-Tabs sind leer (noch keine Beiträge nach Fresh Start). Spalten stehen bereit.</p>') +
     "<h3>Mitglieder · Season-Kategorien</h3>" +
-    '<p class="sub">Eine Spalte pro Kategorie · Season % · sortiert nach Season %</p>' +
+    '<p class="sub">Header anklicken zum Sortieren · eine Spalte pro Kategorie · Season %</p>' +
     memberTable(cols, rows) +
     "</section>";
 }
@@ -2323,7 +2531,7 @@ function renderActivity(el) {
     { key: "kills", label: "Kills", class: "num" },
     { key: "donations", label: "Spende", class: "num" },
     { key: "season", label: "Season", class: "num" },
-    { key: "vs", label: "VS" },
+    { key: "vs", label: "VS", sortType: "num" },
   ];
   const rows = sortedMembers((a, b) => (b.activity ?? 0) - (a.activity ?? 0), "activity").map(
     (m) => ({
@@ -2335,11 +2543,21 @@ function renderActivity(el) {
       donations: fmtNum(m.donations),
       season: esc(m.season_display || fmtPct(m.season_activity)),
       vs: vsBadge(m.vs_flag),
+      _sort: {
+        role: m.role || "",
+        name: normalizeName(m.name),
+        activity: m.activity != null ? Number(m.activity) : null,
+        kills: m.kills_abs != null ? Number(m.kills_abs) : null,
+        donations: m.donations != null ? Number(m.donations) : null,
+        season: m.season_activity != null ? Number(m.season_activity) : null,
+        vs: vsFlagSortRank(m.vs_flag),
+      },
     })
   );
   el.innerHTML =
     '<section class="panel glass"><h2>Activity Score</h2>' +
     '<p class="lead">Gewichteter Score aus dem Dashboard-Sheet (Kills, Spende, Season, VS + R4/R5-Bonus).</p>' +
+    '<p class="sub">Header anklicken zum Sortieren · Filter oben</p>' +
     memberTable(cols, rows) +
     "</section>";
 }
