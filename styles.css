@@ -815,6 +815,50 @@ table.t.compact {
   }
 }
 
+.widget-toggle {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.widget-toggle-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.widget-toggle .sub {
+  margin: 4px 0 0;
+}
+
+.widget-chevron {
+  flex: 0 0 auto;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-top: 2px;
+  opacity: 0.55;
+  background: currentColor;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z'/%3E%3C/svg%3E") center / contain no-repeat;
+  transition: transform 0.15s ease;
+}
+
+.widget-toggle[aria-expanded="false"] .widget-chevron {
+  transform: rotate(-90deg);
+}
+
+.widget-body {
+  margin-top: 12px;
+}
+
 .widget h3 {
   margin: 0 0 10px;
   font-family: var(--font-display);
@@ -822,6 +866,13 @@ table.t.compact {
   letter-spacing: 0.04em;
   color: var(--ink);
 }
+
+.widget-toggle h3 {
+  margin: 0;
+}
+
+.vs-compare-table tr.win td { color: var(--ok); }
+.vs-compare-table tr.loss td { color: var(--bad); }
 
 .widget .sub {
   margin: -4px 0 10px;

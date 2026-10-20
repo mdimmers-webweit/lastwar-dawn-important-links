@@ -3,7 +3,7 @@
 let DATA = null;
 
 const ROLE_OPTIONS = ["R5", "R4", "R3", "R2", "R1"];
-const CACHE_BUST = "20261020-kills-cols";
+const CACHE_BUST = "20261020-overview-gegner";
 
 /** Season contribution columns — mirrors Sheet tabs / SEASON_CATEGORIES. */
 const SEASON_CATS = [
@@ -19,9 +19,8 @@ const WENIG_AKTIV_COUNT = 8;
 const FILTER_STORAGE_KEY = "dawn-dashboard-filters-v3";
 const PERIOD_STORAGE_KEY = "dawn-dashboard-period";
 
-/** Alle Daten-Tabs haben Filter; Links/Config nicht. */
+/** Mitglieder-Filter: Overview/Gegner/Links/Config ohne Filterleiste. */
 const FILTERABLE_VIEWS = new Set([
-  "overview",
   "kills",
   "donations",
   "vs",
@@ -29,6 +28,10 @@ const FILTERABLE_VIEWS = new Set([
   "events",
   "activity",
 ]);
+
+const COLLAPSE_STORAGE_KEY = "dawn-dashboard-collapse-v1";
+/** @type {Record<string, boolean>|null} */
+let collapseState = null;
 
 /**
  * @typedef {{
@@ -698,16 +701,15 @@ const WATCHLIST_DISPLAY_MAX = 15;
 function memberLowActivityForWatchlist(m) {
   if (!m.active) return false;
   if ((m.activity ?? 0) >= 0.4) return false;
-  return periodMode === "gesamt";
+  return true;
 }
 
 function buildWatchlistEntries(members, compare) {
   const watch = [];
   for (const m of members) {
-    if (memberBelowQuotaForPeriod(m)) {
-      const reason =
-        periodMode === "tag" ? "VS heute unter Quote" : "VS unter Quote";
-      watch.push({ m, reason, score: 3 });
+    // Gesamtverlauf: VS-Flag + Activity-KPI (nicht an Woche/Gesamt-Toggle gekoppelt)
+    if (/below/i.test(String(m.vs_flag || ""))) {
+      watch.push({ m, reason: "VS unter Quote", score: 3 });
     } else if (memberLowActivityForWatchlist(m)) {
       watch.push({ m, reason: "Niedrige Activity (Gesamt-KPI)", score: 2 });
     }
@@ -1242,20 +1244,24 @@ function renderChampionWidget(champState, vsReady, vsEmptyMsg) {
     const noteHtml = rule.note
       ? `<p class="sub champ-note">${esc(rule.note)}</p>`
       : "";
-    return (
-      `<article class="widget span-12 glass champ-widget"><h3>Champion</h3>` +
-      `<p class="sub">${esc(title)} · manuell</p>` +
+    return widgetShell(
+      "champion",
+      "Champion",
+      `${esc(title)} · manuell`,
       noteHtml +
-      (rows
-        ? `<ul class="rank-list champ-list">${rows}</ul>`
-        : `<p class="sub">Noch keine Gewinner eingetragen.</p>`) +
-      `</article>`
+        (rows
+          ? `<ul class="rank-list champ-list">${rows}</ul>`
+          : `<p class="sub">Noch keine Gewinner eingetragen.</p>`),
+      { className: "champ-widget", span: "span-12" }
     );
   }
   if (!vsReady) {
-    return (
-      `<article class="widget span-12 glass champ-widget"><h3>Champion</h3>` +
-      `<p class="sub">${esc(vsEmptyMsg)}</p></article>`
+    return widgetShell(
+      "champion",
+      "Champion",
+      esc(vsEmptyMsg),
+      "",
+      { className: "champ-widget", span: "span-12" }
     );
   }
   if (rule.type === "save_exact_and_closest") {
@@ -1296,10 +1302,7 @@ function renderChampionWidget(champState, vsReady, vsEmptyMsg) {
       : weekRows
         ? `<ul class="rank-list champ-list">${weekRows}</ul>`
         : `<p class="sub">${esc(vsEmptyMsg)}</p>`;
-    return (
-      `<article class="widget span-12 glass champ-widget"><h3>Champion</h3>` +
-      `<p class="sub">Save-Woche: Tagesziel ${esc(targetLabel)} exakt · ` +
-      `Wochen-Sieger erst Sonntag (Summe ${esc(weekDaysLabel)} nah an ${esc(targetLabel)})</p>` +
+    const body =
       `<div class="champ-blocks">` +
       `<div class="champ-block">` +
       `<p class="champ-section-label">Tages-Treffer · exakt ${esc(targetLabel)}</p>` +
@@ -1314,7 +1317,13 @@ function renderChampionWidget(champState, vsReady, vsEmptyMsg) {
       `<div class="champ-block">` +
       `<p class="champ-section-label">Wochen-Sieger</p>` +
       weekBody +
-      `</div></div></article>`
+      `</div></div>`;
+    return widgetShell(
+      "champion",
+      "Champion",
+      `Save-Woche · Tagesziel ${esc(targetLabel)} exakt · Wochen-Sieger Sonntag`,
+      body,
+      { className: "champ-widget", span: "span-12" }
     );
   }
   if (rule.type === "day_min") {
@@ -1332,32 +1341,30 @@ function renderChampionWidget(champState, vsReady, vsEmptyMsg) {
         );
       })
       .join("");
-    return (
-      `<article class="widget span-12 glass champ-widget"><h3>Champion</h3>` +
-      `<p class="sub">Tag ≥ ${esc(minLabel)} · alle Treffer</p>` +
-      (dayRows
+    return widgetShell(
+      "champion",
+      "Champion",
+      `Tag ≥ ${esc(minLabel)} · alle Treffer`,
+      dayRows
         ? `<ul class="rank-list champ-list">${dayRows}</ul>`
-        : `<p class="sub">${esc(vsEmptyMsg)}</p>`) +
-      `</article>`
+        : `<p class="sub">${esc(vsEmptyMsg)}</p>`,
+      { className: "champ-widget", span: "span-12" }
     );
   }
-  const periodSub =
-    periodMode === "gesamt" ? "Wochenstand (Sheet Latest)" : "Wochensumme";
   const head = champState.topList[0];
-  const headHtml = head
-    ? `<p class="sub">${esc(head.name)} · ${fmtPts(vsMetric(head))}</p>`
-    : `<p class="sub">${esc(vsEmptyMsg)}</p>`;
-  return (
-    `<article class="widget span-12 glass champ-widget"><h3>Champion</h3><p class="sub">${esc(
-      periodSub
-    )}</p>${headHtml}` +
+  const body =
+    (head
+      ? `<p class="sub">${esc(head.name)} · ${fmtPts(vsMetric(head))}</p>`
+      : `<p class="sub">${esc(vsEmptyMsg)}</p>`) +
     renderRankList(
       head ? champState.topList.slice(1) : [],
       (m) => fmtPts(vsMetric(m)),
       vsEmptyMsg
-    ) +
-    `</article>`
-  );
+    );
+  return widgetShell("champion", "Champion", "Wochensumme", body, {
+    className: "champ-widget",
+    span: "span-12",
+  });
 }
 
 function renderRankList(items, valueFn, emptyMsg) {
@@ -1425,6 +1432,68 @@ function activityTrendPoints() {
     .filter((p) => p.date && Number.isFinite(p.avg));
 }
 
+function loadCollapseState() {
+  if (collapseState) return collapseState;
+  try {
+    collapseState = JSON.parse(sessionStorage.getItem(COLLAPSE_STORAGE_KEY) || "{}") || {};
+  } catch (e) {
+    collapseState = {};
+  }
+  return collapseState;
+}
+
+function isWidgetCollapsed(id, defaultCollapsed) {
+  const s = loadCollapseState();
+  if (Object.prototype.hasOwnProperty.call(s, id)) return !!s[id];
+  return !!defaultCollapsed;
+}
+
+function setWidgetCollapsed(id, collapsed) {
+  const s = loadCollapseState();
+  s[id] = !!collapsed;
+  try {
+    sessionStorage.setItem(COLLAPSE_STORAGE_KEY, JSON.stringify(s));
+  } catch (e) {
+    /* ignore */
+  }
+}
+
+/**
+ * Collapsible overview widget shell.
+ * @param {string} id
+ * @param {string} title
+ * @param {string} subHtml already-escaped or plain via esc in caller
+ * @param {string} bodyHtml
+ * @param {{ className?: string, defaultCollapsed?: boolean, span?: string }} [opts]
+ */
+function widgetShell(id, title, subHtml, bodyHtml, opts) {
+  const o = opts || {};
+  const collapsed = isWidgetCollapsed(id, !!o.defaultCollapsed);
+  const span = o.span || "span-12";
+  const extra = o.className ? " " + o.className : "";
+  return (
+    `<article class="widget ${span} glass${extra}" data-collapse-id="${esc(id)}">` +
+    `<button type="button" class="widget-toggle" aria-expanded="${collapsed ? "false" : "true"}">` +
+    `<span class="widget-toggle-text"><h3>${esc(title)}</h3>` +
+    (subHtml ? `<p class="sub">${subHtml}</p>` : "") +
+    `</span><span class="widget-chevron" aria-hidden="true"></span></button>` +
+    `<div class="widget-body"${collapsed ? " hidden" : ""}>${bodyHtml}</div></article>`
+  );
+}
+
+function pulseGesamtDonation(members) {
+  let best = null;
+  let pts = 0;
+  for (const m of members) {
+    const d = Number(m.donations) || 0;
+    if (d > pts) {
+      pts = d;
+      best = m;
+    }
+  }
+  return { m: best, pts };
+}
+
 function activityTrendSummary(points) {
   if (!points.length) return "Keine Verlaufsdaten";
   if (points.length === 1) return `Stand ${fmtPct(points[0].avg)}`;
@@ -1438,15 +1507,14 @@ function activityTrendSummary(points) {
   return `Fallend · −${label} · zuletzt ${fmtPct(last)}`;
 }
 
-/** Ø-Activity-Verlauf (Archiv + Live) — Overview only, kein VS-Burnup. */
-function renderActivityTrendChart() {
+/** Ø-Activity-Verlauf body (Archiv + Live) — wrapped by widgetShell in Overview. */
+function renderActivityTrendChartBody() {
   const series = activityTrendPoints();
   if (!series.length) {
-    return (
-      '<article class="widget span-12 glass">' +
-      "<h3>Activity-Verlauf</h3>" +
-      '<p class="sub">Noch keine Archiv-Snapshots für den Trend.</p></article>'
-    );
+    return {
+      summary: "Gesamtverlauf",
+      body: '<p class="sub">Noch keine Archiv-Snapshots für den Trend.</p>',
+    };
   }
   const summary = activityTrendSummary(series);
   const W = 640;
@@ -1489,54 +1557,88 @@ function renderActivityTrendChart() {
         `<title>${esc(p.date)} Ø ${fmtPct(p.avg)}${p.n ? ` · n=${p.n}` : ""}</title></circle>`
     )
     .join("");
-  return (
-    '<article class="widget span-12 glass">' +
-    '<div class="vs-chart-head"><h3>Activity-Verlauf</h3>' +
-    `<p class="sub">${esc(summary)}</p></div>` +
-    '<p class="sub">Ø Activity der Aktiven · Archiv-Snapshots (+ heute live)</p>' +
-    '<div class="vs-chart">' +
-    `<svg class="activity-trend" viewBox="0 0 ${W} ${H}" role="img" aria-label="Activity-Verlauf">` +
-    ticks.join("") +
-    `<path class="chart-area dawn" d="${area}" />` +
-    `<path class="chart-line dawn" d="${path}" fill="none" />` +
-    dots +
-    labels +
-    "</svg></div></article>"
+  return {
+    summary: esc(summary),
+    body:
+      '<p class="sub">Ø Activity der Aktiven · Archiv (+ live)</p>' +
+      '<div class="vs-chart">' +
+      `<svg class="activity-trend" viewBox="0 0 ${W} ${H}" role="img" aria-label="Activity-Verlauf">` +
+      ticks.join("") +
+      `<path class="chart-area dawn" d="${area}" />` +
+      `<path class="chart-line dawn" d="${path}" fill="none" />` +
+      dots +
+      labels +
+      "</svg></div>",
+  };
+}
+
+/** Compact week day strip for Overview (not a card wall). */
+function renderVsCompareCompact(days) {
+  const sorted = vsCompareDaysSorted(days);
+  if (!sorted.length) return { summary: "", body: "" };
+  let wins = 0;
+  let losses = 0;
+  for (const d of sorted) {
+    if (/win/i.test(String(d.result || ""))) wins += 1;
+    else if (/loss/i.test(String(d.result || ""))) losses += 1;
+  }
+  const last = sorted[sorted.length - 1];
+  const summary = esc(
+    `${sorted.length} Tag${sorted.length === 1 ? "" : "e"} · ${wins}W/${losses}L` +
+      (last ? ` · zuletzt Δ ${fmtPts(last.delta)}` : "")
   );
+  const head =
+    "<thead><tr><th>Tag</th><th>Ergebnis</th><th class=\"num\">DawN</th>" +
+    "<th class=\"num\">Gegner</th><th class=\"num\">Δ</th></tr></thead>";
+  const bodyRows = sorted
+    .map((d) => {
+      const win = /win/i.test(String(d.result || ""));
+      const loss = /loss/i.test(String(d.result || ""));
+      const cls = win ? "win" : loss ? "loss" : "";
+      return (
+        `<tr class="${cls}"><td>${esc(String(d.date).slice(5))}</td>` +
+        `<td>${esc(d.result || "—")}</td>` +
+        `<td class="num">${fmtPts(d.dawn)}</td>` +
+        `<td class="num">${fmtPts(d.opponent)}</td>` +
+        `<td class="num">${fmtPts(d.delta)}</td></tr>`
+      );
+    })
+    .join("");
+  return {
+    summary,
+    body:
+      '<div class="table-wrap"><table class="t compact vs-compare-table">' +
+      head +
+      `<tbody>${bodyRows}</tbody></table></div>` +
+      '<p class="sub">Details &amp; Gegner-Rangliste → Tab Gegner</p>',
+  };
 }
 
 function renderOverviewWidgets() {
-  const members = filteredMembers("overview");
-  // Champion immer über kompletten Roster — nicht durch Filter verfälschen.
-  const champState = computeChampionState(DATA.members || []);
+  // Overview = aktuelle VS-Woche. Kein Filter, kein Woche/Gesamt-Toggle.
+  periodMode = "woche";
+  const roster = DATA.members || [];
+  const champState = computeChampionState(roster);
   const vsReady = hasVsSheetData();
   const vsEmptyMsg = !vsReady ? "Keine VS-Daten verfügbar" : noVsDataMessage();
-  const underQuota = members
-    .filter((m) => memberBelowQuotaForPeriod(m))
+  const underQuota = roster
+    .filter((m) => /below/i.test(String(m.vs_flag || "")))
     .sort((a, b) => String(a.name).localeCompare(String(b.name), "de"));
-  const topDon = members
+  const topDonWeek = roster
     .map((m) => ({ m, pts: donationMetric(m) }))
     .filter((x) => x.pts > 0)
     .sort((a, b) => b.pts - a.pts)
     .slice(0, 5)
     .map((x) => x.m);
-  const wenigAktiv = wenigAktivMembers(members);
-
+  const wenigAktiv = wenigAktivMembers(roster);
   const compare = sheetBlock("vs_compare");
   const days = (compare && compare.days) || [];
-  // Overview: day cards only — no VS burn-up (Activity-Verlauf is the chart here).
-  const compareWidget =
-    days.length > 0
-      ? `<article class="widget span-12 glass vs-overview-compare">${renderVsCompareDays(days, {
-          includeBurnup: false,
-        })}</article>`
-      : "";
-
-  const vsPulse = vsPulseCounts(members);
-  const vsOk = vsPulse.ok;
-  const vsBelow = vsPulse.below;
-
-  const watchAll = buildWatchlistEntries(members, compare);
+  const cmp = days.length ? renderVsCompareCompact(days) : null;
+  const trend = renderActivityTrendChartBody();
+  const vsOk = roster.filter((m) => m.vs_flag === "OK").length;
+  const vsBelow = roster.filter((m) => /below/i.test(String(m.vs_flag || ""))).length;
+  const topDonGesamt = pulseGesamtDonation(roster);
+  const watchAll = buildWatchlistEntries(roster, compare);
   const watchShort = watchAll.slice(0, WATCHLIST_DISPLAY_MAX);
   const watchSubExtra =
     watchAll.length > watchShort.length
@@ -1544,97 +1646,114 @@ function renderOverviewWidgets() {
       : watchAll.length
         ? ` · ${watchAll.length} Einträge`
         : "";
-  const watchSub =
-    periodMode === "woche"
-      ? `Woche: VS-Flags & Vergleich${watchSubExtra}`
-      : `Gesamt-KPI: Activity & VS-Flags${watchSubExtra}`;
-
-  const periodHint =
-    periodMode === "woche"
-      ? "VS Wochensumme · Spende Wochensumme"
-      : "Sheet-Stand · VS Latest · Spende Dashboard · VS-Flags";
 
   return (
     `<p class="ops-stand">${esc(dataRealityLine())}</p>` +
-    `<p class="sub">${esc(periodHint)} · ${members.length} Mitglieder nach Filter</p>` +
+    `<p class="sub">Ops · aktuelle VS-Woche · ${roster.length} Mitglieder</p>` +
     '<div class="widget-grid">' +
     renderChampionWidget(champState, vsReady, vsEmptyMsg) +
-    `<article class="widget span-6 glass"><h3>Unter Quote</h3>` +
-    `<p class="sub">${underQuota.length} ${
-      underQuota.length === 1 ? "Mitglied" : "Mitglieder"
-    } · vollständige Liste</p>` +
-    (underQuota.length
-      ? "<ul class=\"rank-list\">" +
-        underQuota
-          .map(
-            (m) =>
-              `<li><span class="rank">!</span><span class="who">${esc(m.name)}</span>` +
-              `<span class="val">${underQuotaBadge(m)}</span></li>`
-          )
-          .join("") +
-        "</ul>"
-      : `<p class="sub">Keine unter Quote im Filter.</p>`) +
-    "</article>" +
-    `<article class="widget span-6 glass"><h3>Top Spende</h3><p class="sub">${
-      periodMode === "woche" ? "Wochensumme · Top 5" : "Gesamt · Top 5"
-    }</p>` +
-    renderRankList(topDon, (m) => fmtNum(donationMetric(m)), noDonationDataMessage()) +
-    "</article>" +
-    `<article class="widget span-6 glass"><h3>Wenig aktiv</h3>` +
-    `<p class="sub">Niedrigste Activity · ${wenigAktiv.length} von max. ${Math.min(
-      10,
-      Math.max(5, WENIG_AKTIV_COUNT)
-    )}</p>` +
-    (wenigAktiv.length
-      ? "<ol class=\"rank-list\">" +
-        wenigAktiv
-          .map(
-            (m, i) =>
-              `<li><span class="rank">${i + 1}</span>` +
-              `<span class="who">${esc(m.name)}</span>` +
-              `<span class="val">${esc(m.activity_display || fmtPct(m.activity))}</span></li>`
-          )
-          .join("") +
-        "</ol>"
-      : `<p class="sub">Keine Activity-Werte im Filter.</p>`) +
-    "</article>" +
-    `<article class="widget span-6 glass"><h3>Pulse</h3><div class="pulse-row">` +
-    `<div class="pulse-pill"><strong>${fmtPct(avgActFiltered(members))}</strong>Ø Activity</div>` +
-    `<div class="pulse-pill"><strong>${vsOk}</strong>VS OK</div>` +
-    `<div class="pulse-pill"><strong>${vsBelow}</strong>Unter Quote</div>` +
-    `<div class="pulse-pill"><strong>${fmtNum(
-      topDon[0] ? donationMetric(topDon[0]) : null
-    )}</strong>Top Spende</div>` +
-    `<div class="pulse-pill"><strong>${
-      champState.rule && champState.rule.type === "manual"
-        ? esc(champState.rule.title || "Manuell")
-        : fmtPts(champState.pulsePts)
-    }</strong>Champion</div>` +
-    "</div></article>" +
-    renderActivityTrendChart() +
-    compareWidget +
-    `<article class="widget span-12 glass"><h3>Watchlist</h3><p class="sub">${esc(watchSub)}</p>` +
-    (watchShort.length
-      ? "<ul class=\"rank-list\">" +
-        watchShort
-          .map(
-            (w) =>
-              `<li><span class="rank">•</span><span class="who">${esc(w.m.name)}</span>` +
-              `<span class="val">${esc(w.reason)}</span></li>`
-          )
-          .join("") +
-        "</ul>"
-      : '<p class="sub">Alles ruhig im Filter.</p>') +
-    "</article></div>"
+    widgetShell(
+      "under-quota",
+      "Unter Quote",
+      `${underQuota.length} · diese Woche`,
+      underQuota.length
+        ? "<ul class=\"rank-list\">" +
+            underQuota
+              .map(
+                (m) =>
+                  `<li><span class="rank">!</span><span class="who">${esc(m.name)}</span>` +
+                  `<span class="val">${vsBadge(m.vs_flag)}</span></li>`
+              )
+              .join("") +
+            "</ul>"
+        : '<p class="sub">Keine unter Quote.</p>',
+      { span: "span-6" }
+    ) +
+    widgetShell(
+      "top-don",
+      "Top Spende",
+      "Wochensumme · Top 5",
+      renderRankList(topDonWeek, (m) => fmtNum(donationMetric(m)), noDonationDataMessage()),
+      { span: "span-6" }
+    ) +
+    widgetShell(
+      "wenig-aktiv",
+      "Wenig aktiv",
+      `Gesamt-KPI · niedrigste Activity · ${wenigAktiv.length}`,
+      wenigAktiv.length
+        ? "<ol class=\"rank-list\">" +
+            wenigAktiv
+              .map(
+                (m, i) =>
+                  `<li><span class="rank">${i + 1}</span>` +
+                  `<span class="who">${esc(m.name)}</span>` +
+                  `<span class="val">${esc(m.activity_display || fmtPct(m.activity))}</span></li>`
+              )
+              .join("") +
+            "</ol>"
+        : '<p class="sub">Keine Activity-Werte.</p>',
+      { span: "span-6" }
+    ) +
+    widgetShell(
+      "pulse",
+      "Pulse",
+      "Gesamtverlauf",
+      `<div class="pulse-row">` +
+        `<div class="pulse-pill"><strong>${fmtPct(avgActFiltered(roster))}</strong>Ø Activity</div>` +
+        `<div class="pulse-pill"><strong>${vsOk}</strong>VS OK</div>` +
+        `<div class="pulse-pill"><strong>${vsBelow}</strong>Unter Quote</div>` +
+        `<div class="pulse-pill"><strong>${fmtNum(topDonGesamt.pts || null)}</strong>Top Spende</div>` +
+        `<div class="pulse-pill"><strong>${
+          champState.rule && champState.rule.type === "manual"
+            ? esc(champState.rule.title || "Manuell")
+            : fmtPts(champState.pulsePts)
+        }</strong>Champion</div></div>`,
+      { span: "span-6" }
+    ) +
+    widgetShell("activity-trend", "Activity-Verlauf", trend.summary, trend.body, {
+      span: "span-12",
+      defaultCollapsed: false,
+    }) +
+    (cmp
+      ? widgetShell("vs-compare", "VS-Vergleich · Woche", cmp.summary, cmp.body, {
+          span: "span-12",
+          className: "vs-overview-compare",
+          defaultCollapsed: false,
+        })
+      : "") +
+    widgetShell(
+      "watchlist",
+      "Watchlist",
+      `Gesamtverlauf · VS-Flags &amp; Activity${watchSubExtra}`,
+      watchShort.length
+        ? "<ul class=\"rank-list\">" +
+            watchShort
+              .map(
+                (w) =>
+                  `<li><span class="rank">•</span><span class="who">${esc(w.m.name)}</span>` +
+                  `<span class="val">${esc(w.reason)}</span></li>`
+              )
+              .join("") +
+            "</ul>"
+        : '<p class="sub">Alles ruhig.</p>',
+      { span: "span-12", defaultCollapsed: false }
+    ) +
+    "</div>"
   );
 }
 
 function bindOverviewControls(root) {
-  root.querySelectorAll("[data-period]").forEach((btn) => {
+  root.querySelectorAll(".widget-toggle").forEach((btn) => {
     btn.addEventListener("click", () => {
-      periodMode = btn.dataset.period;
-      persistFilterState();
-      renderAllViews();
+      const art = btn.closest("[data-collapse-id]");
+      if (!art) return;
+      const id = art.getAttribute("data-collapse-id");
+      const body = art.querySelector(".widget-body");
+      const open = btn.getAttribute("aria-expanded") === "true";
+      const nextOpen = !open;
+      btn.setAttribute("aria-expanded", String(nextOpen));
+      if (body) body.hidden = !nextOpen;
+      setWidgetCollapsed(id, !nextOpen);
     });
   });
 }
@@ -1821,6 +1940,7 @@ function renderAllViews() {
   renderKills(document.getElementById("view-kills"));
   renderDonations(document.getElementById("view-donations"));
   renderVs(document.getElementById("view-vs"));
+  renderGegner(document.getElementById("view-gegner"));
   renderSeason(document.getElementById("view-season"));
   renderEvents(document.getElementById("view-events"));
   renderActivity(document.getElementById("view-activity"));
@@ -2075,13 +2195,161 @@ function renderOverview(el) {
     '<div class="hero-meta">' +
     `<p class="hero-stand">Stand <strong>${esc(stand)}</strong>` +
     `<span class="hero-mode-chip">${esc(currentIsoWeekLabel())} · ${esc(vsWeekModeLabel())}</span></p>` +
-    renderPeriodToggle() +
     "</div>" +
     '<h2 class="hero-headline">DawN · <em>Ops Overview</em></h2>' +
     renderOverviewWidgets() +
     "</div></section>" +
     renderMissingStrip();
   bindOverviewControls(el);
+}
+
+/** Gegner-Allianz: Wochenlage aus VS Compare + Rangliste VS Opponent. */
+function renderGegner(el) {
+  const compare = sheetBlock("vs_compare");
+  const opp = sheetBlock("vs_opponent");
+  const days = vsCompareDaysSorted((compare && compare.days) || []);
+  let dawnSum = 0;
+  let oppSum = 0;
+  let meetings = days.length;
+  for (const d of days) {
+    dawnSum += Number(d.dawn) || 0;
+    oppSum += Number(d.opponent) || 0;
+  }
+  const delta = dawnSum - oppSum;
+  const weekLabel = currentIsoWeekLabel();
+
+  const dayRows = days.map((d) => {
+    const win = /win/i.test(String(d.result || ""));
+    const loss = /loss/i.test(String(d.result || ""));
+    return {
+      date: esc(d.date),
+      result: esc(d.result || "—"),
+      dawn: fmtPts(d.dawn),
+      opponent: fmtPts(d.opponent),
+      delta: fmtPts(d.delta),
+      dawn_n: d.dawn_count != null ? String(d.dawn_count) : "—",
+      opp_n: d.opp_count != null ? String(d.opp_count) : "—",
+      _sort: {
+        date: d.date || "",
+        result: d.result || "",
+        dawn: d.dawn,
+        opponent: d.opponent,
+        delta: d.delta,
+        dawn_n: d.dawn_count,
+        opp_n: d.opp_count,
+      },
+      _tone: win ? "win" : loss ? "loss" : "",
+    };
+  });
+
+  const dayCols = [
+    { key: "date", label: "Tag" },
+    { key: "result", label: "Ergebnis" },
+    { key: "dawn", label: "DawN", class: "num" },
+    { key: "opponent", label: "Gegner", class: "num" },
+    { key: "delta", label: "Δ", class: "num" },
+    { key: "dawn_n", label: "DawN n", class: "num" },
+    { key: "opp_n", label: "Gegner n", class: "num" },
+  ];
+
+  const oppRowsRaw = (opp && opp.rows) || [];
+  const scored = oppRowsRaw
+    .map((r) => {
+      const vals = r.values || {};
+      const cols = (opp.columns || []).filter((c) => /^\d{4}-\d{2}-\d{2}$/.test(c));
+      let sum = 0;
+      let n = 0;
+      const byDay = {};
+      for (const c of cols) {
+        const v = vals[c];
+        if (v == null || v === "") continue;
+        const num = Number(v);
+        if (!Number.isFinite(num)) continue;
+        byDay[c] = num;
+        sum += num;
+        n += 1;
+      }
+      const latest = r.latest != null ? Number(r.latest) : sum;
+      return { name: r.name, sum: Number.isFinite(latest) ? latest : sum, n, byDay };
+    })
+    .filter((x) => x.name && x.sum > 0)
+    .sort((a, b) => b.sum - a.sum);
+
+  const top = scored.slice(0, 15);
+  const bottom = [...scored].sort((a, b) => a.sum - b.sum).slice(0, 10);
+  const median =
+    scored.length > 0 ? scored[Math.floor(scored.length / 2)].sum : null;
+  const topShare =
+    oppSum > 0 && top.length
+      ? top.slice(0, 5).reduce((s, x) => s + x.sum, 0) / oppSum
+      : null;
+
+  const strengthBody =
+    '<p class="sub">Höchste Tages-/Stand-Punkte der Gegner-Rangliste (aktueller Gegner)</p>' +
+    (top.length
+      ? memberTable(
+          [
+            { key: "rank", label: "#" },
+            { key: "name", label: "Name" },
+            { key: "pts", label: "Punkte", class: "num" },
+          ],
+          top.map((x, i) => ({
+            rank: String(i + 1),
+            name: `<span class="name">${esc(x.name)}</span>`,
+            pts: fmtPts(x.sum),
+            _sort: { rank: i + 1, name: normalizeName(x.name), pts: x.sum },
+          })),
+          "compact"
+        )
+      : '<p class="sub">Keine VS-Opponent-Daten.</p>');
+
+  const weakBody =
+    '<p class="sub">Niedrigste Punkte — mögliche schwache Slots</p>' +
+    (bottom.length
+      ? memberTable(
+          [
+            { key: "rank", label: "#" },
+            { key: "name", label: "Name" },
+            { key: "pts", label: "Punkte", class: "num" },
+          ],
+          bottom.map((x, i) => ({
+            rank: String(i + 1),
+            name: `<span class="name">${esc(x.name)}</span>`,
+            pts: fmtPts(x.sum),
+            _sort: { rank: i + 1, name: normalizeName(x.name), pts: x.sum },
+          })),
+          "compact"
+        )
+      : '<p class="sub">Keine Daten.</p>');
+
+  const analysis =
+    `<div class="meta-grid">` +
+    `<div class="meta-chip"><span class="k">Treffen diese Woche</span><span class="v">${meetings}</span></div>` +
+    `<div class="meta-chip"><span class="k">DawN Summe</span><span class="v">${fmtPts(dawnSum)}</span></div>` +
+    `<div class="meta-chip"><span class="k">Gegner Summe</span><span class="v">${fmtPts(oppSum)}</span></div>` +
+    `<div class="meta-chip"><span class="k">Δ</span><span class="v">${fmtPts(delta)}</span></div>` +
+    `<div class="meta-chip"><span class="k">Gegner-Spieler</span><span class="v">${scored.length}</span></div>` +
+    `<div class="meta-chip"><span class="k">Median Gegner</span><span class="v">${fmtPts(median)}</span></div>` +
+    (topShare != null
+      ? `<div class="meta-chip"><span class="k">Top-5-Anteil</span><span class="v">${fmtPct(
+          topShare
+        )}</span></div>`
+      : "") +
+    `</div>` +
+    `<p class="sub">Mehrfach-Treffen: sobald mehrere VS-Tage / Wiederholungen vorliegen, werden Stärken·Schwächen hier verdichtet. Allianz-Tag folgt, sobald Capture ihn liefert.</p>`;
+
+  el.innerHTML =
+    '<section class="panel glass"><h2>Gegner</h2>' +
+    `<p class="lead">${esc(weekLabel)} · Wochenlage gegen die aktuelle Gegner-Allianz</p>` +
+    analysis +
+    "<h3>Tage</h3>" +
+    (dayRows.length
+      ? memberTable(dayCols, dayRows, "compact")
+      : '<p class="sub">Noch keine VS-Compare-Tage.</p>') +
+    '<div class="widget-grid" style="margin-top:16px">' +
+    `<article class="widget span-6 glass"><h3>Stärken</h3>${strengthBody}</article>` +
+    `<article class="widget span-6 glass"><h3>Schwächen</h3>${weakBody}</article>` +
+    "</div></section>";
 }
 
 function killsTrendBadge(m) {
