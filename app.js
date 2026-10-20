@@ -1901,6 +1901,41 @@ function renderActivity(el) {
     "</section>";
 }
 
+function normalizeChampionDraft(raw) {
+  if (!raw || typeof raw !== "object") return { type: "max_score" };
+  const type = String(raw.type || "").toLowerCase();
+  if (type === "day_min") {
+    const dayMin = Number(raw.day_min);
+    return {
+      type: "day_min",
+      day_min: Number.isFinite(dayMin) && dayMin > 0 ? dayMin : VS_SAVE_MIN,
+    };
+  }
+  if (type === "save_exact_and_closest") {
+    const dayTarget = Number(raw.day_target);
+    const days = Array.isArray(raw.week_days) && raw.week_days.length
+      ? raw.week_days.map((d) => String(d).toLowerCase())
+      : ["mon", "tue", "wed", "thu"];
+    return {
+      type: "save_exact_and_closest",
+      day_target: Number.isFinite(dayTarget) && dayTarget > 0 ? dayTarget : VS_SAVE_MIN,
+      week_days: days,
+      week_agg: String(raw.week_agg || "closest_sum").toLowerCase(),
+    };
+  }
+  if (type === "manual") {
+    return {
+      type: "manual",
+      title: String(raw.title || "").trim(),
+      winners: Array.isArray(raw.winners)
+        ? raw.winners.map((n) => String(n ?? "").trim()).filter(Boolean)
+        : [],
+      note: String(raw.note || "").trim(),
+    };
+  }
+  return { type: "max_score" };
+}
+
 function configDraftForWeek(cfg, year, week) {
   const entry = (cfg && cfg.vsWeeks ? cfg.vsWeeks : []).find(
     (item) => Number(item.year) === year && Number(item.week) === week
@@ -1915,7 +1950,8 @@ function configDraftForWeek(cfg, year, week) {
     if (mode !== "push" && mode !== "save") mode = "push";
   }
   const elevatedMin = entry ? pushElevatedMinFromEntry(entry) : null;
-  return { year, week, mode, elevatedMin };
+  const champion = normalizeChampionDraft(entry && entry.champion);
+  return { year, week, mode, elevatedMin, champion };
 }
 
 function applyVsWeekToDashboard(cfg) {
@@ -1947,10 +1983,76 @@ function syncConfigModeBlocks(el) {
   if (saveBlock) saveBlock.hidden = mode !== "save";
 }
 
+function syncConfigChampionBlocks(el) {
+  const type = el.querySelector("#cfgChampType").value;
+  for (const block of el.querySelectorAll("[data-champ-type]")) {
+    block.hidden = block.getAttribute("data-champ-type") !== type;
+  }
+}
+
+function collectChampionFromForm(el) {
+  const type = el.querySelector("#cfgChampType").value;
+  if (type === "day_min") {
+    const dayMin = parsePointsInput(el.querySelector("#cfgChampDayMin").value);
+    if (!dayMin) throw new Error("Champion: Tagesminimum erforderlich");
+    return { type: "day_min", day_min: dayMin };
+  }
+  if (type === "save_exact_and_closest") {
+    const dayTarget =
+      parsePointsInput(el.querySelector("#cfgChampDayTarget").value) || VS_SAVE_MIN;
+    const weekDays = [...el.querySelectorAll('input[name="cfgChampWeekDay"]:checked')].map(
+      (cb) => cb.value
+    );
+    return {
+      type: "save_exact_and_closest",
+      day_target: dayTarget,
+      week_days: weekDays.length ? weekDays : ["mon", "tue", "wed", "thu"],
+      week_agg: "closest_sum",
+    };
+  }
+  if (type === "manual") {
+    const title = el.querySelector("#cfgChampTitle").value.trim();
+    const winners = el
+      .querySelector("#cfgChampWinners")
+      .value.split(/\r?\n/)
+      .map((s) => s.trim())
+      .filter(Boolean);
+    const note = el.querySelector("#cfgChampNote").value.trim();
+    if (!title) throw new Error("Champion: Titel erforderlich (z. B. Bestes Outfit)");
+    if (!winners.length) throw new Error("Champion: mindestens einen Gewinner eintragen");
+    const out = { type: "manual", title, winners };
+    if (note) out.note = note;
+    return out;
+  }
+  return { type: "max_score" };
+}
+
 function bindConfigForm(el, draft) {
   el.querySelector("#cfgMode").value = draft.mode;
   syncConfigModeBlocks(el);
   el.querySelector("#cfgMode").addEventListener("change", () => syncConfigModeBlocks(el));
+
+  const champ = draft.champion || { type: "max_score" };
+  el.querySelector("#cfgChampType").value = champ.type || "max_score";
+  syncConfigChampionBlocks(el);
+  el.querySelector("#cfgChampType").addEventListener("change", () => syncConfigChampionBlocks(el));
+
+  if (champ.type === "day_min") {
+    el.querySelector("#cfgChampDayMin").value = formatPointsInputValue(champ.day_min) || String(champ.day_min || "");
+  }
+  if (champ.type === "save_exact_and_closest") {
+    el.querySelector("#cfgChampDayTarget").value =
+      formatPointsInputValue(champ.day_target) || String(champ.day_target || VS_SAVE_MIN);
+    const selected = new Set(champ.week_days || ["mon", "tue", "wed", "thu"]);
+    el.querySelectorAll('input[name="cfgChampWeekDay"]').forEach((cb) => {
+      cb.checked = selected.has(cb.value);
+    });
+  }
+  if (champ.type === "manual") {
+    el.querySelector("#cfgChampTitle").value = champ.title || "";
+    el.querySelector("#cfgChampWinners").value = (champ.winners || []).join("\n");
+    el.querySelector("#cfgChampNote").value = champ.note || "";
+  }
 
   const statusEl = el.querySelector("#cfgStatus");
   const setStatus = (msg, isError) => {
@@ -1968,12 +2070,14 @@ function bindConfigForm(el, draft) {
     btn.disabled = true;
     setStatus("Speichern…");
     try {
+      const champion = collectChampionFromForm(el);
       const json = await postImportantLinksConfig({
         kind: "vs-week",
         year: draft.year,
         week: draft.week,
         mode,
         max: maxRaw,
+        champion,
       });
       importantLinksConfig = json.data.config;
       applyVsWeekToDashboard(importantLinksConfig);
@@ -1994,6 +2098,16 @@ function bindConfigForm(el, draft) {
 
 function renderConfigForm(el, cfg, draft, loadError) {
   const weekLabel = `${draft.year}-KW${String(draft.week).padStart(2, "0")}`;
+  const champ = draft.champion || { type: "max_score" };
+  const dayChecks = ["mon", "tue", "wed", "thu", "fri", "sat"]
+    .map((d) => {
+      const checked = (champ.week_days || ["mon", "tue", "wed", "thu"]).includes(d) ? " checked" : "";
+      return (
+        `<label class="cfg-day-check"><input type="checkbox" name="cfgChampWeekDay" value="${d}"${checked}>` +
+        `${CHAMPION_DAY_LABEL_DE[d]}</label>`
+      );
+    })
+    .join("");
   el.innerHTML =
     '<section class="panel glass"><h2>VS-Woche</h2>' +
     (loadError
@@ -2012,6 +2126,43 @@ function renderConfigForm(el, cfg, draft, loadError) {
     '<div id="cfgSaveBlock" hidden>' +
     '<p class="config-hint">Mo–Do: <strong>7,2 Mio</strong> · Fr–Sa: <strong>offen</strong> (kein under/over).</p>' +
     "</div>" +
+    '<fieldset class="cfg-champ-fieldset">' +
+    "<legend>Champion</legend>" +
+    '<p class="config-hint">Punkte-Regeln oder manuell (z. B. Bestes Outfit).</p>' +
+    "<div><label for=\"cfgChampType\">Typ</label>" +
+    '<select id="cfgChampType" name="champType">' +
+    '<option value="max_score">Höchste Punkte (max_score)</option>' +
+    '<option value="day_min">Tagesminimum (day_min)</option>' +
+    '<option value="save_exact_and_closest">Exact + nächste Summe</option>' +
+    '<option value="manual">Manuell (Outfit / Custom)</option>' +
+    "</select></div>" +
+    '<div data-champ-type="day_min" hidden>' +
+    "<div><label for=\"cfgChampDayMin\">Tagesminimum</label>" +
+    `<input id="cfgChampDayMin" type="text" inputmode="numeric" placeholder="z. B. 7.2M" value="${esc(
+      formatPointsInputValue(champ.day_min)
+    )}"></div></div>` +
+    '<div data-champ-type="save_exact_and_closest" hidden>' +
+    "<div><label for=\"cfgChampDayTarget\">Tagesziel (Exact)</label>" +
+    `<input id="cfgChampDayTarget" type="text" inputmode="numeric" placeholder="7200000" value="${esc(
+      formatPointsInputValue(champ.day_target) || "7.2M"
+    )}"></div>` +
+    '<p class="config-hint">Wochentage für Summe (closest_sum):</p>' +
+    `<div class="cfg-day-row">${dayChecks}</div>` +
+    "</div>" +
+    '<div data-champ-type="manual" hidden>' +
+    "<div><label for=\"cfgChampTitle\">Titel</label>" +
+    `<input id="cfgChampTitle" type="text" placeholder="z. B. Bestes Outfit" value="${esc(
+      champ.title || ""
+    )}"></div>` +
+    "<div><label for=\"cfgChampWinners\">Gewinner (ein Name pro Zeile)</label>" +
+    `<textarea id="cfgChampWinners" rows="4" placeholder="Name1&#10;Name2">${esc(
+      (champ.winners || []).join("\n")
+    )}</textarea></div>` +
+    "<div><label for=\"cfgChampNote\">Notiz (optional)</label>" +
+    `<input id="cfgChampNote" type="text" placeholder="optional" value="${esc(
+      champ.note || ""
+    )}"></div></div>` +
+    "</fieldset>" +
     '<div class="btn-row">' +
     '<button type="submit" class="btn" id="cfgSave">Speichern</button>' +
     "</div>" +

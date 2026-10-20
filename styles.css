@@ -1178,6 +1178,58 @@ table.t.compact {
   color: var(--muted, #9aa3b2);
 }
 
+.cfg-champ-fieldset {
+  margin: 0;
+  padding: 12px 14px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  display: grid;
+  gap: 12px;
+}
+
+.cfg-champ-fieldset legend {
+  padding: 0 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--metal);
+}
+
+.cfg-day-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+}
+
+.cfg-day-check {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 6px;
+  margin: 0 !important;
+  font-size: 0.88rem !important;
+  text-transform: none !important;
+  letter-spacing: normal !important;
+  color: var(--ink) !important;
+  font-weight: 500 !important;
+  cursor: pointer;
+}
+
+.cfg-day-check input {
+  width: auto;
+  margin: 0;
+}
+
+.champ-freitext {
+  font-weight: 400;
+  color: var(--muted);
+  font-size: 0.85em;
+}
+
+.champ-note {
+  font-style: italic;
+}
+
 .config-week-label {
   margin: 0;
   font-size: 1rem;

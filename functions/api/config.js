@@ -2,7 +2,13 @@
  * POST /api/config
  * Body:
  *   { kind?: 'link', name, desc?, url }  — append a link (default)
- *   { kind: 'vs-week', year, week, mode, max }
+ *   { kind: 'vs-week', year, week, mode, max?, champion? }
+ *     champion: Punkte-Regeln oder manuell (z.B. Bestes Outfit)
+ *       { type: 'max_score' }
+ *       { type: 'day_min', day_min }
+ *       { type: 'save_exact_and_closest', day_target, week_days, week_agg }
+ *       { type: 'manual', title, winners: string[], note? }
+ *     Mode-only updates preserve an existing champion when body omits it.
  *   { kind: 'vs-week-delete', year, week }
  */
 const REPO = 'mdimmers-webweit/lastwar-dawn-important-links';
