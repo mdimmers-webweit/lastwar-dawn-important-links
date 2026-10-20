@@ -1695,6 +1695,10 @@ function renderVs(el) {
   const vsBlock = sheetBlock("vs");
   const compare = sheetBlock("vs_compare");
   const compareDays = compare && compare.days && compare.days.length ? compare.days : null;
+  const members = filteredMembers();
+  const vsReady = hasVsSheetData();
+  const vsEmptyMsg = !vsReady ? "Keine VS-Daten verfügbar" : noVsDataMessage();
+  const champState = computeChampionState(members);
   const cols = [
     { key: "role", label: "Rolle" },
     { key: "name", label: "Name" },
@@ -1713,6 +1717,9 @@ function renderVs(el) {
   el.innerHTML =
     '<section class="panel glass"><h2>VS</h2>' +
     '<p class="lead">VS-Punkte und Flags — Zeitraum wie in Overview (Woche/Gesamt).</p>' +
+    '<div class="widget-grid">' +
+    renderChampionWidget(champState, vsReady, vsEmptyMsg) +
+    "</div>" +
     renderVsMetaSummary() +
     (compareDays ? renderVsCompareDays(compareDays, { includeBurnup: false }) : "") +
     (vsBlock

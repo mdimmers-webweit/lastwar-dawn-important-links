@@ -817,7 +817,7 @@ table.t.compact {
   gap: 0;
   margin-top: 0.35rem;
   border: 1px solid var(--line);
-  border-radius: var(--radius);
+  border-radius: var(--radius-md);
   overflow: hidden;
   background: rgba(0, 0, 0, 0.18);
 }
