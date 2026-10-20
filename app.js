@@ -3,7 +3,7 @@
 let DATA = null;
 
 const ROLE_OPTIONS = ["R5", "R4", "R3", "R2", "R1"];
-const CACHE_BUST = "20261020-champ-fix";
+const CACHE_BUST = "20261020-kills-cols";
 
 /** Season contribution columns — mirrors Sheet tabs / SEASON_CATEGORIES. */
 const SEASON_CATS = [
@@ -1774,11 +1774,7 @@ function filterFieldsForView(view) {
   const common = filterFieldSearch() + filterFieldRoles() + filterFieldActive();
   switch (view) {
     case "kills":
-      // Tendenz/Anstieg erst wenn Vergleichsdaten existieren — sonst nur sinnvolle Filter.
-      if (killsCompareReady()) {
-        return common + filterFieldKillsTrend() + filterFieldKillsSteep();
-      }
-      return common;
+      return common + filterFieldKillsTrend() + filterFieldKillsSteep();
     case "vs":
     case "overview":
       return common + filterFieldVsFlag();
@@ -2115,49 +2111,37 @@ function killsDeltaCell(m) {
 }
 
 function renderKills(el) {
-  const compare = killsCompareReady();
-  const cols = compare
-    ? [
-        { key: "role", label: "Rolle" },
-        { key: "name", label: "Name" },
-        { key: "stand", label: "Kills", class: "num" },
-        { key: "delta", label: "Δ", class: "num" },
-        { key: "trend", label: "Tendenz", sortType: "num" },
-        { key: "steep", label: "Anstieg", sortType: "num" },
-      ]
-    : [
-        { key: "role", label: "Rolle" },
-        { key: "name", label: "Name" },
-        { key: "stand", label: "Kills", class: "num" },
-      ];
+  const cols = [
+    { key: "role", label: "Rolle" },
+    { key: "name", label: "Name" },
+    { key: "stand", label: "Kills", class: "num" },
+    { key: "delta", label: "Δ", class: "num" },
+    { key: "trend", label: "Tendenz", sortType: "num" },
+    { key: "steep", label: "Anstieg", sortType: "num" },
+  ];
   const rows = sortedMembers(
     (a, b) => (Number(b.kills_abs) || 0) - (Number(a.kills_abs) || 0),
     "kills"
-  ).map((m) => {
-    const row = {
-      _inactive: !m.active,
-      role: esc(m.role),
-      name: `<span class="name">${esc(m.name)}</span>`,
-      stand: m.kills_abs != null ? fmtPts(m.kills_abs) : "—",
-      _sort: {
-        role: m.role || "",
-        name: normalizeName(m.name),
-        stand: m.kills_abs != null ? Number(m.kills_abs) : null,
-      },
-    };
-    if (compare) {
-      row.delta = killsDeltaCell(m);
-      row.trend = killsTrendBadge(m);
-      row.steep = killsSteepLabel(m);
-      row._sort.delta = m.kills_delta != null ? Number(m.kills_delta) : null;
-      row._sort.trend = trendSortRank(m.kills_trend);
-      row._sort.steep = steepSortRank(m.kills_steep);
-    }
-    return row;
-  });
-  const lead = compare
-    ? "KW-Vergleich · Δ / Tendenz / Anstieg · Header sortieren · Filter oben"
-    : "Startstand (eine KW-Spalte) · Vergleich erscheint automatisch ab der 2. KW · Header sortieren";
+  ).map((m) => ({
+    _inactive: !m.active,
+    role: esc(m.role),
+    name: `<span class="name">${esc(m.name)}</span>`,
+    stand: m.kills_abs != null ? fmtPts(m.kills_abs) : "—",
+    delta: killsDeltaCell(m),
+    trend: killsTrendBadge(m),
+    steep: killsSteepLabel(m),
+    _sort: {
+      role: m.role || "",
+      name: normalizeName(m.name),
+      stand: m.kills_abs != null ? Number(m.kills_abs) : null,
+      delta: m.kills_delta != null ? Number(m.kills_delta) : null,
+      trend: trendSortRank(m.kills_trend),
+      steep: steepSortRank(m.kills_steep),
+    },
+  }));
+  const lead = killsCompareReady()
+    ? "Δ / Tendenz / Anstieg · Header sortieren · Filter oben"
+    : "Spalten Δ / Tendenz / Anstieg bereit — Werte ab 2. KW-Spalte · Header sortieren";
   el.innerHTML =
     '<section class="panel glass"><h2>Kills</h2>' +
     `<p class="lead">${esc(lead)}</p>` +
