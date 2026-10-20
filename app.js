@@ -3,7 +3,7 @@
 let DATA = null;
 
 const ROLE_OPTIONS = ["R5", "R4", "R3", "R2", "R1"];
-const CACHE_BUST = "20261020-kills-minimal";
+const CACHE_BUST = "20261020-filter-fix";
 
 /** Season contribution columns — mirrors Sheet tabs / SEASON_CATEGORIES. */
 const SEASON_CATS = [
@@ -15,13 +15,13 @@ const SEASON_CATS = [
 
 /** Overview „Wenig aktiv“ — niedrigste Activity-% (5–10, Default 8). Config später. */
 const WENIG_AKTIV_COUNT = 8;
-const FILTER_STORAGE_KEY = "dawn-dashboard-filters";
+/** v2: default activeOnly=false; invalidates old session prefs that forced Active on. */
+const FILTER_STORAGE_KEY = "dawn-dashboard-filters-v2";
 const PERIOD_STORAGE_KEY = "dawn-dashboard-period";
 
-/** Member-Filter nur auf Tabs mit Mitgliederdaten — nicht Links/Config. */
+/** Filter nur wo er Sinn hat — nicht Kills (reine Kill-Liste), nicht Links/Config. */
 const FILTERABLE_VIEWS = new Set([
   "overview",
-  "kills",
   "donations",
   "vs",
   "season",
@@ -30,7 +30,7 @@ const FILTERABLE_VIEWS = new Set([
 ]);
 
 /** @type {{ roles: string[], activeOnly: boolean, vsFlag: string, search: string }} */
-let filters = { roles: [], activeOnly: true, vsFlag: "all", search: "" };
+let filters = { roles: [], activeOnly: false, vsFlag: "all", search: "" };
 
 /** @type {"woche"|"gesamt"} */
 let periodMode = "woche";
