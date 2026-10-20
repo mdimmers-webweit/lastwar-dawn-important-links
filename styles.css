@@ -723,6 +723,14 @@ table.t.compact {
   margin-bottom: 16px;
 }
 
+.ops-stand {
+  margin: 0 0 14px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--ember);
+  font-variant-numeric: tabular-nums;
+}
+
 .hero-stand {
   margin: 0;
   font-size: 0.92rem;

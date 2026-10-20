@@ -3,7 +3,7 @@
 let DATA = null;
 
 const ROLE_OPTIONS = ["R5", "R4", "R3", "R2", "R1"];
-const CACHE_BUST = "20261020-table-sort";
+const CACHE_BUST = "20261020-sensible-view";
 
 /** Season contribution columns — mirrors Sheet tabs / SEASON_CATEGORIES. */
 const SEASON_CATS = [
@@ -264,6 +264,46 @@ function nameMatchesSearch(name, query) {
 
 function filteredNameSet(view) {
   return new Set(filteredMembers(view).map((m) => normalizeName(m.name)));
+}
+
+/** True once a second KW/kill column exists and deltas are computed. */
+function killsCompareReady() {
+  return (DATA.members || []).some(
+    (m) =>
+      m.kills_delta != null ||
+      (m.kills_trend && m.kills_trend !== "unknown")
+  );
+}
+
+/** Latest date label present on a sheet block (YYYY-MM-DD → de). */
+function sheetLatestDateLabel(key) {
+  const cols = sheetColumnLabels(key);
+  const dates = cols.filter((c) => /^\d{4}-\d{2}-\d{2}$/.test(String(c)));
+  if (!dates.length) return null;
+  dates.sort();
+  const iso = dates[dates.length - 1];
+  const d = parseIsoDate(iso);
+  if (!d) return iso;
+  return d.toLocaleDateString("de-DE", {
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric",
+    timeZone: "UTC",
+  });
+}
+
+/** One-line data reality for the current export (no excuses in the UI). */
+function dataRealityLine() {
+  const vsD = sheetLatestDateLabel("vs");
+  const donD = sheetLatestDateLabel("donations");
+  const kills = killsCompareReady() ? "Kills mit KW-Vergleich" : "Kills Startstand";
+  const parts = [];
+  if (vsD) parts.push(`VS ${vsD}`);
+  else parts.push("VS —");
+  if (donD) parts.push(`Spende ${donD}`);
+  else parts.push("Spende —");
+  parts.push(kills);
+  return parts.join(" · ");
 }
 
 function defaultFilters() {
@@ -1456,19 +1496,58 @@ function renderOverviewWidgets() {
       ? `Woche: VS-Flags & Vergleich${watchSubExtra}`
       : `Gesamt-KPI: Activity & VS-Flags${watchSubExtra}`;
 
-  const periodHint =
-    periodMode === "woche"
-      ? "VS Wochensumme · Spende Wochensumme"
-      : "Sheet-Stand · VS Latest · Spende Dashboard · VS-Flags";
+  const rosterCols = [
+    { key: "role", label: "Rolle" },
+    { key: "name", label: "Name" },
+    { key: "vs", label: "VS", sortType: "num" },
+    { key: "donations", label: "Spende", class: "num" },
+    { key: "activity", label: "Activity", class: "num" },
+    { key: "kills", label: "Kills", class: "num" },
+  ];
+  const rosterRows = [...members]
+    .sort((a, b) => {
+      const ba = memberBelowQuotaForPeriod(a) ? 0 : 1;
+      const bb = memberBelowQuotaForPeriod(b) ? 0 : 1;
+      if (ba !== bb) return ba - bb;
+      return String(a.name).localeCompare(String(b.name), "de");
+    })
+    .map((m) => ({
+      _inactive: !m.active,
+      role: esc(m.role),
+      name: `<span class="name">${esc(m.name)}</span>`,
+      vs: vsBadge(m.vs_flag),
+      donations: fmtNum(donationMetric(m)),
+      activity: esc(m.activity_display || fmtPct(m.activity)),
+      kills: m.kills_abs != null ? fmtPts(m.kills_abs) : esc(m.kills || "—"),
+      _sort: {
+        role: m.role || "",
+        name: normalizeName(m.name),
+        vs: vsFlagSortRank(m.vs_flag),
+        donations: donationMetric(m),
+        activity: m.activity != null ? Number(m.activity) : null,
+        kills: m.kills_abs != null ? Number(m.kills_abs) : null,
+      },
+    }));
 
   return (
-    `<p class="sub">${esc(periodHint)} · ${members.length} Mitglieder nach Filter</p>` +
+    `<p class="ops-stand">${esc(dataRealityLine())} · ${members.length} sichtbar</p>` +
     '<div class="widget-grid">' +
+    `<article class="widget span-12 glass"><h3>Lage</h3><div class="pulse-row">` +
+    `<div class="pulse-pill"><strong>${vsOk}</strong>VS OK</div>` +
+    `<div class="pulse-pill"><strong>${vsBelow}</strong>Unter Quote</div>` +
+    `<div class="pulse-pill"><strong>${fmtPct(avgActFiltered(members))}</strong>Ø Activity</div>` +
+    `<div class="pulse-pill"><strong>${fmtNum(
+      topDon[0] ? donationMetric(topDon[0]) : null
+    )}</strong>Top Spende</div>` +
+    `<div class="pulse-pill"><strong>${
+      champState.rule && champState.rule.type === "manual"
+        ? esc(champState.rule.title || "Manuell")
+        : fmtPts(champState.pulsePts)
+    }</strong>Champion</div>` +
+    "</div></article>" +
     renderChampionWidget(champState, vsReady, vsEmptyMsg) +
     `<article class="widget span-6 glass"><h3>Unter Quote</h3>` +
-    `<p class="sub">${underQuota.length} ${
-      underQuota.length === 1 ? "Mitglied" : "Mitglieder"
-    } · vollständige Liste</p>` +
+    `<p class="sub">${underQuota.length} · vollständige Liste</p>` +
     (underQuota.length
       ? "<ul class=\"rank-list\">" +
         underQuota
@@ -1479,18 +1558,15 @@ function renderOverviewWidgets() {
           )
           .join("") +
         "</ul>"
-      : `<p class="sub">Keine unter Quote im Filter.</p>`) +
+      : `<p class="sub">Keine unter Quote.</p>`) +
     "</article>" +
     `<article class="widget span-6 glass"><h3>Top Spende</h3><p class="sub">${
-      periodMode === "woche" ? "Wochensumme · Top 5" : "Gesamt · Top 5"
+      periodMode === "woche" ? "Bisher erfasste Tage · Top 5" : "Gesamt · Top 5"
     }</p>` +
     renderRankList(topDon, (m) => fmtNum(donationMetric(m)), noDonationDataMessage()) +
     "</article>" +
     `<article class="widget span-6 glass"><h3>Wenig aktiv</h3>` +
-    `<p class="sub">Niedrigste Activity · ${wenigAktiv.length} von max. ${Math.min(
-      10,
-      Math.max(5, WENIG_AKTIV_COUNT)
-    )}</p>` +
+    `<p class="sub">Niedrigste Activity · ${wenigAktiv.length}</p>` +
     (wenigAktiv.length
       ? "<ol class=\"rank-list\">" +
         wenigAktiv
@@ -1502,24 +1578,9 @@ function renderOverviewWidgets() {
           )
           .join("") +
         "</ol>"
-      : `<p class="sub">Keine Activity-Werte im Filter.</p>`) +
+      : `<p class="sub">Keine Activity-Werte.</p>`) +
     "</article>" +
-    `<article class="widget span-6 glass"><h3>Pulse</h3><div class="pulse-row">` +
-    `<div class="pulse-pill"><strong>${fmtPct(avgActFiltered(members))}</strong>Ø Activity</div>` +
-    `<div class="pulse-pill"><strong>${vsOk}</strong>VS OK</div>` +
-    `<div class="pulse-pill"><strong>${vsBelow}</strong>Unter Quote</div>` +
-    `<div class="pulse-pill"><strong>${fmtNum(
-      topDon[0] ? donationMetric(topDon[0]) : null
-    )}</strong>Top Spende</div>` +
-    `<div class="pulse-pill"><strong>${
-      champState.rule && champState.rule.type === "manual"
-        ? esc(champState.rule.title || "Manuell")
-        : fmtPts(champState.pulsePts)
-    }</strong>Champion</div>` +
-    "</div></article>" +
-    renderActivityTrendChart() +
-    compareWidget +
-    `<article class="widget span-12 glass"><h3>Watchlist</h3><p class="sub">${esc(watchSub)}</p>` +
+    `<article class="widget span-6 glass"><h3>Watchlist</h3><p class="sub">${esc(watchSub)}</p>` +
     (watchShort.length
       ? "<ul class=\"rank-list\">" +
         watchShort
@@ -1530,7 +1591,13 @@ function renderOverviewWidgets() {
           )
           .join("") +
         "</ul>"
-      : '<p class="sub">Alles ruhig im Filter.</p>') +
+      : '<p class="sub">Leer.</p>') +
+    "</article>" +
+    compareWidget +
+    renderActivityTrendChart() +
+    `<article class="widget span-12 glass"><h3>Mitglieder</h3>` +
+    `<p class="sub">Arbeitstabelle · Filter oben · Spalten sortierbar · Unter Quote zuerst</p>` +
+    memberTable(rosterCols, rosterRows) +
     "</article></div>"
   );
 }
@@ -1680,7 +1747,11 @@ function filterFieldsForView(view) {
   const common = filterFieldSearch() + filterFieldRoles() + filterFieldActive();
   switch (view) {
     case "kills":
-      return common + filterFieldKillsTrend() + filterFieldKillsSteep();
+      // Tendenz/Anstieg erst wenn Vergleichsdaten existieren — sonst nur sinnvolle Filter.
+      if (killsCompareReady()) {
+        return common + filterFieldKillsTrend() + filterFieldKillsSteep();
+      }
+      return common;
     case "vs":
     case "overview":
       return common + filterFieldVsFlag();
@@ -1979,11 +2050,11 @@ function renderOverview(el) {
     '<section class="hero-ops glass">' +
     '<div class="hero-ops-inner">' +
     '<div class="hero-meta">' +
-    `<p class="hero-stand">Stand <strong>${esc(stand)}</strong>` +
+    `<p class="hero-stand">Export <strong>${esc(stand)}</strong>` +
     `<span class="hero-mode-chip">${esc(currentIsoWeekLabel())} · ${esc(vsWeekModeLabel())}</span></p>` +
     renderPeriodToggle() +
     "</div>" +
-    '<h2 class="hero-headline">DawN · <em>Ops Overview</em></h2>' +
+    '<h2 class="hero-headline">DawN · <em>Ops</em></h2>' +
     renderOverviewWidgets() +
     "</div></section>" +
     renderMissingStrip();
@@ -2017,36 +2088,52 @@ function killsDeltaCell(m) {
 }
 
 function renderKills(el) {
-  const cols = [
-    { key: "name", label: "Name" },
-    { key: "stand", label: "Kills", class: "num" },
-    { key: "delta", label: "Δ", class: "num" },
-    { key: "trend", label: "Tendenz", sortType: "num" },
-    { key: "steep", label: "Anstieg", sortType: "num" },
-  ];
-  const rows = sortedMembers((a, b) => {
-    const da = a.kills_delta != null ? Number(a.kills_delta) : -1;
-    const db = b.kills_delta != null ? Number(b.kills_delta) : -1;
-    if (db !== da) return db - da;
-    return (Number(b.kills_abs) || 0) - (Number(a.kills_abs) || 0);
-  }, "kills").map((m) => ({
-    _inactive: !m.active,
-    name: `<span class="name">${esc(m.name)}</span>`,
-    stand: m.kills_abs != null ? fmtPts(m.kills_abs) : "—",
-    delta: killsDeltaCell(m),
-    trend: killsTrendBadge(m),
-    steep: killsSteepLabel(m),
-    _sort: {
-      name: normalizeName(m.name),
-      stand: m.kills_abs != null ? Number(m.kills_abs) : null,
-      delta: m.kills_delta != null ? Number(m.kills_delta) : null,
-      trend: trendSortRank(m.kills_trend),
-      steep: steepSortRank(m.kills_steep),
-    },
-  }));
+  const compare = killsCompareReady();
+  const cols = compare
+    ? [
+        { key: "role", label: "Rolle" },
+        { key: "name", label: "Name" },
+        { key: "stand", label: "Kills", class: "num" },
+        { key: "delta", label: "Δ", class: "num" },
+        { key: "trend", label: "Tendenz", sortType: "num" },
+        { key: "steep", label: "Anstieg", sortType: "num" },
+      ]
+    : [
+        { key: "role", label: "Rolle" },
+        { key: "name", label: "Name" },
+        { key: "stand", label: "Kills", class: "num" },
+      ];
+  const rows = sortedMembers(
+    (a, b) => (Number(b.kills_abs) || 0) - (Number(a.kills_abs) || 0),
+    "kills"
+  ).map((m) => {
+    const row = {
+      _inactive: !m.active,
+      role: esc(m.role),
+      name: `<span class="name">${esc(m.name)}</span>`,
+      stand: m.kills_abs != null ? fmtPts(m.kills_abs) : "—",
+      _sort: {
+        role: m.role || "",
+        name: normalizeName(m.name),
+        stand: m.kills_abs != null ? Number(m.kills_abs) : null,
+      },
+    };
+    if (compare) {
+      row.delta = killsDeltaCell(m);
+      row.trend = killsTrendBadge(m);
+      row.steep = killsSteepLabel(m);
+      row._sort.delta = m.kills_delta != null ? Number(m.kills_delta) : null;
+      row._sort.trend = trendSortRank(m.kills_trend);
+      row._sort.steep = steepSortRank(m.kills_steep);
+    }
+    return row;
+  });
+  const lead = compare
+    ? "KW-Vergleich · Δ / Tendenz / Anstieg · Header sortieren · Filter oben"
+    : "Startstand (eine KW-Spalte) · Vergleich erscheint automatisch ab der 2. KW · Header sortieren";
   el.innerHTML =
     '<section class="panel glass"><h2>Kills</h2>' +
-    '<p class="sub">Header anklicken zum Sortieren · Filter oben</p>' +
+    `<p class="lead">${esc(lead)}</p>` +
     memberTable(cols, rows) +
     "</section>";
 }
@@ -2074,12 +2161,16 @@ function renderDonations(el) {
       },
     })
   );
+  const donDate = sheetLatestDateLabel("donations");
   el.innerHTML =
     '<section class="panel glass"><h2>Donations</h2>' +
-    '<p class="lead">Allianz-Spenden nach gewähltem Zeitraum (Overview: Woche/Gesamt).</p>' +
-    (block
-      ? `<h3>Donations-Sheet · recent</h3>` + matrixTable(block, { view: "donations" })
-      : "") +
+    `<p class="lead">${
+      donDate
+        ? esc(`Erfasst bis ${donDate} · weitere Tage folgen · Header sortieren`)
+        : "Noch keine Spenden-Spalten · Header sortieren"
+    }</p>` +
+    (block ? matrixTable(block, { view: "donations" }) : "") +
+    "<h3>Mitglieder</h3>" +
     memberTable(cols, rows) +
     "</section>";
 }
@@ -2255,14 +2346,19 @@ function renderVs(el) {
     }
     return out;
   });
+  const vsDate = sheetLatestDateLabel("vs");
+  const dayNote = vsDate
+    ? `Bisher ${vsDate}${dayLabs.length === 1 ? " (1 Tag)" : ` · ${dayLabs.length} Tage`} · weitere folgen`
+    : "Noch keine VS-Tage";
   // VS tab: quote + day compare (no burn-up) + day columns + Wochensumme + Flag. No Champion / Activity.
   el.innerHTML =
     '<section class="panel glass"><h2>VS</h2>' +
     `<p class="lead">${esc(vsTabLead())}</p>` +
+    `<p class="ops-stand">${esc(dayNote)}</p>` +
     renderVsMetaSummary() +
     (compareDays ? renderVsCompareDays(compareDays, { includeBurnup: false }) : "") +
-    "<h3>Mitglieder · Tagespunkte &amp; Wochensumme</h3>" +
-    '<p class="sub">Header anklicken zum Sortieren · eine Spalte pro VS-Tag · Wochensumme · Flag</p>' +
+    "<h3>Mitglieder</h3>" +
+    '<p class="sub">Tagespunkte · Wochensumme · Flag · Header sortieren · Filter oben</p>' +
     memberTable(cols, rows) +
     "</section>";
 }
@@ -2512,13 +2608,12 @@ function renderSeason(el) {
   // Season tab: four Sheet categories + Season Activity only. No CS/DS/Events/Activity.
   el.innerHTML =
     '<section class="panel glass"><h2>Season</h2>' +
-    '<p class="lead">Mutual Assistance · Clean Up · Conquest · Defeat — Punkte aus den Season-Tabs, Season % gewichtet.</p>' +
+    `<p class="lead">${
+      hasPts
+        ? "Assistance · Clean Up · Conquest · Defeat · Season %"
+        : "Saison noch ohne Beiträge — Tabelle bereit, Spalten füllen sich mit den Sheet-Tabs"
+    }</p>` +
     (seasonLegend ? `<div class="meta-grid">${seasonLegend}</div>` : "") +
-    (hasPts
-      ? ""
-      : '<p class="sub">Season-Tabs sind leer (noch keine Beiträge nach Fresh Start). Spalten stehen bereit.</p>') +
-    "<h3>Mitglieder · Season-Kategorien</h3>" +
-    '<p class="sub">Header anklicken zum Sortieren · eine Spalte pro Kategorie · Season %</p>' +
     memberTable(cols, rows) +
     "</section>";
 }
