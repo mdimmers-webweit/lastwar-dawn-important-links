@@ -1649,7 +1649,6 @@ function renderVsCompareDays(days, options) {
         `<div><dt>DawN</dt><dd>${fmtPts(d.dawn)}</dd></div>` +
         `<div><dt>Gegner</dt><dd>${fmtPts(d.opponent)}</dd></div>` +
         `<div><dt>Delta</dt><dd class="num">${fmtPts(d.delta)}</dd></div>` +
-        `<div><dt>Unnötig</dt><dd class="num">${fmtPts(d.unnecessary)}</dd></div>` +
         "</dl></article>"
       );
     })
@@ -1665,30 +1664,12 @@ function renderVsCompareDays(days, options) {
 
 function renderVsMetaSummary() {
   const meta = DATA.meta || {};
-  const mode = String(meta.VSWeekMode || "push").toLowerCase();
-  const pairs = [
-    ["Letzter VS-Tag", meta.VSLastDate],
-    ["Mindestpunkte heute", meta.VSMinToday],
-    ["Wochenmodus", meta.VSWeekMode ? String(meta.VSWeekMode).toUpperCase() : ""],
-  ];
-  if (mode === "push") {
-    pairs.push(["Push-Minimum", meta.VSWeekMin || formatPointsDe(VS_DAILY_MIN)]);
-  } else {
-    pairs.push([
-      "Save-Minimum",
-      meta.VSWeekMin || `MO–DO ${formatPointsDe(VS_SAVE_MIN)} · FR–SA OFFEN`,
-    ]);
-  }
-  const visible = pairs.filter(([, v]) => v != null && String(v).trim());
-  if (!visible.length) return "";
+  // Only date chip — mode/min already in Wochenquote lead. No Activity/Season noise.
+  const last = meta.VSLastDate;
+  if (last == null || !String(last).trim()) return "";
   return (
     '<div class="meta-grid">' +
-    visible
-      .map(
-        ([k, v]) =>
-          `<div class="meta-chip"><span class="k">${esc(k)}</span><span class="v">${esc(String(v))}</span></div>`
-      )
-      .join("") +
+    `<div class="meta-chip"><span class="k">Letzter VS-Tag</span><span class="v">${esc(String(last))}</span></div>` +
     "</div>"
   );
 }
