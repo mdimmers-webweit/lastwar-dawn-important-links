@@ -3,7 +3,7 @@
 let DATA = null;
 
 const ROLE_OPTIONS = ["R5", "R4", "R3", "R2", "R1"];
-const CACHE_BUST = "20261020-sensible-view";
+const CACHE_BUST = "20261020-overview-restore";
 
 /** Season contribution columns — mirrors Sheet tabs / SEASON_CATEGORIES. */
 const SEASON_CATS = [
@@ -660,11 +660,23 @@ function lastCapturedVsLabel() {
 
 function vsPointsAtLabel(member, label) {
   const row = vsSheetRow(member.name);
-  if (!row || !row.values || !Object.prototype.hasOwnProperty.call(row.values, label)) return null;
-  const raw = row.values[label];
-  if (raw == null || raw === "") return null;
-  const v = Number(raw);
-  return Number.isNaN(v) ? null : v;
+  if (row && row.values && Object.prototype.hasOwnProperty.call(row.values, label)) {
+    const raw = row.values[label];
+    if (raw != null && raw !== "") {
+      const v = Number(raw);
+      if (!Number.isNaN(v)) return v;
+    }
+  }
+  // Fallback: member.vs_days from export
+  const days = member && member.vs_days;
+  if (days && Object.prototype.hasOwnProperty.call(days, label)) {
+    const raw = days[label];
+    if (raw != null && raw !== "") {
+      const v = Number(raw);
+      if (!Number.isNaN(v)) return v;
+    }
+  }
+  return null;
 }
 
 function memberBelowQuotaForPeriod(m) {
@@ -1103,17 +1115,27 @@ function computeChampionState(members) {
     const weekSlots = vsDaySlotsForWeek(rule.week_days);
     /** Flat list of every exact day hit (all names, no cap). */
     const exactHits = [];
+    /** Knapp daneben (|Δ| 1–10) — oft mit „7.2M“ verwechselt wenn nur M angezeigt wird. */
+    const nearHits = [];
     for (const slot of allDays) {
-      const hits = members
+      const scored = members
         .map((m) => ({ m, pts: vsPointsAtLabel(m, slot.label) }))
-        .filter((x) => x.pts != null && Math.round(x.pts) === target)
-        .sort((a, b) => String(a.m.name).localeCompare(String(b.m.name), "de"));
-      for (const h of hits) {
-        exactHits.push({ slot, m: h.m, pts: Math.round(h.pts) });
+        .filter((x) => x.pts != null);
+      for (const h of scored) {
+        const pts = Math.round(h.pts);
+        const dist = Math.abs(pts - target);
+        if (dist === 0) exactHits.push({ slot, m: h.m, pts, dist: 0 });
+        else if (dist > 0 && dist <= 10) nearHits.push({ slot, m: h.m, pts, dist });
       }
     }
     exactHits.sort(
       (a, b) =>
+        a.slot.weekday - b.slot.weekday ||
+        String(a.m.name).localeCompare(String(b.m.name), "de")
+    );
+    nearHits.sort(
+      (a, b) =>
+        a.dist - b.dist ||
         a.slot.weekday - b.slot.weekday ||
         String(a.m.name).localeCompare(String(b.m.name), "de")
     );
@@ -1142,6 +1164,7 @@ function computeChampionState(members) {
     return {
       rule,
       exactHits,
+      nearHits,
       dayHits: [],
       weekWinners,
       weekSlots,
@@ -1236,6 +1259,15 @@ function renderChampionWidget(champState, vsReady, vsEmptyMsg) {
           `<span class="val">${fmtPts(h.pts)}</span></li>`
       )
       .join("");
+    const nearRows = (champState.nearHits || [])
+      .slice(0, 8)
+      .map(
+        (h) =>
+          `<li><span class="rank">${esc(formatChampDayLabel(h.slot))}</span>` +
+          `<span class="who">${esc(h.m.name)}</span>` +
+          `<span class="val">${fmtPts(h.pts)} · Δ ${fmtPts(h.dist)}</span></li>`
+      )
+      .join("");
     const weekRows = (champState.weekWinners || [])
       .map(
         (w) =>
@@ -1254,6 +1286,10 @@ function renderChampionWidget(champState, vsReady, vsEmptyMsg) {
       (exactRows
         ? `<ul class="rank-list champ-list">${exactRows}</ul>`
         : `<p class="sub">Noch kein Exact-Treffer.</p>`) +
+      (nearRows
+        ? `<p class="champ-section-label">Knapp daneben (nicht Exact, Δ≤10)</p>` +
+          `<ul class="rank-list champ-list">${nearRows}</ul>`
+        : "") +
       `</div>` +
       `<div class="champ-block">` +
       `<p class="champ-section-label">Wochen-Sieger · Summe ${esc(
@@ -1455,9 +1491,10 @@ function renderActivityTrendChart() {
 
 function renderOverviewWidgets() {
   const members = filteredMembers("overview");
+  // Champion immer über kompletten Roster — nicht durch Filter verfälschen.
+  const champState = computeChampionState(DATA.members || []);
   const vsReady = hasVsSheetData();
   const vsEmptyMsg = !vsReady ? "Keine VS-Daten verfügbar" : noVsDataMessage();
-  const champState = computeChampionState(members);
   const underQuota = members
     .filter((m) => memberBelowQuotaForPeriod(m))
     .sort((a, b) => String(a.name).localeCompare(String(b.name), "de"));
@@ -1496,58 +1533,20 @@ function renderOverviewWidgets() {
       ? `Woche: VS-Flags & Vergleich${watchSubExtra}`
       : `Gesamt-KPI: Activity & VS-Flags${watchSubExtra}`;
 
-  const rosterCols = [
-    { key: "role", label: "Rolle" },
-    { key: "name", label: "Name" },
-    { key: "vs", label: "VS", sortType: "num" },
-    { key: "donations", label: "Spende", class: "num" },
-    { key: "activity", label: "Activity", class: "num" },
-    { key: "kills", label: "Kills", class: "num" },
-  ];
-  const rosterRows = [...members]
-    .sort((a, b) => {
-      const ba = memberBelowQuotaForPeriod(a) ? 0 : 1;
-      const bb = memberBelowQuotaForPeriod(b) ? 0 : 1;
-      if (ba !== bb) return ba - bb;
-      return String(a.name).localeCompare(String(b.name), "de");
-    })
-    .map((m) => ({
-      _inactive: !m.active,
-      role: esc(m.role),
-      name: `<span class="name">${esc(m.name)}</span>`,
-      vs: vsBadge(m.vs_flag),
-      donations: fmtNum(donationMetric(m)),
-      activity: esc(m.activity_display || fmtPct(m.activity)),
-      kills: m.kills_abs != null ? fmtPts(m.kills_abs) : esc(m.kills || "—"),
-      _sort: {
-        role: m.role || "",
-        name: normalizeName(m.name),
-        vs: vsFlagSortRank(m.vs_flag),
-        donations: donationMetric(m),
-        activity: m.activity != null ? Number(m.activity) : null,
-        kills: m.kills_abs != null ? Number(m.kills_abs) : null,
-      },
-    }));
+  const periodHint =
+    periodMode === "woche"
+      ? "VS Wochensumme · Spende Wochensumme"
+      : "Sheet-Stand · VS Latest · Spende Dashboard · VS-Flags";
 
   return (
-    `<p class="ops-stand">${esc(dataRealityLine())} · ${members.length} sichtbar</p>` +
+    `<p class="ops-stand">${esc(dataRealityLine())}</p>` +
+    `<p class="sub">${esc(periodHint)} · ${members.length} Mitglieder nach Filter</p>` +
     '<div class="widget-grid">' +
-    `<article class="widget span-12 glass"><h3>Lage</h3><div class="pulse-row">` +
-    `<div class="pulse-pill"><strong>${vsOk}</strong>VS OK</div>` +
-    `<div class="pulse-pill"><strong>${vsBelow}</strong>Unter Quote</div>` +
-    `<div class="pulse-pill"><strong>${fmtPct(avgActFiltered(members))}</strong>Ø Activity</div>` +
-    `<div class="pulse-pill"><strong>${fmtNum(
-      topDon[0] ? donationMetric(topDon[0]) : null
-    )}</strong>Top Spende</div>` +
-    `<div class="pulse-pill"><strong>${
-      champState.rule && champState.rule.type === "manual"
-        ? esc(champState.rule.title || "Manuell")
-        : fmtPts(champState.pulsePts)
-    }</strong>Champion</div>` +
-    "</div></article>" +
     renderChampionWidget(champState, vsReady, vsEmptyMsg) +
     `<article class="widget span-6 glass"><h3>Unter Quote</h3>` +
-    `<p class="sub">${underQuota.length} · vollständige Liste</p>` +
+    `<p class="sub">${underQuota.length} ${
+      underQuota.length === 1 ? "Mitglied" : "Mitglieder"
+    } · vollständige Liste</p>` +
     (underQuota.length
       ? "<ul class=\"rank-list\">" +
         underQuota
@@ -1558,15 +1557,18 @@ function renderOverviewWidgets() {
           )
           .join("") +
         "</ul>"
-      : `<p class="sub">Keine unter Quote.</p>`) +
+      : `<p class="sub">Keine unter Quote im Filter.</p>`) +
     "</article>" +
     `<article class="widget span-6 glass"><h3>Top Spende</h3><p class="sub">${
-      periodMode === "woche" ? "Bisher erfasste Tage · Top 5" : "Gesamt · Top 5"
+      periodMode === "woche" ? "Wochensumme · Top 5" : "Gesamt · Top 5"
     }</p>` +
     renderRankList(topDon, (m) => fmtNum(donationMetric(m)), noDonationDataMessage()) +
     "</article>" +
     `<article class="widget span-6 glass"><h3>Wenig aktiv</h3>` +
-    `<p class="sub">Niedrigste Activity · ${wenigAktiv.length}</p>` +
+    `<p class="sub">Niedrigste Activity · ${wenigAktiv.length} von max. ${Math.min(
+      10,
+      Math.max(5, WENIG_AKTIV_COUNT)
+    )}</p>` +
     (wenigAktiv.length
       ? "<ol class=\"rank-list\">" +
         wenigAktiv
@@ -1578,9 +1580,24 @@ function renderOverviewWidgets() {
           )
           .join("") +
         "</ol>"
-      : `<p class="sub">Keine Activity-Werte.</p>`) +
+      : `<p class="sub">Keine Activity-Werte im Filter.</p>`) +
     "</article>" +
-    `<article class="widget span-6 glass"><h3>Watchlist</h3><p class="sub">${esc(watchSub)}</p>` +
+    `<article class="widget span-6 glass"><h3>Pulse</h3><div class="pulse-row">` +
+    `<div class="pulse-pill"><strong>${fmtPct(avgActFiltered(members))}</strong>Ø Activity</div>` +
+    `<div class="pulse-pill"><strong>${vsOk}</strong>VS OK</div>` +
+    `<div class="pulse-pill"><strong>${vsBelow}</strong>Unter Quote</div>` +
+    `<div class="pulse-pill"><strong>${fmtNum(
+      topDon[0] ? donationMetric(topDon[0]) : null
+    )}</strong>Top Spende</div>` +
+    `<div class="pulse-pill"><strong>${
+      champState.rule && champState.rule.type === "manual"
+        ? esc(champState.rule.title || "Manuell")
+        : fmtPts(champState.pulsePts)
+    }</strong>Champion</div>` +
+    "</div></article>" +
+    renderActivityTrendChart() +
+    compareWidget +
+    `<article class="widget span-12 glass"><h3>Watchlist</h3><p class="sub">${esc(watchSub)}</p>` +
     (watchShort.length
       ? "<ul class=\"rank-list\">" +
         watchShort
@@ -1591,13 +1608,7 @@ function renderOverviewWidgets() {
           )
           .join("") +
         "</ul>"
-      : '<p class="sub">Leer.</p>') +
-    "</article>" +
-    compareWidget +
-    renderActivityTrendChart() +
-    `<article class="widget span-12 glass"><h3>Mitglieder</h3>` +
-    `<p class="sub">Arbeitstabelle · Filter oben · Spalten sortierbar · Unter Quote zuerst</p>` +
-    memberTable(rosterCols, rosterRows) +
+      : '<p class="sub">Alles ruhig im Filter.</p>') +
     "</article></div>"
   );
 }
@@ -2050,11 +2061,11 @@ function renderOverview(el) {
     '<section class="hero-ops glass">' +
     '<div class="hero-ops-inner">' +
     '<div class="hero-meta">' +
-    `<p class="hero-stand">Export <strong>${esc(stand)}</strong>` +
+    `<p class="hero-stand">Stand <strong>${esc(stand)}</strong>` +
     `<span class="hero-mode-chip">${esc(currentIsoWeekLabel())} · ${esc(vsWeekModeLabel())}</span></p>` +
     renderPeriodToggle() +
     "</div>" +
-    '<h2 class="hero-headline">DawN · <em>Ops</em></h2>' +
+    '<h2 class="hero-headline">DawN · <em>Ops Overview</em></h2>' +
     renderOverviewWidgets() +
     "</div></section>" +
     renderMissingStrip();
