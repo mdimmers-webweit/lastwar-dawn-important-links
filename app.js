@@ -3,7 +3,7 @@
 let DATA = null;
 
 const ROLE_OPTIONS = ["R5", "R4", "R3", "R2", "R1"];
-const CACHE_BUST = "20261020-kills-tendenz";
+const CACHE_BUST = "20261020-kills-minimal";
 
 /** Season contribution columns — mirrors Sheet tabs / SEASON_CATEGORIES. */
 const SEASON_CATS = [
