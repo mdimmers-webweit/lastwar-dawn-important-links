@@ -3,7 +3,7 @@
 let DATA = null;
 
 const ROLE_OPTIONS = ["R5", "R4", "R3", "R2", "R1"];
-const CACHE_BUST = "20261020-filter-fix";
+const CACHE_BUST = "20261020-filter-by-view-2";
 
 /** Season contribution columns — mirrors Sheet tabs / SEASON_CATEGORIES. */
 const SEASON_CATS = [
@@ -15,13 +15,14 @@ const SEASON_CATS = [
 
 /** Overview „Wenig aktiv“ — niedrigste Activity-% (5–10, Default 8). Config später. */
 const WENIG_AKTIV_COUNT = 8;
-/** v2: default activeOnly=false; invalidates old session prefs that forced Active on. */
-const FILTER_STORAGE_KEY = "dawn-dashboard-filters-v2";
+/** v3: per-view filter fields (Kills tendenz/anstieg, VS flag only on VS/Overview). */
+const FILTER_STORAGE_KEY = "dawn-dashboard-filters-v3";
 const PERIOD_STORAGE_KEY = "dawn-dashboard-period";
 
-/** Filter nur wo er Sinn hat — nicht Kills (reine Kill-Liste), nicht Links/Config. */
+/** Alle Daten-Tabs haben Filter; Links/Config nicht. */
 const FILTERABLE_VIEWS = new Set([
   "overview",
+  "kills",
   "donations",
   "vs",
   "season",
@@ -29,8 +30,25 @@ const FILTERABLE_VIEWS = new Set([
   "activity",
 ]);
 
-/** @type {{ roles: string[], activeOnly: boolean, vsFlag: string, search: string }} */
-let filters = { roles: [], activeOnly: false, vsFlag: "all", search: "" };
+/**
+ * @typedef {{
+ *   roles: string[],
+ *   activeOnly: boolean,
+ *   vsFlag: string,
+ *   search: string,
+ *   killsTrend: string,
+ *   killsSteep: string,
+ * }} DashboardFilters
+ */
+/** @type {DashboardFilters} */
+let filters = {
+  roles: [],
+  activeOnly: false,
+  vsFlag: "all",
+  search: "",
+  killsTrend: "all",
+  killsSteep: "all",
+};
 
 /** @type {"woche"|"gesamt"} */
 let periodMode = "woche";
@@ -244,12 +262,19 @@ function nameMatchesSearch(name, query) {
   return normalizeName(name).includes(q);
 }
 
-function filteredNameSet() {
-  return new Set(filteredMembers().map((m) => normalizeName(m.name)));
+function filteredNameSet(view) {
+  return new Set(filteredMembers(view).map((m) => normalizeName(m.name)));
 }
 
 function defaultFilters() {
-  return { roles: [], activeOnly: false, vsFlag: "all", search: "" };
+  return {
+    roles: [],
+    activeOnly: false,
+    vsFlag: "all",
+    search: "",
+    killsTrend: "all",
+    killsSteep: "all",
+  };
 }
 
 function sanitizeFilters(raw) {
@@ -266,11 +291,17 @@ function sanitizeFilters(raw) {
   roles = roles.filter((r) => ROLE_OPTIONS.includes(r));
   let vsFlag = String(raw.vsFlag ?? "all").toLowerCase();
   if (vsFlag !== "ok" && vsFlag !== "below") vsFlag = "all";
+  let killsTrend = String(raw.killsTrend ?? "all").toLowerCase();
+  if (!["all", "up", "flat", "unknown"].includes(killsTrend)) killsTrend = "all";
+  let killsSteep = String(raw.killsSteep ?? "all").toLowerCase();
+  if (!["all", "steep", "mild", "flat"].includes(killsSteep)) killsSteep = "all";
   return {
     roles,
     activeOnly: Boolean(raw.activeOnly),
     vsFlag,
     search: typeof raw.search === "string" ? raw.search : "",
+    killsTrend,
+    killsSteep,
   };
 }
 
@@ -344,12 +375,16 @@ function loadFilterState() {
       .filter((r) => ROLE_OPTIONS.includes(r)),
     vsFlag: params.get("vs") || "all",
     search: params.get("q") || "",
+    killsTrend: params.get("ktrend") || "all",
+    killsSteep: params.get("ksteep") || "all",
   };
   if (
     fromUrl.roles.length ||
     params.has("active") ||
     (fromUrl.vsFlag && fromUrl.vsFlag !== "all") ||
-    fromUrl.search
+    fromUrl.search ||
+    (fromUrl.killsTrend && fromUrl.killsTrend !== "all") ||
+    (fromUrl.killsSteep && fromUrl.killsSteep !== "all")
   ) {
     filters = sanitizeFilters({
       ...defaultFilters(),
@@ -357,6 +392,8 @@ function loadFilterState() {
       activeOnly: params.has("active") ? params.get("active") === "1" : defaultFilters().activeOnly,
       vsFlag: fromUrl.vsFlag,
       search: fromUrl.search,
+      killsTrend: fromUrl.killsTrend,
+      killsSteep: fromUrl.killsSteep,
     });
     return;
   }
@@ -406,6 +443,10 @@ function persistFilterState() {
   else params.delete("vs");
   if (filters.search.trim()) params.set("q", filters.search.trim());
   else params.delete("q");
+  if (filters.killsTrend && filters.killsTrend !== "all") params.set("ktrend", filters.killsTrend);
+  else params.delete("ktrend");
+  if (filters.killsSteep && filters.killsSteep !== "all") params.set("ksteep", filters.killsSteep);
+  else params.delete("ksteep");
   if (periodMode !== "woche") params.set("period", periodMode);
   else params.delete("period");
   const qs = params.toString();
@@ -423,21 +464,36 @@ function avgActFiltered(members) {
   return members.reduce((s, m) => s + (m.activity ?? 0), 0) / members.length;
 }
 
-function memberMatchesFilters(m) {
+function memberMatchesFilters(m, view) {
+  const v = view || currentDashboardView();
   if (filters.activeOnly && !m.active) return false;
   if (filters.roles.length && !filters.roles.includes(m.role)) return false;
-  if (filters.vsFlag === "ok" && m.vs_flag !== "OK") return false;
-  if (filters.vsFlag === "below" && !/below/i.test(String(m.vs_flag || ""))) return false;
   if (filters.search.trim() && !nameMatchesSearch(m.name, filters.search)) return false;
+  // VS Flag nur auf Overview / VS
+  if (v === "overview" || v === "vs") {
+    if (filters.vsFlag === "ok" && m.vs_flag !== "OK") return false;
+    if (filters.vsFlag === "below" && !/below/i.test(String(m.vs_flag || ""))) return false;
+  }
+  // Kill-Tendenz / Anstieg nur auf Kills
+  if (v === "kills") {
+    if (filters.killsTrend !== "all") {
+      const t = String(m.kills_trend || "unknown");
+      if (t !== filters.killsTrend) return false;
+    }
+    if (filters.killsSteep !== "all") {
+      const s = String(m.kills_steep || "");
+      if (s !== filters.killsSteep) return false;
+    }
+  }
   return true;
 }
 
-function filteredMembers() {
-  return (DATA.members || []).filter(memberMatchesFilters);
+function filteredMembers(view) {
+  return (DATA.members || []).filter((m) => memberMatchesFilters(m, view));
 }
 
-function sortedMembers(cmp) {
-  return [...filteredMembers()].sort(cmp);
+function sortedMembers(cmp, view) {
+  return [...filteredMembers(view)].sort(cmp);
 }
 
 function vsSheetRow(name) {
@@ -1358,7 +1414,7 @@ function renderActivityTrendChart() {
 }
 
 function renderOverviewWidgets() {
-  const members = filteredMembers();
+  const members = filteredMembers("overview");
   const vsReady = hasVsSheetData();
   const vsEmptyMsg = !vsReady ? "Keine VS-Daten verfügbar" : noVsDataMessage();
   const champState = computeChampionState(members);
@@ -1494,7 +1550,8 @@ function updateFilterCount() {
   if (!mount || !DATA) return;
   const countEl = mount.querySelector(".filter-count");
   if (countEl) {
-    countEl.textContent = `${filteredMembers().length} / ${(DATA.members || []).length} sichtbar`;
+    const view = currentDashboardView();
+    countEl.textContent = `${filteredMembers(view).length} / ${(DATA.members || []).length} sichtbar`;
   }
 }
 
@@ -1523,11 +1580,18 @@ function bindFilterBarOnce(mount) {
     onFiltersChanged();
   });
   mount.addEventListener("change", (e) => {
-    if (e.target.id === "filterActive") {
+    const id = e.target.id;
+    if (id === "filterActive") {
       filters.activeOnly = e.target.checked;
       onFiltersChanged();
-    } else if (e.target.id === "filterVs") {
+    } else if (id === "filterVs") {
       filters.vsFlag = e.target.value;
+      onFiltersChanged();
+    } else if (id === "filterKillsTrend") {
+      filters.killsTrend = e.target.value;
+      onFiltersChanged();
+    } else if (id === "filterKillsSteep") {
+      filters.killsSteep = e.target.value;
       onFiltersChanged();
     }
   });
@@ -1553,29 +1617,102 @@ function syncFilterVisibility(view) {
   mount.hidden = !FILTERABLE_VIEWS.has(v);
 }
 
-function renderFilterBar() {
-  const mount = document.getElementById("filterMount");
-  if (!mount || !DATA) return;
-  syncFilterVisibility();
-  bindFilterBarOnce(mount);
+function filterFieldSearch() {
+  return (
+    '<div class="field"><label>Suche</label>' +
+    `<input type="search" id="filterSearch" placeholder="Name…" value="${esc(filters.search)}" autocomplete="off"></div>`
+  );
+}
+
+function filterFieldRoles() {
   const roleChips = ROLE_OPTIONS.map(
     (r) =>
       `<button type="button" class="role-chip" data-role="${r}" aria-pressed="${filters.roles.includes(r)}">${r}</button>`
   ).join("");
+  return '<div class="field"><label>Rolle</label><div class="role-chips">' + roleChips + "</div></div>";
+}
+
+function filterFieldActive() {
+  return `<label class="filter-check"><input type="checkbox" id="filterActive" ${
+    filters.activeOnly ? "checked" : ""
+  }> Nur Active</label>`;
+}
+
+function filterFieldVsFlag() {
+  return (
+    '<div class="field"><label>VS Flag</label>' +
+    `<select id="filterVs"><option value="all">Alle</option><option value="ok">OK</option><option value="below">Unter Quote</option></select></div>`
+  );
+}
+
+function filterFieldKillsTrend() {
+  return (
+    '<div class="field"><label>Tendenz</label>' +
+    `<select id="filterKillsTrend">` +
+    `<option value="all">Alle</option>` +
+    `<option value="up">↑ gestiegen</option>` +
+    `<option value="flat">→ gleich</option>` +
+    `<option value="unknown">· kein Vergleich</option>` +
+    `</select></div>`
+  );
+}
+
+function filterFieldKillsSteep() {
+  return (
+    '<div class="field"><label>Anstieg</label>' +
+    `<select id="filterKillsSteep">` +
+    `<option value="all">Alle</option>` +
+    `<option value="steep">steil</option>` +
+    `<option value="mild">mittel</option>` +
+    `<option value="flat">flach</option>` +
+    `</select></div>`
+  );
+}
+
+/** Passende Filter-Felder je Tab — nicht überall der gleiche VS-Filter. */
+function filterFieldsForView(view) {
+  const common = filterFieldSearch() + filterFieldRoles() + filterFieldActive();
+  switch (view) {
+    case "kills":
+      return common + filterFieldKillsTrend() + filterFieldKillsSteep();
+    case "vs":
+    case "overview":
+      return common + filterFieldVsFlag();
+    case "donations":
+    case "season":
+    case "events":
+    case "activity":
+      return common;
+    default: {
+      const _exhaustive = view;
+      return common;
+    }
+  }
+}
+
+function renderFilterBar() {
+  const mount = document.getElementById("filterMount");
+  if (!mount || !DATA) return;
+  const view = currentDashboardView();
+  syncFilterVisibility(view);
+  bindFilterBarOnce(mount);
+  if (!FILTERABLE_VIEWS.has(view)) {
+    mount.innerHTML = "";
+    return;
+  }
+  const n = filteredMembers(view).length;
+  const total = (DATA.members || []).length;
   mount.innerHTML =
     '<div class="filter-bar glass">' +
-    '<div class="field"><label>Suche</label>' +
-    `<input type="search" id="filterSearch" placeholder="Name…" value="${esc(filters.search)}" autocomplete="off"></div>` +
-    '<div class="field"><label>Rolle</label><div class="role-chips">' +
-    roleChips +
-    "</div></div>" +
-    '<div class="field"><label>VS Flag</label>' +
-    `<select id="filterVs"><option value="all">Alle</option><option value="ok">OK</option><option value="below">Unter Quote</option></select></div>` +
-    `<label class="filter-check"><input type="checkbox" id="filterActive" ${filters.activeOnly ? "checked" : ""}> Nur Active</label>` +
-    `<span class="filter-count">${filteredMembers().length} / ${(DATA.members || []).length} sichtbar</span>` +
+    filterFieldsForView(view) +
+    `<span class="filter-count">${n} / ${total} sichtbar</span>` +
     "</div>";
   const vsSel = mount.querySelector("#filterVs");
   if (vsSel) vsSel.value = filters.vsFlag;
+  const trendSel = mount.querySelector("#filterKillsTrend");
+  if (trendSel) trendSel.value = filters.killsTrend;
+  const steepSel = mount.querySelector("#filterKillsSteep");
+  if (steepSel) steepSel.value = filters.killsSteep;
 }
 
 function renderAllViews() {
@@ -1657,12 +1794,13 @@ function memberTable(columns, rows, extraClass) {
 function matrixTable(block, opts) {
   if (!block || !block.columns || !block.rows) return "";
   const maxRows = (opts && opts.maxRows) || 40;
+  const view = (opts && opts.view) || currentDashboardView();
   const cols = [{ key: "name", label: "Name", class: "name" }].concat(
     block.columns.map((c) => ({ key: c, label: c, class: "num" }))
   );
   let sourceRows = block.rows;
   if (!opts || opts.respectFilters !== false) {
-    const allowed = filteredNameSet();
+    const allowed = filteredNameSet(view);
     sourceRows = sourceRows.filter((r) => allowed.has(normalizeName(r.name)));
   }
   const rows = sourceRows.slice(0, maxRows).map((r) => {
@@ -1755,7 +1893,7 @@ function renderKills(el) {
     const db = b.kills_delta != null ? Number(b.kills_delta) : -1;
     if (db !== da) return db - da;
     return (Number(b.kills_abs) || 0) - (Number(a.kills_abs) || 0);
-  }).map((m) => ({
+  }, "kills").map((m) => ({
     _inactive: !m.active,
     name: `<span class="name">${esc(m.name)}</span>`,
     stand: m.kills_abs != null ? fmtPts(m.kills_abs) : "—",
@@ -1777,18 +1915,20 @@ function renderDonations(el) {
     { key: "donations", label: "Spende", class: "num" },
     { key: "activity", label: "Activity", class: "num" },
   ];
-  const rows = sortedMembers((a, b) => donationMetric(b) - donationMetric(a)).map((m) => ({
-    _inactive: !m.active,
-    role: esc(m.role),
-    name: `<span class="name">${esc(m.name)}</span>`,
-    donations: fmtNum(donationMetric(m)),
-    activity: esc(m.activity_display || fmtPct(m.activity)),
-  }));
+  const rows = sortedMembers((a, b) => donationMetric(b) - donationMetric(a), "donations").map(
+    (m) => ({
+      _inactive: !m.active,
+      role: esc(m.role),
+      name: `<span class="name">${esc(m.name)}</span>`,
+      donations: fmtNum(donationMetric(m)),
+      activity: esc(m.activity_display || fmtPct(m.activity)),
+    })
+  );
   el.innerHTML =
     '<section class="panel glass"><h2>Donations</h2>' +
     '<p class="lead">Allianz-Spenden nach gewähltem Zeitraum (Overview: Woche/Gesamt).</p>' +
     (block
-      ? `<h3>Donations-Sheet · recent</h3>` + matrixTable(block)
+      ? `<h3>Donations-Sheet · recent</h3>` + matrixTable(block, { view: "donations" })
       : "") +
     memberTable(cols, rows) +
     "</section>";
@@ -1942,7 +2082,7 @@ function renderVs(el) {
     const wa = memberVsWeekSum(a, dayLabs);
     const wb = memberVsWeekSum(b, dayLabs);
     return (wb == null ? -1 : wb) - (wa == null ? -1 : wa);
-  }).map((m) => {
+  }, "vs").map((m) => {
     const out = {
       _inactive: !m.active,
       role: esc(m.role),
@@ -1967,7 +2107,7 @@ function renderVs(el) {
     "</section>";
 }
 
-function renderMasterTable(block, title) {
+function renderMasterTable(block, title, view) {
   if (!block || !block.rows || !block.rows.length) return "";
   const cols = [
     { key: "role", label: "Rolle" },
@@ -1979,16 +2119,22 @@ function renderMasterTable(block, title) {
     { key: "played", label: "Played" },
     { key: "comment", label: "Comment" },
   ];
-  const rows = block.rows.map((r) => ({
-    role: esc(r.role),
-    name: `<span class="name">${esc(r.name)}</span>`,
-    thp: esc(r.thp_display || fmtNum(r.thp)),
-    team: esc(r.preferred_team || "—"),
-    slot: esc(r.preferred_slot || "—"),
-    registered: esc(r.registered_display || (r.registered === true ? "Yes" : r.registered === false ? "No" : "—")),
-    played: esc(r.played_display || (r.played === true ? "Yes" : r.played === false ? "No" : "—")),
-    comment: esc(r.comment || "—"),
-  }));
+  const allowed = filteredNameSet(view || "events");
+  const rows = block.rows
+    .filter((r) => allowed.has(normalizeName(r.name)))
+    .map((r) => ({
+      role: esc(r.role),
+      name: `<span class="name">${esc(r.name)}</span>`,
+      thp: esc(r.thp_display || fmtNum(r.thp)),
+      team: esc(r.preferred_team || "—"),
+      slot: esc(r.preferred_slot || "—"),
+      registered: esc(
+        r.registered_display || (r.registered === true ? "Yes" : r.registered === false ? "No" : "—")
+      ),
+      played: esc(r.played_display || (r.played === true ? "Yes" : r.played === false ? "No" : "—")),
+      comment: esc(r.comment || "—"),
+    }));
+  if (!rows.length) return "";
   return `<h3>${esc(title)}</h3>` + memberTable(cols, rows, "compact");
 }
 
@@ -2037,13 +2183,19 @@ function renderEvents(el) {
       { key: "level", label: "Trial Level", class: "num" },
       { key: "damage", label: "Damage", class: "num" },
     ];
-    const rows = eventsBlock.members.map((r) => ({
-      name: `<span class="name">${esc(r.name)}</span>`,
-      difficulty: esc(r.difficulty || "—"),
-      level: esc(r.trial_level || "—"),
-      damage: esc(r.damage || "—"),
-    }));
-    trialHtml = "<h3>Generals Trial · Teilnehmer (Events-Sheet)</h3>" + memberTable(cols, rows, "compact");
+    const allowed = filteredNameSet("events");
+    const rows = eventsBlock.members
+      .filter((r) => allowed.has(normalizeName(r.name)))
+      .map((r) => ({
+        name: `<span class="name">${esc(r.name)}</span>`,
+        difficulty: esc(r.difficulty || "—"),
+        level: esc(r.trial_level || "—"),
+        damage: esc(r.damage || "—"),
+      }));
+    if (rows.length) {
+      trialHtml =
+        "<h3>Generals Trial · Teilnehmer (Events-Sheet)</h3>" + memberTable(cols, rows, "compact");
+    }
   }
 
   const cols = [
@@ -2056,7 +2208,10 @@ function renderEvents(el) {
     { key: "team_ds", label: "DS Team/Slot" },
     { key: "team_cs", label: "CS Team/Slot" },
   ];
-  const rows = sortedMembers((a, b) => String(a.name).localeCompare(String(b.name), "de")).map((m) => {
+  const rows = sortedMembers(
+    (a, b) => String(a.name).localeCompare(String(b.name), "de"),
+    "events"
+  ).map((m) => {
     const gt = m.generals_trial || {};
     const ds = m.ds_master || {};
     const cs = m.cs_master || {};
@@ -2080,8 +2235,8 @@ function renderEvents(el) {
     (chips ? `<div class="meta-grid">${chips}</div>` : "") +
     catalogHtml +
     trialHtml +
-    renderMasterTable(dsBlock, "DS - Master") +
-    renderMasterTable(csBlock, "CS - Master") +
+    renderMasterTable(dsBlock, "DS - Master", "events") +
+    renderMasterTable(csBlock, "CS - Master", "events") +
     "<h3>Mitglieder · zusammengeführt</h3>" +
     memberTable(cols, rows) +
     "</section>";
@@ -2131,20 +2286,21 @@ function renderSeason(el) {
     ...SEASON_CATS.map((c) => ({ key: "s_" + c.key, label: c.label, class: "num" })),
     { key: "season", label: "Season %", class: "num" },
   ];
-  const rows = sortedMembers((a, b) => (b.season_activity ?? 0) - (a.season_activity ?? 0)).map(
-    (m) => {
-      const out = {
-        _inactive: !m.active,
-        role: esc(m.role),
-        name: `<span class="name">${esc(m.name)}</span>`,
-        season: esc(m.season_display || fmtPct(m.season_activity)),
-      };
-      for (const c of SEASON_CATS) {
-        out["s_" + c.key] = seasonCatCell(m, c.key);
-      }
-      return out;
+  const rows = sortedMembers(
+    (a, b) => (b.season_activity ?? 0) - (a.season_activity ?? 0),
+    "season"
+  ).map((m) => {
+    const out = {
+      _inactive: !m.active,
+      role: esc(m.role),
+      name: `<span class="name">${esc(m.name)}</span>`,
+      season: esc(m.season_display || fmtPct(m.season_activity)),
+    };
+    for (const c of SEASON_CATS) {
+      out["s_" + c.key] = seasonCatCell(m, c.key);
     }
-  );
+    return out;
+  });
   // Season tab: four Sheet categories + Season Activity only. No CS/DS/Events/Activity.
   el.innerHTML =
     '<section class="panel glass"><h2>Season</h2>' +
@@ -2169,16 +2325,18 @@ function renderActivity(el) {
     { key: "season", label: "Season", class: "num" },
     { key: "vs", label: "VS" },
   ];
-  const rows = sortedMembers((a, b) => (b.activity ?? 0) - (a.activity ?? 0)).map((m) => ({
-    _inactive: !m.active,
-    role: esc(m.role),
-    name: `<span class="name">${esc(m.name)}</span>`,
-    activity: esc(m.activity_display || fmtPct(m.activity)),
-    kills: esc(m.kills || "—"),
-    donations: fmtNum(m.donations),
-    season: esc(m.season_display || fmtPct(m.season_activity)),
-    vs: vsBadge(m.vs_flag),
-  }));
+  const rows = sortedMembers((a, b) => (b.activity ?? 0) - (a.activity ?? 0), "activity").map(
+    (m) => ({
+      _inactive: !m.active,
+      role: esc(m.role),
+      name: `<span class="name">${esc(m.name)}</span>`,
+      activity: esc(m.activity_display || fmtPct(m.activity)),
+      kills: esc(m.kills || "—"),
+      donations: fmtNum(m.donations),
+      season: esc(m.season_display || fmtPct(m.season_activity)),
+      vs: vsBadge(m.vs_flag),
+    })
+  );
   el.innerHTML =
     '<section class="panel glass"><h2>Activity Score</h2>' +
     '<p class="lead">Gewichteter Score aus dem Dashboard-Sheet (Kills, Spende, Season, VS + R4/R5-Bonus).</p>' +
@@ -2553,6 +2711,7 @@ function initRouter() {
       t.setAttribute("aria-selected", String(t.dataset.view === view));
     });
     syncFilterVisibility(view);
+    renderFilterBar();
     try {
       if (routed && prev !== view) {
         history.replaceState({ y: window.scrollY }, "", urlForView(prev));
