@@ -139,15 +139,22 @@ function applyVsWeek(config, body) {
   } catch (err) {
     return { error: String(err.message || err), status: 400 };
   }
-  const entry = { year, week, mode };
-  // JSON key ``max``: push = optional elevated daily min. Save ignores max
-  // (weekday mins: Mo 12M / Di–Do 7.2M / Fr–Sa open — no outlier cap).
-  if (mode === 'push' && maxPoints != null && maxPoints > 7_200_000) {
-    entry.max = maxPoints;
-  }
   const idx = config.vsWeeks.findIndex(
     (item) => Number(item.year) === year && Number(item.week) === week
   );
+  const prev = idx >= 0 ? config.vsWeeks[idx] : null;
+  const entry = { year, week, mode };
+  // JSON key ``max``: push = optional elevated daily min. Save ignores max
+  // (weekday mins: Mo–Do 7.2M / Fr–Sa open — no outlier cap).
+  if (mode === 'push' && maxPoints != null && maxPoints > 7_200_000) {
+    entry.max = maxPoints;
+  }
+  // Champion rule is config-driven; preserve on mode-only updates.
+  if (body.champion && typeof body.champion === 'object') {
+    entry.champion = body.champion;
+  } else if (prev && prev.champion && typeof prev.champion === 'object') {
+    entry.champion = prev.champion;
+  }
   if (idx >= 0) config.vsWeeks[idx] = entry;
   else config.vsWeeks.push(entry);
   config.vsWeeks.sort((a, b) => b.year - a.year || b.week - a.week);

@@ -808,6 +808,17 @@ table.t.compact {
   white-space: nowrap;
 }
 
+.champ-week {
+  margin: 0.75rem 0 0;
+  font-size: 0.92rem;
+  line-height: 1.4;
+}
+
+.rank-list.champ-days .rank {
+  min-width: 4.5rem;
+  font-variant-numeric: tabular-nums;
+}
+
 .rank-list .val {
   font-variant-numeric: tabular-nums;
   color: var(--brand-ink);

@@ -11599,11 +11599,11 @@
       ]
     }
   },
-  "generated_at": "2026-10-20T07:32:29Z",
-  "stand_berlin": "20.10.2026, 09:32",
+  "generated_at": "2026-10-20T07:45:36Z",
+  "stand_berlin": "20.10.2026, 09:45",
   "source": "google_sheets",
   "source_file": "DawN - Base + Tabs (live)",
-  "snapshot": "2026-10-20T07:32:29",
+  "snapshot": "2026-10-20T07:45:36",
   "links": {
     "title": "DawN",
     "tagline": "Important links",
@@ -11638,7 +11638,18 @@
     {
       "year": 2026,
       "week": 43,
-      "mode": "save"
+      "mode": "save",
+      "champion": {
+        "type": "save_exact_and_closest",
+        "day_target": 7200000,
+        "week_days": [
+          "mon",
+          "tue",
+          "wed",
+          "thu"
+        ],
+        "week_agg": "closest_sum"
+      }
     },
     {
       "year": 2026,

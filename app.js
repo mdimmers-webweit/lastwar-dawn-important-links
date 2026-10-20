@@ -3,7 +3,7 @@
 let DATA = null;
 
 const ROLE_OPTIONS = ["R5", "R4", "R3", "R2", "R1"];
-const CACHE_BUST = "20261020-save-mo-do-72";
+const CACHE_BUST = "20261020-dynamic-champion";
 const FILTER_STORAGE_KEY = "dawn-dashboard-filters";
 const PERIOD_STORAGE_KEY = "dawn-dashboard-period";
 
@@ -21,8 +21,8 @@ const FILTERABLE_VIEWS = new Set([
 /** @type {{ roles: string[], activeOnly: boolean, vsFlag: string, search: string }} */
 let filters = { roles: [], activeOnly: true, vsFlag: "all", search: "" };
 
-/** @type {"tag"|"woche"|"gesamt"} */
-let periodMode = "tag";
+/** @type {"woche"|"gesamt"} */
+let periodMode = "woche";
 
 let filterBarInitialized = false;
 
@@ -34,8 +34,24 @@ const VS_DAILY_MIN = 7200000;
 const VS_SAVE_MIN = 7200000;
 /** Legacy JSON max that must never become a push elevated min. */
 const LEGACY_SAVE_12M = 12_000_000;
-/** Save/Economy: ≥ this = Push-scale outlier — never Champion. */
-const VS_SAVE_CHAMPION_MAX = 20_000_000;
+
+/**
+ * Per-week champion rules live on vs_weeks[].champion (see vs_weeks.json).
+ * Types:
+ * - max_score — highest VS points in the active period (classic Push)
+ * - day_min — list members with day score >= day_min
+ * - save_exact_and_closest — exact day_target per day + week_agg over week_days
+ *   (week_agg: closest_sum → Mo–Do sum closest to day_target)
+ */
+const CHAMPION_DAY_INDEX = { mon: 0, tue: 1, wed: 2, thu: 3, fri: 4, sat: 5 };
+const CHAMPION_DAY_LABEL_DE = {
+  mon: "Mo",
+  tue: "Di",
+  wed: "Mi",
+  thu: "Do",
+  fri: "Fr",
+  sat: "Sa",
+};
 
 function parsePointsInput(raw) {
   const s = String(raw ?? "")
@@ -344,13 +360,19 @@ function loadFilterState() {
 function loadPeriodState() {
   const params = new URLSearchParams(location.search);
   const p = params.get("period");
-  if (p === "tag" || p === "woche" || p === "gesamt") {
+  // Tag removed (data always a day late); map legacy "tag" → Woche.
+  if (p === "woche" || p === "gesamt") {
     periodMode = p;
+    return;
+  }
+  if (p === "tag") {
+    periodMode = "woche";
     return;
   }
   try {
     const stored = sessionStorage.getItem(PERIOD_STORAGE_KEY);
-    if (stored === "tag" || stored === "woche" || stored === "gesamt") periodMode = stored;
+    if (stored === "woche" || stored === "gesamt") periodMode = stored;
+    else if (stored === "tag") periodMode = "woche";
   } catch (e) {
     /* ignore */
   }
@@ -490,31 +512,6 @@ function activeVsWeekMode() {
   const hit = list.find((item) => Number(item.year) === wk.year && Number(item.week) === wk.week);
   const mode = String((hit && hit.mode) || "push").toLowerCase();
   return mode === "save" ? "save" : "push";
-}
-
-/** Quota met for Champion candidacy (open days: any positive score). */
-function memberMeetsVsQuotaForChampion(m) {
-  if (periodMode === "tag") {
-    const lab = currentGameDateLabel();
-    if (!hasSheetDateColumn("vs", lab)) return false;
-    const pts = vsPointsAtLabel(m, lab);
-    if (pts == null || pts <= 0) return false;
-    const min = vsMinForGameDate(parseIsoDate(lab));
-    if (min <= 0) return true;
-    return pts >= min;
-  }
-  return m.vs_flag === "OK";
-}
-
-/** Champion pool: no over-flag; Save also excludes ≥20M outliers and below-quota. */
-function isChampionEligible(m, pts) {
-  if (pts == null || pts <= 0) return false;
-  if (/over/i.test(String(m.vs_flag || ""))) return false;
-  if (activeVsWeekMode() === "save") {
-    if (pts >= VS_SAVE_CHAMPION_MAX) return false;
-    if (!memberMeetsVsQuotaForChampion(m)) return false;
-  }
-  return true;
 }
 
 function vsWeeksEntryForDate(d) {
@@ -802,7 +799,6 @@ function renderMissingStrip() {
 
 function renderPeriodToggle() {
   const modes = [
-    ["tag", "Tag"],
     ["woche", "Woche"],
     ["gesamt", "Gesamt"],
   ];
@@ -813,6 +809,249 @@ function renderPeriodToggle() {
     )
     .join("");
   return `<div class="period-toggle" role="group" aria-label="Zeitraum">${btns}</div>`;
+}
+
+function activeVsWeekEntry() {
+  const wk = activeVsWeekKey();
+  const list = (DATA && DATA.vs_weeks) || [];
+  const hit = list.find((item) => Number(item.year) === wk.year && Number(item.week) === wk.week);
+  if (hit) return hit;
+  return { year: wk.year, week: wk.week, mode: activeVsWeekMode() };
+}
+
+/** Resolve champion rule for the active VS week (config or mode default). */
+function activeChampionRule() {
+  const entry = activeVsWeekEntry();
+  const raw = entry && entry.champion;
+  if (raw && typeof raw === "object") {
+    const type = String(raw.type || "").toLowerCase();
+    if (type === "save_exact_and_closest") {
+      const dayTarget = Number(raw.day_target);
+      return {
+        type,
+        day_target: Number.isFinite(dayTarget) && dayTarget > 0 ? dayTarget : VS_SAVE_MIN,
+        week_days: Array.isArray(raw.week_days) && raw.week_days.length
+          ? raw.week_days.map((d) => String(d).toLowerCase())
+          : ["mon", "tue", "wed", "thu"],
+        week_agg: String(raw.week_agg || "closest_sum").toLowerCase(),
+      };
+    }
+    if (type === "day_min") {
+      const dayMin = Number(raw.day_min);
+      if (Number.isFinite(dayMin) && dayMin > 0) return { type, day_min: dayMin };
+    }
+    if (type === "max_score") return { type: "max_score" };
+  }
+  return { type: "max_score" };
+}
+
+function vsDaySlotsForWeek(dayKeys) {
+  const refWeek = activeVsWeekKey();
+  const allow =
+    dayKeys && dayKeys.length
+      ? new Set(
+          dayKeys
+            .map((k) => CHAMPION_DAY_INDEX[String(k).toLowerCase()])
+            .filter((n) => n != null)
+        )
+      : null;
+  const byWd = new Map();
+  for (const lab of sheetColumnLabels("vs")) {
+    const d = parseIsoDate(lab);
+    if (!d) continue;
+    const wk = isoWeekKey(d);
+    if (wk.year !== refWeek.year || wk.week !== refWeek.week) continue;
+    const wd = pythonWeekday(d);
+    if (allow && !allow.has(wd)) continue;
+    byWd.set(wd, { label: lab, date: d, weekday: wd });
+  }
+  const order = allow
+    ? [...allow].sort((a, b) => a - b)
+    : [0, 1, 2, 3, 4, 5].filter((wd) => byWd.has(wd));
+  return order.map((wd) => {
+    const hit = byWd.get(wd);
+    if (hit) return hit;
+    return { label: null, date: null, weekday: wd };
+  });
+}
+
+function weekdayKeyFromIndex(wd) {
+  for (const [key, idx] of Object.entries(CHAMPION_DAY_INDEX)) {
+    if (idx === wd) return key;
+  }
+  return "";
+}
+
+function formatChampDayLabel(slot) {
+  const key = weekdayKeyFromIndex(slot.weekday);
+  const short = CHAMPION_DAY_LABEL_DE[key] || "?";
+  if (!slot.date) return short;
+  const dd = String(slot.date.getUTCDate()).padStart(2, "0");
+  const mm = String(slot.date.getUTCMonth() + 1).padStart(2, "0");
+  return `${short} ${dd}.${mm}.`;
+}
+
+function computeChampionState(members) {
+  const rule = activeChampionRule();
+  if (rule.type === "save_exact_and_closest") {
+    const target = rule.day_target;
+    const allDays = vsDaySlotsForWeek(["mon", "tue", "wed", "thu", "fri", "sat"]).filter(
+      (s) => s.label
+    );
+    const weekSlots = vsDaySlotsForWeek(rule.week_days);
+    const dayHits = allDays.map((slot) => {
+      const hits = members
+        .map((m) => ({ m, pts: vsPointsAtLabel(m, slot.label) }))
+        .filter((x) => x.pts != null && Math.round(x.pts) === Math.round(target))
+        .sort((a, b) => String(a.m.name).localeCompare(String(b.m.name), "de"));
+      return { slot, hits };
+    });
+    const sums = members
+      .map((m) => {
+        let sum = 0;
+        let n = 0;
+        for (const slot of weekSlots) {
+          if (!slot.label) continue;
+          const pts = vsPointsAtLabel(m, slot.label);
+          if (pts == null) continue;
+          sum += pts;
+          n += 1;
+        }
+        return { m, sum, n, dist: Math.abs(sum - target) };
+      })
+      .filter((x) => x.n > 0);
+    let best = Infinity;
+    for (const x of sums) if (x.dist < best) best = x.dist;
+    const weekWinners =
+      best === Infinity
+        ? []
+        : sums
+            .filter((x) => x.dist === best)
+            .sort((a, b) => String(a.m.name).localeCompare(String(b.m.name), "de"));
+    return { rule, dayHits, weekWinners, weekSlots, topList: [], pulsePts: weekWinners[0] ? weekWinners[0].sum : null };
+  }
+  if (rule.type === "day_min") {
+    const dayMin = rule.day_min;
+    const days = vsDaySlotsForWeek(["mon", "tue", "wed", "thu", "fri", "sat"]).filter(
+      (s) => s.label
+    );
+    const dayHits = days.map((slot) => {
+      const hits = members
+        .map((m) => ({ m, pts: vsPointsAtLabel(m, slot.label) }))
+        .filter((x) => x.pts != null && x.pts >= dayMin)
+        .sort((a, b) => b.pts - a.pts || String(a.m.name).localeCompare(String(b.m.name), "de"));
+      return { slot, hits };
+    });
+    const top = dayHits.flatMap((d) => d.hits).sort((a, b) => b.pts - a.pts);
+    return {
+      rule,
+      dayHits,
+      weekWinners: [],
+      weekSlots: [],
+      topList: top.slice(0, 5).map((x) => x.m),
+      pulsePts: top[0] ? top[0].pts : null,
+    };
+  }
+  // max_score (default)
+  const ranked = members
+    .map((m) => ({ m, pts: vsMetric(m) }))
+    .filter((x) => x.pts != null && x.pts > 0)
+    .sort((a, b) => b.pts - a.pts);
+  return {
+    rule: { type: "max_score" },
+    dayHits: [],
+    weekWinners: [],
+    weekSlots: [],
+    topList: ranked.slice(0, 5).map((x) => x.m),
+    pulsePts: ranked[0] ? ranked[0].pts : null,
+  };
+}
+
+function renderChampionWidget(champState, vsReady, vsEmptyMsg) {
+  const rule = champState.rule;
+  if (!vsReady) {
+    return (
+      `<article class="widget span-8 glass"><h3>Champion</h3>` +
+      `<p class="sub">${esc(vsEmptyMsg)}</p></article>`
+    );
+  }
+  if (rule.type === "save_exact_and_closest") {
+    const targetLabel = fmtPts(rule.day_target);
+    const dayRows = champState.dayHits
+      .map((dh) => {
+        const who = dh.hits.length
+          ? dh.hits.map((h) => esc(h.m.name)).join(", ")
+          : "—";
+        return (
+          `<li><span class="rank">${esc(formatChampDayLabel(dh.slot))}</span>` +
+          `<span class="who">${who}</span>` +
+          `<span class="val">${esc(targetLabel)}</span></li>`
+        );
+      })
+      .join("");
+    const weekWho = champState.weekWinners.length
+      ? champState.weekWinners
+          .map((w) => `${esc(w.m.name)} · ${fmtPts(w.sum)} (Δ ${fmtPts(w.dist)})`)
+          .join(", ")
+      : "—";
+    const weekDaysLabel = (rule.week_days || [])
+      .map((d) => CHAMPION_DAY_LABEL_DE[d] || d)
+      .join("–");
+    return (
+      `<article class="widget span-8 glass"><h3>Champion</h3>` +
+      `<p class="sub">Exact ${esc(targetLabel)} / Tag · ${esc(weekDaysLabel)} Summe nächste ${esc(
+        targetLabel
+      )}</p>` +
+      (dayRows
+        ? `<ul class="rank-list champ-days">${dayRows}</ul>`
+        : `<p class="sub">${esc(vsEmptyMsg)}</p>`) +
+      `<p class="champ-week"><strong>Woche (${esc(weekDaysLabel)})</strong> · ${weekWho}</p>` +
+      `</article>`
+    );
+  }
+  if (rule.type === "day_min") {
+    const minLabel = fmtPts(rule.day_min);
+    const dayRows = champState.dayHits
+      .map((dh) => {
+        const who = dh.hits.length
+          ? dh.hits
+              .slice(0, 6)
+              .map((h) => `${esc(h.m.name)} (${fmtPts(h.pts)})`)
+              .join(", ") + (dh.hits.length > 6 ? ` +${dh.hits.length - 6}` : "")
+          : "—";
+        return (
+          `<li><span class="rank">${esc(formatChampDayLabel(dh.slot))}</span>` +
+          `<span class="who">${who}</span>` +
+          `<span class="val">≥ ${esc(minLabel)}</span></li>`
+        );
+      })
+      .join("");
+    return (
+      `<article class="widget span-8 glass"><h3>Champion</h3>` +
+      `<p class="sub">Tag ≥ ${esc(minLabel)}</p>` +
+      (dayRows
+        ? `<ul class="rank-list champ-days">${dayRows}</ul>`
+        : `<p class="sub">${esc(vsEmptyMsg)}</p>`) +
+      `</article>`
+    );
+  }
+  const periodSub =
+    periodMode === "gesamt" ? "Wochenstand (Sheet Latest)" : "Wochensumme";
+  const head = champState.topList[0];
+  const headHtml = head
+    ? `<p class="sub">${esc(head.name)} · ${fmtPts(vsMetric(head))}</p>`
+    : `<p class="sub">${esc(vsEmptyMsg)}</p>`;
+  return (
+    `<article class="widget span-8 glass"><h3>Champion</h3><p class="sub">${esc(
+      periodSub
+    )}</p>${headHtml}` +
+    renderRankList(
+      head ? champState.topList.slice(1) : [],
+      (m) => fmtPts(vsMetric(m)),
+      vsEmptyMsg
+    ) +
+    `</article>`
+  );
 }
 
 function renderRankList(items, valueFn, emptyMsg) {
@@ -837,17 +1076,7 @@ function renderOverviewWidgets() {
   const members = filteredMembers();
   const vsReady = hasVsSheetData();
   const vsEmptyMsg = !vsReady ? "Keine VS-Daten verfügbar" : noVsDataMessage();
-  const topVsAll = members
-    .map((m) => ({ m, pts: vsMetric(m) }))
-    .filter((x) => x.pts != null && x.pts > 0)
-    .sort((a, b) => b.pts - a.pts);
-  // Champion: höchste Punkte unter Eligible; Save schließt ≥20M Push-Outliers aus.
-  const topVsChamp = topVsAll
-    .filter((x) => isChampionEligible(x.m, x.pts))
-    .slice(0, 5)
-    .map((x) => x.m);
-  const topVs = topVsAll.slice(0, 5).map((x) => x.m);
-  const champ = topVsChamp[0];
+  const champState = computeChampionState(members);
   const underQuota = members
     .filter((m) => memberBelowQuotaForPeriod(m))
     .sort((a, b) => String(a.name).localeCompare(String(b.name), "de"))
@@ -879,38 +1108,19 @@ function renderOverviewWidgets() {
         ? ` · ${watchAll.length} Einträge`
         : "";
   const watchSub =
-    periodMode === "tag"
-      ? `Heute: VS unter Quote (nur wenn Tages-Spalte + Punkte)${watchSubExtra}`
-      : periodMode === "woche"
-        ? `Woche: VS-Flags & Vergleich${watchSubExtra}`
-        : `Gesamt-KPI: Activity & VS-Flags${watchSubExtra}`;
+    periodMode === "woche"
+      ? `Woche: VS-Flags & Vergleich${watchSubExtra}`
+      : `Gesamt-KPI: Activity & VS-Flags${watchSubExtra}`;
 
   const periodHint =
-    periodMode === "tag"
-      ? "VS & Spende · heutiger Spieltag"
-      : periodMode === "woche"
-        ? "VS Wochensumme · Spende Wochensumme"
-        : "Sheet-Stand · VS Latest · Spende Dashboard · VS-Flags";
-
-  const champHtml = champ
-    ? `<p class="sub">${esc(champ.name)} · ${fmtPts(vsMetric(champ))}</p>`
-    : `<p class="sub">${esc(vsReady ? "—" : vsEmptyMsg)}</p>`;
+    periodMode === "woche"
+      ? "VS Wochensumme · Spende Wochensumme"
+      : "Sheet-Stand · VS Latest · Spende Dashboard · VS-Flags";
 
   return (
     `<p class="sub">${esc(periodHint)} · ${members.length} Mitglieder nach Filter</p>` +
     '<div class="widget-grid">' +
-    `<article class="widget span-4 glass"><h3>Champion VS</h3>${champHtml}` +
-    renderRankList(
-      vsReady && champ ? topVsChamp.slice(1) : [],
-      (m) => fmtPts(vsMetric(m)),
-      vsEmptyMsg
-    ) +
-    "</article>" +
-    `<article class="widget span-4 glass"><h3>Top VS</h3><p class="sub">${
-      periodMode === "gesamt" ? "Wochenstand (Sheet Latest)" : periodMode === "woche" ? "Wochensumme" : "Heute"
-    }</p>` +
-    renderRankList(vsReady ? topVs : [], (m) => fmtPts(vsMetric(m)), vsEmptyMsg) +
-    "</article>" +
+    renderChampionWidget(champState, vsReady, vsEmptyMsg) +
     `<article class="widget span-4 glass"><h3>Unter Quote</h3><p class="sub">${vsBelow} gesamt</p>` +
     (underQuota.length
       ? "<ul class=\"rank-list\">" +
@@ -922,9 +1132,11 @@ function renderOverviewWidgets() {
           )
           .join("") +
         "</ul>"
-      : `<p class="sub">${esc(periodMode === "tag" && !hasSheetDateColumn("vs", currentGameDateLabel()) ? noVsDataMessage() : "Keine unter Quote im Filter.")}</p>`) +
+      : `<p class="sub">Keine unter Quote im Filter.</p>`) +
     "</article>" +
-    `<article class="widget span-4 glass"><h3>Top Spende</h3><p class="sub">${periodMode === "tag" ? "Heute" : periodMode === "woche" ? "Wochensumme" : "Gesamt"}</p>` +
+    `<article class="widget span-4 glass"><h3>Top Spende</h3><p class="sub">${
+      periodMode === "woche" ? "Wochensumme" : "Gesamt"
+    }</p>` +
     renderRankList(topDon, (m) => fmtNum(donationMetric(m)), noDonationDataMessage()) +
     "</article>" +
     compareWidget +
@@ -935,7 +1147,7 @@ function renderOverviewWidgets() {
     `<div class="pulse-pill"><strong>${fmtNum(
       topDon[0] ? donationMetric(topDon[0]) : null
     )}</strong>Top Spende</div>` +
-    `<div class="pulse-pill"><strong>${fmtPts(champ ? vsMetric(champ) : null)}</strong>Top VS</div>` +
+    `<div class="pulse-pill"><strong>${fmtPts(champState.pulsePts)}</strong>Champion</div>` +
     "</div></article>" +
     `<article class="widget span-12 glass"><h3>Watchlist</h3><p class="sub">${esc(watchSub)}</p>` +
     (watchShort.length
@@ -1234,7 +1446,7 @@ function renderDonations(el) {
   }));
   el.innerHTML =
     '<section class="panel glass"><h2>Donations</h2>' +
-    '<p class="lead">Allianz-Spenden nach gewähltem Zeitraum (Overview: Tag/Woche/Gesamt).</p>' +
+    '<p class="lead">Allianz-Spenden nach gewähltem Zeitraum (Overview: Woche/Gesamt).</p>' +
     (block
       ? `<h3>Donations-Sheet · recent</h3>` + matrixTable(block)
       : "") +
@@ -1410,7 +1622,7 @@ function renderVs(el) {
   }));
   el.innerHTML =
     '<section class="panel glass"><h2>VS</h2>' +
-    '<p class="lead">VS-Punkte und Flags — Zeitraum wie in Overview (Tag/Woche/Gesamt).</p>' +
+    '<p class="lead">VS-Punkte und Flags — Zeitraum wie in Overview (Woche/Gesamt).</p>' +
     renderVsMetaSummary() +
     (compareDays ? renderVsCompareDays(compareDays) : "") +
     (vsBlock
