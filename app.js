@@ -3,9 +3,9 @@
 let DATA = null;
 
 const ROLE_OPTIONS = ["R5", "R4", "R3", "R2", "R1"];
-const CACHE_BUST = "20261020-watch-15m";
+const CACHE_BUST = "20261020-save-push";
 
-/** Save-Woche: Watchlist-Schwelle für ungewöhnlich hohe Tages-VS (Tracking). */
+/** Save-Woche: eigenes Widget — Tages-VS über dieser Schwelle (Tracking). */
 const WATCH_SAVE_DAY_OVER = 15_000_000;
 
 /** Season contribution columns — mirrors Sheet tabs / SEASON_CATEGORIES. */
@@ -730,15 +730,6 @@ function buildWatchlistEntries(members, compare) {
     } else if (memberLowActivityForWatchlist(m)) {
       watch.push({ m, reason: "Niedrige Activity (Gesamt-KPI)", score: 2 });
     }
-    // Save: Tages-VS > 15M zum Verfolgen (z. B. Push-Verhalten in Save-Woche)
-    for (const hit of memberSaveDayOverHits(m)) {
-      const dayShort = String(hit.label).slice(5);
-      watch.push({
-        m,
-        reason: `Save · >15M am ${dayShort} · ${fmtPts(hit.pts)}`,
-        score: 4 + hit.pts / 1e10,
-      });
-    }
   }
   const cmpPlayers = (compare && compare.players) || [];
   for (const p of cmpPlayers) {
@@ -756,6 +747,29 @@ function buildWatchlistEntries(members, compare) {
       b.score - a.score || String(a.m.name).localeCompare(String(b.m.name), "de")
   );
   return watch;
+}
+
+/** Save-Woche: Mitglieder mit Tages-VS > 15M — eigenes Overview-Element. */
+function buildSavePushEntries(members) {
+  if (activeVsWeekMode() !== "save") return [];
+  const entries = [];
+  for (const m of members) {
+    for (const hit of memberSaveDayOverHits(m)) {
+      entries.push({
+        m,
+        label: hit.label,
+        pts: hit.pts,
+        dayShort: String(hit.label).slice(5),
+      });
+    }
+  }
+  entries.sort(
+    (a, b) =>
+      b.pts - a.pts ||
+      String(a.label).localeCompare(String(b.label)) ||
+      String(a.m.name).localeCompare(String(b.m.name), "de")
+  );
+  return entries;
 }
 
 function memberVsStatusOk(m) {
@@ -1672,6 +1686,16 @@ function renderOverviewWidgets() {
       : watchAll.length
         ? ` · ${watchAll.length} Einträge`
         : "";
+  const savePushAll = buildSavePushEntries(roster);
+  const savePushShort = savePushAll.slice(0, WATCHLIST_DISPLAY_MAX);
+  const savePushSub =
+    activeVsWeekMode() !== "save"
+      ? "Nur in Save-Wochen"
+      : savePushAll.length > savePushShort.length
+        ? `Save · &gt;15M/Tag · ${savePushAll.length} gesamt, Top ${savePushShort.length}`
+        : savePushAll.length
+          ? `Save · &gt;15M/Tag · ${savePushAll.length}`
+          : "Save · &gt;15M/Tag · keine";
 
   return (
     `<p class="ops-stand">${esc(dataRealityLine())}</p>` +
@@ -1750,7 +1774,7 @@ function renderOverviewWidgets() {
     widgetShell(
       "watchlist",
       "Watchlist",
-      `Gesamtverlauf · VS-Flags · Activity · Save &gt;15M/Tag${watchSubExtra}`,
+      `Gesamtverlauf · VS unter Quote · Activity${watchSubExtra}`,
       watchShort.length
         ? "<ul class=\"rank-list\">" +
             watchShort
@@ -1762,6 +1786,25 @@ function renderOverviewWidgets() {
               .join("") +
             "</ul>"
         : '<p class="sub">Alles ruhig.</p>',
+      { span: "span-12", defaultCollapsed: false }
+    ) +
+    widgetShell(
+      "save-push",
+      "Save · über 15M",
+      savePushSub,
+      savePushShort.length
+        ? "<ul class=\"rank-list\">" +
+            savePushShort
+              .map(
+                (e) =>
+                  `<li><span class="rank">↑</span><span class="who">${esc(e.m.name)}</span>` +
+                  `<span class="val">${esc(e.dayShort)} · ${fmtPts(e.pts)}</span></li>`
+              )
+              .join("") +
+            "</ul>"
+        : activeVsWeekMode() === "save"
+          ? '<p class="sub">Niemand über 15M/Tag.</p>'
+          : '<p class="sub">Nur in Save-Wochen sichtbar.</p>',
       { span: "span-12", defaultCollapsed: false }
     ) +
     "</div>"
