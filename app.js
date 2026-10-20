@@ -3,7 +3,10 @@
 let DATA = null;
 
 const ROLE_OPTIONS = ["R5", "R4", "R3", "R2", "R1"];
-const CACHE_BUST = "20261020-overview-gegner";
+const CACHE_BUST = "20261020-watch-15m";
+
+/** Save-Woche: Watchlist-Schwelle für ungewöhnlich hohe Tages-VS (Tracking). */
+const WATCH_SAVE_DAY_OVER = 15_000_000;
 
 /** Season contribution columns — mirrors Sheet tabs / SEASON_CATEGORIES. */
 const SEASON_CATS = [
@@ -704,6 +707,20 @@ function memberLowActivityForWatchlist(m) {
   return true;
 }
 
+function memberSaveDayOverHits(m) {
+  if (activeVsWeekMode() !== "save") return [];
+  const labs = vsWeekDayLabels();
+  const hits = [];
+  for (const lab of labs) {
+    const pts = vsPointsAtLabel(m, lab);
+    if (pts == null) continue;
+    if (pts > WATCH_SAVE_DAY_OVER) {
+      hits.push({ label: lab, pts: Math.round(pts) });
+    }
+  }
+  return hits;
+}
+
 function buildWatchlistEntries(members, compare) {
   const watch = [];
   for (const m of members) {
@@ -712,6 +729,15 @@ function buildWatchlistEntries(members, compare) {
       watch.push({ m, reason: "VS unter Quote", score: 3 });
     } else if (memberLowActivityForWatchlist(m)) {
       watch.push({ m, reason: "Niedrige Activity (Gesamt-KPI)", score: 2 });
+    }
+    // Save: Tages-VS > 15M zum Verfolgen (z. B. Push-Verhalten in Save-Woche)
+    for (const hit of memberSaveDayOverHits(m)) {
+      const dayShort = String(hit.label).slice(5);
+      watch.push({
+        m,
+        reason: `Save · >15M am ${dayShort} · ${fmtPts(hit.pts)}`,
+        score: 4 + hit.pts / 1e10,
+      });
     }
   }
   const cmpPlayers = (compare && compare.players) || [];
@@ -1724,7 +1750,7 @@ function renderOverviewWidgets() {
     widgetShell(
       "watchlist",
       "Watchlist",
-      `Gesamtverlauf · VS-Flags &amp; Activity${watchSubExtra}`,
+      `Gesamtverlauf · VS-Flags · Activity · Save &gt;15M/Tag${watchSubExtra}`,
       watchShort.length
         ? "<ul class=\"rank-list\">" +
             watchShort
