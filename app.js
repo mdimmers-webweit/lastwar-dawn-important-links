@@ -3,7 +3,7 @@
 let DATA = null;
 
 const ROLE_OPTIONS = ["R5", "R4", "R3", "R2", "R1"];
-const CACHE_BUST = "20261020-save-outlier";
+const CACHE_BUST = "20261020-save-weekday-mins";
 const FILTER_STORAGE_KEY = "dawn-dashboard-filters";
 const PERIOD_STORAGE_KEY = "dawn-dashboard-period";
 
@@ -30,12 +30,10 @@ const IMPORTANT_LINKS_ORIGIN = "https://lastwar-dawn-important-links.pages.dev";
 const IMPORTANT_LINKS_CONFIG_URL = IMPORTANT_LINKS_ORIGIN + "/config.json";
 const IMPORTANT_LINKS_API_URL = IMPORTANT_LINKS_ORIGIN + "/api/config";
 const VS_DAILY_MIN = 7200000;
-/** Save/Economy = Tagesquote wie Push-Basis; fest 7.2M. */
+/** Save/Economy Montag-Tagesminimum. */
+const VS_SAVE_MON_MIN = 12000000;
+/** Save/Economy Di–Do-Tagesminimum. Fr–Sa offen (kein under/over). */
 const VS_SAVE_MIN = 7200000;
-/** Save Mo–Do Outlier-Cap (darüber = „over“, kein Champion). */
-const VS_OUTLIER_MAX = 12000000;
-/** Config ≥20M = Champion/Push-Schwelle — nie als Save-Outlier. */
-const VS_SAVE_OUTLIER_EXTREME = 20000000;
 
 function parsePointsInput(raw) {
   const s = String(raw ?? "")
@@ -60,17 +58,8 @@ function pushElevatedMinFromEntry(entry) {
   if (!entry || String(entry.mode || "push").toLowerCase() !== "push") return null;
   const n = Number(entry.max);
   if (!Number.isFinite(n) || n <= VS_DAILY_MIN) return null;
-  if (n === VS_OUTLIER_MAX) return null;
-  return n;
-}
-
-/** Save/Economy Mo–Thu outlier; extreme ≥20M configs clamp to 12M. */
-function saveOutlierMaxFromEntry(entry) {
-  if (!entry || String(entry.mode || "").toLowerCase() !== "save") return null;
-  const n = Number(entry.max);
-  if (!Number.isFinite(n) || n <= VS_SAVE_MIN || n >= VS_SAVE_OUTLIER_EXTREME) {
-    return VS_OUTLIER_MAX;
-  }
+  // Legacy 12M (old Save outlier / Monday floor) is never a push elevated min.
+  if (n === VS_SAVE_MON_MIN) return null;
   return n;
 }
 
@@ -192,7 +181,7 @@ function vsBadge(flag) {
   if (!f) return '<span class="badge off">—</span>';
   if (f === "OK") return '<span class="badge ok">OK</span>';
   if (/below/i.test(f)) return `<span class="badge warn">${esc(f)}</span>`;
-  if (/over/i.test(f)) return `<span class="badge bad" title="Save/Economy over outlier">${esc(f)}</span>`;
+  if (/over/i.test(f)) return `<span class="badge bad" title="VS over">${esc(f)}</span>`;
   return `<span class="badge bad">${esc(f)}</span>`;
 }
 
@@ -508,17 +497,18 @@ function vsMinForGameDate(d) {
   const cfg = legendConfig();
   const dailyMin = Number(cfg.vs_min_daily) || VS_DAILY_MIN;
   const saveMin = Number(cfg.vs_min_save) || VS_SAVE_MIN;
+  const saveMonMin = Number(cfg.vs_min_save_mon) || VS_SAVE_MON_MIN;
   const entry = vsWeeksEntryForDate(d);
   const mode = String(entry.mode || "push").toLowerCase();
   const wd = pythonWeekday(d);
-  if (wd >= 4 || mode === "push") {
-    if (mode === "push") {
-      const elevated = pushElevatedMinFromEntry(entry);
-      if (elevated && elevated > dailyMin) return elevated;
-    }
-    return dailyMin;
+  if (mode === "save") {
+    if (wd === 0) return saveMonMin;
+    if (wd >= 4) return 0; // Fr–Sa open
+    return saveMin;
   }
-  return saveMin;
+  const elevated = pushElevatedMinFromEntry(entry);
+  if (elevated && elevated > dailyMin) return elevated;
+  return dailyMin;
 }
 
 function lastCapturedVsLabel() {
@@ -748,8 +738,10 @@ function vsWeekModeLabel() {
     const minLabel = meta.VSWeekMin || formatPointsDe(VS_DAILY_MIN);
     return `PUSH · Min ${minLabel}`;
   }
-  const outlier = meta.VSWeekOutlierMax || formatPointsDe(VS_OUTLIER_MAX);
-  return `SAVE · Min ${formatPointsDe(VS_SAVE_MIN)} · Outlier ${outlier}`;
+  return (
+    `SAVE · Mo ${formatPointsDe(VS_SAVE_MON_MIN)} · ` +
+    `Di–Do ${formatPointsDe(VS_SAVE_MIN)} · Fr–Sa offen`
+  );
 }
 
 function sheetBlock(key) {
@@ -816,7 +808,7 @@ function renderOverviewWidgets() {
     .map((m) => ({ m, pts: vsMetric(m) }))
     .filter((x) => x.pts != null && x.pts > 0)
     .sort((a, b) => b.pts - a.pts);
-  // Save/Economy „over“: kein Champion (z. B. >12M am Economy-Tag).
+  // Champion = höchste Punkte; „over“ nur noch Restflags (Save hat kein Over-Cap).
   const topVsChamp = topVsAll
     .filter((x) => !/over/i.test(String(x.m.vs_flag || "")))
     .slice(0, 5)
@@ -1345,10 +1337,10 @@ function renderVsMetaSummary() {
   if (mode === "push") {
     pairs.push(["Push-Minimum", meta.VSWeekMin || formatPointsDe(VS_DAILY_MIN)]);
   } else {
-    pairs.push(["Save-Minimum", meta.VSWeekMin || formatPointsDe(VS_SAVE_MIN)]);
     pairs.push([
-      "Save-Outlier Mo–Do",
-      meta.VSWeekOutlierMax || formatPointsDe(VS_OUTLIER_MAX),
+      "Save-Minimum",
+      meta.VSWeekMin ||
+        `Mo ${formatPointsDe(VS_SAVE_MON_MIN)} · Di–Do ${formatPointsDe(VS_SAVE_MIN)} · Fr–Sa offen`,
     ]);
   }
   const visible = pairs.filter(([, v]) => v != null && String(v).trim());
@@ -1597,8 +1589,7 @@ function configDraftForWeek(cfg, year, week) {
     if (mode !== "push" && mode !== "save") mode = "push";
   }
   const elevatedMin = entry ? pushElevatedMinFromEntry(entry) : null;
-  const outlierMax = entry ? saveOutlierMaxFromEntry(entry) : null;
-  return { year, week, mode, elevatedMin, outlierMax };
+  return { year, week, mode, elevatedMin };
 }
 
 function applyVsWeekToDashboard(cfg) {
@@ -1617,9 +1608,9 @@ function applyVsWeekToDashboard(cfg) {
     const effective = draft.elevatedMin || VS_DAILY_MIN;
     meta.VSWeekMin = formatPointsDe(effective);
   } else {
-    meta.VSWeekMin = formatPointsDe(VS_SAVE_MIN);
-    const outlier = draft.outlierMax || VS_OUTLIER_MAX;
-    meta.VSWeekOutlierMax = formatPointsDe(outlier);
+    meta.VSWeekMin =
+      `Mo ${formatPointsDe(VS_SAVE_MON_MIN)} · ` +
+      `Di–Do ${formatPointsDe(VS_SAVE_MIN)} · Fr–Sa offen`;
   }
   DATA.meta = meta;
 }
@@ -1695,8 +1686,7 @@ function renderConfigForm(el, cfg, draft, loadError) {
       formatPointsInputValue(draft.elevatedMin)
     )}"></div></div>` +
     '<div id="cfgSaveBlock" hidden>' +
-    '<p class="config-hint">Minimum fest: <strong>7,2 Mio</strong> Punkte (Mo–Sa).</p>' +
-    '<p class="config-hint">Outlier-Max Mo–Do: <strong>12 Mio</strong> (darüber = over; ≥20M-Config wird gekappt).</p>' +
+    '<p class="config-hint">Mo: <strong>12 Mio</strong> · Di–Do: <strong>7,2 Mio</strong> · Fr–Sa: <strong>offen</strong> (kein under/over).</p>' +
     "</div>" +
     '<div class="btn-row">' +
     '<button type="submit" class="btn" id="cfgSave">Speichern</button>' +

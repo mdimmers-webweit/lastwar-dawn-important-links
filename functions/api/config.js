@@ -140,14 +140,10 @@ function applyVsWeek(config, body) {
     return { error: String(err.message || err), status: 400 };
   }
   const entry = { year, week, mode };
-  // JSON key ``max``: push = optional elevated daily min; save = Mon–Thu outlier cap.
-  // Save/Economy: never store extreme ≥20M (champion/push thresholds) as outlier.
-  if (mode === 'push') {
-    if (maxPoints != null && maxPoints > 7_200_000) entry.max = maxPoints;
-  } else {
-    let cap = maxPoints != null ? maxPoints : 12_000_000;
-    if (cap >= 20_000_000) cap = 12_000_000;
-    entry.max = cap;
+  // JSON key ``max``: push = optional elevated daily min. Save ignores max
+  // (weekday mins: Mo 12M / Di–Do 7.2M / Fr–Sa open — no outlier cap).
+  if (mode === 'push' && maxPoints != null && maxPoints > 7_200_000) {
+    entry.max = maxPoints;
   }
   const idx = config.vsWeeks.findIndex(
     (item) => Number(item.year) === year && Number(item.week) === week
@@ -164,7 +160,7 @@ function parseMaxPoints(raw, mode) {
     .toLowerCase()
     .replace(/\s/g, '')
     .replace(/,/g, '');
-  if (!s) return mode === 'push' ? null : 12000000;
+  if (!s) return null;
   if (s.endsWith('m')) {
     const n = parseFloat(s.slice(0, -1));
     if (!Number.isFinite(n) || n <= 0) throw new Error('Invalid max');
