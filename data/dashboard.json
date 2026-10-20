@@ -15196,5 +15196,217 @@
       "week": 34,
       "mode": "save"
     }
+  ],
+  "activity_trend": [
+    {
+      "date": "2026-09-14",
+      "avg": 0.3399,
+      "n": 100,
+      "source": "archive"
+    },
+    {
+      "date": "2026-09-15",
+      "avg": 0.4128,
+      "n": 100,
+      "source": "archive"
+    },
+    {
+      "date": "2026-09-16",
+      "avg": 0.4651,
+      "n": 93,
+      "source": "archive"
+    },
+    {
+      "date": "2026-09-17",
+      "avg": 0.3372,
+      "n": 104,
+      "source": "archive"
+    },
+    {
+      "date": "2026-09-18",
+      "avg": 0.4306,
+      "n": 91,
+      "source": "archive"
+    },
+    {
+      "date": "2026-09-19",
+      "avg": 0.3661,
+      "n": 99,
+      "source": "archive"
+    },
+    {
+      "date": "2026-09-20",
+      "avg": 0.3355,
+      "n": 91,
+      "source": "archive"
+    },
+    {
+      "date": "2026-09-21",
+      "avg": 0.3373,
+      "n": 105,
+      "source": "archive"
+    },
+    {
+      "date": "2026-09-22",
+      "avg": 0.4435,
+      "n": 115,
+      "source": "archive"
+    },
+    {
+      "date": "2026-09-23",
+      "avg": 0.3373,
+      "n": 105,
+      "source": "archive"
+    },
+    {
+      "date": "2026-09-24",
+      "avg": 0.4435,
+      "n": 115,
+      "source": "archive"
+    },
+    {
+      "date": "2026-09-25",
+      "avg": 0.3373,
+      "n": 105,
+      "source": "archive"
+    },
+    {
+      "date": "2026-09-26",
+      "avg": 0.4435,
+      "n": 115,
+      "source": "archive"
+    },
+    {
+      "date": "2026-09-27",
+      "avg": 0.3373,
+      "n": 105,
+      "source": "archive"
+    },
+    {
+      "date": "2026-09-28",
+      "avg": 0.4435,
+      "n": 115,
+      "source": "archive"
+    },
+    {
+      "date": "2026-09-29",
+      "avg": 0.3373,
+      "n": 105,
+      "source": "archive"
+    },
+    {
+      "date": "2026-09-30",
+      "avg": 0.4435,
+      "n": 115,
+      "source": "archive"
+    },
+    {
+      "date": "2026-10-01",
+      "avg": 0.3373,
+      "n": 105,
+      "source": "archive"
+    },
+    {
+      "date": "2026-10-02",
+      "avg": 0.4435,
+      "n": 115,
+      "source": "archive"
+    },
+    {
+      "date": "2026-10-03",
+      "avg": 0.3373,
+      "n": 105,
+      "source": "archive"
+    },
+    {
+      "date": "2026-10-04",
+      "avg": 0.4435,
+      "n": 115,
+      "source": "archive"
+    },
+    {
+      "date": "2026-10-05",
+      "avg": 0.3373,
+      "n": 105,
+      "source": "archive"
+    },
+    {
+      "date": "2026-10-06",
+      "avg": 0.4422,
+      "n": 105,
+      "source": "archive"
+    },
+    {
+      "date": "2026-10-07",
+      "avg": 0.4868,
+      "n": 101,
+      "source": "archive"
+    },
+    {
+      "date": "2026-10-08",
+      "avg": 0.4123,
+      "n": 101,
+      "source": "archive"
+    },
+    {
+      "date": "2026-10-09",
+      "avg": 0.6052,
+      "n": 99,
+      "source": "archive"
+    },
+    {
+      "date": "2026-10-10",
+      "avg": 0.5964,
+      "n": 102,
+      "source": "archive"
+    },
+    {
+      "date": "2026-10-11",
+      "avg": 0.6122,
+      "n": 101,
+      "source": "archive"
+    },
+    {
+      "date": "2026-10-12",
+      "avg": 0.6122,
+      "n": 101,
+      "source": "archive"
+    },
+    {
+      "date": "2026-10-13",
+      "avg": 0.6122,
+      "n": 101,
+      "source": "archive"
+    },
+    {
+      "date": "2026-10-14",
+      "avg": 0.7305,
+      "n": 101,
+      "source": "archive"
+    },
+    {
+      "date": "2026-10-15",
+      "avg": 0.7702,
+      "n": 100,
+      "source": "archive"
+    },
+    {
+      "date": "2026-10-16",
+      "avg": 0.7163,
+      "n": 100,
+      "source": "archive"
+    },
+    {
+      "date": "2026-10-19",
+      "avg": 0.6732,
+      "n": 102,
+      "source": "archive"
+    },
+    {
+      "date": "2026-10-20",
+      "avg": 0.3773,
+      "n": 101,
+      "source": "live"
+    }
   ]
 }

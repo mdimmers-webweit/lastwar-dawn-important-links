@@ -3,7 +3,7 @@
 let DATA = null;
 
 const ROLE_OPTIONS = ["R5", "R4", "R3", "R2", "R1"];
-const CACHE_BUST = "20261020-season-cats";
+const CACHE_BUST = "20261020-overview";
 
 /** Season contribution columns — mirrors Sheet tabs / SEASON_CATEGORIES. */
 const SEASON_CATS = [
@@ -12,6 +12,9 @@ const SEASON_CATS = [
   { key: "conquest", label: "Conquest", legend: "Season Conquest" },
   { key: "defeat", label: "Defeat", legend: "Season Defeat" },
 ];
+
+/** Overview „Wenig aktiv“ — niedrigste Activity-% (5–10, Default 8). Config später. */
+const WENIG_AKTIV_COUNT = 8;
 const FILTER_STORAGE_KEY = "dawn-dashboard-filters";
 const PERIOD_STORAGE_KEY = "dawn-dashboard-period";
 
@@ -1227,6 +1230,110 @@ function renderRankList(items, valueFn, emptyMsg) {
   );
 }
 
+function wenigAktivMembers(members) {
+  const n = Math.min(10, Math.max(5, WENIG_AKTIV_COUNT));
+  return members
+    .filter((m) => m.active && m.activity != null && !Number.isNaN(Number(m.activity)))
+    .slice()
+    .sort(
+      (a, b) =>
+        Number(a.activity) - Number(b.activity) ||
+        String(a.name).localeCompare(String(b.name), "de")
+    )
+    .slice(0, n);
+}
+
+function activityTrendPoints() {
+  const raw = (DATA && DATA.activity_trend) || [];
+  return raw
+    .map((p) => ({
+      date: String(p.date || ""),
+      avg: Number(p.avg),
+      n: Number(p.n) || 0,
+    }))
+    .filter((p) => p.date && Number.isFinite(p.avg));
+}
+
+function activityTrendSummary(points) {
+  if (!points.length) return "Keine Verlaufsdaten";
+  if (points.length === 1) return `Stand ${fmtPct(points[0].avg)}`;
+  const first = points[0].avg;
+  const last = points[points.length - 1].avg;
+  const delta = last - first;
+  const abs = Math.abs(delta);
+  const label = fmtPct(abs);
+  if (abs < 0.005) return `Stabil · zuletzt ${fmtPct(last)}`;
+  if (delta > 0) return `Steigend · +${label} · zuletzt ${fmtPct(last)}`;
+  return `Fallend · −${label} · zuletzt ${fmtPct(last)}`;
+}
+
+/** Ø-Activity-Verlauf (Archiv + Live) — Overview only, kein VS-Burnup. */
+function renderActivityTrendChart() {
+  const series = activityTrendPoints();
+  if (!series.length) {
+    return (
+      '<article class="widget span-12 glass">' +
+      "<h3>Activity-Verlauf</h3>" +
+      '<p class="sub">Noch keine Archiv-Snapshots für den Trend.</p></article>'
+    );
+  }
+  const summary = activityTrendSummary(series);
+  const W = 640;
+  const H = 220;
+  const pad = { t: 18, r: 16, b: 36, l: 44 };
+  const iw = W - pad.l - pad.r;
+  const ih = H - pad.t - pad.b;
+  const n = series.length;
+  const xAt = (i) => pad.l + (n === 1 ? iw / 2 : (i / (n - 1)) * iw);
+  const yAt = (v) => pad.t + ih - Math.min(1, Math.max(0, v)) * ih;
+  const path = series
+    .map((p, i) => `${i ? "L" : "M"}${xAt(i).toFixed(1)},${yAt(p.avg).toFixed(1)}`)
+    .join(" ");
+  const area =
+    `M${xAt(0).toFixed(1)},${yAt(0).toFixed(1)} ` +
+    series.map((p, i) => `L${xAt(i).toFixed(1)},${yAt(p.avg).toFixed(1)}`).join(" ") +
+    ` L${xAt(n - 1).toFixed(1)},${yAt(0).toFixed(1)} Z`;
+  const ticks = [0, 0.25, 0.5, 0.75, 1].map((t) => {
+    const y = yAt(t);
+    return (
+      `<line class="chart-grid" x1="${pad.l}" y1="${y.toFixed(1)}" x2="${W - pad.r}" y2="${y.toFixed(1)}" />` +
+      `<text class="chart-tick" x="${pad.l - 6}" y="${(y + 3).toFixed(1)}" text-anchor="end">${esc(
+        fmtPct(t)
+      )}</text>`
+    );
+  });
+  const step = n > 12 ? Math.ceil(n / 8) : 1;
+  const labels = series
+    .map((p, i) => {
+      if (i % step !== 0 && i !== n - 1) return "";
+      return `<text class="chart-x" x="${xAt(i).toFixed(1)}" y="${H - 12}" text-anchor="middle">${esc(
+        String(p.date).slice(5)
+      )}</text>`;
+    })
+    .join("");
+  const dots = series
+    .map(
+      (p, i) =>
+        `<circle class="chart-dot dawn" cx="${xAt(i).toFixed(1)}" cy="${yAt(p.avg).toFixed(1)}" r="3.5">` +
+        `<title>${esc(p.date)} Ø ${fmtPct(p.avg)}${p.n ? ` · n=${p.n}` : ""}</title></circle>`
+    )
+    .join("");
+  return (
+    '<article class="widget span-12 glass">' +
+    '<div class="vs-chart-head"><h3>Activity-Verlauf</h3>' +
+    `<p class="sub">${esc(summary)}</p></div>` +
+    '<p class="sub">Ø Activity der Aktiven · Archiv-Snapshots (+ heute live)</p>' +
+    '<div class="vs-chart">' +
+    `<svg class="activity-trend" viewBox="0 0 ${W} ${H}" role="img" aria-label="Activity-Verlauf">` +
+    ticks.join("") +
+    `<path class="chart-area dawn" d="${area}" />` +
+    `<path class="chart-line dawn" d="${path}" fill="none" />` +
+    dots +
+    labels +
+    "</svg></div></article>"
+  );
+}
+
 function renderOverviewWidgets() {
   const members = filteredMembers();
   const vsReady = hasVsSheetData();
@@ -1241,13 +1348,15 @@ function renderOverviewWidgets() {
     .sort((a, b) => b.pts - a.pts)
     .slice(0, 5)
     .map((x) => x.m);
+  const wenigAktiv = wenigAktivMembers(members);
 
   const compare = sheetBlock("vs_compare");
   const days = (compare && compare.days) || [];
+  // Overview: day cards only — no VS burn-up (Activity-Verlauf is the chart here).
   const compareWidget =
     days.length > 0
       ? `<article class="widget span-12 glass vs-overview-compare">${renderVsCompareDays(days, {
-          includeBurnup: true,
+          includeBurnup: false,
         })}</article>`
       : "";
 
@@ -1298,8 +1407,25 @@ function renderOverviewWidgets() {
     }</p>` +
     renderRankList(topDon, (m) => fmtNum(donationMetric(m)), noDonationDataMessage()) +
     "</article>" +
-    compareWidget +
-    `<article class="widget span-12 glass"><h3>Pulse</h3><div class="pulse-row">` +
+    `<article class="widget span-6 glass"><h3>Wenig aktiv</h3>` +
+    `<p class="sub">Niedrigste Activity · ${wenigAktiv.length} von max. ${Math.min(
+      10,
+      Math.max(5, WENIG_AKTIV_COUNT)
+    )}</p>` +
+    (wenigAktiv.length
+      ? "<ol class=\"rank-list\">" +
+        wenigAktiv
+          .map(
+            (m, i) =>
+              `<li><span class="rank">${i + 1}</span>` +
+              `<span class="who">${esc(m.name)}</span>` +
+              `<span class="val">${esc(m.activity_display || fmtPct(m.activity))}</span></li>`
+          )
+          .join("") +
+        "</ol>"
+      : `<p class="sub">Keine Activity-Werte im Filter.</p>`) +
+    "</article>" +
+    `<article class="widget span-6 glass"><h3>Pulse</h3><div class="pulse-row">` +
     `<div class="pulse-pill"><strong>${fmtPct(avgActFiltered(members))}</strong>Ø Activity</div>` +
     `<div class="pulse-pill"><strong>${vsOk}</strong>VS OK</div>` +
     `<div class="pulse-pill"><strong>${vsBelow}</strong>Unter Quote</div>` +
@@ -1312,6 +1438,8 @@ function renderOverviewWidgets() {
         : fmtPts(champState.pulsePts)
     }</strong>Champion</div>` +
     "</div></article>" +
+    renderActivityTrendChart() +
+    compareWidget +
     `<article class="widget span-12 glass"><h3>Watchlist</h3><p class="sub">${esc(watchSub)}</p>` +
     (watchShort.length
       ? "<ul class=\"rank-list\">" +
@@ -1706,7 +1834,7 @@ function renderVsBurnupChart(days) {
 
 function renderVsCompareDays(days, options) {
   if (!days || !days.length) return "";
-  const includeBurnup = !options || options.includeBurnup !== false;
+  const includeBurnup = !!(options && options.includeBurnup);
   const sorted = vsCompareDaysSorted(days);
   const cards = sorted
     .map((d) => {

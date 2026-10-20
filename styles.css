@@ -1048,7 +1048,8 @@ table.t.compact {
 .vs-chart-legend .lg.dawn { color: var(--brand-ink); }
 .vs-chart-legend .lg.opp { color: var(--ember); }
 
-.vs-burnup {
+.vs-burnup,
+.activity-trend {
   display: block;
   width: 100%;
   height: auto;
