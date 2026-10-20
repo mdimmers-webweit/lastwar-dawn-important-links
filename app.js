@@ -3,7 +3,7 @@
 let DATA = null;
 
 const ROLE_OPTIONS = ["R5", "R4", "R3", "R2", "R1"];
-const CACHE_BUST = "20261020-save-push";
+const CACHE_BUST = "20261020-watch-compact";
 
 /** Save-Woche: eigenes Widget — Tages-VS über dieser Schwelle (Tracking). */
 const WATCH_SAVE_DAY_OVER = 15_000_000;
@@ -726,9 +726,9 @@ function buildWatchlistEntries(members, compare) {
   for (const m of members) {
     // Gesamtverlauf: VS-Flag + Activity-KPI (nicht an Woche/Gesamt-Toggle gekoppelt)
     if (/below/i.test(String(m.vs_flag || ""))) {
-      watch.push({ m, reason: "VS unter Quote", score: 3 });
+      watch.push({ m, reason: "Unter Quote", score: 3 });
     } else if (memberLowActivityForWatchlist(m)) {
-      watch.push({ m, reason: "Niedrige Activity (Gesamt-KPI)", score: 2 });
+      watch.push({ m, reason: "Activity niedrig", score: 2 });
     }
   }
   const cmpPlayers = (compare && compare.players) || [];
@@ -738,7 +738,7 @@ function buildWatchlistEntries(members, compare) {
     if (!mem) continue;
     watch.push({
       m: mem,
-      reason: "Unnötige VS-Punkte",
+      reason: "Unnötige VS",
       score: 1 + (Number(p.unnecessary) || 0) / 1e8,
     });
   }
@@ -1774,19 +1774,19 @@ function renderOverviewWidgets() {
     widgetShell(
       "watchlist",
       "Watchlist",
-      `Gesamtverlauf · VS unter Quote · Activity${watchSubExtra}`,
+      `Unter Quote · Activity${watchSubExtra}`,
       watchShort.length
-        ? "<ul class=\"rank-list\">" +
+        ? "<ul class=\"rank-list watch-list\">" +
             watchShort
               .map(
                 (w) =>
-                  `<li><span class="rank">•</span><span class="who">${esc(w.m.name)}</span>` +
+                  `<li><span class="who">${esc(w.m.name)}</span>` +
                   `<span class="val">${esc(w.reason)}</span></li>`
               )
               .join("") +
             "</ul>"
         : '<p class="sub">Alles ruhig.</p>',
-      { span: "span-12", defaultCollapsed: false }
+      { span: "span-12", className: "watch-widget", defaultCollapsed: false }
     ) +
     widgetShell(
       "save-push",

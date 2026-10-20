@@ -970,6 +970,42 @@ table.t.compact {
   font-weight: 600;
 }
 
+/* Watchlist: dichter, zwei Spalten — Unter-Quote hat Vorrang, weniger Höhe. */
+.watch-widget .widget-body {
+  margin-top: 8px;
+}
+
+.rank-list.watch-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 14px;
+  row-gap: 0;
+}
+
+.rank-list.watch-list li {
+  gap: 6px;
+  padding: 3px 0;
+  font-size: 0.8rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.035);
+}
+
+.rank-list.watch-list .who {
+  font-weight: 600;
+}
+
+.rank-list.watch-list .val {
+  font-size: 0.74rem;
+  font-weight: 500;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+@media (max-width: 720px) {
+  .rank-list.watch-list {
+    grid-template-columns: 1fr;
+  }
+}
+
 .gap-title {
   margin: 0 0 8px;
   font-size: 0.85rem;
