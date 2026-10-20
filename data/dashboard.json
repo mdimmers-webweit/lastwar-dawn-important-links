@@ -120,7 +120,9 @@
         "2026-10-19": 8553888
       },
       "kills_abs": 7522458,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R4",
@@ -209,7 +211,9 @@
         "2026-10-19": 24929280
       },
       "kills_abs": 12333685,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R4",
@@ -298,7 +302,9 @@
         "2026-10-19": 7572770
       },
       "kills_abs": 10307828,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R4",
@@ -387,7 +393,9 @@
         "2026-10-19": 10629690
       },
       "kills_abs": 7149574,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R4",
@@ -476,7 +484,9 @@
         "2026-10-19": 7002084
       },
       "kills_abs": 2745492,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -565,7 +575,9 @@
         "2026-10-19": 7318534
       },
       "kills_abs": 13024093,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R4",
@@ -649,7 +661,9 @@
         "2026-10-19": 11105852
       },
       "kills_abs": 7769391,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -738,7 +752,9 @@
         "2026-10-19": 8686165
       },
       "kills_abs": 8977491,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R4",
@@ -827,7 +843,9 @@
         "2026-10-19": 8479577
       },
       "kills_abs": 6861018,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -916,7 +934,9 @@
         "2026-10-19": 7201666
       },
       "kills_abs": 5418141,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -1005,7 +1025,9 @@
         "2026-10-19": 7202151
       },
       "kills_abs": 5781900,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -1094,7 +1116,9 @@
         "2026-10-19": 7200023
       },
       "kills_abs": 4632643,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -1183,7 +1207,9 @@
         "2026-10-19": 13048348
       },
       "kills_abs": 3640645,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -1272,7 +1298,9 @@
         "2026-10-19": 4940293
       },
       "kills_abs": 3874380,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -1361,7 +1389,9 @@
         "2026-10-19": 6444000
       },
       "kills_abs": 6384949,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -1450,7 +1480,9 @@
         "2026-10-19": 8271563
       },
       "kills_abs": 3365108,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R4",
@@ -1539,7 +1571,9 @@
         "2026-10-19": 12064536
       },
       "kills_abs": 4916815,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -1628,7 +1662,9 @@
         "2026-10-19": 7592327
       },
       "kills_abs": 3094875,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -1712,7 +1748,9 @@
         "2026-10-19": 7660190
       },
       "kills_abs": 2932014,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -1801,7 +1839,9 @@
         "2026-10-19": 22118498
       },
       "kills_abs": 3132014,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R4",
@@ -1890,7 +1930,9 @@
         "2026-10-19": 7243454
       },
       "kills_abs": 3774494,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -1979,7 +2021,9 @@
         "2026-10-19": 7288786
       },
       "kills_abs": 3218773,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -2068,7 +2112,9 @@
         "2026-10-19": 14860319
       },
       "kills_abs": 3354251,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -2157,7 +2203,9 @@
         "2026-10-19": 7281357
       },
       "kills_abs": 3063584,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R4",
@@ -2246,7 +2294,9 @@
         "2026-10-19": 7779111
       },
       "kills_abs": 2160839,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -2330,7 +2380,9 @@
         "2026-10-19": 5127608
       },
       "kills_abs": 1708229,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -2419,7 +2471,9 @@
         "2026-10-19": 8341000
       },
       "kills_abs": 1769832,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -2508,7 +2562,9 @@
         "2026-10-19": 15836223
       },
       "kills_abs": 3235937,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -2597,7 +2653,9 @@
         "2026-10-19": 8672783
       },
       "kills_abs": 1686650,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -2686,7 +2744,9 @@
         "2026-10-19": 7200004
       },
       "kills_abs": 2324872,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -2775,7 +2835,9 @@
         "2026-10-19": 7200002
       },
       "kills_abs": 1814707,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -2864,7 +2926,9 @@
         "2026-10-19": 7384688
       },
       "kills_abs": 2059415,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -2953,7 +3017,9 @@
         "2026-10-19": 10148438
       },
       "kills_abs": 1817708,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -3042,7 +3108,9 @@
         "2026-10-19": 9875436
       },
       "kills_abs": 1344924,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -3131,7 +3199,9 @@
         "2026-10-19": 7364257
       },
       "kills_abs": 1603837,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -3220,7 +3290,9 @@
         "2026-10-19": 8002107
       },
       "kills_abs": 1597930,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -3309,7 +3381,9 @@
         "2026-10-19": 8687678
       },
       "kills_abs": 1620978,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -3398,7 +3472,9 @@
         "2026-10-19": 7407790
       },
       "kills_abs": 1738100,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -3487,7 +3563,9 @@
         "2026-10-19": 7200003
       },
       "kills_abs": 1431012,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -3576,7 +3654,9 @@
         "2026-10-19": 4568085
       },
       "kills_abs": 1673301,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -3665,7 +3745,9 @@
         "2026-10-19": 8647240
       },
       "kills_abs": 1449300,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -3754,7 +3836,9 @@
         "2026-10-19": 20427207
       },
       "kills_abs": 1300540,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -3843,7 +3927,9 @@
         "2026-10-19": 7491620
       },
       "kills_abs": 1840230,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -3932,7 +4018,9 @@
         "2026-10-19": 17509077
       },
       "kills_abs": 1007321,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -4021,7 +4109,9 @@
         "2026-10-19": 8884204
       },
       "kills_abs": 1145232,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -4110,7 +4200,9 @@
         "2026-10-19": 7292001
       },
       "kills_abs": 717622,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -4199,7 +4291,9 @@
         "2026-10-19": 9285367
       },
       "kills_abs": 911970,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -4288,7 +4382,9 @@
         "2026-10-19": 9165362
       },
       "kills_abs": 915506,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -4377,7 +4473,9 @@
         "2026-10-19": 10616116
       },
       "kills_abs": 675741,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -4461,7 +4559,9 @@
         "2026-10-19": 10647564
       },
       "kills_abs": 2242282,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -4550,7 +4650,9 @@
         "2026-10-19": 3177188
       },
       "kills_abs": 1231654,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -4634,7 +4736,9 @@
         "2026-10-19": 7900011
       },
       "kills_abs": 2506117,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -4718,7 +4822,9 @@
         "2026-10-19": 8200875
       },
       "kills_abs": 1892447,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -4802,7 +4908,9 @@
         "2026-10-19": 7200005
       },
       "kills_abs": 2714535,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -4886,7 +4994,9 @@
         "2026-10-19": 19751403
       },
       "kills_abs": 552046,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -4970,7 +5080,9 @@
         "2026-10-19": 14441028
       },
       "kills_abs": 999756,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -5054,7 +5166,9 @@
         "2026-10-19": 8651625
       },
       "kills_abs": 1516676,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R4",
@@ -5138,7 +5252,9 @@
         "2026-10-19": 8601357
       },
       "kills_abs": 1639092,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -5222,7 +5338,9 @@
         "2026-10-19": 7200000
       },
       "kills_abs": 375643,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -5306,7 +5424,9 @@
         "2026-10-19": 12018212
       },
       "kills_abs": 1074717,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -5390,7 +5510,9 @@
         "2026-10-19": 5786003
       },
       "kills_abs": 495095,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -5474,7 +5596,9 @@
         "2026-10-19": 1950908
       },
       "kills_abs": 217089,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -5558,7 +5682,9 @@
         "2026-10-19": 14999958
       },
       "kills_abs": 1662225,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -5642,7 +5768,9 @@
         "2026-10-19": 8591503
       },
       "kills_abs": 613727,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -5726,7 +5854,9 @@
         "2026-10-19": 17288967
       },
       "kills_abs": 6058688,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -5810,7 +5940,9 @@
         "2026-10-19": 10605521
       },
       "kills_abs": 5683735,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -5894,7 +6026,9 @@
         "2026-10-19": 15312758
       },
       "kills_abs": 6184899,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -5978,7 +6112,9 @@
         "2026-10-19": 5048532
       },
       "kills_abs": 5653395,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -6062,7 +6198,9 @@
         "2026-10-19": 2259553
       },
       "kills_abs": 4270716,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -6146,7 +6284,9 @@
         "2026-10-19": 6455749
       },
       "kills_abs": 3378648,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -6230,7 +6370,9 @@
         "2026-10-19": 7257254
       },
       "kills_abs": 2734183,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -6314,7 +6456,9 @@
         "2026-10-19": 21976991
       },
       "kills_abs": 2496526,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -6398,7 +6542,9 @@
         "2026-10-19": 14087160
       },
       "kills_abs": 1390019,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -6482,7 +6628,9 @@
         "2026-10-19": 7201613
       },
       "kills_abs": 1289481,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -6566,7 +6714,9 @@
         "2026-10-19": 4117500
       },
       "kills_abs": 1216282,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -6650,7 +6800,9 @@
         "2026-10-19": 17937183
       },
       "kills_abs": 1108071,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -6734,7 +6886,9 @@
         "2026-10-19": 12272402
       },
       "kills_abs": 1161580,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -6818,7 +6972,9 @@
         "2026-10-19": 7616473
       },
       "kills_abs": 863473,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -6902,7 +7058,9 @@
         "2026-10-19": 23518208
       },
       "kills_abs": 897291,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -6986,7 +7144,9 @@
         "2026-10-19": 9266794
       },
       "kills_abs": 12380647,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -7070,7 +7230,9 @@
         "2026-10-19": 10379405
       },
       "kills_abs": 8150180,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -7154,7 +7316,9 @@
         "2026-10-19": 19799213
       },
       "kills_abs": 2497679,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -7238,7 +7402,9 @@
         "2026-10-19": 7685326
       },
       "kills_abs": 1527440,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -7322,7 +7488,9 @@
         "2026-10-19": 5977814
       },
       "kills_abs": 2698268,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -7406,7 +7574,9 @@
         "2026-10-19": 7365141
       },
       "kills_abs": 2281321,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -7490,7 +7660,9 @@
         "2026-10-19": 10728169
       },
       "kills_abs": 1683381,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -7574,7 +7746,9 @@
         "2026-10-19": 7374705
       },
       "kills_abs": 1312599,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R2",
@@ -7658,7 +7832,9 @@
         "2026-10-19": 12030069
       },
       "kills_abs": 4418573,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -7742,7 +7918,9 @@
         "2026-10-19": 14058408
       },
       "kills_abs": 4344872,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -7826,7 +8004,9 @@
         "2026-10-19": 12563171
       },
       "kills_abs": 17743025,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -7910,7 +8090,9 @@
         "2026-10-19": 10929893
       },
       "kills_abs": 14261420,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -7994,7 +8176,9 @@
         "2026-10-19": 13634063
       },
       "kills_abs": 14392917,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -8078,7 +8262,9 @@
         "2026-10-19": 7170055
       },
       "kills_abs": 1184618,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -8162,7 +8348,9 @@
         "2026-10-19": 13619689
       },
       "kills_abs": 2352577,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -8246,7 +8434,9 @@
         "2026-10-19": 8991835
       },
       "kills_abs": 24841352,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -8330,7 +8520,9 @@
         "2026-10-19": 9982500
       },
       "kills_abs": 3356861,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -8414,7 +8606,9 @@
         "2026-10-19": 7865001
       },
       "kills_abs": 421954,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R2",
@@ -8498,7 +8692,9 @@
         "2026-10-19": 0
       },
       "kills_abs": 414572,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R2",
@@ -8582,7 +8778,9 @@
         "2026-10-19": 12536856
       },
       "kills_abs": 4335865,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -8638,7 +8836,9 @@
         "2026-10-19": 0
       },
       "kills_abs": 800300,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     },
     {
       "role": "R3",
@@ -8694,7 +8894,9 @@
         "2026-10-19": 0
       },
       "kills_abs": 1074717,
-      "kills_delta": null
+      "kills_delta": null,
+      "kills_trend": "unknown",
+      "kills_steep": null
     }
   ],
   "summary": {

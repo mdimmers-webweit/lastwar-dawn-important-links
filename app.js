@@ -3,7 +3,7 @@
 let DATA = null;
 
 const ROLE_OPTIONS = ["R5", "R4", "R3", "R2", "R1"];
-const CACHE_BUST = "20261020-kills-delta";
+const CACHE_BUST = "20261020-kills-tendenz";
 
 /** Season contribution columns — mirrors Sheet tabs / SEASON_CATEGORIES. */
 const SEASON_CATS = [
@@ -1235,7 +1235,7 @@ function hasActivitySignal(m) {
   if ((Number(m.donations) || 0) > 0) return true;
   if ((Number(m.vs_week_sum) || Number(m.vs_latest) || 0) > 0) return true;
   if ((Number(m.season_activity) || 0) > 0) return true;
-  // Kill-Wachstum (Kämpfe/Verteidigung) — nur echtes Δ, kein Fake-+100%.
+  // KPI Kills: nur echtes Wochen-Δ (kein Fake-+100% bei einer Spalte).
   if ((Number(m.kills_delta) || 0) > 0) return true;
   if (m.kills_pct != null && !Number.isNaN(Number(m.kills_pct)) && Number(m.kills_pct) > 0) {
     return true;
@@ -1716,29 +1716,66 @@ function renderOverview(el) {
   bindOverviewControls(el);
 }
 
+function killsTrendBadge(m) {
+  const t = String(m.kills_trend || "");
+  if (t === "up") return '<span class="badge ok" title="gestiegen">↑</span>';
+  if (t === "flat") return '<span class="badge off" title="gleichbleibend">→</span>';
+  return '<span class="badge off" title="noch kein Vergleich">·</span>';
+}
+
+function killsSteepLabel(m) {
+  const s = String(m.kills_steep || "");
+  if (s === "steep") return '<span class="badge ok">steil</span>';
+  if (s === "mild") return '<span class="badge warn">mittel</span>';
+  if (s === "flat") {
+    if (String(m.kills_trend) === "up") return '<span class="badge off">flach</span>';
+    return '<span class="badge off">—</span>';
+  }
+  return "—";
+}
+
+function killsDeltaCell(m) {
+  const d = m.kills_delta;
+  if (d == null || Number.isNaN(Number(d))) return "—";
+  const n = Number(d);
+  if (n > 0) return `+${fmtPts(n)}`;
+  return "±0";
+}
+
 function renderKills(el) {
   const block = sheetBlock("kills");
+  const colsCount = block && block.columns ? block.columns.length : 0;
+  const hasDelta = colsCount >= 2 || (DATA.members || []).some((m) => m.kills_delta != null);
   const cols = [
     { key: "role", label: "Rolle" },
     { key: "name", label: "Name" },
-    { key: "kills", label: "Kills Δ", class: "num" },
-    { key: "activity", label: "Activity", class: "num" },
-    { key: "events", label: "Events" },
+    { key: "stand", label: "Kills", class: "num" },
+    { key: "delta", label: "Δ", class: "num" },
+    { key: "trend", label: "Tendenz" },
+    { key: "steep", label: "Anstieg" },
   ];
-  const rows = sortedMembers((a, b) => (b.kills_pct ?? -1) - (a.kills_pct ?? -1)).map((m) => ({
+  const rows = sortedMembers((a, b) => {
+    const da = a.kills_delta != null ? Number(a.kills_delta) : -1;
+    const db = b.kills_delta != null ? Number(b.kills_delta) : -1;
+    if (db !== da) return db - da;
+    return (Number(b.kills_abs) || 0) - (Number(a.kills_abs) || 0);
+  }).map((m) => ({
     _inactive: !m.active,
     role: esc(m.role),
     name: `<span class="name">${esc(m.name)}</span>`,
-    kills: esc(m.kills || "—"),
-    activity: esc(m.activity_display || fmtPct(m.activity)),
-    events: esc(m.events || "—"),
+    stand: m.kills_abs != null ? fmtPts(m.kills_abs) : "—",
+    delta: killsDeltaCell(m),
+    trend: killsTrendBadge(m),
+    steep: killsSteepLabel(m),
   }));
+  const lead = hasDelta
+    ? "Kill-Stand, Wochen-Δ (+XXXX), Tendenz ↑/→ und wie steil der Anstieg relativ zur Allianz."
+    : "Aktuell nur eine KW-Spalte — Stand sichtbar, Tendenz/Δ/Anstieg ab dem zweiten Kill-Stand.";
   el.innerHTML =
     '<section class="panel glass"><h2>Kills</h2>' +
-    '<p class="lead">Kills-Sheet: Stand bzw. Wochen-Δ zwischen KW-Spalten. Der Activity-Score gewichtet dieses Δ (KPI Kills) — nicht den Events-Tab.</p>' +
-
-    (block
-      ? `<h3>Kills-Sheet · ${esc(block.columns.join(", "))}</h3>` + matrixTable(block)
+    `<p class="lead">${esc(lead)}</p>` +
+    (block && block.columns && block.columns.length
+      ? `<p class="sub">Sheet-Spalten: ${esc(block.columns.join(" · "))}</p>`
       : "") +
     memberTable(cols, rows) +
     "</section>";
