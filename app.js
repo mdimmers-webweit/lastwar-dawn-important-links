@@ -3,7 +3,7 @@
 let DATA = null;
 
 const ROLE_OPTIONS = ["R5", "R4", "R3", "R2", "R1"];
-const CACHE_BUST = "20261020-save-champion-cap";
+const CACHE_BUST = "20261020-save-mo-do-72";
 const FILTER_STORAGE_KEY = "dawn-dashboard-filters";
 const PERIOD_STORAGE_KEY = "dawn-dashboard-period";
 
@@ -30,10 +30,10 @@ const IMPORTANT_LINKS_ORIGIN = "https://lastwar-dawn-important-links.pages.dev";
 const IMPORTANT_LINKS_CONFIG_URL = IMPORTANT_LINKS_ORIGIN + "/config.json";
 const IMPORTANT_LINKS_API_URL = IMPORTANT_LINKS_ORIGIN + "/api/config";
 const VS_DAILY_MIN = 7200000;
-/** Save/Economy Montag-Tagesminimum. */
-const VS_SAVE_MON_MIN = 12000000;
-/** Save/Economy Di–Do-Tagesminimum. Fr–Sa offen (kein under/over). */
+/** Save/Economy Mo–Do-Tagesminimum. Fr–Sa offen (kein under/over). */
 const VS_SAVE_MIN = 7200000;
+/** Legacy JSON max that must never become a push elevated min. */
+const LEGACY_SAVE_12M = 12_000_000;
 /** Save/Economy: ≥ this = Push-scale outlier — never Champion. */
 const VS_SAVE_CHAMPION_MAX = 20_000_000;
 
@@ -60,8 +60,8 @@ function pushElevatedMinFromEntry(entry) {
   if (!entry || String(entry.mode || "push").toLowerCase() !== "push") return null;
   const n = Number(entry.max);
   if (!Number.isFinite(n) || n <= VS_DAILY_MIN) return null;
-  // Legacy 12M (old Save outlier / Monday floor) is never a push elevated min.
-  if (n === VS_SAVE_MON_MIN) return null;
+  // Legacy 12M (old Save outlier floor) is never a push elevated min.
+  if (n === LEGACY_SAVE_12M) return null;
   return n;
 }
 
@@ -535,14 +535,12 @@ function vsMinForGameDate(d) {
   const cfg = legendConfig();
   const dailyMin = Number(cfg.vs_min_daily) || VS_DAILY_MIN;
   const saveMin = Number(cfg.vs_min_save) || VS_SAVE_MIN;
-  const saveMonMin = Number(cfg.vs_min_save_mon) || VS_SAVE_MON_MIN;
   const entry = vsWeeksEntryForDate(d);
   const mode = String(entry.mode || "push").toLowerCase();
   const wd = pythonWeekday(d);
   if (mode === "save") {
-    if (wd === 0) return saveMonMin;
     if (wd >= 4) return 0; // Fr–Sa open
-    return saveMin;
+    return saveMin; // Mo–Do
   }
   const elevated = pushElevatedMinFromEntry(entry);
   if (elevated && elevated > dailyMin) return elevated;
@@ -776,10 +774,7 @@ function vsWeekModeLabel() {
     const minLabel = meta.VSWeekMin || formatPointsDe(VS_DAILY_MIN);
     return `PUSH · Min ${minLabel}`;
   }
-  return (
-    `SAVE · Mo ${formatPointsDe(VS_SAVE_MON_MIN)} · ` +
-    `Di–Do ${formatPointsDe(VS_SAVE_MIN)} · Fr–Sa offen`
-  );
+  return `SAVE · MO–DO ${formatPointsDe(VS_SAVE_MIN)} · FR–SA OFFEN`;
 }
 
 function sheetBlock(key) {
@@ -1377,8 +1372,7 @@ function renderVsMetaSummary() {
   } else {
     pairs.push([
       "Save-Minimum",
-      meta.VSWeekMin ||
-        `Mo ${formatPointsDe(VS_SAVE_MON_MIN)} · Di–Do ${formatPointsDe(VS_SAVE_MIN)} · Fr–Sa offen`,
+      meta.VSWeekMin || `MO–DO ${formatPointsDe(VS_SAVE_MIN)} · FR–SA OFFEN`,
     ]);
   }
   const visible = pairs.filter(([, v]) => v != null && String(v).trim());
@@ -1646,9 +1640,7 @@ function applyVsWeekToDashboard(cfg) {
     const effective = draft.elevatedMin || VS_DAILY_MIN;
     meta.VSWeekMin = formatPointsDe(effective);
   } else {
-    meta.VSWeekMin =
-      `Mo ${formatPointsDe(VS_SAVE_MON_MIN)} · ` +
-      `Di–Do ${formatPointsDe(VS_SAVE_MIN)} · Fr–Sa offen`;
+    meta.VSWeekMin = `MO–DO ${formatPointsDe(VS_SAVE_MIN)} · FR–SA OFFEN`;
   }
   DATA.meta = meta;
 }
@@ -1724,7 +1716,7 @@ function renderConfigForm(el, cfg, draft, loadError) {
       formatPointsInputValue(draft.elevatedMin)
     )}"></div></div>` +
     '<div id="cfgSaveBlock" hidden>' +
-    '<p class="config-hint">Mo: <strong>12 Mio</strong> · Di–Do: <strong>7,2 Mio</strong> · Fr–Sa: <strong>offen</strong> (kein under/over).</p>' +
+    '<p class="config-hint">Mo–Do: <strong>7,2 Mio</strong> · Fr–Sa: <strong>offen</strong> (kein under/over).</p>' +
     "</div>" +
     '<div class="btn-row">' +
     '<button type="submit" class="btn" id="cfgSave">Speichern</button>' +
