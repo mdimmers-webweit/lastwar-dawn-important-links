@@ -3,7 +3,7 @@
 let DATA = null;
 
 const ROLE_OPTIONS = ["R5", "R4", "R3", "R2", "R1"];
-const CACHE_BUST = "20261020-dynamic-champion";
+const CACHE_BUST = "20261020-champion-exact";
 const FILTER_STORAGE_KEY = "dawn-dashboard-filters";
 const PERIOD_STORAGE_KEY = "dawn-dashboard-period";
 
@@ -37,11 +37,12 @@ const LEGACY_SAVE_12M = 12_000_000;
 
 /**
  * Per-week champion rules live on vs_weeks[].champion (see vs_weeks.json).
- * Types:
+ * Punkte-Regeln oder manuell (z.B. Bestes Outfit):
  * - max_score — highest VS points in the active period (classic Push)
  * - day_min — list members with day score >= day_min
  * - save_exact_and_closest — exact day_target per day + week_agg over week_days
  *   (week_agg: closest_sum → Mo–Do sum closest to day_target)
+ * - manual — free-text title + winners[] (not computed from VS points)
  */
 const CHAMPION_DAY_INDEX = { mon: 0, tue: 1, wed: 2, thu: 3, fri: 4, sat: 5 };
 const CHAMPION_DAY_LABEL_DE = {
@@ -179,12 +180,12 @@ function formatStandBerlin() {
   });
 }
 
+/** Exact integer points with German grouping (e.g. 7.200.002) — never abbreviate to M. */
 function fmtPts(n) {
   if (n == null || n === "") return "—";
   const v = Number(n);
   if (Number.isNaN(v)) return esc(String(n));
-  if (v >= 1_000_000) return (v / 1_000_000).toLocaleString("de-DE", { maximumFractionDigits: 1 }) + "M";
-  return v.toLocaleString("de-DE");
+  return Math.round(v).toLocaleString("de-DE");
 }
 
 function fmtThp(m) {
@@ -840,9 +841,24 @@ function activeChampionRule() {
       const dayMin = Number(raw.day_min);
       if (Number.isFinite(dayMin) && dayMin > 0) return { type, day_min: dayMin };
     }
+    if (type === "manual") {
+      const title = String(raw.title || "").trim() || "Champion";
+      const winners = Array.isArray(raw.winners)
+        ? raw.winners.map((n) => String(n ?? "").trim()).filter(Boolean)
+        : [];
+      const note = String(raw.note || "").trim();
+      return { type: "manual", title, winners, note };
+    }
     if (type === "max_score") return { type: "max_score" };
   }
   return { type: "max_score" };
+}
+
+/** Match a free-text winner name against the roster (exact NFC lowercase). */
+function findMemberByEnteredName(entered) {
+  const key = normalizeName(entered);
+  if (!key) return null;
+  return (DATA.members || []).find((m) => normalizeName(m.name) === key) || null;
 }
 
 function vsDaySlotsForWeek(dayKeys) {
@@ -893,19 +909,43 @@ function formatChampDayLabel(slot) {
 
 function computeChampionState(members) {
   const rule = activeChampionRule();
+  if (rule.type === "manual") {
+    const winners = (rule.winners || []).map((name) => {
+      const m = findMemberByEnteredName(name);
+      return { name, m };
+    });
+    return {
+      rule,
+      dayHits: [],
+      weekWinners: [],
+      weekSlots: [],
+      topList: [],
+      manualWinners: winners,
+      pulsePts: null,
+    };
+  }
   if (rule.type === "save_exact_and_closest") {
-    const target = rule.day_target;
+    const target = Math.round(rule.day_target);
     const allDays = vsDaySlotsForWeek(["mon", "tue", "wed", "thu", "fri", "sat"]).filter(
       (s) => s.label
     );
     const weekSlots = vsDaySlotsForWeek(rule.week_days);
-    const dayHits = allDays.map((slot) => {
+    /** Flat list of every exact day hit (all names, no cap). */
+    const exactHits = [];
+    for (const slot of allDays) {
       const hits = members
         .map((m) => ({ m, pts: vsPointsAtLabel(m, slot.label) }))
-        .filter((x) => x.pts != null && Math.round(x.pts) === Math.round(target))
+        .filter((x) => x.pts != null && Math.round(x.pts) === target)
         .sort((a, b) => String(a.m.name).localeCompare(String(b.m.name), "de"));
-      return { slot, hits };
-    });
+      for (const h of hits) {
+        exactHits.push({ slot, m: h.m, pts: Math.round(h.pts) });
+      }
+    }
+    exactHits.sort(
+      (a, b) =>
+        a.slot.weekday - b.slot.weekday ||
+        String(a.m.name).localeCompare(String(b.m.name), "de")
+    );
     const sums = members
       .map((m) => {
         let sum = 0;
@@ -928,7 +968,15 @@ function computeChampionState(members) {
         : sums
             .filter((x) => x.dist === best)
             .sort((a, b) => String(a.m.name).localeCompare(String(b.m.name), "de"));
-    return { rule, dayHits, weekWinners, weekSlots, topList: [], pulsePts: weekWinners[0] ? weekWinners[0].sum : null };
+    return {
+      rule,
+      exactHits,
+      dayHits: [],
+      weekWinners,
+      weekSlots,
+      topList: [],
+      pulsePts: weekWinners[0] ? weekWinners[0].sum : null,
+    };
   }
   if (rule.type === "day_min") {
     const dayMin = rule.day_min;
@@ -945,6 +993,7 @@ function computeChampionState(members) {
     const top = dayHits.flatMap((d) => d.hits).sort((a, b) => b.pts - a.pts);
     return {
       rule,
+      exactHits: [],
       dayHits,
       weekWinners: [],
       weekSlots: [],
@@ -959,6 +1008,7 @@ function computeChampionState(members) {
     .sort((a, b) => b.pts - a.pts);
   return {
     rule: { type: "max_score" },
+    exactHits: [],
     dayHits: [],
     weekWinners: [],
     weekSlots: [],
@@ -969,56 +1019,84 @@ function computeChampionState(members) {
 
 function renderChampionWidget(champState, vsReady, vsEmptyMsg) {
   const rule = champState.rule;
+  if (rule.type === "manual") {
+    const title = rule.title || "Champion";
+    const winners = champState.manualWinners || [];
+    const rows = winners
+      .map((w, i) => {
+        const display = w.m ? w.m.name : w.name;
+        const hint = w.m ? "" : " · Freitext";
+        return (
+          `<li><span class="rank">${i + 1}</span>` +
+          `<span class="who">${esc(display)}${hint ? `<span class="champ-freitext">${hint}</span>` : ""}</span>` +
+          `<span class="val"></span></li>`
+        );
+      })
+      .join("");
+    const noteHtml = rule.note
+      ? `<p class="sub champ-note">${esc(rule.note)}</p>`
+      : "";
+    return (
+      `<article class="widget span-12 glass champ-widget"><h3>Champion</h3>` +
+      `<p class="sub">${esc(title)} · manuell</p>` +
+      noteHtml +
+      (rows
+        ? `<ul class="rank-list champ-list">${rows}</ul>`
+        : `<p class="sub">Noch keine Gewinner eingetragen.</p>`) +
+      `</article>`
+    );
+  }
   if (!vsReady) {
     return (
-      `<article class="widget span-8 glass"><h3>Champion</h3>` +
+      `<article class="widget span-12 glass champ-widget"><h3>Champion</h3>` +
       `<p class="sub">${esc(vsEmptyMsg)}</p></article>`
     );
   }
   if (rule.type === "save_exact_and_closest") {
     const targetLabel = fmtPts(rule.day_target);
-    const dayRows = champState.dayHits
-      .map((dh) => {
-        const who = dh.hits.length
-          ? dh.hits.map((h) => esc(h.m.name)).join(", ")
-          : "—";
-        return (
-          `<li><span class="rank">${esc(formatChampDayLabel(dh.slot))}</span>` +
-          `<span class="who">${who}</span>` +
-          `<span class="val">${esc(targetLabel)}</span></li>`
-        );
-      })
-      .join("");
-    const weekWho = champState.weekWinners.length
-      ? champState.weekWinners
-          .map((w) => `${esc(w.m.name)} · ${fmtPts(w.sum)} (Δ ${fmtPts(w.dist)})`)
-          .join(", ")
-      : "—";
     const weekDaysLabel = (rule.week_days || [])
       .map((d) => CHAMPION_DAY_LABEL_DE[d] || d)
       .join("–");
+    const exactRows = (champState.exactHits || [])
+      .map(
+        (h) =>
+          `<li><span class="rank">${esc(formatChampDayLabel(h.slot))}</span>` +
+          `<span class="who">${esc(h.m.name)}</span>` +
+          `<span class="val">${fmtPts(h.pts)}</span></li>`
+      )
+      .join("");
+    const weekRows = (champState.weekWinners || [])
+      .map(
+        (w) =>
+          `<li><span class="rank">Δ</span>` +
+          `<span class="who">${esc(w.m.name)}</span>` +
+          `<span class="val">${fmtPts(w.sum)} · Δ ${fmtPts(w.dist)}</span></li>`
+      )
+      .join("");
     return (
-      `<article class="widget span-8 glass"><h3>Champion</h3>` +
-      `<p class="sub">Exact ${esc(targetLabel)} / Tag · ${esc(weekDaysLabel)} Summe nächste ${esc(
-        targetLabel
-      )}</p>` +
-      (dayRows
-        ? `<ul class="rank-list champ-days">${dayRows}</ul>`
+      `<article class="widget span-12 glass champ-widget"><h3>Champion</h3>` +
+      `<p class="sub">Exact ${esc(targetLabel)} / Tag · alle Treffer · ${esc(
+        weekDaysLabel
+      )} Summe nächste ${esc(targetLabel)}</p>` +
+      `<p class="champ-section-label">Exact ${esc(targetLabel)}</p>` +
+      (exactRows
+        ? `<ul class="rank-list champ-list">${exactRows}</ul>`
+        : `<p class="sub">Noch kein Exact-Treffer.</p>`) +
+      `<p class="champ-section-label">Woche (${esc(weekDaysLabel)}) · nächste Summe</p>` +
+      (weekRows
+        ? `<ul class="rank-list champ-list">${weekRows}</ul>`
         : `<p class="sub">${esc(vsEmptyMsg)}</p>`) +
-      `<p class="champ-week"><strong>Woche (${esc(weekDaysLabel)})</strong> · ${weekWho}</p>` +
       `</article>`
     );
   }
   if (rule.type === "day_min") {
     const minLabel = fmtPts(rule.day_min);
     const dayRows = champState.dayHits
+      .filter((dh) => dh.hits.length)
       .map((dh) => {
-        const who = dh.hits.length
-          ? dh.hits
-              .slice(0, 6)
-              .map((h) => `${esc(h.m.name)} (${fmtPts(h.pts)})`)
-              .join(", ") + (dh.hits.length > 6 ? ` +${dh.hits.length - 6}` : "")
-          : "—";
+        const who = dh.hits
+          .map((h) => `${esc(h.m.name)} (${fmtPts(h.pts)})`)
+          .join(", ");
         return (
           `<li><span class="rank">${esc(formatChampDayLabel(dh.slot))}</span>` +
           `<span class="who">${who}</span>` +
@@ -1027,10 +1105,10 @@ function renderChampionWidget(champState, vsReady, vsEmptyMsg) {
       })
       .join("");
     return (
-      `<article class="widget span-8 glass"><h3>Champion</h3>` +
-      `<p class="sub">Tag ≥ ${esc(minLabel)}</p>` +
+      `<article class="widget span-12 glass champ-widget"><h3>Champion</h3>` +
+      `<p class="sub">Tag ≥ ${esc(minLabel)} · alle Treffer</p>` +
       (dayRows
-        ? `<ul class="rank-list champ-days">${dayRows}</ul>`
+        ? `<ul class="rank-list champ-list">${dayRows}</ul>`
         : `<p class="sub">${esc(vsEmptyMsg)}</p>`) +
       `</article>`
     );
@@ -1042,7 +1120,7 @@ function renderChampionWidget(champState, vsReady, vsEmptyMsg) {
     ? `<p class="sub">${esc(head.name)} · ${fmtPts(vsMetric(head))}</p>`
     : `<p class="sub">${esc(vsEmptyMsg)}</p>`;
   return (
-    `<article class="widget span-8 glass"><h3>Champion</h3><p class="sub">${esc(
+    `<article class="widget span-12 glass champ-widget"><h3>Champion</h3><p class="sub">${esc(
       periodSub
     )}</p>${headHtml}` +
     renderRankList(
@@ -1147,7 +1225,11 @@ function renderOverviewWidgets() {
     `<div class="pulse-pill"><strong>${fmtNum(
       topDon[0] ? donationMetric(topDon[0]) : null
     )}</strong>Top Spende</div>` +
-    `<div class="pulse-pill"><strong>${fmtPts(champState.pulsePts)}</strong>Champion</div>` +
+    `<div class="pulse-pill"><strong>${
+      champState.rule && champState.rule.type === "manual"
+        ? esc(champState.rule.title || "Manuell")
+        : fmtPts(champState.pulsePts)
+    }</strong>Champion</div>` +
     "</div></article>" +
     `<article class="widget span-12 glass"><h3>Watchlist</h3><p class="sub">${esc(watchSub)}</p>` +
     (watchShort.length
