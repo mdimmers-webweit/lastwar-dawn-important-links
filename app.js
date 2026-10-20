@@ -1711,10 +1711,10 @@ function renderVs(el) {
     vs: vsBadge(m.vs_flag),
     activity: esc(m.activity_display || fmtPct(m.activity)),
   }));
-  // VS tab: meta + day compare (no burn-up) + full roster. Champion / Unter Quote live on Overview only.
+  // VS tab: meta + day compare (no burn-up) + full roster. Champion / quota widgets live on Overview only.
   el.innerHTML =
     '<section class="panel glass"><h2>VS</h2>' +
-    '<p class="lead">Tagesvergleich DawN vs. Gegner und Mitglieder-Punkte/Flags (Woche/Gesamt wie oben). Champion und Unter Quote stehen unter Overview.</p>' +
+    '<p class="lead">Tagesvergleich DawN vs. Gegner und Mitglieder-Punkte/Flags (Woche/Gesamt wie oben). Champion und Quoten-Listen stehen unter Overview.</p>' +
     renderVsMetaSummary() +
     (compareDays ? renderVsCompareDays(compareDays, { includeBurnup: false }) : "") +
     "<h3>Mitglieder · VS Punkte &amp; Flags</h3>" +
