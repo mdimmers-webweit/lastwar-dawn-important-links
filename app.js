@@ -1735,7 +1735,7 @@ function renderKills(el) {
   }));
   el.innerHTML =
     '<section class="panel glass"><h2>Kills</h2>' +
-    '<p class="lead">Kill-Stand bzw. Wochen-Δ (Wachstum = Kämpfe/Verteidigung). Activity nutzt nur echtes Δ ab zwei KW-Spalten.</p>' +
+    '<p class="lead">Kills-Sheet: Stand bzw. Wochen-Δ zwischen KW-Spalten. Der Activity-Score gewichtet dieses Δ (KPI Kills) — nicht den Events-Tab.</p>' +
 
     (block
       ? `<h3>Kills-Sheet · ${esc(block.columns.join(", "))}</h3>` + matrixTable(block)
