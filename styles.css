@@ -1381,6 +1381,57 @@ table.t.compact {
   margin: 0;
 }
 
+.cfg-champ-rule {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  display: grid;
+  gap: 10px;
+  background: rgba(0, 0, 0, 0.16);
+}
+
+.cfg-champ-rule + .cfg-champ-rule {
+  margin-top: 10px;
+}
+
+.cfg-champ-rule-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.cfg-champ-add-row {
+  margin-top: 4px;
+}
+
+.cfg-roster-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 4px 10px;
+  max-height: 220px;
+  overflow: auto;
+  padding: 6px 0;
+}
+
+.cfg-roster-check {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 6px;
+  margin: 0 !important;
+  font-size: 0.82rem !important;
+  text-transform: none !important;
+  letter-spacing: normal !important;
+  color: var(--ink) !important;
+  font-weight: 500 !important;
+  cursor: pointer;
+}
+
+.cfg-roster-check input {
+  width: auto;
+  margin: 0;
+}
+
 .champ-freitext {
   font-weight: 400;
   color: var(--muted);

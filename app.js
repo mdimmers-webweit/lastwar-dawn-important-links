@@ -3,7 +3,7 @@
 let DATA = null;
 
 const ROLE_OPTIONS = ["R5", "R4", "R3", "R2", "R1"];
-const CACHE_BUST = "20261020-watch-compact";
+const CACHE_BUST = "20261021-champions-multi";
 
 /** Save-Woche: eigenes Widget — Tages-VS über dieser Schwelle (Tracking). */
 const WATCH_SAVE_DAY_OVER = 15_000_000;
@@ -71,13 +71,9 @@ const VS_SAVE_MIN = 7200000;
 const LEGACY_SAVE_12M = 12_000_000;
 
 /**
- * Per-week champion rules live on vs_weeks[].champion (see vs_weeks.json).
- * Punkte-Regeln oder manuell (z.B. Bestes Outfit):
- * - max_score — highest VS points in the active period (classic Push)
- * - day_min — list members with day score >= day_min
- * - save_exact_and_closest — exact day_target per day + week_agg over week_days
- *   (week_agg: closest_sum → Mo–Do sum closest to day_target)
- * - manual — free-text title + winners[] (not computed from VS points)
+ * Per-week champion rules: vs_weeks[].champions[] (legacy: .champion single).
+ * Messbar: max_score | day_min | save_exact_and_closest (aus VS).
+ * Nicht messbar: manual — Titel + winners[] aus Active-Roster (Checkbox).
  */
 const CHAMPION_DAY_INDEX = { mon: 0, tue: 1, wed: 2, thu: 3, fri: 4, sat: 5 };
 const CHAMPION_DAY_LABEL_DE = {
@@ -1045,45 +1041,69 @@ function activeVsWeekEntry() {
   return { year: wk.year, week: wk.week, mode: activeVsWeekMode() };
 }
 
-/** Resolve champion rule for the active VS week (config or mode default). */
-function activeChampionRule() {
-  const entry = activeVsWeekEntry();
-  const raw = entry && entry.champion;
-  if (raw && typeof raw === "object") {
-    const type = String(raw.type || "").toLowerCase();
-    if (type === "save_exact_and_closest") {
-      const dayTarget = Number(raw.day_target);
-      return {
-        type,
-        day_target: Number.isFinite(dayTarget) && dayTarget > 0 ? dayTarget : VS_SAVE_MIN,
-        week_days: Array.isArray(raw.week_days) && raw.week_days.length
-          ? raw.week_days.map((d) => String(d).toLowerCase())
-          : ["mon", "tue", "wed", "thu"],
-        week_agg: String(raw.week_agg || "closest_sum").toLowerCase(),
-      };
-    }
-    if (type === "day_min") {
-      const dayMin = Number(raw.day_min);
-      if (Number.isFinite(dayMin) && dayMin > 0) return { type, day_min: dayMin };
-    }
-    if (type === "manual") {
-      const title = String(raw.title || "").trim() || "Champion";
-      const winners = Array.isArray(raw.winners)
+function normalizeChampionRule(raw) {
+  if (!raw || typeof raw !== "object") return { type: "max_score" };
+  const type = String(raw.type || "").toLowerCase();
+  if (type === "save_exact_and_closest") {
+    const dayTarget = Number(raw.day_target);
+    return {
+      type,
+      day_target: Number.isFinite(dayTarget) && dayTarget > 0 ? dayTarget : VS_SAVE_MIN,
+      week_days: Array.isArray(raw.week_days) && raw.week_days.length
+        ? raw.week_days.map((d) => String(d).toLowerCase())
+        : ["mon", "tue", "wed", "thu"],
+      week_agg: String(raw.week_agg || "closest_sum").toLowerCase(),
+    };
+  }
+  if (type === "day_min") {
+    const dayMin = Number(raw.day_min);
+    return {
+      type: "day_min",
+      day_min: Number.isFinite(dayMin) && dayMin > 0 ? dayMin : VS_SAVE_MIN,
+    };
+  }
+  if (type === "manual") {
+    return {
+      type: "manual",
+      title: String(raw.title || "").trim() || "Champion",
+      winners: Array.isArray(raw.winners)
         ? raw.winners.map((n) => String(n ?? "").trim()).filter(Boolean)
-        : [];
-      const note = String(raw.note || "").trim();
-      return { type: "manual", title, winners, note };
-    }
-    if (type === "max_score") return { type: "max_score" };
+        : [],
+      note: String(raw.note || "").trim(),
+    };
   }
   return { type: "max_score" };
 }
 
-/** Match a free-text winner name against the roster (exact NFC lowercase). */
-function findMemberByEnteredName(entered) {
-  const key = normalizeName(entered);
+/** All champion rules for the active VS week (champions[] or legacy champion). */
+function activeChampionRules() {
+  const entry = activeVsWeekEntry();
+  if (entry && Array.isArray(entry.champions) && entry.champions.length) {
+    return entry.champions.map(normalizeChampionRule);
+  }
+  if (entry && entry.champion && typeof entry.champion === "object") {
+    return [normalizeChampionRule(entry.champion)];
+  }
+  return [{ type: "max_score" }];
+}
+
+/** Primary rule for Pulse (first measurable, else first). */
+function activeChampionRule() {
+  const rules = activeChampionRules();
+  return rules.find((r) => r.type !== "manual") || rules[0] || { type: "max_score" };
+}
+
+function findMemberByRosterName(name) {
+  const key = normalizeName(name);
   if (!key) return null;
   return (DATA.members || []).find((m) => normalizeName(m.name) === key) || null;
+}
+
+function activeRosterNames() {
+  return (DATA.members || [])
+    .filter((m) => m.active)
+    .map((m) => m.name)
+    .sort((a, b) => String(a).localeCompare(String(b), "de"));
 }
 
 function vsDaySlotsForWeek(dayKeys) {
@@ -1138,12 +1158,12 @@ function championWeekReady(now = new Date()) {
   return pythonWeekday(d) === 6;
 }
 
-function computeChampionState(members) {
-  const rule = activeChampionRule();
+function computeChampionState(members, ruleIn) {
+  const rule = ruleIn || activeChampionRule();
   if (rule.type === "manual") {
     const winners = (rule.winners || []).map((name) => {
-      const m = findMemberByEnteredName(name);
-      return { name, m };
+      const m = findMemberByRosterName(name);
+      return { name: m ? m.name : name, m };
     });
     return {
       rule,
@@ -1265,39 +1285,47 @@ function computeChampionState(members) {
   };
 }
 
-function renderChampionWidget(champState, vsReady, vsEmptyMsg) {
+function computeAllChampionStates(members) {
+  return activeChampionRules().map((rule) => computeChampionState(members, rule));
+}
+
+function renderChampionWidgets(champStates, vsReady, vsEmptyMsg) {
+  return champStates
+    .map((st, i) => renderChampionWidget(st, vsReady, vsEmptyMsg, i))
+    .join("");
+}
+
+function renderChampionWidget(champState, vsReady, vsEmptyMsg, idx) {
   const rule = champState.rule;
+  const idSuffix = idx != null ? `-${idx}` : "";
   if (rule.type === "manual") {
     const title = rule.title || "Champion";
     const winners = champState.manualWinners || [];
     const rows = winners
-      .map((w, i) => {
-        const display = w.m ? w.m.name : w.name;
-        const hint = w.m ? "" : " · Freitext";
-        return (
+      .map(
+        (w, i) =>
           `<li><span class="rank">${i + 1}</span>` +
-          `<span class="who">${esc(display)}${hint ? `<span class="champ-freitext">${hint}</span>` : ""}</span>` +
+          `<span class="who">${esc(w.m ? w.m.name : w.name)}</span>` +
           `<span class="val"></span></li>`
-        );
-      })
+      )
       .join("");
     const noteHtml = rule.note
       ? `<p class="sub champ-note">${esc(rule.note)}</p>`
       : "";
     return widgetShell(
-      "champion",
-      "Champion",
-      `${esc(title)} · manuell`,
+      `champion${idSuffix}`,
+      title,
+      "Nicht messbar · Roster-Auswahl",
       noteHtml +
         (rows
           ? `<ul class="rank-list champ-list">${rows}</ul>`
-          : `<p class="sub">Noch keine Gewinner eingetragen.</p>`),
+          : `<p class="sub">Noch niemand ausgewählt.</p>`),
       { className: "champ-widget", span: "span-12" }
     );
   }
   if (!vsReady) {
     return widgetShell(
-      "champion",
+      `champion${idSuffix}`,
       "Champion",
       esc(vsEmptyMsg),
       "",
@@ -1359,7 +1387,7 @@ function renderChampionWidget(champState, vsReady, vsEmptyMsg) {
       weekBody +
       `</div></div>`;
     return widgetShell(
-      "champion",
+      `champion${idSuffix}`,
       "Champion",
       `Save-Woche · Tagesziel ${esc(targetLabel)} exakt · Wochen-Sieger Sonntag`,
       body,
@@ -1382,7 +1410,7 @@ function renderChampionWidget(champState, vsReady, vsEmptyMsg) {
       })
       .join("");
     return widgetShell(
-      "champion",
+      `champion${idSuffix}`,
       "Champion",
       `Tag ≥ ${esc(minLabel)} · alle Treffer`,
       dayRows
@@ -1401,7 +1429,7 @@ function renderChampionWidget(champState, vsReady, vsEmptyMsg) {
       (m) => fmtPts(vsMetric(m)),
       vsEmptyMsg
     );
-  return widgetShell("champion", "Champion", "Wochensumme", body, {
+  return widgetShell(`champion${idSuffix}`, "Champion", "Wochensumme", body, {
     className: "champ-widget",
     span: "span-12",
   });
@@ -1658,7 +1686,8 @@ function renderOverviewWidgets() {
   // Overview = aktuelle VS-Woche. Kein Filter, kein Woche/Gesamt-Toggle.
   periodMode = "woche";
   const roster = DATA.members || [];
-  const champState = computeChampionState(roster);
+  const champStates = computeAllChampionStates(roster);
+  const champState = champStates.find((s) => s.rule && s.rule.type !== "manual") || champStates[0];
   const vsReady = hasVsSheetData();
   const vsEmptyMsg = !vsReady ? "Keine VS-Daten verfügbar" : noVsDataMessage();
   const underQuota = roster
@@ -1701,7 +1730,7 @@ function renderOverviewWidgets() {
     `<p class="ops-stand">${esc(dataRealityLine())}</p>` +
     `<p class="sub">Ops · aktuelle VS-Woche · ${roster.length} Mitglieder</p>` +
     '<div class="widget-grid">' +
-    renderChampionWidget(champState, vsReady, vsEmptyMsg) +
+    renderChampionWidgets(champStates, vsReady, vsEmptyMsg) +
     widgetShell(
       "under-quota",
       "Unter Quote",
@@ -3005,39 +3034,12 @@ function renderActivity(el) {
     "</section>";
 }
 
-function normalizeChampionDraft(raw) {
-  if (!raw || typeof raw !== "object") return { type: "max_score" };
-  const type = String(raw.type || "").toLowerCase();
-  if (type === "day_min") {
-    const dayMin = Number(raw.day_min);
-    return {
-      type: "day_min",
-      day_min: Number.isFinite(dayMin) && dayMin > 0 ? dayMin : VS_SAVE_MIN,
-    };
+function championsFromEntry(entry) {
+  if (entry && Array.isArray(entry.champions) && entry.champions.length) {
+    return entry.champions.map(normalizeChampionRule);
   }
-  if (type === "save_exact_and_closest") {
-    const dayTarget = Number(raw.day_target);
-    const days = Array.isArray(raw.week_days) && raw.week_days.length
-      ? raw.week_days.map((d) => String(d).toLowerCase())
-      : ["mon", "tue", "wed", "thu"];
-    return {
-      type: "save_exact_and_closest",
-      day_target: Number.isFinite(dayTarget) && dayTarget > 0 ? dayTarget : VS_SAVE_MIN,
-      week_days: days,
-      week_agg: String(raw.week_agg || "closest_sum").toLowerCase(),
-    };
-  }
-  if (type === "manual") {
-    return {
-      type: "manual",
-      title: String(raw.title || "").trim(),
-      winners: Array.isArray(raw.winners)
-        ? raw.winners.map((n) => String(n ?? "").trim()).filter(Boolean)
-        : [],
-      note: String(raw.note || "").trim(),
-    };
-  }
-  return { type: "max_score" };
+  if (entry && entry.champion) return [normalizeChampionRule(entry.champion)];
+  return [{ type: "max_score" }];
 }
 
 function configDraftForWeek(cfg, year, week) {
@@ -3054,8 +3056,8 @@ function configDraftForWeek(cfg, year, week) {
     if (mode !== "push" && mode !== "save") mode = "push";
   }
   const elevatedMin = entry ? pushElevatedMinFromEntry(entry) : null;
-  const champion = normalizeChampionDraft(entry && entry.champion);
-  return { year, week, mode, elevatedMin, champion };
+  const champions = championsFromEntry(entry);
+  return { year, week, mode, elevatedMin, champions };
 }
 
 function applyVsWeekToDashboard(cfg) {
@@ -3087,48 +3089,114 @@ function syncConfigModeBlocks(el) {
   if (saveBlock) saveBlock.hidden = mode !== "save";
 }
 
-function syncConfigChampionBlocks(el) {
-  const type = el.querySelector("#cfgChampType").value;
-  for (const block of el.querySelectorAll("[data-champ-type]")) {
+function syncChampRuleType(card) {
+  const type = card.querySelector(".cfg-champ-type").value;
+  for (const block of card.querySelectorAll("[data-champ-type]")) {
     block.hidden = block.getAttribute("data-champ-type") !== type;
   }
 }
 
-function collectChampionFromForm(el) {
-  const type = el.querySelector("#cfgChampType").value;
-  if (type === "day_min") {
-    const dayMin = parsePointsInput(el.querySelector("#cfgChampDayMin").value);
-    if (!dayMin) throw new Error("Champion: Tagesminimum erforderlich");
-    return { type: "day_min", day_min: dayMin };
-  }
-  if (type === "save_exact_and_closest") {
-    const dayTarget =
-      parsePointsInput(el.querySelector("#cfgChampDayTarget").value) || VS_SAVE_MIN;
-    const weekDays = [...el.querySelectorAll('input[name="cfgChampWeekDay"]:checked')].map(
-      (cb) => cb.value
-    );
-    return {
-      type: "save_exact_and_closest",
-      day_target: dayTarget,
-      week_days: weekDays.length ? weekDays : ["mon", "tue", "wed", "thu"],
-      week_agg: "closest_sum",
-    };
-  }
-  if (type === "manual") {
-    const title = el.querySelector("#cfgChampTitle").value.trim();
-    const winners = el
-      .querySelector("#cfgChampWinners")
-      .value.split(/\r?\n/)
-      .map((s) => s.trim())
-      .filter(Boolean);
-    const note = el.querySelector("#cfgChampNote").value.trim();
-    if (!title) throw new Error("Champion: Titel erforderlich (z. B. Bestes Outfit)");
-    if (!winners.length) throw new Error("Champion: mindestens einen Gewinner eintragen");
-    const out = { type: "manual", title, winners };
-    if (note) out.note = note;
-    return out;
-  }
-  return { type: "max_score" };
+function collectChampionsFromForm(el) {
+  const cards = [...el.querySelectorAll("[data-champ-rule]")];
+  if (!cards.length) throw new Error("Mindestens eine Champion-Regel");
+  return cards.map((card, i) => {
+    const type = card.querySelector(".cfg-champ-type").value;
+    if (type === "day_min") {
+      const dayMin = parsePointsInput(card.querySelector(".cfg-champ-day-min").value);
+      if (!dayMin) throw new Error(`Regel ${i + 1}: Tagesminimum erforderlich`);
+      return { type: "day_min", day_min: dayMin };
+    }
+    if (type === "save_exact_and_closest") {
+      const dayTarget =
+        parsePointsInput(card.querySelector(".cfg-champ-day-target").value) || VS_SAVE_MIN;
+      const weekDays = [...card.querySelectorAll('input[name^="cfgChampWeekDay"]:checked')].map(
+        (cb) => cb.value
+      );
+      return {
+        type: "save_exact_and_closest",
+        day_target: dayTarget,
+        week_days: weekDays.length ? weekDays : ["mon", "tue", "wed", "thu"],
+        week_agg: "closest_sum",
+      };
+    }
+    if (type === "manual") {
+      const title = card.querySelector(".cfg-champ-title").value.trim();
+      if (!title) throw new Error(`Regel ${i + 1}: Titel erforderlich (z. B. Bestes Outfit)`);
+      const winners = [...card.querySelectorAll(".cfg-champ-winner:checked")].map((cb) => cb.value);
+      const note = (card.querySelector(".cfg-champ-note")?.value || "").trim();
+      const out = { type: "manual", title, winners };
+      if (note) out.note = note;
+      return out;
+    }
+    return { type: "max_score" };
+  });
+}
+
+function renderChampRuleCardHtml(rule, idx, rosterNames) {
+  const r = rule || { type: "max_score" };
+  const type = r.type || "max_score";
+  const dayChecks = ["mon", "tue", "wed", "thu", "fri", "sat"]
+    .map((d) => {
+      const checked = (r.week_days || ["mon", "tue", "wed", "thu"]).includes(d) ? " checked" : "";
+      return (
+        `<label class="cfg-day-check"><input type="checkbox" name="cfgChampWeekDay${idx}" value="${d}"${checked}>` +
+        `${CHAMPION_DAY_LABEL_DE[d]}</label>`
+      );
+    })
+    .join("");
+  const selected = new Set(r.winners || []);
+  const rosterHtml = rosterNames
+    .map((name) => {
+      const checked = selected.has(name) ? " checked" : "";
+      return (
+        `<label class="cfg-roster-check"><input type="checkbox" class="cfg-champ-winner" value="${esc(
+          name
+        )}"${checked}>${esc(name)}</label>`
+      );
+    })
+    .join("");
+  return (
+    `<div class="cfg-champ-rule" data-champ-rule="${idx}">` +
+    `<div class="cfg-champ-rule-head">` +
+    `<strong>Regel ${idx + 1}</strong>` +
+    `<button type="button" class="btn-ghost cfg-champ-remove" data-remove="${idx}">Entfernen</button>` +
+    `</div>` +
+    "<div><label>Typ</label>" +
+    `<select class="cfg-champ-type">` +
+    `<option value="max_score"${type === "max_score" ? " selected" : ""}>Höchste Punkte</option>` +
+    `<option value="day_min"${type === "day_min" ? " selected" : ""}>Tagesminimum</option>` +
+    `<option value="save_exact_and_closest"${
+      type === "save_exact_and_closest" ? " selected" : ""
+    }>Exact + nächste Summe</option>` +
+    `<option value="manual"${type === "manual" ? " selected" : ""}>Nicht messbar (Outfit / Custom)</option>` +
+    `</select></div>` +
+    `<div data-champ-type="day_min"${type === "day_min" ? "" : " hidden"}>` +
+    "<div><label>Tagesminimum</label>" +
+    `<input class="cfg-champ-day-min" type="text" inputmode="numeric" placeholder="z. B. 7.2M" value="${esc(
+      formatPointsInputValue(r.day_min)
+    )}"></div></div>` +
+    `<div data-champ-type="save_exact_and_closest"${
+      type === "save_exact_and_closest" ? "" : " hidden"
+    }>` +
+    "<div><label>Tagesziel (Exact)</label>" +
+    `<input class="cfg-champ-day-target" type="text" inputmode="numeric" placeholder="7200000" value="${esc(
+      formatPointsInputValue(r.day_target) || "7.2M"
+    )}"></div>` +
+    '<p class="config-hint">Wochentage für Summe:</p>' +
+    `<div class="cfg-day-row">${dayChecks}</div></div>` +
+    `<div data-champ-type="manual"${type === "manual" ? "" : " hidden"}>` +
+    "<div><label>Titel</label>" +
+    `<input class="cfg-champ-title" type="text" placeholder="z. B. Bestes Outfit" value="${esc(
+      r.title || ""
+    )}"></div>` +
+    '<p class="config-hint">Gewinner aus Active-Roster (nur Auswahl wird angezeigt):</p>' +
+    `<div class="cfg-roster-grid">${rosterHtml || '<p class="sub">Kein Active-Roster geladen.</p>'}</div>` +
+    "<div><label>Notiz (optional)</label>" +
+    `<input class="cfg-champ-note" type="text" placeholder="optional" value="${esc(
+      r.note || ""
+    )}"></div></div>` +
+    `</div>`
+  );
 }
 
 function bindConfigForm(el, draft) {
@@ -3136,27 +3204,55 @@ function bindConfigForm(el, draft) {
   syncConfigModeBlocks(el);
   el.querySelector("#cfgMode").addEventListener("change", () => syncConfigModeBlocks(el));
 
-  const champ = draft.champion || { type: "max_score" };
-  el.querySelector("#cfgChampType").value = champ.type || "max_score";
-  syncConfigChampionBlocks(el);
-  el.querySelector("#cfgChampType").addEventListener("change", () => syncConfigChampionBlocks(el));
+  const list = el.querySelector("#cfgChampList");
+  const rosterNames = activeRosterNames();
 
-  if (champ.type === "day_min") {
-    el.querySelector("#cfgChampDayMin").value = formatPointsInputValue(champ.day_min) || String(champ.day_min || "");
-  }
-  if (champ.type === "save_exact_and_closest") {
-    el.querySelector("#cfgChampDayTarget").value =
-      formatPointsInputValue(champ.day_target) || String(champ.day_target || VS_SAVE_MIN);
-    const selected = new Set(champ.week_days || ["mon", "tue", "wed", "thu"]);
-    el.querySelectorAll('input[name="cfgChampWeekDay"]').forEach((cb) => {
-      cb.checked = selected.has(cb.value);
+  const rebindRuleCards = () => {
+    list.querySelectorAll("[data-champ-rule]").forEach((card) => {
+      const sel = card.querySelector(".cfg-champ-type");
+      if (sel && !sel.dataset.bound) {
+        sel.dataset.bound = "1";
+        sel.addEventListener("change", () => syncChampRuleType(card));
+      }
+      syncChampRuleType(card);
     });
-  }
-  if (champ.type === "manual") {
-    el.querySelector("#cfgChampTitle").value = champ.title || "";
-    el.querySelector("#cfgChampWinners").value = (champ.winners || []).join("\n");
-    el.querySelector("#cfgChampNote").value = champ.note || "";
-  }
+    list.querySelectorAll(".cfg-champ-remove").forEach((btn) => {
+      if (btn.dataset.bound) return;
+      btn.dataset.bound = "1";
+      btn.addEventListener("click", () => {
+        const cards = list.querySelectorAll("[data-champ-rule]");
+        if (cards.length <= 1) {
+          showToast("Mindestens eine Regel behalten.", true);
+          return;
+        }
+        btn.closest("[data-champ-rule]")?.remove();
+        list.querySelectorAll("[data-champ-rule]").forEach((card, i) => {
+          card.setAttribute("data-champ-rule", String(i));
+          const head = card.querySelector(".cfg-champ-rule-head strong");
+          if (head) head.textContent = `Regel ${i + 1}`;
+        });
+      });
+    });
+  };
+
+  rebindRuleCards();
+
+  el.querySelector("#cfgChampAddPoints")?.addEventListener("click", () => {
+    const idx = list.querySelectorAll("[data-champ-rule]").length;
+    list.insertAdjacentHTML(
+      "beforeend",
+      renderChampRuleCardHtml({ type: "max_score" }, idx, rosterNames)
+    );
+    rebindRuleCards();
+  });
+  el.querySelector("#cfgChampAddManual")?.addEventListener("click", () => {
+    const idx = list.querySelectorAll("[data-champ-rule]").length;
+    list.insertAdjacentHTML(
+      "beforeend",
+      renderChampRuleCardHtml({ type: "manual", title: "", winners: [] }, idx, rosterNames)
+    );
+    rebindRuleCards();
+  });
 
   const statusEl = el.querySelector("#cfgStatus");
   const setStatus = (msg, isError) => {
@@ -3174,14 +3270,15 @@ function bindConfigForm(el, draft) {
     btn.disabled = true;
     setStatus("Speichern…");
     try {
-      const champion = collectChampionFromForm(el);
+      const champions = collectChampionsFromForm(el);
       const json = await postImportantLinksConfig({
         kind: "vs-week",
         year: draft.year,
         week: draft.week,
         mode,
         max: maxRaw,
-        champion,
+        champions,
+        champion: champions[0],
       });
       importantLinksConfig = json.data.config;
       applyVsWeekToDashboard(importantLinksConfig);
@@ -3202,15 +3299,13 @@ function bindConfigForm(el, draft) {
 
 function renderConfigForm(el, cfg, draft, loadError) {
   const weekLabel = `${draft.year}-KW${String(draft.week).padStart(2, "0")}`;
-  const champ = draft.champion || { type: "max_score" };
-  const dayChecks = ["mon", "tue", "wed", "thu", "fri", "sat"]
-    .map((d) => {
-      const checked = (champ.week_days || ["mon", "tue", "wed", "thu"]).includes(d) ? " checked" : "";
-      return (
-        `<label class="cfg-day-check"><input type="checkbox" name="cfgChampWeekDay" value="${d}"${checked}>` +
-        `${CHAMPION_DAY_LABEL_DE[d]}</label>`
-      );
-    })
+  const champions =
+    Array.isArray(draft.champions) && draft.champions.length
+      ? draft.champions
+      : [{ type: "max_score" }];
+  const rosterNames = activeRosterNames();
+  const rulesHtml = champions
+    .map((rule, i) => renderChampRuleCardHtml(rule, i, rosterNames))
     .join("");
   el.innerHTML =
     '<section class="panel glass"><h2>VS-Woche</h2>' +
@@ -3232,41 +3327,12 @@ function renderConfigForm(el, cfg, draft, loadError) {
     "</div>" +
     '<fieldset class="cfg-champ-fieldset">' +
     "<legend>Champion</legend>" +
-    '<p class="config-hint">Punkte-Regeln oder manuell (z. B. Bestes Outfit).</p>' +
-    "<div><label for=\"cfgChampType\">Typ</label>" +
-    '<select id="cfgChampType" name="champType">' +
-    '<option value="max_score">Höchste Punkte (max_score)</option>' +
-    '<option value="day_min">Tagesminimum (day_min)</option>' +
-    '<option value="save_exact_and_closest">Exact + nächste Summe</option>' +
-    '<option value="manual">Manuell (Outfit / Custom)</option>' +
-    "</select></div>" +
-    '<div data-champ-type="day_min" hidden>' +
-    "<div><label for=\"cfgChampDayMin\">Tagesminimum</label>" +
-    `<input id="cfgChampDayMin" type="text" inputmode="numeric" placeholder="z. B. 7.2M" value="${esc(
-      formatPointsInputValue(champ.day_min)
-    )}"></div></div>` +
-    '<div data-champ-type="save_exact_and_closest" hidden>' +
-    "<div><label for=\"cfgChampDayTarget\">Tagesziel (Exact)</label>" +
-    `<input id="cfgChampDayTarget" type="text" inputmode="numeric" placeholder="7200000" value="${esc(
-      formatPointsInputValue(champ.day_target) || "7.2M"
-    )}"></div>` +
-    '<p class="config-hint">Wochentage für Summe (closest_sum):</p>' +
-    `<div class="cfg-day-row">${dayChecks}</div>` +
-    "</div>" +
-    '<div data-champ-type="manual" hidden>' +
-    "<div><label for=\"cfgChampTitle\">Titel</label>" +
-    `<input id="cfgChampTitle" type="text" placeholder="z. B. Bestes Outfit" value="${esc(
-      champ.title || ""
-    )}"></div>` +
-    "<div><label for=\"cfgChampWinners\">Gewinner (ein Name pro Zeile)</label>" +
-    `<textarea id="cfgChampWinners" rows="4" placeholder="Name1&#10;Name2">${esc(
-      (champ.winners || []).join("\n")
-    )}</textarea></div>` +
-    "<div><label for=\"cfgChampNote\">Notiz (optional)</label>" +
-    `<input id="cfgChampNote" type="text" placeholder="optional" value="${esc(
-      champ.note || ""
-    )}"></div></div>` +
-    "</fieldset>" +
+    '<p class="config-hint">Mehrere Regeln möglich: messbar (VS) und/oder nicht messbar (Outfit) mit Roster-Auswahl.</p>' +
+    `<div id="cfgChampList">${rulesHtml}</div>` +
+    '<div class="btn-row cfg-champ-add-row">' +
+    '<button type="button" class="btn-ghost" id="cfgChampAddPoints">+ Punkte-Regel</button>' +
+    '<button type="button" class="btn-ghost" id="cfgChampAddManual">+ Nicht messbar</button>' +
+    "</div></fieldset>" +
     '<div class="btn-row">' +
     '<button type="submit" class="btn" id="cfgSave">Speichern</button>' +
     "</div>" +

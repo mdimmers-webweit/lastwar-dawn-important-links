@@ -2,13 +2,11 @@
  * POST /api/config
  * Body:
  *   { kind?: 'link', name, desc?, url }  — append a link (default)
- *   { kind: 'vs-week', year, week, mode, max?, champion? }
- *     champion: Punkte-Regeln oder manuell (z.B. Bestes Outfit)
- *       { type: 'max_score' }
- *       { type: 'day_min', day_min }
- *       { type: 'save_exact_and_closest', day_target, week_days, week_agg }
- *       { type: 'manual', title, winners: string[], note? }
- *     Mode-only updates preserve an existing champion when body omits it.
+ *   { kind: 'vs-week', year, week, mode, max?, champions?, champion? }
+ *     champions: Regel-Liste (bevorzugt). Legacy: einzelnes champion.
+ *       messbar: max_score | day_min | save_exact_and_closest
+ *       nicht messbar: { type:'manual', title, winners: string[], note? }
+ *     Mode-only updates preserve existing champions when body omits both.
  *   { kind: 'vs-week-delete', year, week }
  */
 const REPO = 'mdimmers-webweit/lastwar-dawn-important-links';
@@ -155,11 +153,21 @@ function applyVsWeek(config, body) {
   if (mode === 'push' && maxPoints != null && maxPoints > 7_200_000) {
     entry.max = maxPoints;
   }
-  // Champion rule is config-driven; preserve on mode-only updates.
-  if (body.champion && typeof body.champion === 'object') {
+  // Champion rules: champions[] preferred; legacy champion kept as first.
+  if (Array.isArray(body.champions) && body.champions.length) {
+    entry.champions = body.champions;
+    entry.champion = body.champions[0];
+  } else if (body.champion && typeof body.champion === 'object') {
     entry.champion = body.champion;
-  } else if (prev && prev.champion && typeof prev.champion === 'object') {
-    entry.champion = prev.champion;
+    entry.champions = [body.champion];
+  } else if (prev) {
+    if (Array.isArray(prev.champions) && prev.champions.length) {
+      entry.champions = prev.champions;
+      entry.champion = prev.champions[0];
+    } else if (prev.champion && typeof prev.champion === 'object') {
+      entry.champion = prev.champion;
+      entry.champions = [prev.champion];
+    }
   }
   if (idx >= 0) config.vsWeeks[idx] = entry;
   else config.vsWeeks.push(entry);
