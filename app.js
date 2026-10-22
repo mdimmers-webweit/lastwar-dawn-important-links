@@ -3,7 +3,7 @@
 let DATA = null;
 
 const ROLE_OPTIONS = ["R5", "R4", "R3", "R2", "R1"];
-const CACHE_BUST = "20261021-champions-multi";
+const CACHE_BUST = "20261022-presence";
 
 /** Save-Woche: eigenes Widget — Tages-VS über dieser Schwelle (Tracking). */
 const WATCH_SAVE_DAY_OVER = 15_000_000;
@@ -1725,6 +1725,15 @@ function renderOverviewWidgets() {
         : savePushAll.length
           ? `Save · &gt;15M/Tag · ${savePushAll.length}`
           : "Save · &gt;15M/Tag · keine";
+  const presence = presenceBlock();
+  const offlineN =
+    presence && presence.online && presence.online.offline_count != null
+      ? presence.online.offline_count
+      : "—";
+  const noGiftN =
+    presence && presence.gifts && presence.gifts.no_gift_count != null
+      ? presence.gifts.no_gift_count
+      : "—";
 
   return (
     `<p class="ops-stand">${esc(dataRealityLine())}</p>` +
@@ -1786,9 +1795,13 @@ function renderOverviewWidgets() {
           champState.rule && champState.rule.type === "manual"
             ? esc(champState.rule.title || "Manuell")
             : fmtPts(champState.pulsePts)
-        }</strong>Champion</div></div>`,
+        }</strong>Champion</div>` +
+        `<div class="pulse-pill"><strong>${esc(String(offlineN))}</strong>Offline ≥12h</div>` +
+        `<div class="pulse-pill"><strong>${esc(String(noGiftN))}</strong>Ohne Geschenk</div></div>`,
       { span: "span-6" }
     ) +
+    renderPresenceOfflineWidget() +
+    renderPresenceGiftsWidgets() +
     widgetShell("activity-trend", "Activity-Verlauf", trend.summary, trend.body, {
       span: "span-12",
       defaultCollapsed: false,
@@ -1837,6 +1850,128 @@ function renderOverviewWidgets() {
       { span: "span-12", defaultCollapsed: false }
     ) +
     "</div>"
+  );
+}
+
+/** Presence block from export (Last-Online + Allianzgeschenk). */
+function presenceBlock() {
+  const p = DATA && DATA.presence;
+  return p && typeof p === "object" ? p : null;
+}
+
+function fmtHoursOffline(h) {
+  if (h == null || !Number.isFinite(Number(h))) return "—";
+  const n = Number(h);
+  if (n < 1) return `${Math.round(n * 60)} Min`;
+  if (Number.isInteger(n)) return `${n} Std`;
+  return `${n.toFixed(1)} Std`;
+}
+
+function renderPresenceOfflineWidget() {
+  const p = presenceBlock();
+  const online = (p && p.online) || {};
+  const flagH = (p && p.offline_flag_hours) || 12;
+  const list = Array.isArray(online.offline) ? online.offline : [];
+  const count = online.offline_count != null ? online.offline_count : list.length;
+  const sub =
+    online.date
+      ? `≥${flagH} Std offline · ${online.date}`
+      : `≥${flagH} Std offline`;
+  if (!p || !online.sampled) {
+    return widgetShell(
+      "presence-offline",
+      "Offline",
+      sub,
+      '<p class="sub">Noch kein Last-Online-Capture.</p>',
+      { span: "span-6" }
+    );
+  }
+  const body = list.length
+    ? "<ul class=\"rank-list\">" +
+      list
+        .slice(0, 20)
+        .map(
+          (e) =>
+            `<li><span class="rank">⏱</span><span class="who">${esc(e.name)}</span>` +
+            `<span class="val">${esc(fmtHoursOffline(e.hours_offline))}</span></li>`
+        )
+        .join("") +
+      "</ul>"
+    : '<p class="sub">Niemand ≥' + flagH + " Std offline.</p>";
+  return widgetShell(
+    "presence-offline",
+    "Offline",
+    `${count} · ${sub}`,
+    body,
+    { span: "span-6", defaultCollapsed: false }
+  );
+}
+
+function renderPresenceGiftsWidgets() {
+  const p = presenceBlock();
+  const gifts = (p && p.gifts) || {};
+  const top = Array.isArray(gifts.top) ? gifts.top : [];
+  const noGift = Array.isArray(gifts.no_gift) ? gifts.no_gift : [];
+  const noCount =
+    gifts.no_gift_count != null ? gifts.no_gift_count : noGift.length;
+  const dateHint = gifts.date ? ` · ${gifts.date}` : "";
+  if (!p || gifts.events == null) {
+    const empty = widgetShell(
+      "presence-gifts",
+      "Allianzgeschenk",
+      "Feed",
+      '<p class="sub">Noch kein Geschenk-Capture.</p>',
+      { span: "span-6" }
+    );
+    const emptyMiss = widgetShell(
+      "presence-no-gift",
+      "Ohne Geschenk",
+      "Active · kein Treffer",
+      '<p class="sub">Noch kein Geschenk-Capture.</p>',
+      { span: "span-6" }
+    );
+    return empty + emptyMiss;
+  }
+  const topBody = top.length
+    ? "<ol class=\"rank-list\">" +
+      top
+        .slice(0, 10)
+        .map(
+          (e, i) =>
+            `<li><span class="rank">${i + 1}</span>` +
+            `<span class="who">${esc(e.name)}</span>` +
+            `<span class="val">${esc(String(e.count))}×</span></li>`
+        )
+        .join("") +
+      "</ol>"
+    : '<p class="sub">Keine Geschenk-Events gematcht.</p>';
+  const missBody = noGift.length
+    ? "<ul class=\"rank-list\">" +
+      noGift
+        .slice(0, 25)
+        .map(
+          (e) =>
+            `<li><span class="who">${esc(e.name)}</span>` +
+            `<span class="val">—</span></li>`
+        )
+        .join("") +
+      "</ul>"
+    : '<p class="sub">Alle Active mit mindestens einem Geschenk.</p>';
+  return (
+    widgetShell(
+      "presence-gifts",
+      "Allianzgeschenk",
+      `${gifts.events || 0} Events · ${gifts.unique_members || 0} Namen${dateHint}`,
+      topBody,
+      { span: "span-6", defaultCollapsed: false }
+    ) +
+    widgetShell(
+      "presence-no-gift",
+      "Ohne Geschenk",
+      `Active · ${noCount} ohne Treffer${dateHint}`,
+      missBody,
+      { span: "span-6", defaultCollapsed: noCount === 0 }
+    )
   );
 }
 

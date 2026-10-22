@@ -17654,5 +17654,24 @@
       "n": 99,
       "source": "live"
     }
-  ]
+  ],
+  "presence": {
+    "as_of": null,
+    "offline_flag_hours": 12,
+    "online": {
+      "date": "",
+      "sampled": 0,
+      "offline": [],
+      "offline_count": 0
+    },
+    "gifts": {
+      "date": "",
+      "events": 0,
+      "unique_members": 0,
+      "unmatched_ocr": 0,
+      "top": [],
+      "no_gift": [],
+      "no_gift_count": 0
+    }
+  }
 }
