@@ -3,17 +3,10 @@
     {
       "year": 2026,
       "week": 43,
-      "mode": "save",
+      "mode": "push",
+      "max": 15000000,
       "champion": {
-        "type": "save_exact_and_closest",
-        "day_target": 7200000,
-        "week_days": [
-          "mon",
-          "tue",
-          "wed",
-          "thu"
-        ],
-        "week_agg": "closest_sum"
+        "type": "max_score"
       }
     },
     {

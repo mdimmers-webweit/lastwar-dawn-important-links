@@ -3450,7 +3450,7 @@ function renderConfigForm(el, cfg, draft, loadError) {
     '<form class="config-form" id="cfgForm">' +
     `<p class="config-week-label">Aktuelle Woche: <strong>${esc(weekLabel)}</strong></p>` +
     "<div><label for=\"cfgMode\">Modus</label>" +
-    `<select id="cfgMode" name="mode"><option value="push">Push (Fr–Sa)</option><option value="save">Save (Mo–Do)</option></select></div>` +
+    `<select id="cfgMode" name="mode"><option value="push">Push (ganze Woche)</option><option value="save">Save (Mo–Do)</option></select></div>` +
     '<div id="cfgPushBlock">' +
     '<p class="config-hint">Minimum fest: <strong>7,2 Mio</strong> Punkte.</p>' +
     "<div><label for=\"cfgElevatedMin\">Höheres Minimum (optional)</label>" +
