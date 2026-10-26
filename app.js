@@ -621,31 +621,6 @@ function activeVsWeekKey() {
   return fromGame;
 }
 
-/** VS-Flag aus Tageswerten der aktiven ISO-Woche (nicht Sheet-vs_flag der Vorwoche). */
-function memberVsWeekFlag(m) {
-  const labs = vsWeekDayLabels();
-  let nDays = 0;
-  let nBelow = 0;
-  for (const lab of labs) {
-    const d = parseIsoDate(lab);
-    if (!d) continue;
-    const min = vsMinForGameDate(d);
-    if (min <= 0) continue;
-    const pts = vsPointsAtLabel(m, lab);
-    if (pts == null || pts <= 0) continue;
-    nDays += 1;
-    if (pts < min) nBelow += 1;
-  }
-  if (nDays === 0) return "";
-  if (nBelow) return `${nBelow}/${nDays} below`;
-  return "OK";
-}
-
-function currentWeekHasQuotaScores() {
-  const roster = (DATA && DATA.members) || [];
-  return roster.some((m) => memberVsWeekFlag(m) !== "");
-}
-
 function activeVsWeekMode() {
   const meta = (DATA && DATA.meta) || {};
   const fromMeta = String(meta.VSWeekMode || "").toLowerCase();
@@ -724,7 +699,7 @@ function memberBelowQuotaForPeriod(m) {
     if (min <= 0) return false;
     return pts < min;
   }
-  return /below/i.test(memberVsWeekFlag(m));
+  return /below/i.test(String(m.vs_flag || ""));
 }
 
 /** Activity % im JSON = gewichteter Gesamt-KPI (Sheet), nicht Tages-/Wochenmodus. */
@@ -753,8 +728,8 @@ function memberSaveDayOverHits(m) {
 function buildWatchlistEntries(members, compare) {
   const watch = [];
   for (const m of members) {
-    // Overview-Woche: Flag aus aktuellen VS-Tageswerten (Montags leer bis neue Daten)
-    if (/below/i.test(memberVsWeekFlag(m))) {
+    // Gesamtverlauf: VS-Flag + Activity-KPI (nicht an Woche/Gesamt-Toggle gekoppelt)
+    if (/below/i.test(String(m.vs_flag || ""))) {
       watch.push({ m, reason: "Unter Quote", score: 3 });
     } else if (memberLowActivityForWatchlist(m)) {
       watch.push({ m, reason: "Activity niedrig", score: 2 });
@@ -810,7 +785,7 @@ function memberVsStatusOk(m) {
     if (min <= 0) return pts > 0;
     return pts >= min;
   }
-  return memberVsWeekFlag(m) === "OK";
+  return m.vs_flag === "OK";
 }
 
 function vsPulseCounts(members) {
@@ -829,8 +804,8 @@ function vsPulseCounts(members) {
     return { ok, below };
   }
   return {
-    ok: members.filter((m) => memberVsWeekFlag(m) === "OK").length,
-    below: members.filter((m) => /below/i.test(memberVsWeekFlag(m))).length,
+    ok: members.filter((m) => m.vs_flag === "OK").length,
+    below: members.filter((m) => /below/i.test(String(m.vs_flag || ""))).length,
   };
 }
 
@@ -931,7 +906,22 @@ function memberVsWeekSum(member, dayLabels) {
 }
 
 function vsWeekDayLabels() {
-  // Nur Spalten der aktiven ISO-Woche — kein Fallback auf Vorwochen (Montags-Reset).
+  const block = sheetBlock("vs");
+  const cols = (block && block.columns) || [];
+  const refWeek = activeVsWeekKey();
+  const inWeek = cols.filter((lab) => {
+    const d = parseIsoDate(lab);
+    if (!d) return false;
+    const wk = isoWeekKey(d);
+    return wk.year === refWeek.year && wk.week === refWeek.week;
+  });
+  // Allgemeines VS-UI: Fallback auf vorhandene Spalten wenn Woche noch leer.
+  // Champion nutzt championWeekDayLabels() ohne Fallback.
+  return inWeek.length ? inWeek : cols.filter((lab) => !!parseIsoDate(lab));
+}
+
+/** Nur Datums-Spalten der aktiven ISO-Woche — kein Vorwochen-Fallback (Champion-Reset). */
+function championWeekDayLabels() {
   const block = sheetBlock("vs");
   const cols = (block && block.columns) || [];
   const refWeek = activeVsWeekKey();
@@ -941,6 +931,30 @@ function vsWeekDayLabels() {
     const wk = isoWeekKey(d);
     return wk.year === refWeek.year && wk.week === refWeek.week;
   });
+}
+
+/** Wochensumme strikt aus aktuellen Wochen-Tageswerten (kein vs_week_sum/vs_latest). */
+function championWeekSum(member) {
+  const labs = championWeekDayLabels();
+  if (!labs.length) return null;
+  let sum = 0;
+  let any = false;
+  for (const lab of labs) {
+    const v = memberVsDayPoints(member, lab);
+    if (v == null) continue;
+    sum += v;
+    any = true;
+  }
+  return any ? sum : null;
+}
+
+function championWeekHasScores() {
+  return championWeekDayLabels().length > 0;
+}
+
+function championNewWeekMessage() {
+  const wk = activeVsWeekKey();
+  return `Neue VS-Woche ${wk.year}-KW${String(wk.week).padStart(2, "0")} · noch keine Tageswerte`;
 }
 
 function vsDayHeaderLabel(iso) {
@@ -1150,7 +1164,8 @@ function vsDaySlotsForWeek(dayKeys) {
         )
       : null;
   const byWd = new Map();
-  for (const lab of sheetColumnLabels("vs")) {
+  // Nur aktuelle ISO-Woche (Champion) — keine Vorwochen-Spalten.
+  for (const lab of championWeekDayLabels()) {
     const d = parseIsoDate(lab);
     if (!d) continue;
     const wk = isoWeekKey(d);
@@ -1302,9 +1317,9 @@ function computeChampionState(members, ruleIn) {
       pulsePts: top[0] ? top[0].pts : null,
     };
   }
-  // max_score (default)
+  // max_score (default) — nur aktuelle VS-Woche, kein vs_week_sum-Fallback
   const ranked = members
-    .map((m) => ({ m, pts: vsMetric(m) }))
+    .map((m) => ({ m, pts: championWeekSum(m) }))
     .filter((x) => x.pts != null && x.pts > 0)
     .sort((a, b) => b.pts - a.pts);
   return {
@@ -1362,6 +1377,16 @@ function renderChampionWidget(champState, vsReady, vsEmptyMsg, idx) {
       "Champion",
       esc(vsEmptyMsg),
       "",
+      { className: "champ-widget", span: "span-12" }
+    );
+  }
+  // Nach So/Mo-Reset: neue ISO-Woche ohne Tageswerte → Champion leer (nicht Vorwoche)
+  if (!championWeekHasScores()) {
+    return widgetShell(
+      `champion${idSuffix}`,
+      "Champion",
+      championNewWeekMessage(),
+      '<p class="sub">Wartet auf erste VS-Werte dieser Woche.</p>',
       { className: "champ-widget", span: "span-12" }
     );
   }
@@ -1455,11 +1480,11 @@ function renderChampionWidget(champState, vsReady, vsEmptyMsg, idx) {
   const head = champState.topList[0];
   const body =
     (head
-      ? `<p class="sub">${esc(head.name)} · ${fmtPts(vsMetric(head))}</p>`
+      ? `<p class="sub">${esc(head.name)} · ${fmtPts(championWeekSum(head))}</p>`
       : `<p class="sub">${esc(vsEmptyMsg)}</p>`) +
     renderRankList(
       head ? champState.topList.slice(1) : [],
-      (m) => fmtPts(vsMetric(m)),
+      (m) => fmtPts(championWeekSum(m)),
       vsEmptyMsg
     );
   return widgetShell(`champion${idSuffix}`, "Champion", "Wochensumme", body, {
@@ -1723,12 +1748,9 @@ function renderOverviewWidgets() {
   const champState = champStates.find((s) => s.rule && s.rule.type !== "manual") || champStates[0];
   const vsReady = hasVsSheetData();
   const vsEmptyMsg = !vsReady ? "Keine VS-Daten verfügbar" : noVsDataMessage();
-  const weekHasVs = currentWeekHasQuotaScores();
-  const underQuota = weekHasVs
-    ? roster
-        .filter((m) => /below/i.test(memberVsWeekFlag(m)))
-        .sort((a, b) => String(a.name).localeCompare(String(b.name), "de"))
-    : [];
+  const underQuota = roster
+    .filter((m) => /below/i.test(String(m.vs_flag || "")))
+    .sort((a, b) => String(a.name).localeCompare(String(b.name), "de"));
   const topDonWeek = roster
     .map((m) => ({ m, pts: donationMetric(m) }))
     .filter((x) => x.pts > 0)
@@ -1738,21 +1760,10 @@ function renderOverviewWidgets() {
   const wenigAktiv = wenigAktivMembers(roster);
   const compare = sheetBlock("vs_compare");
   const days = (compare && compare.days) || [];
-  // VS-Vergleich nur Tage der aktiven ISO-Woche (Montags leer bis neue Daten)
-  const refWeek = activeVsWeekKey();
-  const daysThisWeek = days.filter((d) => {
-    const lab = d && (d.date || d.day || d.label);
-    const parsed = parseIsoDate(lab);
-    if (!parsed) return false;
-    const wk = isoWeekKey(parsed);
-    return wk.year === refWeek.year && wk.week === refWeek.week;
-  });
-  const cmp = daysThisWeek.length ? renderVsCompareCompact(daysThisWeek) : null;
+  const cmp = days.length ? renderVsCompareCompact(days) : null;
   const trend = renderActivityTrendChartBody();
-  const vsOk = weekHasVs
-    ? roster.filter((m) => memberVsWeekFlag(m) === "OK").length
-    : 0;
-  const vsBelow = underQuota.length;
+  const vsOk = roster.filter((m) => m.vs_flag === "OK").length;
+  const vsBelow = roster.filter((m) => /below/i.test(String(m.vs_flag || ""))).length;
   const topDonGesamt = pulseGesamtDonation(roster);
   const watchAll = buildWatchlistEntries(roster, compare);
   const watchShort = watchAll.slice(0, WATCHLIST_DISPLAY_MAX);
@@ -1790,22 +1801,18 @@ function renderOverviewWidgets() {
     widgetShell(
       "under-quota",
       "Unter Quote",
-      weekHasVs
-        ? `${underQuota.length} · diese Woche`
-        : "Neue Woche · noch keine VS-Tage",
-      weekHasVs
-        ? underQuota.length
-          ? "<ul class=\"rank-list\">" +
-              underQuota
-                .map(
-                  (m) =>
-                    `<li><span class="rank">!</span><span class="who">${esc(m.name)}</span>` +
-                    `<span class="val">${vsBadge(memberVsWeekFlag(m))}</span></li>`
-                )
-                .join("") +
-              "</ul>"
-          : '<p class="sub">Keine unter Quote.</p>'
-        : '<p class="sub">Noch keine VS-Daten in dieser Woche.</p>',
+      `${underQuota.length} · diese Woche`,
+      underQuota.length
+        ? "<ul class=\"rank-list\">" +
+            underQuota
+              .map(
+                (m) =>
+                  `<li><span class="rank">!</span><span class="who">${esc(m.name)}</span>` +
+                  `<span class="val">${vsBadge(m.vs_flag)}</span></li>`
+              )
+              .join("") +
+            "</ul>"
+        : '<p class="sub">Keine unter Quote.</p>',
       { span: "span-6" }
     ) +
     widgetShell(
