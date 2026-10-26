@@ -4,20 +4,6 @@
   "vsWeeks": [
     {
       "year": 2026,
-      "week": 44,
-      "mode": "push",
-      "max": 20000000,
-      "champions": [
-        {
-          "type": "max_score"
-        }
-      ],
-      "champion": {
-        "type": "max_score"
-      }
-    },
-    {
-      "year": 2026,
       "week": 43,
       "mode": "push",
       "max": 15000000,

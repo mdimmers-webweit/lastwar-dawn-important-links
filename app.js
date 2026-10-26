@@ -3,7 +3,7 @@
 let DATA = null;
 
 const ROLE_OPTIONS = ["R5", "R4", "R3", "R2", "R1"];
-const CACHE_BUST = "20261026-quota-presence";
+const CACHE_BUST = "20261026-presence-tab";
 
 /** Save-Woche: eigenes Widget — Tages-VS über dieser Schwelle (Tracking). */
 const WATCH_SAVE_DAY_OVER = 15_000_000;
@@ -25,7 +25,7 @@ const PERIOD_STORAGE_KEY = "dawn-dashboard-period";
 /** Offline-Stunden-Schwellen für Overview-Presence-Filter. */
 const OFFLINE_HOUR_OPTIONS = [12, 24, 48, 72];
 
-/** Mitglieder-Filter: Gegner/Links/Config ohne Filterleiste. Overview = Presence. */
+/** Mitglieder-Filter: Gegner/Links/Config ohne Filterleiste. Overview + Präsenz = Presence. */
 const FILTERABLE_VIEWS = new Set([
   "overview",
   "kills",
@@ -34,6 +34,7 @@ const FILTERABLE_VIEWS = new Set([
   "season",
   "events",
   "activity",
+  "presence",
 ]);
 
 const COLLAPSE_STORAGE_KEY = "dawn-dashboard-collapse-v1";
@@ -2007,32 +2008,39 @@ function fmtHoursOffline(h) {
   return `${n.toFixed(1)} Std`;
 }
 
-function renderPresenceOfflineWidget() {
+/**
+ * @param {{ limit?: number|null, span?: string, idPrefix?: string }} [opts]
+ *   limit null = volle Liste (Präsenz-Tab); Default Overview-Cap.
+ */
+function renderPresenceOfflineWidget(opts) {
+  const o = opts || {};
+  const limit = o.limit === undefined ? 40 : o.limit;
+  const span = o.span || "span-6";
+  const id = (o.idPrefix || "") + "presence-offline";
   const p = presenceBlock();
   const online = (p && p.online) || {};
-  const flagH = (p && p.offline_flag_hours) || 12;
   const minH = offlineMinHoursFilter();
   const raw = Array.isArray(online.offline) ? online.offline : [];
   const list = raw.filter(
     (e) => presenceEntryVisible(e) && Number(e.hours_offline) >= minH
   );
+  const shown = limit == null ? list : list.slice(0, limit);
   const sub =
     online.date
       ? `≥${minH} Std offline · ${online.date}`
       : `≥${minH} Std offline`;
   if (!p || !online.sampled) {
     return widgetShell(
-      "presence-offline",
+      id,
       "Offline Zeiten",
       sub,
       '<p class="sub">Noch kein Last-Online-Capture.</p>',
-      { span: "span-6" }
+      { span }
     );
   }
   const body = list.length
     ? "<ul class=\"rank-list\">" +
-      list
-        .slice(0, 40)
+      shown
         .map(
           (e) =>
             `<li><span class="rank">⏱</span><span class="who">${esc(e.name)}</span>` +
@@ -2042,43 +2050,52 @@ function renderPresenceOfflineWidget() {
       "</ul>"
     : '<p class="sub">Niemand ≥' + minH + " Std offline (Filter).</p>";
   return widgetShell(
-    "presence-offline",
+    id,
     "Offline Zeiten",
     `${list.length} · ${sub}`,
     body,
-    { span: "span-6", defaultCollapsed: false }
+    { span, defaultCollapsed: false }
   );
 }
 
-function renderPresenceGiftsWidgets() {
+/**
+ * @param {{ topLimit?: number|null, noGiftLimit?: number|null, span?: string, idPrefix?: string }} [opts]
+ */
+function renderPresenceGiftsWidgets(opts) {
+  const o = opts || {};
+  const topLimit = o.topLimit === undefined ? 15 : o.topLimit;
+  const noGiftLimit = o.noGiftLimit === undefined ? 40 : o.noGiftLimit;
+  const span = o.span || "span-6";
+  const prefix = o.idPrefix || "";
   const p = presenceBlock();
   const gifts = (p && p.gifts) || {};
   const topRaw = Array.isArray(gifts.top) ? gifts.top : [];
   const noGiftRaw = Array.isArray(gifts.no_gift) ? gifts.no_gift : [];
   const top = topRaw.filter(presenceEntryVisible);
   const noGift = noGiftRaw.filter(presenceEntryVisible);
+  const topShown = topLimit == null ? top : top.slice(0, topLimit);
+  const noGiftShown = noGiftLimit == null ? noGift : noGift.slice(0, noGiftLimit);
   const dateHint = gifts.date ? ` · ${gifts.date}` : "";
   if (!p || gifts.events == null) {
     const empty = widgetShell(
-      "presence-gifts",
+      prefix + "presence-gifts",
       "Geschenke",
       "Top · Feed",
       '<p class="sub">Noch kein Geschenk-Capture.</p>',
-      { span: "span-6" }
+      { span }
     );
     const emptyMiss = widgetShell(
-      "presence-no-gift",
+      prefix + "presence-no-gift",
       "Ohne Geschenk",
       "Active · kein Treffer",
       '<p class="sub">Noch kein Geschenk-Capture.</p>',
-      { span: "span-6" }
+      { span }
     );
     return empty + emptyMiss;
   }
   const topBody = top.length
     ? "<ol class=\"rank-list\">" +
-      top
-        .slice(0, 15)
+      topShown
         .map(
           (e, i) =>
             `<li><span class="rank">${i + 1}</span>` +
@@ -2090,8 +2107,7 @@ function renderPresenceGiftsWidgets() {
     : '<p class="sub">Keine Geschenk-Events (Filter).</p>';
   const missBody = noGift.length
     ? "<ul class=\"rank-list\">" +
-      noGift
-        .slice(0, 40)
+      noGiftShown
         .map(
           (e) =>
             `<li><span class="who">${esc(e.name)}</span>` +
@@ -2102,20 +2118,147 @@ function renderPresenceGiftsWidgets() {
     : '<p class="sub">Alle sichtbaren Active mit mindestens einem Geschenk.</p>';
   return (
     widgetShell(
-      "presence-gifts",
+      prefix + "presence-gifts",
       "Geschenke",
       `Top ${top.length} · ${gifts.events || 0} Events${dateHint}`,
       topBody,
-      { span: "span-6", defaultCollapsed: false }
+      { span, defaultCollapsed: false }
     ) +
     widgetShell(
-      "presence-no-gift",
+      prefix + "presence-no-gift",
       "Ohne Geschenk",
       `Active · ${noGift.length} ohne Treffer${dateHint}`,
       missBody,
-      { span: "span-6", defaultCollapsed: noGift.length === 0 }
+      { span, defaultCollapsed: noGift.length === 0 }
     )
   );
+}
+
+/** Snapshot-Kennzahlen aus aktuellem Presence-Block (kein Tagesverlauf). */
+function presenceSnapshotTotals() {
+  const p = presenceBlock();
+  if (!p) {
+    return { ready: false, events: null, unique: null, offline: null, sampled: null, noGift: null };
+  }
+  const online = p.online || {};
+  const gifts = p.gifts || {};
+  const minH = offlineMinHoursFilter();
+  const raw = Array.isArray(online.offline) ? online.offline : [];
+  const offlineFiltered = raw.filter(
+    (e) => presenceEntryVisible(e) && Number(e.hours_offline) >= minH
+  );
+  const noGiftRaw = Array.isArray(gifts.no_gift) ? gifts.no_gift : [];
+  return {
+    ready: true,
+    events: gifts.events != null ? Number(gifts.events) : null,
+    unique: gifts.unique_members != null ? Number(gifts.unique_members) : null,
+    offline: online.sampled ? offlineFiltered.length : null,
+    sampled: online.sampled != null ? Number(online.sampled) : null,
+    noGift: gifts.events != null ? noGiftRaw.filter(presenceEntryVisible).length : null,
+    onlineDate: online.date || null,
+    giftsDate: gifts.date || null,
+    asOf: p.as_of || null,
+  };
+}
+
+function fmtPresenceAsOf(iso) {
+  if (!iso) return null;
+  try {
+    const d = new Date(iso);
+    if (Number.isNaN(d.getTime())) return String(iso);
+    return d.toLocaleString("de-DE", {
+      timeZone: "Europe/Berlin",
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric",
+      hour: "2-digit",
+      minute: "2-digit",
+    });
+  } catch (e) {
+    return String(iso);
+  }
+}
+
+function renderPresenceSnapshotPills(t) {
+  const cell = (label, val) =>
+    `<div class="pulse-pill"><strong>${esc(val == null ? "—" : String(val))}</strong>${esc(label)}</div>`;
+  return (
+    `<div class="pulse-row">` +
+    cell("Geschenk-Events", t.events) +
+    cell("Unique mit Geschenk", t.unique) +
+    cell("Offline (Filter)", t.offline) +
+    cell("Ohne Geschenk", t.noGift) +
+    cell("Online sampled", t.sampled) +
+    `</div>`
+  );
+}
+
+function renderPresence(el) {
+  if (!el) return;
+  const p = presenceBlock();
+  const t = presenceSnapshotTotals();
+  const asOfLabel = fmtPresenceAsOf(t.asOf);
+  const dateBits = [t.onlineDate, t.giftsDate].filter(Boolean);
+  const captureHint = dateBits.length
+    ? [...new Set(dateBits)].join(" / ")
+    : null;
+
+  let standLine;
+  if (!p) {
+    standLine = "Noch keine Presence-Daten im Export.";
+  } else if (asOfLabel) {
+    standLine =
+      `Snapshot Stand ${asOfLabel}` +
+      (captureHint ? ` · Capture ${captureHint}` : "") +
+      " · noch kein Tagesverlauf";
+  } else {
+    standLine =
+      (captureHint ? `Capture ${captureHint} · ` : "") +
+      "Snapshot · noch kein Tagesverlauf";
+  }
+
+  const snapshotBody = !p
+    ? '<p class="sub">Presence fehlt in dashboard.json — Offline/Geschenke erscheinen, sobald Capture + Analyze laufen.</p>'
+    : renderPresenceSnapshotPills(t) +
+      '<div class="widget-grid">' +
+      renderPresenceOfflineWidget({
+        limit: null,
+        span: "span-6",
+        idPrefix: "page-",
+      }) +
+      renderPresenceGiftsWidgets({
+        topLimit: null,
+        noGiftLimit: null,
+        span: "span-6",
+        idPrefix: "page-",
+      }) +
+      "</div>";
+
+  const dayStub =
+    '<div class="stub-note">' +
+    "Pro Tag: noch keine Tageshistorie. Später eine Zeile je Capture-Tag " +
+    "(Offline-Count, Geschenk-Events, Unique)." +
+    "</div>";
+
+  const sumStub =
+    '<div class="stub-note">' +
+    "Summe gesamt: historische Aggregation folgt. Unten nur der aktuelle Snapshot " +
+    "(kein aufsummierter Verlauf)." +
+    "</div>" +
+    (p ? renderPresenceSnapshotPills(t) : '<p class="sub">Keine Snapshot-Werte.</p>');
+
+  el.innerHTML =
+    '<section class="panel glass"><h2>Präsenz</h2>' +
+    '<p class="lead">Last-Online &amp; Allianzgeschenke · aktueller Snapshot (Filter oben)</p>' +
+    `<p class="ops-stand">${esc(standLine)}</p>` +
+    "<h3>Aktueller Snapshot</h3>" +
+    snapshotBody +
+    "<h3>Pro Tag</h3>" +
+    dayStub +
+    "<h3>Summe gesamt</h3>" +
+    sumStub +
+    "</section>";
+  bindOverviewControls(el);
 }
 
 function bindOverviewControls(root) {
@@ -2286,6 +2429,7 @@ function filterFieldsForView(view) {
     case "kills":
       return common + filterFieldKillsTrend() + filterFieldKillsSteep();
     case "overview":
+    case "presence":
       // Presence (Geschenke / Offline): Suche, Rolle, Active, Offline-Schwelle
       return common + filterFieldOfflineHours();
     case "vs":
@@ -2337,6 +2481,7 @@ function renderAllViews() {
   renderSeason(document.getElementById("view-season"));
   renderEvents(document.getElementById("view-events"));
   renderActivity(document.getElementById("view-activity"));
+  renderPresence(document.getElementById("view-presence"));
   renderLinks(document.getElementById("view-links"));
   renderConfig(document.getElementById("view-config"));
 }
