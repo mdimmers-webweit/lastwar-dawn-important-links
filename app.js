@@ -3,7 +3,7 @@
 let DATA = null;
 
 const ROLE_OPTIONS = ["R5", "R4", "R3", "R2", "R1"];
-const CACHE_BUST = "20261022-presence";
+const CACHE_BUST = "20261026-quota-presence";
 
 /** Save-Woche: eigenes Widget — Tages-VS über dieser Schwelle (Tracking). */
 const WATCH_SAVE_DAY_OVER = 15_000_000;
@@ -18,12 +18,16 @@ const SEASON_CATS = [
 
 /** Overview „Wenig aktiv“ — niedrigste Activity-% (5–10, Default 8). Config später. */
 const WENIG_AKTIV_COUNT = 8;
-/** v3: per-view filter fields (Kills tendenz/anstieg, VS flag only on VS/Overview). */
-const FILTER_STORAGE_KEY = "dawn-dashboard-filters-v3";
+/** v4: Overview-Filter für Presence (Offline/Geschenke); VS-Flag nur auf VS. */
+const FILTER_STORAGE_KEY = "dawn-dashboard-filters-v4";
 const PERIOD_STORAGE_KEY = "dawn-dashboard-period";
 
-/** Mitglieder-Filter: Overview/Gegner/Links/Config ohne Filterleiste. */
+/** Offline-Stunden-Schwellen für Overview-Presence-Filter. */
+const OFFLINE_HOUR_OPTIONS = [12, 24, 48, 72];
+
+/** Mitglieder-Filter: Gegner/Links/Config ohne Filterleiste. Overview = Presence. */
 const FILTERABLE_VIEWS = new Set([
+  "overview",
   "kills",
   "donations",
   "vs",
@@ -44,6 +48,7 @@ let collapseState = null;
  *   search: string,
  *   killsTrend: string,
  *   killsSteep: string,
+ *   offlineMinHours: number,
  * }} DashboardFilters
  */
 /** @type {DashboardFilters} */
@@ -54,6 +59,7 @@ let filters = {
   search: "",
   killsTrend: "all",
   killsSteep: "all",
+  offlineMinHours: 12,
 };
 
 /** @type {"woche"|"gesamt"} */
@@ -316,6 +322,7 @@ function defaultFilters() {
     search: "",
     killsTrend: "all",
     killsSteep: "all",
+    offlineMinHours: 12,
   };
 }
 
@@ -337,6 +344,8 @@ function sanitizeFilters(raw) {
   if (!["all", "up", "flat", "unknown"].includes(killsTrend)) killsTrend = "all";
   let killsSteep = String(raw.killsSteep ?? "all").toLowerCase();
   if (!["all", "steep", "mild", "flat"].includes(killsSteep)) killsSteep = "all";
+  let offlineMinHours = Number(raw.offlineMinHours);
+  if (!OFFLINE_HOUR_OPTIONS.includes(offlineMinHours)) offlineMinHours = 12;
   return {
     roles,
     activeOnly: Boolean(raw.activeOnly),
@@ -344,6 +353,7 @@ function sanitizeFilters(raw) {
     search: typeof raw.search === "string" ? raw.search : "",
     killsTrend,
     killsSteep,
+    offlineMinHours,
   };
 }
 
@@ -511,8 +521,8 @@ function memberMatchesFilters(m, view) {
   if (filters.activeOnly && !m.active) return false;
   if (filters.roles.length && !filters.roles.includes(m.role)) return false;
   if (filters.search.trim() && !nameMatchesSearch(m.name, filters.search)) return false;
-  // VS Flag nur auf Overview / VS
-  if (v === "overview" || v === "vs") {
+  // VS Flag nur auf VS-Tab (Overview-Filter dient Presence: Suche/Rolle/Active/Offline)
+  if (v === "vs") {
     if (filters.vsFlag === "ok" && m.vs_flag !== "OK") return false;
     if (filters.vsFlag === "below" && !/below/i.test(String(m.vs_flag || ""))) return false;
   }
@@ -955,6 +965,42 @@ function championWeekHasScores() {
 function championNewWeekMessage() {
   const wk = activeVsWeekKey();
   return `Neue VS-Woche ${wk.year}-KW${String(wk.week).padStart(2, "0")} · noch keine Tageswerte`;
+}
+
+/**
+ * Below-quota flag from current ISO/VS-week day columns only — no vs_flag / Vorwoche.
+ * Same week boundary as Champion (championWeekDayLabels).
+ */
+function memberCurrentWeekBelowFlag(member) {
+  const labs = championWeekDayLabels();
+  if (!labs.length) return null;
+  let nDays = 0;
+  let nBelow = 0;
+  for (const lab of labs) {
+    const min = vsMinForGameDate(parseIsoDate(lab));
+    if (min <= 0) continue;
+    const pts = vsPointsAtLabel(member, lab);
+    if (pts == null || pts <= 0) continue;
+    nDays += 1;
+    if (pts < min) nBelow += 1;
+  }
+  if (!nDays || !nBelow) return null;
+  return `${nBelow}/${nDays} below`;
+}
+
+/** Unter Quote für „diese Woche“ — leer bis aktuelle Wochen-Spalten existieren. */
+function buildUnderQuotaThisWeek(members) {
+  if (!championWeekHasScores()) {
+    return { ready: false, list: [] };
+  }
+  const list = [];
+  for (const m of members) {
+    const flag = memberCurrentWeekBelowFlag(m);
+    if (!flag) continue;
+    list.push({ m, flag });
+  }
+  list.sort((a, b) => String(a.m.name).localeCompare(String(b.m.name), "de"));
+  return { ready: true, list };
 }
 
 function vsDayHeaderLabel(iso) {
@@ -1748,9 +1794,7 @@ function renderOverviewWidgets() {
   const champState = champStates.find((s) => s.rule && s.rule.type !== "manual") || champStates[0];
   const vsReady = hasVsSheetData();
   const vsEmptyMsg = !vsReady ? "Keine VS-Daten verfügbar" : noVsDataMessage();
-  const underQuota = roster
-    .filter((m) => /below/i.test(String(m.vs_flag || "")))
-    .sort((a, b) => String(a.name).localeCompare(String(b.name), "de"));
+  const underQuotaWeek = buildUnderQuotaThisWeek(roster);
   const topDonWeek = roster
     .map((m) => ({ m, pts: donationMetric(m) }))
     .filter((x) => x.pts > 0)
@@ -1798,23 +1842,7 @@ function renderOverviewWidgets() {
     `<p class="sub">Ops · aktuelle VS-Woche · ${roster.length} Mitglieder</p>` +
     '<div class="widget-grid">' +
     renderChampionWidgets(champStates, vsReady, vsEmptyMsg) +
-    widgetShell(
-      "under-quota",
-      "Unter Quote",
-      `${underQuota.length} · diese Woche`,
-      underQuota.length
-        ? "<ul class=\"rank-list\">" +
-            underQuota
-              .map(
-                (m) =>
-                  `<li><span class="rank">!</span><span class="who">${esc(m.name)}</span>` +
-                  `<span class="val">${vsBadge(m.vs_flag)}</span></li>`
-              )
-              .join("") +
-            "</ul>"
-        : '<p class="sub">Keine unter Quote.</p>',
-      { span: "span-6" }
-    ) +
+    renderUnderQuotaWidget(underQuotaWeek) +
     widgetShell(
       "top-don",
       "Top Spende",
@@ -1911,10 +1939,64 @@ function renderOverviewWidgets() {
   );
 }
 
+function renderUnderQuotaWidget(underQuotaWeek) {
+  // Nach So/Mo-Reset: neue ISO-Woche ohne Tageswerte → leer (nicht Vorwochen-vs_flag)
+  if (!underQuotaWeek.ready) {
+    return widgetShell(
+      "under-quota",
+      "Unter Quote",
+      championNewWeekMessage(),
+      '<p class="sub">Wartet auf erste VS-Werte dieser Woche.</p>',
+      { span: "span-6" }
+    );
+  }
+  const list = underQuotaWeek.list || [];
+  return widgetShell(
+    "under-quota",
+    "Unter Quote",
+    `${list.length} · diese Woche`,
+    list.length
+      ? "<ul class=\"rank-list\">" +
+          list
+            .map(
+              (e) =>
+                `<li><span class="rank">!</span><span class="who">${esc(e.m.name)}</span>` +
+                `<span class="val">${vsBadge(e.flag)}</span></li>`
+            )
+            .join("") +
+          "</ul>"
+      : '<p class="sub">Keine unter Quote.</p>',
+    { span: "span-6" }
+  );
+}
+
 /** Presence block from export (Last-Online + Allianzgeschenk). */
 function presenceBlock() {
   const p = DATA && DATA.presence;
   return p && typeof p === "object" ? p : null;
+}
+
+/**
+ * Overview filter bar → Presence lists.
+ * Always Active-Roster (export + client); search/role from filter bar.
+ */
+function presenceEntryVisible(entry) {
+  if (!entry || !entry.name) return false;
+  const m = findMemberByRosterName(entry.name);
+  // Immer Active-Roster (wie Export); filter.activeOnly ist zusätzlich konsistent
+  if (!m || !m.active) return false;
+  if (filters.roles.length && !filters.roles.includes(m.role)) return false;
+  if (filters.search.trim() && !nameMatchesSearch(entry.name, filters.search)) {
+    return false;
+  }
+  return true;
+}
+
+function offlineMinHoursFilter() {
+  const p = presenceBlock();
+  const flagH = (p && p.offline_flag_hours) || 12;
+  const want = Number(filters.offlineMinHours) || flagH;
+  return Math.max(flagH, want);
 }
 
 function fmtHoursOffline(h) {
@@ -1929,16 +2011,19 @@ function renderPresenceOfflineWidget() {
   const p = presenceBlock();
   const online = (p && p.online) || {};
   const flagH = (p && p.offline_flag_hours) || 12;
-  const list = Array.isArray(online.offline) ? online.offline : [];
-  const count = online.offline_count != null ? online.offline_count : list.length;
+  const minH = offlineMinHoursFilter();
+  const raw = Array.isArray(online.offline) ? online.offline : [];
+  const list = raw.filter(
+    (e) => presenceEntryVisible(e) && Number(e.hours_offline) >= minH
+  );
   const sub =
     online.date
-      ? `≥${flagH} Std offline · ${online.date}`
-      : `≥${flagH} Std offline`;
+      ? `≥${minH} Std offline · ${online.date}`
+      : `≥${minH} Std offline`;
   if (!p || !online.sampled) {
     return widgetShell(
       "presence-offline",
-      "Offline",
+      "Offline Zeiten",
       sub,
       '<p class="sub">Noch kein Last-Online-Capture.</p>',
       { span: "span-6" }
@@ -1947,7 +2032,7 @@ function renderPresenceOfflineWidget() {
   const body = list.length
     ? "<ul class=\"rank-list\">" +
       list
-        .slice(0, 20)
+        .slice(0, 40)
         .map(
           (e) =>
             `<li><span class="rank">⏱</span><span class="who">${esc(e.name)}</span>` +
@@ -1955,11 +2040,11 @@ function renderPresenceOfflineWidget() {
         )
         .join("") +
       "</ul>"
-    : '<p class="sub">Niemand ≥' + flagH + " Std offline.</p>";
+    : '<p class="sub">Niemand ≥' + minH + " Std offline (Filter).</p>";
   return widgetShell(
     "presence-offline",
-    "Offline",
-    `${count} · ${sub}`,
+    "Offline Zeiten",
+    `${list.length} · ${sub}`,
     body,
     { span: "span-6", defaultCollapsed: false }
   );
@@ -1968,16 +2053,16 @@ function renderPresenceOfflineWidget() {
 function renderPresenceGiftsWidgets() {
   const p = presenceBlock();
   const gifts = (p && p.gifts) || {};
-  const top = Array.isArray(gifts.top) ? gifts.top : [];
-  const noGift = Array.isArray(gifts.no_gift) ? gifts.no_gift : [];
-  const noCount =
-    gifts.no_gift_count != null ? gifts.no_gift_count : noGift.length;
+  const topRaw = Array.isArray(gifts.top) ? gifts.top : [];
+  const noGiftRaw = Array.isArray(gifts.no_gift) ? gifts.no_gift : [];
+  const top = topRaw.filter(presenceEntryVisible);
+  const noGift = noGiftRaw.filter(presenceEntryVisible);
   const dateHint = gifts.date ? ` · ${gifts.date}` : "";
   if (!p || gifts.events == null) {
     const empty = widgetShell(
       "presence-gifts",
-      "Allianzgeschenk",
-      "Feed",
+      "Geschenke",
+      "Top · Feed",
       '<p class="sub">Noch kein Geschenk-Capture.</p>',
       { span: "span-6" }
     );
@@ -1993,7 +2078,7 @@ function renderPresenceGiftsWidgets() {
   const topBody = top.length
     ? "<ol class=\"rank-list\">" +
       top
-        .slice(0, 10)
+        .slice(0, 15)
         .map(
           (e, i) =>
             `<li><span class="rank">${i + 1}</span>` +
@@ -2002,11 +2087,11 @@ function renderPresenceGiftsWidgets() {
         )
         .join("") +
       "</ol>"
-    : '<p class="sub">Keine Geschenk-Events gematcht.</p>';
+    : '<p class="sub">Keine Geschenk-Events (Filter).</p>';
   const missBody = noGift.length
     ? "<ul class=\"rank-list\">" +
       noGift
-        .slice(0, 25)
+        .slice(0, 40)
         .map(
           (e) =>
             `<li><span class="who">${esc(e.name)}</span>` +
@@ -2014,21 +2099,21 @@ function renderPresenceGiftsWidgets() {
         )
         .join("") +
       "</ul>"
-    : '<p class="sub">Alle Active mit mindestens einem Geschenk.</p>';
+    : '<p class="sub">Alle sichtbaren Active mit mindestens einem Geschenk.</p>';
   return (
     widgetShell(
       "presence-gifts",
-      "Allianzgeschenk",
-      `${gifts.events || 0} Events · ${gifts.unique_members || 0} Namen${dateHint}`,
+      "Geschenke",
+      `Top ${top.length} · ${gifts.events || 0} Events${dateHint}`,
       topBody,
       { span: "span-6", defaultCollapsed: false }
     ) +
     widgetShell(
       "presence-no-gift",
       "Ohne Geschenk",
-      `Active · ${noCount} ohne Treffer${dateHint}`,
+      `Active · ${noGift.length} ohne Treffer${dateHint}`,
       missBody,
-      { span: "span-6", defaultCollapsed: noCount === 0 }
+      { span: "span-6", defaultCollapsed: noGift.length === 0 }
     )
   );
 }
@@ -2090,6 +2175,9 @@ function bindFilterBarOnce(mount) {
       onFiltersChanged();
     } else if (id === "filterVs") {
       filters.vsFlag = e.target.value;
+      onFiltersChanged();
+    } else if (id === "filterOfflineHours") {
+      filters.offlineMinHours = Number(e.target.value) || 12;
       onFiltersChanged();
     } else if (id === "filterKillsTrend") {
       filters.killsTrend = e.target.value;
@@ -2155,6 +2243,18 @@ function filterFieldVsFlag() {
   );
 }
 
+function filterFieldOfflineHours() {
+  const cur = Number(filters.offlineMinHours) || 12;
+  const opts = OFFLINE_HOUR_OPTIONS.map(
+    (h) =>
+      `<option value="${h}"${h === cur ? " selected" : ""}>≥${h} Std</option>`
+  ).join("");
+  return (
+    '<div class="field"><label>Offline</label>' +
+    `<select id="filterOfflineHours">${opts}</select></div>`
+  );
+}
+
 function filterFieldKillsTrend() {
   return (
     '<div class="field"><label>Tendenz</label>' +
@@ -2185,8 +2285,10 @@ function filterFieldsForView(view) {
   switch (view) {
     case "kills":
       return common + filterFieldKillsTrend() + filterFieldKillsSteep();
-    case "vs":
     case "overview":
+      // Presence (Geschenke / Offline): Suche, Rolle, Active, Offline-Schwelle
+      return common + filterFieldOfflineHours();
+    case "vs":
       return common + filterFieldVsFlag();
     case "donations":
     case "season":
