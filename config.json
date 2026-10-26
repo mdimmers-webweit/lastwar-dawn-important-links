@@ -7,6 +7,11 @@
       "week": 43,
       "mode": "push",
       "max": 15000000,
+      "champions": [
+        {
+          "type": "max_score"
+        }
+      ],
       "champion": {
         "type": "max_score"
       }
