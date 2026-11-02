@@ -3,7 +3,7 @@
 let DATA = null;
 
 const ROLE_OPTIONS = ["R5", "R4", "R3", "R2", "R1"];
-const CACHE_BUST = "20261026-presence-tab";
+const CACHE_BUST = "20261102-absences-8h";
 
 /** Save-Woche: eigenes Widget — Tages-VS über dieser Schwelle (Tracking). */
 const WATCH_SAVE_DAY_OVER = 15_000_000;
@@ -23,7 +23,7 @@ const FILTER_STORAGE_KEY = "dawn-dashboard-filters-v4";
 const PERIOD_STORAGE_KEY = "dawn-dashboard-period";
 
 /** Offline-Stunden-Schwellen für Overview-Presence-Filter. */
-const OFFLINE_HOUR_OPTIONS = [12, 24, 48, 72];
+const OFFLINE_HOUR_OPTIONS = [8, 12, 24, 48, 72];
 
 /** Mitglieder-Filter: Gegner/Links/Config ohne Filterleiste. Overview + Präsenz = Presence. */
 const FILTERABLE_VIEWS = new Set([
@@ -60,7 +60,7 @@ let filters = {
   search: "",
   killsTrend: "all",
   killsSteep: "all",
-  offlineMinHours: 12,
+  offlineMinHours: 8,
 };
 
 /** @type {"woche"|"gesamt"} */
@@ -323,7 +323,7 @@ function defaultFilters() {
     search: "",
     killsTrend: "all",
     killsSteep: "all",
-    offlineMinHours: 12,
+    offlineMinHours: 8,
   };
 }
 
@@ -346,7 +346,7 @@ function sanitizeFilters(raw) {
   let killsSteep = String(raw.killsSteep ?? "all").toLowerCase();
   if (!["all", "steep", "mild", "flat"].includes(killsSteep)) killsSteep = "all";
   let offlineMinHours = Number(raw.offlineMinHours);
-  if (!OFFLINE_HOUR_OPTIONS.includes(offlineMinHours)) offlineMinHours = 12;
+  if (!OFFLINE_HOUR_OPTIONS.includes(offlineMinHours)) offlineMinHours = 8;
   return {
     roles,
     activeOnly: Boolean(raw.activeOnly),
@@ -1837,6 +1837,9 @@ function renderOverviewWidgets() {
     presence && presence.gifts && presence.gifts.no_gift_count != null
       ? presence.gifts.no_gift_count
       : "—";
+  const absences = (presence && presence.absences) || null;
+  const absenceCycleN =
+    absences && absences.vs_cycle_total != null ? absences.vs_cycle_total : "—";
 
   return (
     `<p class="ops-stand">${esc(dataRealityLine())}</p>` +
@@ -1883,11 +1886,13 @@ function renderOverviewWidgets() {
             ? esc(champState.rule.title || "Manuell")
             : fmtPts(champState.pulsePts)
         }</strong>Champion</div>` +
-        `<div class="pulse-pill"><strong>${esc(String(offlineN))}</strong>Offline ≥12h</div>` +
+        `<div class="pulse-pill"><strong>${esc(String(offlineN))}</strong>Offline ≥8h</div>` +
+        `<div class="pulse-pill"><strong>${esc(String(absenceCycleN))}</strong>Abw. VS-Zyklus</div>` +
         `<div class="pulse-pill"><strong>${esc(String(noGiftN))}</strong>Ohne Geschenk</div></div>`,
       { span: "span-6" }
     ) +
     renderPresenceOfflineWidget() +
+    renderAbsencesWeekWidget() +
     renderPresenceGiftsWidgets() +
     widgetShell("activity-trend", "Activity-Verlauf", trend.summary, trend.body, {
       span: "span-12",
@@ -1995,9 +2000,78 @@ function presenceEntryVisible(entry) {
 
 function offlineMinHoursFilter() {
   const p = presenceBlock();
-  const flagH = (p && p.offline_flag_hours) || 12;
+  const flagH = (p && p.offline_flag_hours) || 8;
   const want = Number(filters.offlineMinHours) || flagH;
   return Math.max(flagH, want);
+}
+
+/** Abwesenheiten ≥8h in der aktuellen ISO-/VS-Woche (Sightings pro Mitglied). */
+function absencesBlock() {
+  const p = presenceBlock();
+  const a = p && p.absences;
+  return a && typeof a === "object" ? a : null;
+}
+
+/**
+ * @param {{ limit?: number|null, span?: string, idPrefix?: string }} [opts]
+ */
+function renderAbsencesWeekWidget(opts) {
+  const o = opts || {};
+  const limit = o.limit === undefined ? 40 : o.limit;
+  const span = o.span || "span-6";
+  const id = (o.idPrefix || "") + "presence-absences-week";
+  const a = absencesBlock();
+  const thr = (a && a.threshold_hours) || 8;
+  const week = (a && a.iso_week) || "";
+  const raw = Array.isArray(a && a.per_member) ? a.per_member : [];
+  const list = raw.filter(presenceEntryVisible);
+  const shown = limit == null ? list : list.slice(0, limit);
+  const cycleTotal = a && a.vs_cycle_total != null ? a.vs_cycle_total : null;
+  const weekTotal = a && a.week_total != null ? a.week_total : null;
+  const snaps = a && a.snapshots != null ? a.snapshots : null;
+  const subBits = [
+    `≥${thr}h Sightings`,
+    week || null,
+    snaps != null ? `${snaps} Snapshots` : null,
+  ].filter(Boolean);
+  if (!a) {
+    return widgetShell(
+      id,
+      "Abwesenheiten ≥8h / Woche",
+      subBits.join(" · ") || "ISO-/VS-Woche",
+      '<p class="sub">Noch keine Abwesenheits-Historie.</p>',
+      { span }
+    );
+  }
+  const kpi =
+    `<div class="pulse-row" style="margin-bottom:0.6rem">` +
+    `<div class="pulse-pill"><strong>${esc(
+      cycleTotal == null ? "—" : String(cycleTotal)
+    )}</strong>Gesamtabwesenheiten VS-Zyklus</div>` +
+    `<div class="pulse-pill"><strong>${esc(
+      weekTotal == null ? "—" : String(weekTotal)
+    )}</strong>Summe Woche</div></div>`;
+  const body =
+    kpi +
+    (list.length
+      ? "<ul class=\"rank-list\">" +
+        shown
+          .map(
+            (e) =>
+              `<li><span class="rank">${esc(String(e.count))}×</span>` +
+              `<span class="who">${esc(e.name)}</span>` +
+              `<span class="val">${esc(String(e.count))}</span></li>`
+          )
+          .join("") +
+        "</ul>"
+      : '<p class="sub">Keine Abwesenheiten ≥' + thr + "h in dieser Woche (Filter).</p>");
+  return widgetShell(
+    id,
+    "Abwesenheiten ≥8h / Woche",
+    `${list.length} Mitglieder · ${subBits.join(" · ")}`,
+    body,
+    { span, defaultCollapsed: false }
+  );
 }
 
 function fmtHoursOffline(h) {
@@ -2226,6 +2300,11 @@ function renderPresence(el) {
         span: "span-6",
         idPrefix: "page-",
       }) +
+      renderAbsencesWeekWidget({
+        limit: null,
+        span: "span-6",
+        idPrefix: "page-",
+      }) +
       renderPresenceGiftsWidgets({
         topLimit: null,
         noGiftLimit: null,
@@ -2234,28 +2313,37 @@ function renderPresence(el) {
       }) +
       "</div>";
 
-  const dayStub =
-    '<div class="stub-note">' +
-    "Pro Tag: noch keine Tageshistorie. Später eine Zeile je Capture-Tag " +
-    "(Offline-Count, Geschenk-Events, Unique)." +
-    "</div>";
+  const a = absencesBlock();
+  const weekHist =
+    a && a.iso_week
+      ? `<div class="stub-note">Woche ${esc(a.iso_week)} · ${esc(
+          String(a.snapshots || 0)
+        )} Last-Online-Snapshots · Zählung = Sightings mit Offline ≥${esc(
+          String(a.threshold_hours || 8)
+        )}h (nicht Episoden).</div>`
+      : '<div class="stub-note">Wochenhistorie aus results/presence_history.json, sobald Export läuft.</div>';
 
   const sumStub =
     '<div class="stub-note">' +
-    "Summe gesamt: historische Aggregation folgt. Unten nur der aktuelle Snapshot " +
-    "(kein aufsummierter Verlauf)." +
+    "VS-Zyklus = aktuelle ISO-/VS-Woche (Summe der Abwesenheits-Sightings)." +
     "</div>" +
-    (p ? renderPresenceSnapshotPills(t) : '<p class="sub">Keine Snapshot-Werte.</p>');
+    (p ? renderPresenceSnapshotPills(t) : '<p class="sub">Keine Snapshot-Werte.</p>') +
+    (a
+      ? `<div class="pulse-row" style="margin-top:0.6rem">` +
+        `<div class="pulse-pill"><strong>${esc(
+          String(a.vs_cycle_total ?? "—")
+        )}</strong>Gesamtabwesenheiten VS-Zyklus</div></div>`
+      : "");
 
   el.innerHTML =
     '<section class="panel glass"><h2>Präsenz</h2>' +
-    '<p class="lead">Last-Online &amp; Allianzgeschenke · aktueller Snapshot (Filter oben)</p>' +
+    '<p class="lead">Last-Online &amp; Allianzgeschenke · Snapshot + Abwesenheiten ≥8h / Woche</p>' +
     `<p class="ops-stand">${esc(standLine)}</p>` +
     "<h3>Aktueller Snapshot</h3>" +
     snapshotBody +
-    "<h3>Pro Tag</h3>" +
-    dayStub +
-    "<h3>Summe gesamt</h3>" +
+    "<h3>Woche / VS-Zyklus</h3>" +
+    weekHist +
+    "<h3>Summe</h3>" +
     sumStub +
     "</section>";
   bindOverviewControls(el);
@@ -2320,7 +2408,7 @@ function bindFilterBarOnce(mount) {
       filters.vsFlag = e.target.value;
       onFiltersChanged();
     } else if (id === "filterOfflineHours") {
-      filters.offlineMinHours = Number(e.target.value) || 12;
+      filters.offlineMinHours = Number(e.target.value) || 8;
       onFiltersChanged();
     } else if (id === "filterKillsTrend") {
       filters.killsTrend = e.target.value;
@@ -2387,7 +2475,7 @@ function filterFieldVsFlag() {
 }
 
 function filterFieldOfflineHours() {
-  const cur = Number(filters.offlineMinHours) || 12;
+  const cur = Number(filters.offlineMinHours) || 8;
   const opts = OFFLINE_HOUR_OPTIONS.map(
     (h) =>
       `<option value="${h}"${h === cur ? " selected" : ""}>≥${h} Std</option>`
