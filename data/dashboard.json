@@ -19240,11 +19240,11 @@
       ]
     }
   },
-  "generated_at": "2026-11-04T08:07:51Z",
-  "stand_berlin": "04.11.2026, 09:07",
+  "generated_at": "2026-11-04T16:09:46Z",
+  "stand_berlin": "04.11.2026, 17:09",
   "source": "google_sheets",
   "source_file": "DawN - Base + Tabs (live)",
-  "snapshot": "2026-11-04T08:07:51",
+  "snapshot": "2026-11-04T16:09:46",
   "links": {
     "title": "DawN",
     "tagline": "Important links",
@@ -19509,54 +19509,529 @@
     }
   ],
   "presence": {
-    "as_of": "2026-11-04T09:07:52+01:00",
+    "as_of": "2026-11-04T17:09:51+01:00",
     "offline_flag_hours": 8,
     "online": {
       "date": "2026-11-04",
-      "sampled": 0,
-      "offline": [],
-      "offline_count": 0
+      "sampled": 64,
+      "offline": [
+        {
+          "name": "SEKRETIK",
+          "hours_offline": 24.0
+        },
+        {
+          "name": "Random Attacks",
+          "hours_offline": 22.0
+        },
+        {
+          "name": "Xx RvE Xx",
+          "hours_offline": 19.0
+        },
+        {
+          "name": "CANONDA",
+          "hours_offline": 17.0
+        },
+        {
+          "name": "HeinselHH",
+          "hours_offline": 11.0
+        },
+        {
+          "name": "Neritoo",
+          "hours_offline": 11.0
+        },
+        {
+          "name": "TheStarks",
+          "hours_offline": 11.0
+        },
+        {
+          "name": "Buckioio",
+          "hours_offline": 9.0
+        }
+      ],
+      "offline_count": 8
     },
     "gifts": {
       "date": "2026-11-04",
-      "events": 0,
-      "unique_members": 0,
-      "unmatched_ocr": 0,
-      "top": [],
-      "no_gift": [],
-      "no_gift_count": 0
+      "events": 230,
+      "unique_members": 26,
+      "unmatched_ocr": 1,
+      "top": [
+        {
+          "name": "Everton 123456",
+          "count": 33
+        },
+        {
+          "name": "jacknnn2",
+          "count": 21
+        },
+        {
+          "name": "xJeeane",
+          "count": 20
+        },
+        {
+          "name": "WT1110",
+          "count": 16
+        },
+        {
+          "name": "Munsoned",
+          "count": 16
+        },
+        {
+          "name": "Jiintan",
+          "count": 12
+        },
+        {
+          "name": "Alex000392",
+          "count": 10
+        },
+        {
+          "name": "Eisen024",
+          "count": 10
+        },
+        {
+          "name": "AnnoraX",
+          "count": 10
+        },
+        {
+          "name": "PunisherR93",
+          "count": 9
+        },
+        {
+          "name": "Yuna",
+          "count": 8
+        },
+        {
+          "name": "Rodrigo",
+          "count": 8
+        },
+        {
+          "name": "chalako77",
+          "count": 7
+        },
+        {
+          "name": "Valério",
+          "count": 7
+        },
+        {
+          "name": "Baby Bax Baba Bax",
+          "count": 7
+        }
+      ],
+      "no_gift": [
+        {
+          "name": "0 AÇOUGUEIRO"
+        },
+        {
+          "name": "73Katy"
+        },
+        {
+          "name": "AJ die Beste"
+        },
+        {
+          "name": "AndreResende"
+        },
+        {
+          "name": "Andressita MD"
+        },
+        {
+          "name": "Banu89"
+        },
+        {
+          "name": "Bazïinga"
+        },
+        {
+          "name": "BlackHeiX"
+        },
+        {
+          "name": "blubbb123"
+        },
+        {
+          "name": "Buckioio"
+        },
+        {
+          "name": "CANONDA"
+        },
+        {
+          "name": "Clone"
+        },
+        {
+          "name": "damboddambod"
+        },
+        {
+          "name": "Dani Earth"
+        },
+        {
+          "name": "Deaths Brother"
+        },
+        {
+          "name": "Diniz Infaaaa"
+        },
+        {
+          "name": "DiViNE10"
+        },
+        {
+          "name": "Draurg v2"
+        },
+        {
+          "name": "Erdbeermarmelade"
+        },
+        {
+          "name": "Fabinho gomes"
+        },
+        {
+          "name": "Filippos4Paok"
+        },
+        {
+          "name": "ForesTalaniz"
+        },
+        {
+          "name": "Fred67290"
+        },
+        {
+          "name": "Gabi Vampira"
+        },
+        {
+          "name": "Griffeyga"
+        },
+        {
+          "name": "GrummelGriesgram"
+        },
+        {
+          "name": "Hassleham"
+        },
+        {
+          "name": "iamJazzyy"
+        },
+        {
+          "name": "Icey786"
+        },
+        {
+          "name": "ikki"
+        },
+        {
+          "name": "ImpAugustus"
+        },
+        {
+          "name": "Itamar1130"
+        },
+        {
+          "name": "Jazzcat78"
+        },
+        {
+          "name": "JazzHandsThomas"
+        },
+        {
+          "name": "jhonkarther"
+        },
+        {
+          "name": "Juliani86"
+        },
+        {
+          "name": "Kaizennnnnnnnnnnn"
+        },
+        {
+          "name": "LaLaLanD"
+        },
+        {
+          "name": "Lana 67"
+        },
+        {
+          "name": "Lawima"
+        },
+        {
+          "name": "Lord Rembe"
+        },
+        {
+          "name": "Lover Of Manquaca"
+        },
+        {
+          "name": "MAJØR"
+        },
+        {
+          "name": "mandarin"
+        },
+        {
+          "name": "MarchH"
+        },
+        {
+          "name": "Masterzin"
+        },
+        {
+          "name": "Megalocasiadon"
+        },
+        {
+          "name": "Millanoo"
+        },
+        {
+          "name": "Mr Xanor"
+        },
+        {
+          "name": "Nakama Tskulaxo"
+        },
+        {
+          "name": "NocB"
+        },
+        {
+          "name": "Noxnanni"
+        },
+        {
+          "name": "Omori UG)>"
+        },
+        {
+          "name": "Omori ⵜⵎⵏ"
+        },
+        {
+          "name": "Omori ㄑ0"
+        },
+        {
+          "name": "Outerspace Chase"
+        },
+        {
+          "name": "Random Attacks"
+        },
+        {
+          "name": "ReflexX"
+        },
+        {
+          "name": "Relapse94"
+        },
+        {
+          "name": "rePlay"
+        },
+        {
+          "name": "Rico 2026"
+        },
+        {
+          "name": "Ringwraiths"
+        },
+        {
+          "name": "RubiA"
+        },
+        {
+          "name": "Sandboxman"
+        },
+        {
+          "name": "SEKRETIK"
+        },
+        {
+          "name": "Sosiskaa"
+        },
+        {
+          "name": "Southwest01"
+        },
+        {
+          "name": "Squatislav"
+        },
+        {
+          "name": "The phantom 0"
+        },
+        {
+          "name": "TheStarks"
+        },
+        {
+          "name": "Tomatofake"
+        },
+        {
+          "name": "User1904"
+        },
+        {
+          "name": "Xx RvE Xx"
+        },
+        {
+          "name": "xXxJoKeRxXx"
+        },
+        {
+          "name": "Zettovic"
+        },
+        {
+          "name": "ßKATERINA ß"
+        }
+      ],
+      "no_gift_count": 76
     },
     "absences": {
       "threshold_hours": 8,
       "iso_week": "2026-W45",
-      "snapshots": 4,
+      "snapshots": 8,
       "per_member": [
         {
+          "name": "Xx RvE Xx",
+          "count": 7
+        },
+        {
+          "name": "SEKRETIK",
+          "count": 6
+        },
+        {
+          "name": "CANONDA",
+          "count": 5
+        },
+        {
           "name": "ImpAugustus",
+          "count": 5
+        },
+        {
+          "name": "Random Attacks",
+          "count": 5
+        },
+        {
+          "name": "Kaizennnnnnnnnnnn",
+          "count": 4
+        },
+        {
+          "name": "Megalocasiadon",
+          "count": 4
+        },
+        {
+          "name": "Noxnanni",
+          "count": 4
+        },
+        {
+          "name": "AJ die Beste",
           "count": 3
         },
         {
-          "name": "Xx RvE Xx",
+          "name": "Buckioio",
           "count": 3
+        },
+        {
+          "name": "HeinselHH",
+          "count": 3
+        },
+        {
+          "name": "Neritoo",
+          "count": 3
+        },
+        {
+          "name": "TheStarks",
+          "count": 3
+        },
+        {
+          "name": "Tomatofake",
+          "count": 3
+        },
+        {
+          "name": "Yuna",
+          "count": 3
+        },
+        {
+          "name": "73Katy",
+          "count": 2
+        },
+        {
+          "name": "Andressita MD",
+          "count": 2
+        },
+        {
+          "name": "Banu89",
+          "count": 2
+        },
+        {
+          "name": "Bazïinga",
+          "count": 2
+        },
+        {
+          "name": "BlackHeiX",
+          "count": 2
+        },
+        {
+          "name": "blubbb123",
+          "count": 2
+        },
+        {
+          "name": "Bruna Laïs",
+          "count": 2
+        },
+        {
+          "name": "Cmdr William T Riker",
+          "count": 2
+        },
+        {
+          "name": "Deaths Brother",
+          "count": 2
+        },
+        {
+          "name": "Fabinho gomes",
+          "count": 2
+        },
+        {
+          "name": "Filippos4Paok",
+          "count": 2
+        },
+        {
+          "name": "Fred67290",
+          "count": 2
+        },
+        {
+          "name": "Griffeyga",
+          "count": 2
         },
         {
           "name": "Gubalibre",
           "count": 2
         },
         {
-          "name": "SEKRETIK",
+          "name": "Jazzcat78",
           "count": 2
         },
         {
-          "name": "Yuna",
+          "name": "jhonkarther",
           "count": 2
         },
         {
-          "name": "AJ die Beste",
-          "count": 1
+          "name": "Juliani86",
+          "count": 2
         },
         {
-          "name": "Andressita MD",
+          "name": "Lawima",
+          "count": 2
+        },
+        {
+          "name": "Lord Rembe",
+          "count": 2
+        },
+        {
+          "name": "MAJØR",
+          "count": 2
+        },
+        {
+          "name": "ReflexX",
+          "count": 2
+        },
+        {
+          "name": "Rico 2026",
+          "count": 2
+        },
+        {
+          "name": "Rodrigo",
+          "count": 2
+        },
+        {
+          "name": "Sosiskaa",
+          "count": 2
+        },
+        {
+          "name": "Southwest01",
+          "count": 2
+        },
+        {
+          "name": "The phantom 0",
+          "count": 2
+        },
+        {
+          "name": "Tiane",
+          "count": 2
+        },
+        {
+          "name": "xXxJoKeRxXx",
+          "count": 2
+        },
+        {
+          "name": "Zettovic",
+          "count": 2
+        },
+        {
+          "name": "Alex000392",
           "count": 1
         },
         {
@@ -19564,27 +20039,7 @@
           "count": 1
         },
         {
-          "name": "Banu89",
-          "count": 1
-        },
-        {
-          "name": "Bazïinga",
-          "count": 1
-        },
-        {
-          "name": "BlackHeiX",
-          "count": 1
-        },
-        {
-          "name": "Bruna Laïs",
-          "count": 1
-        },
-        {
-          "name": "Buckioio",
-          "count": 1
-        },
-        {
-          "name": "CANONDA",
+          "name": "Baby Bax Baba Bax",
           "count": 1
         },
         {
@@ -19592,55 +20047,47 @@
           "count": 1
         },
         {
-          "name": "Cmdr William T Riker",
+          "name": "Dani Earth",
           "count": 1
         },
         {
-          "name": "Deaths Brother",
+          "name": "Erdbeermarmelade",
           "count": 1
         },
         {
-          "name": "Fabinho gomes",
+          "name": "Everton 123456",
           "count": 1
         },
         {
-          "name": "Fred67290",
+          "name": "Hassleham",
           "count": 1
         },
         {
-          "name": "Griffeyga",
+          "name": "JazzHandsThomas",
           "count": 1
         },
         {
-          "name": "HeinselHH",
+          "name": "Jiintan",
           "count": 1
         },
         {
-          "name": "Jazzcat78",
+          "name": "Lover Of Manquaca",
           "count": 1
         },
         {
-          "name": "Juliani86",
+          "name": "MarchH",
           "count": 1
         },
         {
-          "name": "Kaizennnnnnnnnnnn",
+          "name": "Masterzin",
           "count": 1
         },
         {
-          "name": "MAJØR",
+          "name": "Mr Xanor",
           "count": 1
         },
         {
-          "name": "Megalocasiadon",
-          "count": 1
-        },
-        {
-          "name": "Neritoo",
-          "count": 1
-        },
-        {
-          "name": "Noxnanni",
+          "name": "Nakama Tskulaxo",
           "count": 1
         },
         {
@@ -19648,15 +20095,15 @@
           "count": 1
         },
         {
+          "name": "Optimus Bob",
+          "count": 1
+        },
+        {
           "name": "Outerspace Chase",
           "count": 1
         },
         {
-          "name": "Random Attacks",
-          "count": 1
-        },
-        {
-          "name": "Rodrigo",
+          "name": "Relapse94",
           "count": 1
         },
         {
@@ -19664,27 +20111,11 @@
           "count": 1
         },
         {
-          "name": "Sosiskaa",
+          "name": "Squatislav",
           "count": 1
         },
         {
-          "name": "Southwest01",
-          "count": 1
-        },
-        {
-          "name": "The phantom 0",
-          "count": 1
-        },
-        {
-          "name": "TheStarks",
-          "count": 1
-        },
-        {
-          "name": "Tiane",
-          "count": 1
-        },
-        {
-          "name": "Tomatofake",
+          "name": "User1904",
           "count": 1
         },
         {
@@ -19692,16 +20123,16 @@
           "count": 1
         },
         {
-          "name": "xXxJoKeRxXx",
+          "name": "xJeeane",
           "count": 1
         },
         {
-          "name": "Zettovic",
+          "name": "ßKATERINA ß",
           "count": 1
         }
       ],
-      "week_total": 49,
-      "vs_cycle_total": 49,
+      "week_total": 144,
+      "vs_cycle_total": 144,
       "vs_cycle_note": "current_iso_week"
     }
   }
