@@ -19733,11 +19733,11 @@
       ]
     }
   },
-  "generated_at": "2026-11-05T08:09:49Z",
-  "stand_berlin": "05.11.2026, 09:09",
+  "generated_at": "2026-11-05T16:14:22Z",
+  "stand_berlin": "05.11.2026, 17:14",
   "source": "google_sheets",
   "source_file": "DawN - Base + Tabs (live)",
-  "snapshot": "2026-11-05T08:09:49",
+  "snapshot": "2026-11-05T16:14:22",
   "links": {
     "title": "DawN",
     "tagline": "Important links",
@@ -20002,42 +20002,46 @@
     }
   ],
   "presence": {
-    "as_of": "2026-11-05T09:09:54+01:00",
+    "as_of": "2026-11-05T17:14:28+01:00",
     "offline_flag_hours": 8,
     "online": {
       "date": "2026-11-05",
-      "sampled": 68,
+      "sampled": 69,
       "offline": [
         {
-          "name": "ImpAugustus",
-          "hours_offline": 18.0
+          "name": "Everton 123456",
+          "hours_offline": 24.0
+        },
+        {
+          "name": "iamJazzyy",
+          "hours_offline": 24.0
         },
         {
           "name": "Megalocasiadon",
-          "hours_offline": 16.0
+          "hours_offline": 24.0
+        },
+        {
+          "name": "Ringwraiths",
+          "hours_offline": 24.0
         },
         {
           "name": "Xx RvE Xx",
-          "hours_offline": 14.0
-        },
-        {
-          "name": "Inlv1",
-          "hours_offline": 12.0
-        },
-        {
-          "name": "AJ die Beste",
-          "hours_offline": 10.0
+          "hours_offline": 22.0
         },
         {
           "name": "SEKRETIK",
-          "hours_offline": 9.0
+          "hours_offline": 17.0
         },
         {
-          "name": "Masterzin",
-          "hours_offline": 8.0
+          "name": "RubiA",
+          "hours_offline": 12.0
+        },
+        {
+          "name": "Yuna",
+          "hours_offline": 12.0
         }
       ],
-      "offline_count": 7
+      "offline_count": 8
     },
     "gifts": {
       "date": "2026-11-05",
@@ -20317,11 +20321,11 @@
     "absences": {
       "threshold_hours": 8,
       "iso_week": "2026-W45",
-      "snapshots": 11,
+      "snapshots": 12,
       "per_member": [
         {
           "name": "Xx RvE Xx",
-          "count": 9
+          "count": 10
         },
         {
           "name": "ImpAugustus",
@@ -20329,11 +20333,11 @@
         },
         {
           "name": "Megalocasiadon",
-          "count": 7
+          "count": 8
         },
         {
           "name": "SEKRETIK",
-          "count": 7
+          "count": 8
         },
         {
           "name": "Random Attacks",
@@ -20349,6 +20353,10 @@
         },
         {
           "name": "Noxnanni",
+          "count": 5
+        },
+        {
+          "name": "Yuna",
           "count": 5
         },
         {
@@ -20369,10 +20377,6 @@
         },
         {
           "name": "Tomatofake",
-          "count": 4
-        },
-        {
-          "name": "Yuna",
           "count": 4
         },
         {
@@ -20405,6 +20409,10 @@
         },
         {
           "name": "Rodrigo",
+          "count": 3
+        },
+        {
+          "name": "RubiA",
           "count": 3
         },
         {
@@ -20460,6 +20468,10 @@
           "count": 2
         },
         {
+          "name": "Everton 123456",
+          "count": 2
+        },
+        {
           "name": "Fabinho gomes",
           "count": 2
         },
@@ -20504,7 +20516,7 @@
           "count": 2
         },
         {
-          "name": "RubiA",
+          "name": "Ringwraiths",
           "count": 2
         },
         {
@@ -20560,11 +20572,11 @@
           "count": 1
         },
         {
-          "name": "Everton 123456",
+          "name": "Hassleham",
           "count": 1
         },
         {
-          "name": "Hassleham",
+          "name": "iamJazzyy",
           "count": 1
         },
         {
@@ -20600,10 +20612,6 @@
           "count": 1
         },
         {
-          "name": "Ringwraiths",
-          "count": 1
-        },
-        {
           "name": "Squatislav",
           "count": 1
         },
@@ -20620,8 +20628,8 @@
           "count": 1
         }
       ],
-      "week_total": 187,
-      "vs_cycle_total": 187,
+      "week_total": 195,
+      "vs_cycle_total": 195,
       "vs_cycle_note": "current_iso_week"
     }
   }
