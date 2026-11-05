@@ -19240,11 +19240,11 @@
       ]
     }
   },
-  "generated_at": "2026-11-04T16:09:46Z",
-  "stand_berlin": "04.11.2026, 17:09",
+  "generated_at": "2026-11-05T00:09:57Z",
+  "stand_berlin": "05.11.2026, 01:09",
   "source": "google_sheets",
   "source_file": "DawN - Base + Tabs (live)",
-  "snapshot": "2026-11-04T16:09:46",
+  "snapshot": "2026-11-05T00:09:57",
   "links": {
     "title": "DawN",
     "tagline": "Important links",
@@ -19509,46 +19509,98 @@
     }
   ],
   "presence": {
-    "as_of": "2026-11-04T17:09:51+01:00",
+    "as_of": "2026-11-05T01:10:04+01:00",
     "offline_flag_hours": 8,
     "online": {
       "date": "2026-11-04",
-      "sampled": 64,
+      "sampled": 66,
       "offline": [
         {
-          "name": "SEKRETIK",
+          "name": "AndreResende",
           "hours_offline": 24.0
         },
         {
-          "name": "Random Attacks",
-          "hours_offline": 22.0
+          "name": "Baby Bax Baba Bax",
+          "hours_offline": 24.0
         },
         {
-          "name": "Xx RvE Xx",
-          "hours_offline": 19.0
+          "name": "Bazïinga",
+          "hours_offline": 24.0
         },
         {
-          "name": "CANONDA",
-          "hours_offline": 17.0
+          "name": "Clone",
+          "hours_offline": 24.0
         },
         {
-          "name": "HeinselHH",
-          "hours_offline": 11.0
+          "name": "damboddambod",
+          "hours_offline": 24.0
+        },
+        {
+          "name": "Fred67290",
+          "hours_offline": 24.0
+        },
+        {
+          "name": "Lord Rembe",
+          "hours_offline": 24.0
         },
         {
           "name": "Neritoo",
-          "hours_offline": 11.0
+          "hours_offline": 24.0
         },
         {
-          "name": "TheStarks",
-          "hours_offline": 11.0
+          "name": "Noxnanni",
+          "hours_offline": 24.0
         },
         {
-          "name": "Buckioio",
-          "hours_offline": 9.0
+          "name": "Omori UG)>",
+          "hours_offline": 24.0
+        },
+        {
+          "name": "ReflexX",
+          "hours_offline": 24.0
+        },
+        {
+          "name": "Ringwraiths",
+          "hours_offline": 24.0
+        },
+        {
+          "name": "Rodrigo",
+          "hours_offline": 24.0
+        },
+        {
+          "name": "RubiA",
+          "hours_offline": 24.0
+        },
+        {
+          "name": "The phantom 0",
+          "hours_offline": 24.0
+        },
+        {
+          "name": "Tomatofake",
+          "hours_offline": 24.0
+        },
+        {
+          "name": "User1904",
+          "hours_offline": 24.0
+        },
+        {
+          "name": "HeinselHH",
+          "hours_offline": 19.0
+        },
+        {
+          "name": "ImpAugustus",
+          "hours_offline": 10.0
+        },
+        {
+          "name": "Megalocasiadon",
+          "hours_offline": 8.0
+        },
+        {
+          "name": "Yuna",
+          "hours_offline": 8.0
         }
       ],
-      "offline_count": 8
+      "offline_count": 21
     },
     "gifts": {
       "date": "2026-11-04",
@@ -19852,11 +19904,15 @@
     "absences": {
       "threshold_hours": 8,
       "iso_week": "2026-W45",
-      "snapshots": 8,
+      "snapshots": 9,
       "per_member": [
         {
           "name": "Xx RvE Xx",
           "count": 7
+        },
+        {
+          "name": "ImpAugustus",
+          "count": 6
         },
         {
           "name": "SEKRETIK",
@@ -19867,7 +19923,11 @@
           "count": 5
         },
         {
-          "name": "ImpAugustus",
+          "name": "Megalocasiadon",
+          "count": 5
+        },
+        {
+          "name": "Noxnanni",
           "count": 5
         },
         {
@@ -19875,15 +19935,23 @@
           "count": 5
         },
         {
+          "name": "HeinselHH",
+          "count": 4
+        },
+        {
           "name": "Kaizennnnnnnnnnnn",
           "count": 4
         },
         {
-          "name": "Megalocasiadon",
+          "name": "Neritoo",
           "count": 4
         },
         {
-          "name": "Noxnanni",
+          "name": "Tomatofake",
+          "count": 4
+        },
+        {
+          "name": "Yuna",
           "count": 4
         },
         {
@@ -19891,27 +19959,35 @@
           "count": 3
         },
         {
+          "name": "Bazïinga",
+          "count": 3
+        },
+        {
           "name": "Buckioio",
           "count": 3
         },
         {
-          "name": "HeinselHH",
+          "name": "Fred67290",
           "count": 3
         },
         {
-          "name": "Neritoo",
+          "name": "Lord Rembe",
+          "count": 3
+        },
+        {
+          "name": "ReflexX",
+          "count": 3
+        },
+        {
+          "name": "Rodrigo",
+          "count": 3
+        },
+        {
+          "name": "The phantom 0",
           "count": 3
         },
         {
           "name": "TheStarks",
-          "count": 3
-        },
-        {
-          "name": "Tomatofake",
-          "count": 3
-        },
-        {
-          "name": "Yuna",
           "count": 3
         },
         {
@@ -19923,11 +19999,11 @@
           "count": 2
         },
         {
-          "name": "Banu89",
+          "name": "Baby Bax Baba Bax",
           "count": 2
         },
         {
-          "name": "Bazïinga",
+          "name": "Banu89",
           "count": 2
         },
         {
@@ -19959,10 +20035,6 @@
           "count": 2
         },
         {
-          "name": "Fred67290",
-          "count": 2
-        },
-        {
           "name": "Griffeyga",
           "count": 2
         },
@@ -19987,15 +20059,11 @@
           "count": 2
         },
         {
-          "name": "Lord Rembe",
-          "count": 2
-        },
-        {
           "name": "MAJØR",
           "count": 2
         },
         {
-          "name": "ReflexX",
+          "name": "Omori UG)>",
           "count": 2
         },
         {
@@ -20003,7 +20071,7 @@
           "count": 2
         },
         {
-          "name": "Rodrigo",
+          "name": "RubiA",
           "count": 2
         },
         {
@@ -20015,11 +20083,11 @@
           "count": 2
         },
         {
-          "name": "The phantom 0",
+          "name": "Tiane",
           "count": 2
         },
         {
-          "name": "Tiane",
+          "name": "User1904",
           "count": 2
         },
         {
@@ -20035,15 +20103,23 @@
           "count": 1
         },
         {
+          "name": "AndreResende",
+          "count": 1
+        },
+        {
           "name": "AnnoraX",
           "count": 1
         },
         {
-          "name": "Baby Bax Baba Bax",
+          "name": "chalako77",
           "count": 1
         },
         {
-          "name": "chalako77",
+          "name": "Clone",
+          "count": 1
+        },
+        {
+          "name": "damboddambod",
           "count": 1
         },
         {
@@ -20091,10 +20167,6 @@
           "count": 1
         },
         {
-          "name": "Omori UG)>",
-          "count": 1
-        },
-        {
           "name": "Optimus Bob",
           "count": 1
         },
@@ -20107,15 +20179,11 @@
           "count": 1
         },
         {
-          "name": "RubiA",
+          "name": "Ringwraiths",
           "count": 1
         },
         {
           "name": "Squatislav",
-          "count": 1
-        },
-        {
-          "name": "User1904",
           "count": 1
         },
         {
@@ -20131,8 +20199,8 @@
           "count": 1
         }
       ],
-      "week_total": 144,
-      "vs_cycle_total": 144,
+      "week_total": 165,
+      "vs_cycle_total": 165,
       "vs_cycle_note": "current_iso_week"
     }
   }
