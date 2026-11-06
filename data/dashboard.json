@@ -19733,11 +19733,11 @@
       ]
     }
   },
-  "generated_at": "2026-11-05T16:14:22Z",
-  "stand_berlin": "05.11.2026, 17:14",
+  "generated_at": "2026-11-06T00:09:10Z",
+  "stand_berlin": "06.11.2026, 01:09",
   "source": "google_sheets",
   "source_file": "DawN - Base + Tabs (live)",
-  "snapshot": "2026-11-05T16:14:22",
+  "snapshot": "2026-11-06T00:09:10",
   "links": {
     "title": "DawN",
     "tagline": "Important links",
@@ -20002,46 +20002,34 @@
     }
   ],
   "presence": {
-    "as_of": "2026-11-05T17:14:28+01:00",
+    "as_of": "2026-11-06T01:09:14+01:00",
     "offline_flag_hours": 8,
     "online": {
       "date": "2026-11-05",
-      "sampled": 69,
+      "sampled": 74,
       "offline": [
         {
-          "name": "Everton 123456",
-          "hours_offline": 24.0
-        },
-        {
-          "name": "iamJazzyy",
-          "hours_offline": 24.0
-        },
-        {
-          "name": "Megalocasiadon",
-          "hours_offline": 24.0
-        },
-        {
-          "name": "Ringwraiths",
-          "hours_offline": 24.0
-        },
-        {
-          "name": "Xx RvE Xx",
-          "hours_offline": 22.0
-        },
-        {
           "name": "SEKRETIK",
-          "hours_offline": 17.0
+          "hours_offline": 24.0
         },
         {
-          "name": "RubiA",
-          "hours_offline": 12.0
+          "name": "ImpAugustus",
+          "hours_offline": 11.0
         },
         {
-          "name": "Yuna",
-          "hours_offline": 12.0
+          "name": "Andressita MD",
+          "hours_offline": 9.0
+        },
+        {
+          "name": "Dani Earth",
+          "hours_offline": 8.0
+        },
+        {
+          "name": "Griffeyga",
+          "hours_offline": 8.0
         }
       ],
-      "offline_count": 8
+      "offline_count": 5
     },
     "gifts": {
       "date": "2026-11-05",
@@ -20321,7 +20309,7 @@
     "absences": {
       "threshold_hours": 8,
       "iso_week": "2026-W45",
-      "snapshots": 12,
+      "snapshots": 13,
       "per_member": [
         {
           "name": "Xx RvE Xx",
@@ -20329,14 +20317,14 @@
         },
         {
           "name": "ImpAugustus",
-          "count": 8
-        },
-        {
-          "name": "Megalocasiadon",
-          "count": 8
+          "count": 9
         },
         {
           "name": "SEKRETIK",
+          "count": 9
+        },
+        {
+          "name": "Megalocasiadon",
           "count": 8
         },
         {
@@ -20380,6 +20368,10 @@
           "count": 4
         },
         {
+          "name": "Andressita MD",
+          "count": 3
+        },
+        {
           "name": "Bazïinga",
           "count": 3
         },
@@ -20389,6 +20381,10 @@
         },
         {
           "name": "Fred67290",
+          "count": 3
+        },
+        {
+          "name": "Griffeyga",
           "count": 3
         },
         {
@@ -20436,10 +20432,6 @@
           "count": 2
         },
         {
-          "name": "Andressita MD",
-          "count": 2
-        },
-        {
           "name": "Baby Bax Baba Bax",
           "count": 2
         },
@@ -20464,6 +20456,10 @@
           "count": 2
         },
         {
+          "name": "Dani Earth",
+          "count": 2
+        },
+        {
           "name": "Deaths Brother",
           "count": 2
         },
@@ -20473,10 +20469,6 @@
         },
         {
           "name": "Fabinho gomes",
-          "count": 2
-        },
-        {
-          "name": "Griffeyga",
           "count": 2
         },
         {
@@ -20564,10 +20556,6 @@
           "count": 1
         },
         {
-          "name": "Dani Earth",
-          "count": 1
-        },
-        {
           "name": "Erdbeermarmelade",
           "count": 1
         },
@@ -20628,8 +20616,8 @@
           "count": 1
         }
       ],
-      "week_total": 195,
-      "vs_cycle_total": 195,
+      "week_total": 200,
+      "vs_cycle_total": 200,
       "vs_cycle_note": "current_iso_week"
     }
   }
