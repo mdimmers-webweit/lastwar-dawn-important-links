@@ -20082,11 +20082,11 @@
       ]
     }
   },
-  "generated_at": "2026-11-06T04:57:04Z",
-  "stand_berlin": "06.11.2026, 05:57",
+  "generated_at": "2026-11-06T08:21:22Z",
+  "stand_berlin": "06.11.2026, 09:21",
   "source": "google_sheets",
   "source_file": "DawN - Base + Tabs (live)",
-  "snapshot": "2026-11-06T04:57:04",
+  "snapshot": "2026-11-06T08:21:22",
   "links": {
     "title": "DawN",
     "tagline": "Important links",
@@ -20351,7 +20351,7 @@
     }
   ],
   "presence": {
-    "as_of": "2026-11-06T05:57:08+01:00",
+    "as_of": "2026-11-06T09:21:27+01:00",
     "offline_flag_hours": 8,
     "online": {
       "date": "2026-11-06",
@@ -20363,22 +20363,26 @@
         },
         {
           "name": "ImpAugustus",
-          "hours_offline": 15.0
-        },
-        {
-          "name": "iamJazzyy",
-          "hours_offline": 11.0
+          "hours_offline": 19.0
         },
         {
           "name": "Random Attacks",
+          "hours_offline": 15.0
+        },
+        {
+          "name": "Lawima",
           "hours_offline": 11.0
         },
         {
-          "name": "BlackHeiX",
+          "name": "Megalocasiadon",
+          "hours_offline": 10.0
+        },
+        {
+          "name": "MarchH",
           "hours_offline": 9.0
         }
       ],
-      "offline_count": 5
+      "offline_count": 6
     },
     "gifts": {
       "date": "2026-11-06",
@@ -20673,15 +20677,15 @@
     "absences": {
       "threshold_hours": 8,
       "iso_week": "2026-W45",
-      "snapshots": 14,
+      "snapshots": 15,
       "per_member": [
         {
           "name": "ImpAugustus",
-          "count": 10
+          "count": 11
         },
         {
           "name": "SEKRETIK",
-          "count": 10
+          "count": 11
         },
         {
           "name": "Xx RvE Xx",
@@ -20689,11 +20693,11 @@
         },
         {
           "name": "Megalocasiadon",
-          "count": 8
+          "count": 9
         },
         {
           "name": "Random Attacks",
-          "count": 7
+          "count": 8
         },
         {
           "name": "CANONDA",
@@ -20721,6 +20725,10 @@
         },
         {
           "name": "HeinselHH",
+          "count": 4
+        },
+        {
+          "name": "Lawima",
           "count": 4
         },
         {
@@ -20757,10 +20765,6 @@
         },
         {
           "name": "Gubalibre",
-          "count": 3
-        },
-        {
-          "name": "Lawima",
           "count": 3
         },
         {
@@ -20860,6 +20864,10 @@
           "count": 2
         },
         {
+          "name": "MarchH",
+          "count": 2
+        },
+        {
           "name": "Masterzin",
           "count": 2
         },
@@ -20944,10 +20952,6 @@
           "count": 1
         },
         {
-          "name": "MarchH",
-          "count": 1
-        },
-        {
           "name": "Nakama Tskulaxo",
           "count": 1
         },
@@ -20980,8 +20984,8 @@
           "count": 1
         }
       ],
-      "week_total": 205,
-      "vs_cycle_total": 205,
+      "week_total": 211,
+      "vs_cycle_total": 211,
       "vs_cycle_note": "current_iso_week"
     }
   }
