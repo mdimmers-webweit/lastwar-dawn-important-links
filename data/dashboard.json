@@ -11253,158 +11253,28 @@
           }
         },
         {
-          "name": "Squatislav",
-          "necessary": 132937616,
+          "name": "PunisherR93",
+          "necessary": 93955170,
           "unnecessary": null,
           "verdict": "Necessary",
           "daily_scores": {
-            "46.328": 62695292,
-            "46.329": 8066500,
-            "46.330": 27186900,
-            "46.331": 34988924,
+            "46.328": 10667715,
+            "46.329": 12961403,
+            "46.330": 9424718,
+            "46.331": 60901334,
             "": null
           }
         },
         {
-          "name": "DUNGEON KEEPER",
-          "necessary": 109851860,
+          "name": "Draurg v2",
+          "necessary": 75700870,
           "unnecessary": null,
           "verdict": "Necessary",
           "daily_scores": {
-            "46.328": 35438252,
-            "46.329": 12261450,
-            "46.330": 40016300,
-            "46.331": 22135858,
-            "": null
-          }
-        },
-        {
-          "name": "jhonkarther",
-          "necessary": 121115224,
-          "unnecessary": null,
-          "verdict": "Necessary",
-          "daily_scores": {
-            "46.328": 52232721,
-            "46.329": 20851950,
-            "46.330": 16478250,
-            "46.331": 31552303,
-            "": null
-          }
-        },
-        {
-          "name": "Ringwraiths",
-          "necessary": 90226854,
-          "unnecessary": null,
-          "verdict": "Necessary",
-          "daily_scores": {
-            "46.328": 35869173,
-            "46.329": 14364850,
-            "46.330": 15541700,
-            "46.331": 24451131,
-            "": null
-          }
-        },
-        {
-          "name": "LaLaLanD",
-          "necessary": 175745145,
-          "unnecessary": null,
-          "verdict": "Necessary",
-          "daily_scores": {
-            "46.328": 77522211,
-            "46.329": 11929550,
-            "46.330": 31799450,
-            "46.331": 54493934,
-            "": null
-          }
-        },
-        {
-          "name": "Bruna Laïs",
-          "necessary": 79134651,
-          "unnecessary": null,
-          "verdict": "Necessary",
-          "daily_scores": {
-            "46.328": 38121335,
-            "46.329": 16168950,
-            "46.330": 11753050,
-            "46.331": 13091316,
-            "": null
-          }
-        },
-        {
-          "name": "rePlay",
-          "necessary": 87361779,
-          "unnecessary": null,
-          "verdict": "Necessary",
-          "daily_scores": {
-            "46.328": 23576319,
-            "46.329": 8833650,
-            "46.330": 26668550,
-            "46.331": 28283260,
-            "": null
-          }
-        },
-        {
-          "name": "Clone",
-          "necessary": 74909033,
-          "unnecessary": null,
-          "verdict": "Necessary",
-          "daily_scores": {
-            "46.328": 27291875,
-            "46.329": 7634000,
-            "46.330": 22852750,
-            "46.331": 17130408,
-            "": null
-          }
-        },
-        {
-          "name": "Dani Earth",
-          "necessary": 87853928,
-          "unnecessary": null,
-          "verdict": "Necessary",
-          "daily_scores": {
-            "46.328": 36640640,
-            "46.329": 9379050,
-            "46.330": 26994800,
-            "46.331": 14839438,
-            "": null
-          }
-        },
-        {
-          "name": "Masterzin",
-          "necessary": 93735095,
-          "unnecessary": null,
-          "verdict": "Necessary",
-          "daily_scores": {
-            "46.328": 44338252,
-            "46.329": 8010600,
-            "46.330": 19778950,
-            "46.331": 21607293,
-            "": null
-          }
-        },
-        {
-          "name": "Lord Rembe",
-          "necessary": 126390175,
-          "unnecessary": null,
-          "verdict": "Necessary",
-          "daily_scores": {
-            "46.328": 22639808,
-            "46.329": 16896550,
-            "46.330": 34012050,
-            "46.331": 52841767,
-            "": null
-          }
-        },
-        {
-          "name": "Megalocasiadon",
-          "necessary": 100788284,
-          "unnecessary": null,
-          "verdict": "Necessary",
-          "daily_scores": {
-            "46.328": 30559033,
-            "46.329": 12873300,
-            "46.330": 17220550,
-            "46.331": 40135401,
+            "46.328": 27033282,
+            "46.329": 15923400,
+            "46.330": 22990750,
+            "46.331": 9753438,
             "": null
           }
         },
@@ -11422,41 +11292,80 @@
           }
         },
         {
-          "name": "AndreResende",
-          "necessary": 93103630,
+          "name": "Optimus Bob",
+          "necessary": 49277684,
           "unnecessary": null,
-          "verdict": "Necessary",
+          "verdict": "Needed more",
           "daily_scores": {
-            "46.328": 22402080,
-            "46.329": 33721400,
-            "46.330": 27476150,
-            "46.331": 9504000,
+            "46.328": 11297385,
+            "46.329": 5293900,
+            "46.330": 19046250,
+            "46.331": 13640149,
             "": null
           }
         },
         {
-          "name": "The phantom 0",
-          "necessary": 99028508,
+          "name": "Neritoo",
+          "necessary": 51454842,
           "unnecessary": null,
           "verdict": "Necessary",
           "daily_scores": {
-            "46.328": 38958008,
-            "46.329": 17640600,
-            "46.330": 17694650,
-            "46.331": 24735250,
+            "46.328": 12584679,
+            "46.329": 8440900,
+            "46.330": 13188250,
+            "46.331": 17241013,
             "": null
           }
         },
         {
-          "name": "HeinselHH",
-          "necessary": 49720258,
+          "name": "RubiA",
+          "necessary": 58444429,
           "unnecessary": null,
           "verdict": "Necessary",
           "daily_scores": {
-            "46.328": 12414992,
-            "46.329": 14999000,
-            "46.330": 8763450,
-            "46.331": 13542816,
+            "46.328": 18098420,
+            "46.329": 13023300,
+            "46.330": 13027350,
+            "46.331": 14295359,
+            "": null
+          }
+        },
+        {
+          "name": "BlackHeiX",
+          "necessary": 65518304,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.328": 12784305,
+            "46.329": 11144250,
+            "46.330": 9121500,
+            "46.331": 32468249,
+            "": null
+          }
+        },
+        {
+          "name": "jacknnn2",
+          "necessary": 100687776,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.328": 15189648,
+            "46.329": 33212350,
+            "46.330": 21584700,
+            "46.331": 30701078,
+            "": null
+          }
+        },
+        {
+          "name": "TheStarks",
+          "necessary": 68241341,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.328": 24874568,
+            "46.329": 9086150,
+            "46.330": 18310900,
+            "46.331": 15969723,
             "": null
           }
         },
@@ -11474,15 +11383,301 @@
           }
         },
         {
-          "name": "Southwest01",
-          "necessary": 62260603,
+          "name": "Masterzin",
+          "necessary": 93735095,
           "unnecessary": null,
           "verdict": "Necessary",
           "daily_scores": {
-            "46.328": 29040933,
-            "46.329": 7200750,
-            "46.330": 16427300,
-            "46.331": 9591620,
+            "46.328": 44338252,
+            "46.329": 8010600,
+            "46.330": 19778950,
+            "46.331": 21607293,
+            "": null
+          }
+        },
+        {
+          "name": "GrummelGriesgram",
+          "necessary": 151098453,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.328": 47305603,
+            "46.329": 15359250,
+            "46.330": 37029150,
+            "46.331": 51404450,
+            "": null
+          }
+        },
+        {
+          "name": "Andressita MD",
+          "necessary": 62846242,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.328": 19013994,
+            "46.329": 8913150,
+            "46.330": 27256450,
+            "46.331": 7662648,
+            "": null
+          }
+        },
+        {
+          "name": "HeinselHH",
+          "necessary": 49720258,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.328": 12414992,
+            "46.329": 14999000,
+            "46.330": 8763450,
+            "46.331": 13542816,
+            "": null
+          }
+        },
+        {
+          "name": "Sosiskaa",
+          "necessary": 61476684,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.328": 23047884,
+            "46.329": 12844000,
+            "46.330": 12090300,
+            "46.331": 13494500,
+            "": null
+          }
+        },
+        {
+          "name": "Millanoo",
+          "necessary": 54867286,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.328": 15233986,
+            "46.329": 7241800,
+            "46.330": 21987500,
+            "46.331": 10404000,
+            "": null
+          }
+        },
+        {
+          "name": "ReflexX",
+          "necessary": 75342870,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.328": 12618969,
+            "46.329": 8280850,
+            "46.330": 24379950,
+            "46.331": 30063101,
+            "": null
+          }
+        },
+        {
+          "name": "Clone",
+          "necessary": 74909033,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.328": 27291875,
+            "46.329": 7634000,
+            "46.330": 22852750,
+            "46.331": 17130408,
+            "": null
+          }
+        },
+        {
+          "name": "Nakama Tskulaxo",
+          "necessary": 116122243,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.328": 37816245,
+            "46.329": 7326300,
+            "46.330": 27044900,
+            "46.331": 43934798,
+            "": null
+          }
+        },
+        {
+          "name": "Fred67290",
+          "necessary": 140273568,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.328": 43543454,
+            "46.329": 19112450,
+            "46.330": 39096050,
+            "46.331": 38521614,
+            "": null
+          }
+        },
+        {
+          "name": "Random Attacks",
+          "necessary": 36616335,
+          "unnecessary": null,
+          "verdict": "Needed more",
+          "daily_scores": {
+            "46.328": 22539585,
+            "46.329": 6763500,
+            "46.330": 7313250,
+            "46.331": null,
+            "": null
+          }
+        },
+        {
+          "name": "AnnoraX",
+          "necessary": 79503337,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.328": 26556849,
+            "46.329": 9815250,
+            "46.330": 28262800,
+            "46.331": 14868438,
+            "": null
+          }
+        },
+        {
+          "name": "СТРАННИК",
+          "necessary": 164605204,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.328": 47361845,
+            "46.329": 9919100,
+            "46.330": 53658400,
+            "46.331": 53665859,
+            "": null
+          }
+        },
+        {
+          "name": "rePlay",
+          "necessary": 87361779,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.328": 23576319,
+            "46.329": 8833650,
+            "46.330": 26668550,
+            "46.331": 28283260,
+            "": null
+          }
+        },
+        {
+          "name": "Hassleham",
+          "necessary": 105663254,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.328": 24593766,
+            "46.329": 10508300,
+            "46.330": 22555900,
+            "46.331": 48005288,
+            "": null
+          }
+        },
+        {
+          "name": "Lana 67",
+          "necessary": 95552737,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.328": 50072437,
+            "46.329": 12189900,
+            "46.330": 33290400,
+            "46.331": null,
+            "": null
+          }
+        },
+        {
+          "name": "Sandboxman",
+          "necessary": 137623751,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.328": 70953090,
+            "46.329": 7438000,
+            "46.330": 41121950,
+            "46.331": 18110711,
+            "": null
+          }
+        },
+        {
+          "name": "Baby Bax Baba Bax",
+          "necessary": 87069729,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.328": 30474623,
+            "46.329": 7226500,
+            "46.330": 27188050,
+            "46.331": 22180556,
+            "": null
+          }
+        },
+        {
+          "name": "MAJØR",
+          "necessary": 73753802,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.328": 13016752,
+            "46.329": 14620900,
+            "46.330": 13497300,
+            "46.331": 32618850,
+            "": null
+          }
+        },
+        {
+          "name": "Mr Xanor",
+          "necessary": 23803438,
+          "unnecessary": null,
+          "verdict": "Needed more",
+          "daily_scores": {
+            "46.328": 11215938,
+            "46.329": 5038000,
+            "46.330": 4213500,
+            "46.331": 3336000,
+            "": null
+          }
+        },
+        {
+          "name": "CANONDA",
+          "necessary": 50059191,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.328": 10161241,
+            "46.329": 8516500,
+            "46.330": 21946950,
+            "46.331": 9434500,
+            "": null
+          }
+        },
+        {
+          "name": "Inlv1",
+          "necessary": 124992789,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.328": 72449320,
+            "46.329": 13095050,
+            "46.330": 10450150,
+            "46.331": 28998269,
+            "": null
+          }
+        },
+        {
+          "name": "LaLaLanD",
+          "necessary": 175745145,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.328": 77522211,
+            "46.329": 11929550,
+            "46.330": 31799450,
+            "46.331": 54493934,
             "": null
           }
         },
@@ -11500,41 +11695,15 @@
           }
         },
         {
-          "name": "Optimus Bob",
-          "necessary": 49277684,
-          "unnecessary": null,
-          "verdict": "Needed more",
-          "daily_scores": {
-            "46.328": 11297385,
-            "46.329": 5293900,
-            "46.330": 19046250,
-            "46.331": 13640149,
-            "": null
-          }
-        },
-        {
-          "name": "PunisherR93",
-          "necessary": 93955170,
+          "name": "Jazzcat78",
+          "necessary": 89441100,
           "unnecessary": null,
           "verdict": "Necessary",
           "daily_scores": {
-            "46.328": 10667715,
-            "46.329": 12961403,
-            "46.330": 9424718,
-            "46.331": 60901334,
-            "": null
-          }
-        },
-        {
-          "name": "Tiane",
-          "necessary": 82157254,
-          "unnecessary": null,
-          "verdict": "Necessary",
-          "daily_scores": {
-            "46.328": 33474445,
-            "46.329": 12359900,
-            "46.330": 16777700,
-            "46.331": 19545209,
+            "46.328": 8552500,
+            "46.329": 24346650,
+            "46.330": 29621950,
+            "46.331": 26920000,
             "": null
           }
         },
@@ -11547,58 +11716,6 @@
             "46.328": null,
             "46.329": null,
             "46.330": null,
-            "46.331": null,
-            "": null
-          }
-        },
-        {
-          "name": "Everton 123456",
-          "necessary": 75686079,
-          "unnecessary": null,
-          "verdict": "Necessary",
-          "daily_scores": {
-            "46.328": 12351303,
-            "46.329": 8182000,
-            "46.330": 17467250,
-            "46.331": 37685526,
-            "": null
-          }
-        },
-        {
-          "name": "Rico 2026",
-          "necessary": 75899215,
-          "unnecessary": null,
-          "verdict": "Necessary",
-          "daily_scores": {
-            "46.328": 29467986,
-            "46.329": 11933800,
-            "46.330": 19258750,
-            "46.331": 15238679,
-            "": null
-          }
-        },
-        {
-          "name": "Filippos4Paok",
-          "necessary": 88189192,
-          "unnecessary": null,
-          "verdict": "Necessary",
-          "daily_scores": {
-            "46.328": 25756077,
-            "46.329": 11971350,
-            "46.330": 20313950,
-            "46.331": 30147815,
-            "": null
-          }
-        },
-        {
-          "name": "Lana 67",
-          "necessary": 95552737,
-          "unnecessary": null,
-          "verdict": "Necessary",
-          "daily_scores": {
-            "46.328": 50072437,
-            "46.329": 12189900,
-            "46.330": 33290400,
             "46.331": null,
             "": null
           }
@@ -11617,379 +11734,15 @@
           }
         },
         {
-          "name": "Rodrigo",
-          "necessary": 95368970,
+          "name": "Lord Rembe",
+          "necessary": 126390175,
           "unnecessary": null,
           "verdict": "Necessary",
           "daily_scores": {
-            "46.328": 19020403,
-            "46.329": 12810650,
-            "46.330": 30972350,
-            "46.331": 32565567,
-            "": null
-          }
-        },
-        {
-          "name": "Bazïinga",
-          "necessary": 85187084,
-          "unnecessary": null,
-          "verdict": "Necessary",
-          "daily_scores": {
-            "46.328": 7407813,
-            "46.329": 11327150,
-            "46.330": 19565650,
-            "46.331": 46886471,
-            "": null
-          }
-        },
-        {
-          "name": "jacknnn2",
-          "necessary": 100687776,
-          "unnecessary": null,
-          "verdict": "Necessary",
-          "daily_scores": {
-            "46.328": 15189648,
-            "46.329": 33212350,
-            "46.330": 21584700,
-            "46.331": 30701078,
-            "": null
-          }
-        },
-        {
-          "name": "Mr Xanor",
-          "necessary": 23803438,
-          "unnecessary": null,
-          "verdict": "Needed more",
-          "daily_scores": {
-            "46.328": 11215938,
-            "46.329": 5038000,
-            "46.330": 4213500,
-            "46.331": 3336000,
-            "": null
-          }
-        },
-        {
-          "name": "Lawima",
-          "necessary": 56683124,
-          "unnecessary": null,
-          "verdict": "Necessary",
-          "daily_scores": {
-            "46.328": 21400464,
-            "46.329": 10913350,
-            "46.330": 12830600,
-            "46.331": 11538710,
-            "": null
-          }
-        },
-        {
-          "name": "Jazzcat78",
-          "necessary": 89441100,
-          "unnecessary": null,
-          "verdict": "Necessary",
-          "daily_scores": {
-            "46.328": 8552500,
-            "46.329": 24346650,
-            "46.330": 29621950,
-            "46.331": 26920000,
-            "": null
-          }
-        },
-        {
-          "name": "Omori UG)>",
-          "necessary": 53049646,
-          "unnecessary": null,
-          "verdict": "Necessary",
-          "daily_scores": {
-            "46.328": 27001217,
-            "46.329": 8757500,
-            "46.330": 8681300,
-            "46.331": 8609629,
-            "": null
-          }
-        },
-        {
-          "name": "Inlv1",
-          "necessary": 124992789,
-          "unnecessary": null,
-          "verdict": "Necessary",
-          "daily_scores": {
-            "46.328": 72449320,
-            "46.329": 13095050,
-            "46.330": 10450150,
-            "46.331": 28998269,
-            "": null
-          }
-        },
-        {
-          "name": "Relapse94",
-          "necessary": 95001451,
-          "unnecessary": null,
-          "verdict": "Necessary",
-          "daily_scores": {
-            "46.328": 21800413,
-            "46.329": 10666400,
-            "46.330": 27670450,
-            "46.331": 34864188,
-            "": null
-          }
-        },
-        {
-          "name": "Sandboxman",
-          "necessary": 137623751,
-          "unnecessary": null,
-          "verdict": "Necessary",
-          "daily_scores": {
-            "46.328": 70953090,
-            "46.329": 7438000,
-            "46.330": 41121950,
-            "46.331": 18110711,
-            "": null
-          }
-        },
-        {
-          "name": "Alex000392",
-          "necessary": 57088676,
-          "unnecessary": null,
-          "verdict": "Needed more",
-          "daily_scores": {
-            "46.328": 13621876,
-            "46.329": 5172600,
-            "46.330": 25051700,
-            "46.331": 13242500,
-            "": null
-          }
-        },
-        {
-          "name": "AJ die Beste",
-          "necessary": 58411532,
-          "unnecessary": null,
-          "verdict": "Necessary",
-          "daily_scores": {
-            "46.328": 8019073,
-            "46.329": 27785250,
-            "46.330": 9561650,
-            "46.331": 13045559,
-            "": null
-          }
-        },
-        {
-          "name": "WT1110",
-          "necessary": 34588094,
-          "unnecessary": null,
-          "verdict": "Necessary",
-          "daily_scores": {
-            "46.328": 10214794,
-            "46.329": 8598500,
-            "46.330": 8452800,
-            "46.331": 7322000,
-            "": null
-          }
-        },
-        {
-          "name": "Hassleham",
-          "necessary": 105663254,
-          "unnecessary": null,
-          "verdict": "Necessary",
-          "daily_scores": {
-            "46.328": 24593766,
-            "46.329": 10508300,
-            "46.330": 22555900,
-            "46.331": 48005288,
-            "": null
-          }
-        },
-        {
-          "name": "xXxJoKeRxXx",
-          "necessary": 99136816,
-          "unnecessary": null,
-          "verdict": "Necessary",
-          "daily_scores": {
-            "46.328": 14940314,
-            "46.329": 8018550,
-            "46.330": 37715400,
-            "46.331": 38462552,
-            "": null
-          }
-        },
-        {
-          "name": "MarchH",
-          "necessary": 99449782,
-          "unnecessary": null,
-          "verdict": "Necessary",
-          "daily_scores": {
-            "46.328": 21578253,
-            "46.329": 11769600,
-            "46.330": 18086100,
-            "46.331": 48015829,
-            "": null
-          }
-        },
-        {
-          "name": "Sosiskaa",
-          "necessary": 61476684,
-          "unnecessary": null,
-          "verdict": "Necessary",
-          "daily_scores": {
-            "46.328": 23047884,
-            "46.329": 12844000,
-            "46.330": 12090300,
-            "46.331": 13494500,
-            "": null
-          }
-        },
-        {
-          "name": "Neritoo",
-          "necessary": 51454842,
-          "unnecessary": null,
-          "verdict": "Necessary",
-          "daily_scores": {
-            "46.328": 12584679,
-            "46.329": 8440900,
-            "46.330": 13188250,
-            "46.331": 17241013,
-            "": null
-          }
-        },
-        {
-          "name": "Nakama Tskulaxo",
-          "necessary": 116122243,
-          "unnecessary": null,
-          "verdict": "Necessary",
-          "daily_scores": {
-            "46.328": 37816245,
-            "46.329": 7326300,
-            "46.330": 27044900,
-            "46.331": 43934798,
-            "": null
-          }
-        },
-        {
-          "name": "Erdbeermarmelade",
-          "necessary": 80001027,
-          "unnecessary": null,
-          "verdict": "Necessary",
-          "daily_scores": {
-            "46.328": 17646375,
-            "46.329": 7205850,
-            "46.330": 17255100,
-            "46.331": 37893702,
-            "": null
-          }
-        },
-        {
-          "name": "chalako77",
-          "necessary": 76133552,
-          "unnecessary": null,
-          "verdict": "Necessary",
-          "daily_scores": {
-            "46.328": 38811977,
-            "46.329": 8065500,
-            "46.330": 19453350,
-            "46.331": 9802725,
-            "": null
-          }
-        },
-        {
-          "name": "GrummelGriesgram",
-          "necessary": 151098453,
-          "unnecessary": null,
-          "verdict": "Necessary",
-          "daily_scores": {
-            "46.328": 47305603,
-            "46.329": 15359250,
-            "46.330": 37029150,
-            "46.331": 51404450,
-            "": null
-          }
-        },
-        {
-          "name": "Zettovic",
-          "necessary": 73886321,
-          "unnecessary": null,
-          "verdict": "Necessary",
-          "daily_scores": {
-            "46.328": 21101837,
-            "46.329": 8048250,
-            "46.330": 14385300,
-            "46.331": 30350934,
-            "": null
-          }
-        },
-        {
-          "name": "Andressita MD",
-          "necessary": 62846242,
-          "unnecessary": null,
-          "verdict": "Necessary",
-          "daily_scores": {
-            "46.328": 19013994,
-            "46.329": 8913150,
-            "46.330": 27256450,
-            "46.331": 7662648,
-            "": null
-          }
-        },
-        {
-          "name": "TheStarks",
-          "necessary": 68241341,
-          "unnecessary": null,
-          "verdict": "Necessary",
-          "daily_scores": {
-            "46.328": 24874568,
-            "46.329": 9086150,
-            "46.330": 18310900,
-            "46.331": 15969723,
-            "": null
-          }
-        },
-        {
-          "name": "73Katy",
-          "necessary": 118105845,
-          "unnecessary": null,
-          "verdict": "Necessary",
-          "daily_scores": {
-            "46.328": 24235503,
-            "46.329": 21250450,
-            "46.330": 20752050,
-            "46.331": 51867842,
-            "": null
-          }
-        },
-        {
-          "name": "JazzHandsThomas",
-          "necessary": 65659503,
-          "unnecessary": null,
-          "verdict": "Necessary",
-          "daily_scores": {
-            "46.328": 18337953,
-            "46.329": 9812000,
-            "46.330": 11942550,
-            "46.331": 25567000,
-            "": null
-          }
-        },
-        {
-          "name": "Baby Bax Baba Bax",
-          "necessary": 87069729,
-          "unnecessary": null,
-          "verdict": "Necessary",
-          "daily_scores": {
-            "46.328": 30474623,
-            "46.329": 7226500,
-            "46.330": 27188050,
-            "46.331": 22180556,
-            "": null
-          }
-        },
-        {
-          "name": "Millanoo",
-          "necessary": 54867286,
-          "unnecessary": null,
-          "verdict": "Necessary",
-          "daily_scores": {
-            "46.328": 15233986,
-            "46.329": 7241800,
-            "46.330": 21987500,
-            "46.331": 10404000,
+            "46.328": 22639808,
+            "46.329": 16896550,
+            "46.330": 34012050,
+            "46.331": 52841767,
             "": null
           }
         },
@@ -12007,32 +11760,6 @@
           }
         },
         {
-          "name": "Random Attacks",
-          "necessary": 36616335,
-          "unnecessary": null,
-          "verdict": "Needed more",
-          "daily_scores": {
-            "46.328": 22539585,
-            "46.329": 6763500,
-            "46.330": 7313250,
-            "46.331": null,
-            "": null
-          }
-        },
-        {
-          "name": "MAJØR",
-          "necessary": 73753802,
-          "unnecessary": null,
-          "verdict": "Necessary",
-          "daily_scores": {
-            "46.328": 13016752,
-            "46.329": 14620900,
-            "46.330": 13497300,
-            "46.331": 32618850,
-            "": null
-          }
-        },
-        {
           "name": "Juliani86",
           "necessary": 109634481,
           "unnecessary": null,
@@ -12046,158 +11773,28 @@
           }
         },
         {
-          "name": "Banu89",
-          "necessary": 79459454,
+          "name": "Everton 123456",
+          "necessary": 75686079,
           "unnecessary": null,
           "verdict": "Necessary",
           "daily_scores": {
-            "46.328": 23875653,
-            "46.329": 7283050,
-            "46.330": 19579700,
-            "46.331": 28721051,
+            "46.328": 12351303,
+            "46.329": 8182000,
+            "46.330": 17467250,
+            "46.331": 37685526,
             "": null
           }
         },
         {
-          "name": "Cmdr William T Riker",
-          "necessary": 8981061,
+          "name": "Dani Earth",
+          "necessary": 87853928,
           "unnecessary": null,
           "verdict": "Necessary",
           "daily_scores": {
-            "46.328": null,
-            "46.329": null,
-            "46.330": null,
-            "46.331": 8981061,
-            "": null
-          }
-        },
-        {
-          "name": "RubiA",
-          "necessary": 58444429,
-          "unnecessary": null,
-          "verdict": "Necessary",
-          "daily_scores": {
-            "46.328": 18098420,
-            "46.329": 13023300,
-            "46.330": 13027350,
-            "46.331": 14295359,
-            "": null
-          }
-        },
-        {
-          "name": "ReflexX",
-          "necessary": 75342870,
-          "unnecessary": null,
-          "verdict": "Necessary",
-          "daily_scores": {
-            "46.328": 12618969,
-            "46.329": 8280850,
-            "46.330": 24379950,
-            "46.331": 30063101,
-            "": null
-          }
-        },
-        {
-          "name": "СТРАННИК",
-          "necessary": 164605204,
-          "unnecessary": null,
-          "verdict": "Necessary",
-          "daily_scores": {
-            "46.328": 47361845,
-            "46.329": 9919100,
-            "46.330": 53658400,
-            "46.331": 53665859,
-            "": null
-          }
-        },
-        {
-          "name": "AnnoraX",
-          "necessary": 79503337,
-          "unnecessary": null,
-          "verdict": "Necessary",
-          "daily_scores": {
-            "46.328": 26556849,
-            "46.329": 9815250,
-            "46.330": 28262800,
-            "46.331": 14868438,
-            "": null
-          }
-        },
-        {
-          "name": "Outerspace Chase",
-          "necessary": 64297976,
-          "unnecessary": null,
-          "verdict": "Necessary",
-          "daily_scores": {
-            "46.328": 24963751,
-            "46.329": 12580500,
-            "46.330": 10281650,
-            "46.331": 16472075,
-            "": null
-          }
-        },
-        {
-          "name": "Tomatofake",
-          "necessary": 77398766,
-          "unnecessary": null,
-          "verdict": "Necessary",
-          "daily_scores": {
-            "46.328": 10339787,
-            "46.329": 8830950,
-            "46.330": 19009700,
-            "46.331": 39218329,
-            "": null
-          }
-        },
-        {
-          "name": "Gubalibre",
-          "necessary": 103286718,
-          "unnecessary": null,
-          "verdict": "Necessary",
-          "daily_scores": {
-            "46.328": 13998126,
-            "46.329": 7295400,
-            "46.330": 27187350,
-            "46.331": 54805842,
-            "": null
-          }
-        },
-        {
-          "name": "Valério",
-          "necessary": 72042695,
-          "unnecessary": null,
-          "verdict": "Necessary",
-          "daily_scores": {
-            "46.328": 23325077,
-            "46.329": 10432350,
-            "46.330": 22694150,
-            "46.331": 15591118,
-            "": null
-          }
-        },
-        {
-          "name": "NocB",
-          "necessary": 95859307,
-          "unnecessary": null,
-          "verdict": "Necessary",
-          "daily_scores": {
-            "46.328": 35906924,
-            "46.329": 7447600,
-            "46.330": 32806200,
-            "46.331": 19698583,
-            "": null
-          }
-        },
-        {
-          "name": "Jiintan",
-          "necessary": 99235489,
-          "unnecessary": null,
-          "verdict": "Necessary",
-          "daily_scores": {
-            "46.328": 45324889,
-            "46.329": 7839250,
-            "46.330": 38816850,
-            "46.331": 7254500,
+            "46.328": 36640640,
+            "46.329": 9379050,
+            "46.330": 26994800,
+            "46.331": 14839438,
             "": null
           }
         },
@@ -12215,67 +11812,41 @@
           }
         },
         {
-          "name": "Griffeyga",
-          "necessary": 71689389,
+          "name": "Southwest01",
+          "necessary": 62260603,
           "unnecessary": null,
           "verdict": "Necessary",
           "daily_scores": {
-            "46.328": 30971446,
-            "46.329": 15765500,
-            "46.330": 7250400,
-            "46.331": 17702043,
+            "46.328": 29040933,
+            "46.329": 7200750,
+            "46.330": 16427300,
+            "46.331": 9591620,
             "": null
           }
         },
         {
-          "name": "0 AÇOUGUEIRO",
-          "necessary": 80953392,
+          "name": "Jiintan",
+          "necessary": 99235489,
           "unnecessary": null,
           "verdict": "Necessary",
           "daily_scores": {
-            "46.328": 28660044,
-            "46.329": 12459000,
-            "46.330": 22519550,
-            "46.331": 17314798,
+            "46.328": 45324889,
+            "46.329": 7839250,
+            "46.330": 38816850,
+            "46.331": 7254500,
             "": null
           }
         },
         {
-          "name": "Lover Of Manquaca",
-          "necessary": 117055806,
+          "name": "Alex000392",
+          "necessary": 57088676,
           "unnecessary": null,
-          "verdict": "Necessary",
+          "verdict": "Needed more",
           "daily_scores": {
-            "46.328": 50500911,
-            "46.329": 18091900,
-            "46.330": 24611700,
-            "46.331": 23851295,
-            "": null
-          }
-        },
-        {
-          "name": "ßKATERINA ß",
-          "necessary": null,
-          "unnecessary": null,
-          "verdict": "",
-          "daily_scores": {
-            "46.328": null,
-            "46.329": null,
-            "46.330": null,
-            "46.331": null,
-            "": null
-          }
-        },
-        {
-          "name": "Draurg v2",
-          "necessary": 75700870,
-          "unnecessary": null,
-          "verdict": "Necessary",
-          "daily_scores": {
-            "46.328": 27033282,
-            "46.329": 15923400,
-            "46.330": 22990750,
-            "46.331": 9753438,
+            "46.328": 13621876,
+            "46.329": 5172600,
+            "46.330": 25051700,
+            "46.331": 13242500,
             "": null
           }
         },
@@ -12293,106 +11864,119 @@
           }
         },
         {
-          "name": "CANONDA",
-          "necessary": 50059191,
+          "name": "ßKATERINA ß",
+          "necessary": null,
           "unnecessary": null,
-          "verdict": "Necessary",
+          "verdict": "",
           "daily_scores": {
-            "46.328": 10161241,
-            "46.329": 8516500,
-            "46.330": 21946950,
-            "46.331": 9434500,
+            "46.328": null,
+            "46.329": null,
+            "46.330": null,
+            "46.331": null,
             "": null
           }
         },
         {
-          "name": "Ougat",
-          "necessary": 69030928,
+          "name": "0 AÇOUGUEIRO",
+          "necessary": 80953392,
           "unnecessary": null,
           "verdict": "Necessary",
           "daily_scores": {
-            "46.328": 32831270,
-            "46.329": 13837950,
-            "46.330": 10830800,
-            "46.331": 11530908,
+            "46.328": 28660044,
+            "46.329": 12459000,
+            "46.330": 22519550,
+            "46.331": 17314798,
             "": null
           }
         },
         {
-          "name": "Buckioio",
-          "necessary": 69533045,
+          "name": "xJeeane",
+          "necessary": 88111386,
           "unnecessary": null,
           "verdict": "Necessary",
           "daily_scores": {
-            "46.328": 18010215,
-            "46.329": 7425750,
-            "46.330": 16437150,
-            "46.331": 27659930,
+            "46.328": 54626125,
+            "46.329": 9772950,
+            "46.330": 10998000,
+            "46.331": 12714311,
             "": null
           }
         },
         {
-          "name": "Fred67290",
-          "necessary": 140273568,
+          "name": "Omori UG)>",
+          "necessary": 53049646,
           "unnecessary": null,
           "verdict": "Necessary",
           "daily_scores": {
-            "46.328": 43543454,
-            "46.329": 19112450,
-            "46.330": 39096050,
-            "46.331": 38521614,
+            "46.328": 27001217,
+            "46.329": 8757500,
+            "46.330": 8681300,
+            "46.331": 8609629,
             "": null
           }
         },
         {
-          "name": "Kaizennnnnnnnnnnn",
-          "necessary": 70005891,
+          "name": "Bruna Laïs",
+          "necessary": 79134651,
           "unnecessary": null,
           "verdict": "Necessary",
           "daily_scores": {
-            "46.328": 21839289,
-            "46.329": 15184400,
-            "46.330": 12288650,
-            "46.331": 20693552,
+            "46.328": 38121335,
+            "46.329": 16168950,
+            "46.330": 11753050,
+            "46.331": 13091316,
             "": null
           }
         },
         {
-          "name": "blubbb123",
-          "necessary": 125133294,
+          "name": "73Katy",
+          "necessary": 118105845,
           "unnecessary": null,
           "verdict": "Necessary",
           "daily_scores": {
-            "46.328": 34854621,
-            "46.329": 25122300,
-            "46.330": 35755250,
-            "46.331": 29401123,
+            "46.328": 24235503,
+            "46.329": 21250450,
+            "46.330": 20752050,
+            "46.331": 51867842,
             "": null
           }
         },
         {
-          "name": "damboddambod",
-          "necessary": 115198818,
+          "name": "Bazïinga",
+          "necessary": 85187084,
           "unnecessary": null,
           "verdict": "Necessary",
           "daily_scores": {
-            "46.328": 23410998,
-            "46.329": 13740750,
-            "46.330": 22634350,
-            "46.331": 55412720,
+            "46.328": 7407813,
+            "46.329": 11327150,
+            "46.330": 19565650,
+            "46.331": 46886471,
             "": null
           }
         },
         {
-          "name": "DesertSniper",
-          "necessary": 91496087,
+          "name": "Ringwraiths",
+          "necessary": 90226854,
           "unnecessary": null,
           "verdict": "Necessary",
           "daily_scores": {
-            "46.328": 25746560,
-            "46.329": 8411500,
-            "46.330": 18809900,
-            "46.331": 38528127,
+            "46.328": 35869173,
+            "46.329": 14364850,
+            "46.330": 15541700,
+            "46.331": 24451131,
+            "": null
+          }
+        },
+        {
+          "name": "AJ die Beste",
+          "necessary": 58411532,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.328": 8019073,
+            "46.329": 27785250,
+            "46.330": 9561650,
+            "46.331": 13045559,
             "": null
           }
         },
@@ -12410,15 +11994,28 @@
           }
         },
         {
-          "name": "Diniz Infaaaa",
-          "necessary": 55929256,
+          "name": "Banu89",
+          "necessary": 79459454,
           "unnecessary": null,
           "verdict": "Necessary",
           "daily_scores": {
-            "46.328": 7394106,
-            "46.329": 9295350,
-            "46.330": 23614850,
-            "46.331": 15624950,
+            "46.328": 23875653,
+            "46.329": 7283050,
+            "46.330": 19579700,
+            "46.331": 28721051,
+            "": null
+          }
+        },
+        {
+          "name": "Tomatofake",
+          "necessary": 77398766,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.328": 10339787,
+            "46.329": 8830950,
+            "46.330": 19009700,
+            "46.331": 39218329,
             "": null
           }
         },
@@ -12436,28 +12033,145 @@
           }
         },
         {
-          "name": "Xx RvE Xx",
-          "necessary": 46163649,
+          "name": "xXxJoKeRxXx",
+          "necessary": 99136816,
           "unnecessary": null,
           "verdict": "Necessary",
           "daily_scores": {
-            "46.328": 17826851,
-            "46.329": 12391950,
-            "46.330": 7205200,
-            "46.331": 8739648,
+            "46.328": 14940314,
+            "46.329": 8018550,
+            "46.330": 37715400,
+            "46.331": 38462552,
             "": null
           }
         },
         {
-          "name": "BlackHeiX",
-          "necessary": 65518304,
+          "name": "Gubalibre",
+          "necessary": 103286718,
           "unnecessary": null,
           "verdict": "Necessary",
           "daily_scores": {
-            "46.328": 12784305,
-            "46.329": 11144250,
-            "46.330": 9121500,
-            "46.331": 32468249,
+            "46.328": 13998126,
+            "46.329": 7295400,
+            "46.330": 27187350,
+            "46.331": 54805842,
+            "": null
+          }
+        },
+        {
+          "name": "The phantom 0",
+          "necessary": 99028508,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.328": 38958008,
+            "46.329": 17640600,
+            "46.330": 17694650,
+            "46.331": 24735250,
+            "": null
+          }
+        },
+        {
+          "name": "Ougat",
+          "necessary": 69030928,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.328": 32831270,
+            "46.329": 13837950,
+            "46.330": 10830800,
+            "46.331": 11530908,
+            "": null
+          }
+        },
+        {
+          "name": "JazzHandsThomas",
+          "necessary": 65659503,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.328": 18337953,
+            "46.329": 9812000,
+            "46.330": 11942550,
+            "46.331": 25567000,
+            "": null
+          }
+        },
+        {
+          "name": "Kaizennnnnnnnnnnn",
+          "necessary": 70005891,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.328": 21839289,
+            "46.329": 15184400,
+            "46.330": 12288650,
+            "46.331": 20693552,
+            "": null
+          }
+        },
+        {
+          "name": "Lawima",
+          "necessary": 56683124,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.328": 21400464,
+            "46.329": 10913350,
+            "46.330": 12830600,
+            "46.331": 11538710,
+            "": null
+          }
+        },
+        {
+          "name": "Lover Of Manquaca",
+          "necessary": 117055806,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.328": 50500911,
+            "46.329": 18091900,
+            "46.330": 24611700,
+            "46.331": 23851295,
+            "": null
+          }
+        },
+        {
+          "name": "damboddambod",
+          "necessary": 115198818,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.328": 23410998,
+            "46.329": 13740750,
+            "46.330": 22634350,
+            "46.331": 55412720,
+            "": null
+          }
+        },
+        {
+          "name": "Erdbeermarmelade",
+          "necessary": 80001027,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.328": 17646375,
+            "46.329": 7205850,
+            "46.330": 17255100,
+            "46.331": 37893702,
+            "": null
+          }
+        },
+        {
+          "name": "Buckioio",
+          "necessary": 69533045,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.328": 18010215,
+            "46.329": 7425750,
+            "46.330": 16437150,
+            "46.331": 27659930,
             "": null
           }
         },
@@ -12475,15 +12189,301 @@
           }
         },
         {
-          "name": "xJeeane",
-          "necessary": 88111386,
+          "name": "chalako77",
+          "necessary": 76133552,
           "unnecessary": null,
           "verdict": "Necessary",
           "daily_scores": {
-            "46.328": 54626125,
-            "46.329": 9772950,
-            "46.330": 10998000,
-            "46.331": 12714311,
+            "46.328": 38811977,
+            "46.329": 8065500,
+            "46.330": 19453350,
+            "46.331": 9802725,
+            "": null
+          }
+        },
+        {
+          "name": "WT1110",
+          "necessary": 34588094,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.328": 10214794,
+            "46.329": 8598500,
+            "46.330": 8452800,
+            "46.331": 7322000,
+            "": null
+          }
+        },
+        {
+          "name": "Filippos4Paok",
+          "necessary": 88189192,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.328": 25756077,
+            "46.329": 11971350,
+            "46.330": 20313950,
+            "46.331": 30147815,
+            "": null
+          }
+        },
+        {
+          "name": "AndreResende",
+          "necessary": 93103630,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.328": 22402080,
+            "46.329": 33721400,
+            "46.330": 27476150,
+            "46.331": 9504000,
+            "": null
+          }
+        },
+        {
+          "name": "Zettovic",
+          "necessary": 73886321,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.328": 21101837,
+            "46.329": 8048250,
+            "46.330": 14385300,
+            "46.331": 30350934,
+            "": null
+          }
+        },
+        {
+          "name": "MarchH",
+          "necessary": 99449782,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.328": 21578253,
+            "46.329": 11769600,
+            "46.330": 18086100,
+            "46.331": 48015829,
+            "": null
+          }
+        },
+        {
+          "name": "NocB",
+          "necessary": 95859307,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.328": 35906924,
+            "46.329": 7447600,
+            "46.330": 32806200,
+            "46.331": 19698583,
+            "": null
+          }
+        },
+        {
+          "name": "DesertSniper",
+          "necessary": 91496087,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.328": 25746560,
+            "46.329": 8411500,
+            "46.330": 18809900,
+            "46.331": 38528127,
+            "": null
+          }
+        },
+        {
+          "name": "Megalocasiadon",
+          "necessary": 100788284,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.328": 30559033,
+            "46.329": 12873300,
+            "46.330": 17220550,
+            "46.331": 40135401,
+            "": null
+          }
+        },
+        {
+          "name": "Outerspace Chase",
+          "necessary": 64297976,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.328": 24963751,
+            "46.329": 12580500,
+            "46.330": 10281650,
+            "46.331": 16472075,
+            "": null
+          }
+        },
+        {
+          "name": "Cmdr William T Riker",
+          "necessary": 8981061,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.328": null,
+            "46.329": null,
+            "46.330": null,
+            "46.331": 8981061,
+            "": null
+          }
+        },
+        {
+          "name": "Rico 2026",
+          "necessary": 75899215,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.328": 29467986,
+            "46.329": 11933800,
+            "46.330": 19258750,
+            "46.331": 15238679,
+            "": null
+          }
+        },
+        {
+          "name": "Xx RvE Xx",
+          "necessary": 46163649,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.328": 17826851,
+            "46.329": 12391950,
+            "46.330": 7205200,
+            "46.331": 8739648,
+            "": null
+          }
+        },
+        {
+          "name": "Griffeyga",
+          "necessary": 71689389,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.328": 30971446,
+            "46.329": 15765500,
+            "46.330": 7250400,
+            "46.331": 17702043,
+            "": null
+          }
+        },
+        {
+          "name": "Diniz Infaaaa",
+          "necessary": 55929256,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.328": 7394106,
+            "46.329": 9295350,
+            "46.330": 23614850,
+            "46.331": 15624950,
+            "": null
+          }
+        },
+        {
+          "name": "Valério",
+          "necessary": 72042695,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.328": 23325077,
+            "46.329": 10432350,
+            "46.330": 22694150,
+            "46.331": 15591118,
+            "": null
+          }
+        },
+        {
+          "name": "DUNGEON KEEPER",
+          "necessary": 109851860,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.328": 35438252,
+            "46.329": 12261450,
+            "46.330": 40016300,
+            "46.331": 22135858,
+            "": null
+          }
+        },
+        {
+          "name": "Rodrigo",
+          "necessary": 95368970,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.328": 19020403,
+            "46.329": 12810650,
+            "46.330": 30972350,
+            "46.331": 32565567,
+            "": null
+          }
+        },
+        {
+          "name": "Squatislav",
+          "necessary": 132937616,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.328": 62695292,
+            "46.329": 8066500,
+            "46.330": 27186900,
+            "46.331": 34988924,
+            "": null
+          }
+        },
+        {
+          "name": "Tiane",
+          "necessary": 82157254,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.328": 33474445,
+            "46.329": 12359900,
+            "46.330": 16777700,
+            "46.331": 19545209,
+            "": null
+          }
+        },
+        {
+          "name": "Relapse94",
+          "necessary": 95001451,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.328": 21800413,
+            "46.329": 10666400,
+            "46.330": 27670450,
+            "46.331": 34864188,
+            "": null
+          }
+        },
+        {
+          "name": "blubbb123",
+          "necessary": 125133294,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.328": 34854621,
+            "46.329": 25122300,
+            "46.330": 35755250,
+            "46.331": 29401123,
+            "": null
+          }
+        },
+        {
+          "name": "jhonkarther",
+          "necessary": 121115224,
+          "unnecessary": null,
+          "verdict": "Necessary",
+          "daily_scores": {
+            "46.328": 52232721,
+            "46.329": 20851950,
+            "46.330": 16478250,
+            "46.331": 31552303,
             "": null
           }
         }
@@ -15029,7 +15029,7 @@
           }
         },
         {
-          "name": "Megalocasiadon",
+          "name": "Buckioio",
           "latest": 0,
           "weekly_avg": 0,
           "values": {
@@ -15044,7 +15044,7 @@
           }
         },
         {
-          "name": "Buckioio",
+          "name": "Megalocasiadon",
           "latest": 0,
           "weekly_avg": 0,
           "values": {
@@ -15104,21 +15104,6 @@
           }
         },
         {
-          "name": "Relapse94",
-          "latest": 0,
-          "weekly_avg": 0,
-          "values": {
-            "2026-11-06": 0,
-            "2026-11-05": 0,
-            "2026-11-04": 0,
-            "2026-11-03": 0,
-            "2026-10-31": 0,
-            "2026-10-30": 0,
-            "2026-10-28": 0,
-            "2026-10-27": 0
-          }
-        },
-        {
           "name": "xXxJoKeRxXx",
           "latest": 0,
           "weekly_avg": 0,
@@ -15134,7 +15119,7 @@
           }
         },
         {
-          "name": "ßKATERINA ß",
+          "name": "Relapse94",
           "latest": 0,
           "weekly_avg": 0,
           "values": {
@@ -15150,6 +15135,21 @@
         },
         {
           "name": "TheStarks",
+          "latest": 0,
+          "weekly_avg": 0,
+          "values": {
+            "2026-11-06": 0,
+            "2026-11-05": 0,
+            "2026-11-04": 0,
+            "2026-11-03": 0,
+            "2026-10-31": 0,
+            "2026-10-30": 0,
+            "2026-10-28": 0,
+            "2026-10-27": 0
+          }
+        },
+        {
+          "name": "ßKATERINA ß",
           "latest": 0,
           "weekly_avg": 0,
           "values": {
@@ -15194,17 +15194,17 @@
           }
         },
         {
-          "name": "AndreResende",
+          "name": "73Katy",
           "latest": 3050,
-          "weekly_avg": 1775,
+          "weekly_avg": 1450,
           "values": {
             "2026-11-06": 3050,
-            "2026-11-05": 0,
-            "2026-11-04": 4050,
+            "2026-11-05": 2750,
+            "2026-11-04": 0,
             "2026-11-03": 0,
             "2026-10-31": 0,
-            "2026-10-30": 3500,
-            "2026-10-28": 200,
+            "2026-10-30": 0,
+            "2026-10-28": 0,
             "2026-10-27": 0
           }
         },
@@ -15224,17 +15224,17 @@
           }
         },
         {
-          "name": "73Katy",
+          "name": "AndreResende",
           "latest": 3050,
-          "weekly_avg": 1450,
+          "weekly_avg": 1775,
           "values": {
             "2026-11-06": 3050,
-            "2026-11-05": 2750,
-            "2026-11-04": 0,
+            "2026-11-05": 0,
+            "2026-11-04": 4050,
             "2026-11-03": 0,
             "2026-10-31": 0,
-            "2026-10-30": 0,
-            "2026-10-28": 0,
+            "2026-10-30": 3500,
+            "2026-10-28": 200,
             "2026-10-27": 0
           }
         },
@@ -15255,6 +15255,36 @@
         },
         {
           "name": "CANONDA",
+          "latest": 0,
+          "weekly_avg": 0,
+          "values": {
+            "2026-11-06": 0,
+            "2026-11-05": 0,
+            "2026-11-04": 0,
+            "2026-11-03": 0,
+            "2026-10-31": 0,
+            "2026-10-30": 0,
+            "2026-10-28": 0,
+            "2026-10-27": 0
+          }
+        },
+        {
+          "name": "BlackHeiX",
+          "latest": 0,
+          "weekly_avg": 712,
+          "values": {
+            "2026-11-06": 0,
+            "2026-11-05": 2850,
+            "2026-11-04": 0,
+            "2026-11-03": 0,
+            "2026-10-31": 0,
+            "2026-10-30": 700,
+            "2026-10-28": 0,
+            "2026-10-27": 0
+          }
+        },
+        {
+          "name": "Mr Xanor",
           "latest": 0,
           "weekly_avg": 0,
           "values": {
@@ -15299,36 +15329,6 @@
           }
         },
         {
-          "name": "Mr Xanor",
-          "latest": 0,
-          "weekly_avg": 0,
-          "values": {
-            "2026-11-06": 0,
-            "2026-11-05": 0,
-            "2026-11-04": 0,
-            "2026-11-03": 0,
-            "2026-10-31": 0,
-            "2026-10-30": 0,
-            "2026-10-28": 0,
-            "2026-10-27": 0
-          }
-        },
-        {
-          "name": "BlackHeiX",
-          "latest": 0,
-          "weekly_avg": 712,
-          "values": {
-            "2026-11-06": 0,
-            "2026-11-05": 2850,
-            "2026-11-04": 0,
-            "2026-11-03": 0,
-            "2026-10-31": 0,
-            "2026-10-30": 700,
-            "2026-10-28": 0,
-            "2026-10-27": 0
-          }
-        },
-        {
           "name": "0 AÇOUGUEIRO",
           "latest": 2750,
           "weekly_avg": 2850,
@@ -15344,11 +15344,11 @@
           }
         },
         {
-          "name": "Inlv1",
-          "latest": 2650,
-          "weekly_avg": 662,
+          "name": "Sosiskaa",
+          "latest": 0,
+          "weekly_avg": 0,
           "values": {
-            "2026-11-06": 2650,
+            "2026-11-06": 0,
             "2026-11-05": 0,
             "2026-11-04": 0,
             "2026-11-03": 0,
@@ -15359,11 +15359,11 @@
           }
         },
         {
-          "name": "Sosiskaa",
-          "latest": 0,
-          "weekly_avg": 0,
+          "name": "Inlv1",
+          "latest": 2650,
+          "weekly_avg": 662,
           "values": {
-            "2026-11-06": 0,
+            "2026-11-06": 2650,
             "2026-11-05": 0,
             "2026-11-04": 0,
             "2026-11-03": 0,
@@ -15434,21 +15434,6 @@
           }
         },
         {
-          "name": "Sandboxman",
-          "latest": 2450,
-          "weekly_avg": 1638,
-          "values": {
-            "2026-11-06": 2450,
-            "2026-11-05": 0,
-            "2026-11-04": 2100,
-            "2026-11-03": 2000,
-            "2026-10-31": 2600,
-            "2026-10-30": 2000,
-            "2026-10-28": 0,
-            "2026-10-27": 0
-          }
-        },
-        {
           "name": "Königinnenreich",
           "latest": 0,
           "weekly_avg": 612,
@@ -15459,6 +15444,21 @@
             "2026-11-03": 0,
             "2026-10-31": 0,
             "2026-10-30": 0,
+            "2026-10-28": 0,
+            "2026-10-27": 0
+          }
+        },
+        {
+          "name": "Sandboxman",
+          "latest": 2450,
+          "weekly_avg": 1638,
+          "values": {
+            "2026-11-06": 2450,
+            "2026-11-05": 0,
+            "2026-11-04": 2100,
+            "2026-11-03": 2000,
+            "2026-10-31": 2600,
+            "2026-10-30": 2000,
             "2026-10-28": 0,
             "2026-10-27": 0
           }
@@ -15629,18 +15629,18 @@
           }
         },
         {
-          "name": "Eisen024",
-          "latest": 1950,
-          "weekly_avg": 1762,
+          "name": "MAJØR",
+          "latest": 0,
+          "weekly_avg": 938,
           "values": {
-            "2026-11-06": 1950,
-            "2026-11-05": 1750,
-            "2026-11-04": 1450,
-            "2026-11-03": 1900,
-            "2026-10-31": 0,
+            "2026-11-06": 0,
+            "2026-11-05": 1950,
+            "2026-11-04": 0,
+            "2026-11-03": 1800,
+            "2026-10-31": 2700,
             "2026-10-30": 0,
-            "2026-10-28": 0,
-            "2026-10-27": 0
+            "2026-10-28": 2650,
+            "2026-10-27": 2400
           }
         },
         {
@@ -15659,18 +15659,18 @@
           }
         },
         {
-          "name": "MAJØR",
-          "latest": 0,
-          "weekly_avg": 938,
+          "name": "Eisen024",
+          "latest": 1950,
+          "weekly_avg": 1762,
           "values": {
-            "2026-11-06": 0,
-            "2026-11-05": 1950,
-            "2026-11-04": 0,
-            "2026-11-03": 1800,
-            "2026-10-31": 2700,
+            "2026-11-06": 1950,
+            "2026-11-05": 1750,
+            "2026-11-04": 1450,
+            "2026-11-03": 1900,
+            "2026-10-31": 0,
             "2026-10-30": 0,
-            "2026-10-28": 2650,
-            "2026-10-27": 2400
+            "2026-10-28": 0,
+            "2026-10-27": 0
           }
         },
         {
@@ -15779,33 +15779,18 @@
           }
         },
         {
-          "name": "DUNGEON KEEPER",
+          "name": "Omori UG)>",
           "latest": 0,
-          "weekly_avg": 625,
+          "weekly_avg": 412,
           "values": {
             "2026-11-06": 0,
-            "2026-11-05": 0,
-            "2026-11-04": 1650,
-            "2026-11-03": 850,
-            "2026-10-31": 0,
-            "2026-10-30": 0,
+            "2026-11-05": 1650,
+            "2026-11-04": 0,
+            "2026-11-03": 0,
+            "2026-10-31": 700,
+            "2026-10-30": 950,
             "2026-10-28": 0,
-            "2026-10-27": 0
-          }
-        },
-        {
-          "name": "Bazïinga",
-          "latest": 1650,
-          "weekly_avg": 2088,
-          "values": {
-            "2026-11-06": 1650,
-            "2026-11-05": 2350,
-            "2026-11-04": 300,
-            "2026-11-03": 4050,
-            "2026-10-31": 0,
-            "2026-10-30": 350,
-            "2026-10-28": 0,
-            "2026-10-27": 0
+            "2026-10-27": 150
           }
         },
         {
@@ -15839,31 +15824,31 @@
           }
         },
         {
-          "name": "Omori UG)>",
-          "latest": 0,
-          "weekly_avg": 412,
+          "name": "Bazïinga",
+          "latest": 1650,
+          "weekly_avg": 2088,
           "values": {
-            "2026-11-06": 0,
-            "2026-11-05": 1650,
-            "2026-11-04": 0,
-            "2026-11-03": 0,
-            "2026-10-31": 700,
-            "2026-10-30": 950,
+            "2026-11-06": 1650,
+            "2026-11-05": 2350,
+            "2026-11-04": 300,
+            "2026-11-03": 4050,
+            "2026-10-31": 0,
+            "2026-10-30": 350,
             "2026-10-28": 0,
-            "2026-10-27": 150
+            "2026-10-27": 0
           }
         },
         {
-          "name": "Ringwraiths",
+          "name": "DUNGEON KEEPER",
           "latest": 0,
-          "weekly_avg": 400,
+          "weekly_avg": 625,
           "values": {
             "2026-11-06": 0,
             "2026-11-05": 0,
-            "2026-11-04": 1600,
-            "2026-11-03": 0,
+            "2026-11-04": 1650,
+            "2026-11-03": 850,
             "2026-10-31": 0,
-            "2026-10-30": 50,
+            "2026-10-30": 0,
             "2026-10-28": 0,
             "2026-10-27": 0
           }
@@ -15884,6 +15869,21 @@
           }
         },
         {
+          "name": "Ringwraiths",
+          "latest": 0,
+          "weekly_avg": 400,
+          "values": {
+            "2026-11-06": 0,
+            "2026-11-05": 0,
+            "2026-11-04": 1600,
+            "2026-11-03": 0,
+            "2026-10-31": 0,
+            "2026-10-30": 50,
+            "2026-10-28": 0,
+            "2026-10-27": 0
+          }
+        },
+        {
           "name": "Everton 123456",
           "latest": 1550,
           "weekly_avg": 2362,
@@ -15899,21 +15899,6 @@
           }
         },
         {
-          "name": "MarchH",
-          "latest": 0,
-          "weekly_avg": 0,
-          "values": {
-            "2026-11-06": 0,
-            "2026-11-05": 0,
-            "2026-11-04": 0,
-            "2026-11-03": 0,
-            "2026-10-31": 0,
-            "2026-10-30": 0,
-            "2026-10-28": 0,
-            "2026-10-27": 0
-          }
-        },
-        {
           "name": "Baby Bax Baba Bax",
           "latest": 1500,
           "weekly_avg": 1550,
@@ -15922,6 +15907,21 @@
             "2026-11-05": 0,
             "2026-11-04": 1650,
             "2026-11-03": 3050,
+            "2026-10-31": 0,
+            "2026-10-30": 0,
+            "2026-10-28": 0,
+            "2026-10-27": 0
+          }
+        },
+        {
+          "name": "MarchH",
+          "latest": 0,
+          "weekly_avg": 0,
+          "values": {
+            "2026-11-06": 0,
+            "2026-11-05": 0,
+            "2026-11-04": 0,
+            "2026-11-03": 0,
             "2026-10-31": 0,
             "2026-10-30": 0,
             "2026-10-28": 0,
@@ -15944,18 +15944,18 @@
           }
         },
         {
-          "name": "Clone",
-          "latest": 1350,
-          "weekly_avg": 1412,
+          "name": "ReflexX",
+          "latest": 0,
+          "weekly_avg": 0,
           "values": {
-            "2026-11-06": 1350,
-            "2026-11-05": 2350,
+            "2026-11-06": 0,
+            "2026-11-05": 0,
             "2026-11-04": 0,
-            "2026-11-03": 1950,
-            "2026-10-31": 800,
-            "2026-10-30": 1450,
-            "2026-10-28": 2150,
-            "2026-10-27": 4350
+            "2026-11-03": 0,
+            "2026-10-31": 0,
+            "2026-10-30": 1350,
+            "2026-10-28": 0,
+            "2026-10-27": 0
           }
         },
         {
@@ -15974,18 +15974,18 @@
           }
         },
         {
-          "name": "ReflexX",
-          "latest": 0,
-          "weekly_avg": 0,
+          "name": "Clone",
+          "latest": 1350,
+          "weekly_avg": 1412,
           "values": {
-            "2026-11-06": 0,
-            "2026-11-05": 0,
+            "2026-11-06": 1350,
+            "2026-11-05": 2350,
             "2026-11-04": 0,
-            "2026-11-03": 0,
-            "2026-10-31": 0,
-            "2026-10-30": 1350,
-            "2026-10-28": 0,
-            "2026-10-27": 0
+            "2026-11-03": 1950,
+            "2026-10-31": 800,
+            "2026-10-30": 1450,
+            "2026-10-28": 2150,
+            "2026-10-27": 4350
           }
         },
         {
@@ -16124,21 +16124,6 @@
           }
         },
         {
-          "name": "DesertSniper",
-          "latest": 650,
-          "weekly_avg": 1475,
-          "values": {
-            "2026-11-06": 650,
-            "2026-11-05": 1250,
-            "2026-11-04": 2450,
-            "2026-11-03": 1550,
-            "2026-10-31": 0,
-            "2026-10-30": 0,
-            "2026-10-28": 1750,
-            "2026-10-27": 2050
-          }
-        },
-        {
           "name": "Nakama Tskulaxo",
           "latest": 650,
           "weekly_avg": 350,
@@ -16151,6 +16136,21 @@
             "2026-10-30": 1200,
             "2026-10-28": 1100,
             "2026-10-27": 0
+          }
+        },
+        {
+          "name": "DesertSniper",
+          "latest": 650,
+          "weekly_avg": 1475,
+          "values": {
+            "2026-11-06": 650,
+            "2026-11-05": 1250,
+            "2026-11-04": 2450,
+            "2026-11-03": 1550,
+            "2026-10-31": 0,
+            "2026-10-30": 0,
+            "2026-10-28": 1750,
+            "2026-10-27": 2050
           }
         },
         {
@@ -16229,21 +16229,6 @@
           }
         },
         {
-          "name": "NocB",
-          "latest": 250,
-          "weekly_avg": 500,
-          "values": {
-            "2026-11-06": 250,
-            "2026-11-05": 0,
-            "2026-11-04": 1750,
-            "2026-11-03": 0,
-            "2026-10-31": 1400,
-            "2026-10-30": 0,
-            "2026-10-28": 0,
-            "2026-10-27": 0
-          }
-        },
-        {
           "name": "Ougat",
           "latest": 0,
           "weekly_avg": 1288,
@@ -16259,7 +16244,22 @@
           }
         },
         {
-          "name": "jhonkarther",
+          "name": "NocB",
+          "latest": 250,
+          "weekly_avg": 500,
+          "values": {
+            "2026-11-06": 250,
+            "2026-11-05": 0,
+            "2026-11-04": 1750,
+            "2026-11-03": 0,
+            "2026-10-31": 1400,
+            "2026-10-30": 0,
+            "2026-10-28": 0,
+            "2026-10-27": 0
+          }
+        },
+        {
+          "name": "SEKRETIK",
           "latest": 0,
           "weekly_avg": 0,
           "values": {
@@ -16274,7 +16274,7 @@
           }
         },
         {
-          "name": "SEKRETIK",
+          "name": "Hassleham",
           "latest": 0,
           "weekly_avg": 0,
           "values": {
@@ -16319,7 +16319,7 @@
           }
         },
         {
-          "name": "Hassleham",
+          "name": "jhonkarther",
           "latest": 0,
           "weekly_avg": 0,
           "values": {
@@ -20082,11 +20082,11 @@
       ]
     }
   },
-  "generated_at": "2026-11-06T04:52:03Z",
-  "stand_berlin": "06.11.2026, 05:52",
+  "generated_at": "2026-11-06T04:57:04Z",
+  "stand_berlin": "06.11.2026, 05:57",
   "source": "google_sheets",
   "source_file": "DawN - Base + Tabs (live)",
-  "snapshot": "2026-11-06T04:52:03",
+  "snapshot": "2026-11-06T04:57:04",
   "links": {
     "title": "DawN",
     "tagline": "Important links",
@@ -20351,7 +20351,7 @@
     }
   ],
   "presence": {
-    "as_of": "2026-11-06T05:52:09+01:00",
+    "as_of": "2026-11-06T05:57:08+01:00",
     "offline_flag_hours": 8,
     "online": {
       "date": "2026-11-06",
