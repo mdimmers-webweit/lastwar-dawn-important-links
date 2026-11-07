@@ -20451,11 +20451,11 @@
       ]
     }
   },
-  "generated_at": "2026-11-07T04:55:25Z",
-  "stand_berlin": "07.11.2026, 05:55",
+  "generated_at": "2026-11-07T08:09:54Z",
+  "stand_berlin": "07.11.2026, 09:09",
   "source": "google_sheets",
   "source_file": "DawN - Base + Tabs (live)",
-  "snapshot": "2026-11-07T04:55:25",
+  "snapshot": "2026-11-07T08:09:54",
   "links": {
     "title": "DawN",
     "tagline": "Important links",
@@ -20720,42 +20720,170 @@
     }
   ],
   "presence": {
-    "as_of": "2026-11-07T05:55:31+01:00",
+    "as_of": "2026-11-07T09:10:00+01:00",
     "offline_flag_hours": 8,
     "online": {
       "date": "2026-11-07",
-      "sampled": 69,
+      "sampled": 68,
       "offline": [
         {
-          "name": "Gubalibre",
-          "hours_offline": 48.0
+          "name": "AndreResende",
+          "hours_offline": 96.0
         },
         {
-          "name": "iamJazzyy",
-          "hours_offline": 11.0
+          "name": "AnnoraX",
+          "hours_offline": 72.0
         },
         {
-          "name": "Mr Xanor",
-          "hours_offline": 9.0
+          "name": "Clone",
+          "hours_offline": 72.0
+        },
+        {
+          "name": "Everton 123456",
+          "hours_offline": 72.0
+        },
+        {
+          "name": "NocB",
+          "hours_offline": 72.0
+        },
+        {
+          "name": "WT1110",
+          "hours_offline": 72.0
+        },
+        {
+          "name": "Yuna",
+          "hours_offline": 72.0
+        },
+        {
+          "name": "73Katy",
+          "hours_offline": 60.0
+        },
+        {
+          "name": "Jazzcat78",
+          "hours_offline": 60.0
         },
         {
           "name": "Kaizennnnnnnnnnnn",
-          "hours_offline": 8.0
+          "hours_offline": 60.0
         },
         {
-          "name": "Lawima",
-          "hours_offline": 8.0
+          "name": "Millanoo",
+          "hours_offline": 60.0
+        },
+        {
+          "name": "Munsoned",
+          "hours_offline": 60.0
+        },
+        {
+          "name": "Southwest01",
+          "hours_offline": 60.0
+        },
+        {
+          "name": "Ringwraiths",
+          "hours_offline": 59.0
         },
         {
           "name": "Megalocasiadon",
-          "hours_offline": 8.0
+          "hours_offline": 54.0
+        },
+        {
+          "name": "TheStarks",
+          "hours_offline": 53.0
+        },
+        {
+          "name": "Fred67290",
+          "hours_offline": 51.0
+        },
+        {
+          "name": "AJ die Beste",
+          "hours_offline": 48.0
+        },
+        {
+          "name": "Bruna Laïs",
+          "hours_offline": 48.0
+        },
+        {
+          "name": "Dani Earth",
+          "hours_offline": 48.0
+        },
+        {
+          "name": "Draurg v2",
+          "hours_offline": 48.0
+        },
+        {
+          "name": "Itamar1130",
+          "hours_offline": 48.0
+        },
+        {
+          "name": "Jiintan",
+          "hours_offline": 48.0
+        },
+        {
+          "name": "The phantom 0",
+          "hours_offline": 48.0
+        },
+        {
+          "name": "Tiane",
+          "hours_offline": 48.0
+        },
+        {
+          "name": "Cmdr William T Riker",
+          "hours_offline": 47.0
+        },
+        {
+          "name": "Gubalibre",
+          "hours_offline": 41.0
+        },
+        {
+          "name": "iamJazzyy",
+          "hours_offline": 14.0
+        },
+        {
+          "name": "Mr Xanor",
+          "hours_offline": 13.0
         },
         {
           "name": "xXxJoKeRxXx",
+          "hours_offline": 11.0
+        },
+        {
+          "name": "blubbb123",
+          "hours_offline": 9.0
+        },
+        {
+          "name": "Fabinho gomes",
+          "hours_offline": 9.0
+        },
+        {
+          "name": "ImpAugustus",
+          "hours_offline": 9.0
+        },
+        {
+          "name": "Juliani86",
+          "hours_offline": 9.0
+        },
+        {
+          "name": "MarchH",
+          "hours_offline": 9.0
+        },
+        {
+          "name": "Tomatofake",
+          "hours_offline": 9.0
+        },
+        {
+          "name": "HeinselHH",
+          "hours_offline": 8.0
+        },
+        {
+          "name": "Optimus Bob",
+          "hours_offline": 8.0
+        },
+        {
+          "name": "SEKRETIK",
           "hours_offline": 8.0
         }
       ],
-      "offline_count": 7
+      "offline_count": 39
     },
     "gifts": {
       "date": "2026-11-07",
