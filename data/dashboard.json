@@ -20082,11 +20082,11 @@
       ]
     }
   },
-  "generated_at": "2026-11-06T16:19:25Z",
-  "stand_berlin": "06.11.2026, 17:19",
+  "generated_at": "2026-11-07T00:09:55Z",
+  "stand_berlin": "07.11.2026, 01:09",
   "source": "google_sheets",
   "source_file": "DawN - Base + Tabs (live)",
-  "snapshot": "2026-11-06T16:19:25",
+  "snapshot": "2026-11-07T00:09:55",
   "links": {
     "title": "DawN",
     "tagline": "Important links",
@@ -20351,38 +20351,26 @@
     }
   ],
   "presence": {
-    "as_of": "2026-11-06T17:19:29+01:00",
+    "as_of": "2026-11-07T01:10:00+01:00",
     "offline_flag_hours": 8,
     "online": {
       "date": "2026-11-06",
       "sampled": 69,
       "offline": [
         {
-          "name": "SEKRETIK",
-          "hours_offline": 24.0
+          "name": "Xx RvE Xx",
+          "hours_offline": 17.0
         },
         {
-          "name": "ImpAugustus",
-          "hours_offline": 19.0
-        },
-        {
-          "name": "Random Attacks",
-          "hours_offline": 15.0
-        },
-        {
-          "name": "Lawima",
+          "name": "PunisherR93",
           "hours_offline": 11.0
         },
         {
-          "name": "Megalocasiadon",
-          "hours_offline": 10.0
-        },
-        {
-          "name": "MarchH",
-          "hours_offline": 9.0
+          "name": "Yuna",
+          "hours_offline": 8.0
         }
       ],
-      "offline_count": 6
+      "offline_count": 3
     },
     "gifts": {
       "date": "2026-11-06",
@@ -20677,7 +20665,7 @@
     "absences": {
       "threshold_hours": 8,
       "iso_week": "2026-W45",
-      "snapshots": 15,
+      "snapshots": 16,
       "per_member": [
         {
           "name": "ImpAugustus",
@@ -20689,7 +20677,7 @@
         },
         {
           "name": "Xx RvE Xx",
-          "count": 10
+          "count": 11
         },
         {
           "name": "Megalocasiadon",
@@ -20698,6 +20686,10 @@
         {
           "name": "Random Attacks",
           "count": 8
+        },
+        {
+          "name": "Yuna",
+          "count": 6
         },
         {
           "name": "CANONDA",
@@ -20709,10 +20701,6 @@
         },
         {
           "name": "Noxnanni",
-          "count": 5
-        },
-        {
-          "name": "Yuna",
           "count": 5
         },
         {
@@ -20964,6 +20952,10 @@
           "count": 1
         },
         {
+          "name": "PunisherR93",
+          "count": 1
+        },
+        {
           "name": "Relapse94",
           "count": 1
         },
@@ -20984,8 +20976,8 @@
           "count": 1
         }
       ],
-      "week_total": 211,
-      "vs_cycle_total": 211,
+      "week_total": 214,
+      "vs_cycle_total": 214,
       "vs_cycle_note": "current_iso_week"
     }
   }
