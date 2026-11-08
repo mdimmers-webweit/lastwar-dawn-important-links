@@ -20451,11 +20451,11 @@
       ]
     }
   },
-  "generated_at": "2026-11-07T16:09:05Z",
-  "stand_berlin": "07.11.2026, 17:09",
+  "generated_at": "2026-11-08T00:09:15Z",
+  "stand_berlin": "08.11.2026, 01:09",
   "source": "google_sheets",
   "source_file": "DawN - Base + Tabs (live)",
-  "snapshot": "2026-11-07T16:09:05",
+  "snapshot": "2026-11-08T00:09:15",
   "links": {
     "title": "DawN",
     "tagline": "Important links",
@@ -20720,58 +20720,46 @@
     }
   ],
   "presence": {
-    "as_of": "2026-11-07T17:09:12+01:00",
+    "as_of": "2026-11-08T01:09:26+01:00",
     "offline_flag_hours": 8,
     "online": {
       "date": "2026-11-07",
-      "sampled": 71,
+      "sampled": 31,
       "offline": [
         {
-          "name": "Everton 123456",
-          "hours_offline": 48.0
+          "name": "Baby Bax Baba Bax",
+          "hours_offline": 24.0
+        },
+        {
+          "name": "Banu89",
+          "hours_offline": 24.0
+        },
+        {
+          "name": "BlackHeiX",
+          "hours_offline": 24.0
         },
         {
           "name": "Gubalibre",
-          "hours_offline": 48.0
-        },
-        {
-          "name": "HeinselHH",
-          "hours_offline": 48.0
-        },
-        {
-          "name": "MAJØR",
-          "hours_offline": 48.0
-        },
-        {
-          "name": "NocB",
-          "hours_offline": 48.0
-        },
-        {
-          "name": "Noxnanni",
-          "hours_offline": 48.0
-        },
-        {
-          "name": "Tomatofake",
-          "hours_offline": 48.0
-        },
-        {
-          "name": "Xx RvE Xx",
-          "hours_offline": 48.0
-        },
-        {
-          "name": "CANONDA",
           "hours_offline": 24.0
         },
         {
-          "name": "Dani Earth",
+          "name": "jacknnn2",
           "hours_offline": 24.0
         },
         {
-          "name": "Fabinho gomes",
+          "name": "JazzHandsThomas",
           "hours_offline": 24.0
         },
         {
-          "name": "Lover Of Manquaca",
+          "name": "jhonkarther",
+          "hours_offline": 24.0
+        },
+        {
+          "name": "Lord Rembe",
+          "hours_offline": 24.0
+        },
+        {
+          "name": "MarchH",
           "hours_offline": 24.0
         },
         {
@@ -20779,11 +20767,7 @@
           "hours_offline": 24.0
         },
         {
-          "name": "Munsoned",
-          "hours_offline": 24.0
-        },
-        {
-          "name": "Rodrigo",
+          "name": "Ringwraiths",
           "hours_offline": 24.0
         },
         {
@@ -20791,31 +20775,15 @@
           "hours_offline": 24.0
         },
         {
-          "name": "Yuna",
+          "name": "Tomatofake",
           "hours_offline": 24.0
         },
         {
-          "name": "ImpAugustus",
-          "hours_offline": 17.0
-        },
-        {
-          "name": "SEKRETIK",
-          "hours_offline": 16.0
-        },
-        {
-          "name": "Neritoo",
-          "hours_offline": 14.0
-        },
-        {
-          "name": "PunisherR93",
-          "hours_offline": 12.0
-        },
-        {
-          "name": "Bruna Laïs",
-          "hours_offline": 10.0
+          "name": "Zettovic",
+          "hours_offline": 24.0
         }
       ],
-      "offline_count": 22
+      "offline_count": 14
     },
     "gifts": {
       "date": "2026-11-07",
@@ -21143,7 +21111,7 @@
     "absences": {
       "threshold_hours": 8,
       "iso_week": "2026-W45",
-      "snapshots": 18,
+      "snapshots": 19,
       "per_member": [
         {
           "name": "ImpAugustus",
@@ -21174,6 +21142,10 @@
           "count": 6
         },
         {
+          "name": "Gubalibre",
+          "count": 6
+        },
+        {
           "name": "Kaizennnnnnnnnnnn",
           "count": 6
         },
@@ -21182,8 +21154,8 @@
           "count": 6
         },
         {
-          "name": "Gubalibre",
-          "count": 5
+          "name": "Tomatofake",
+          "count": 6
         },
         {
           "name": "HeinselHH",
@@ -21198,7 +21170,7 @@
           "count": 5
         },
         {
-          "name": "Tomatofake",
+          "name": "Southwest01",
           "count": 5
         },
         {
@@ -21206,15 +21178,23 @@
           "count": 4
         },
         {
+          "name": "BlackHeiX",
+          "count": 4
+        },
+        {
           "name": "Buckioio",
           "count": 4
         },
         {
-          "name": "Rodrigo",
+          "name": "Lord Rembe",
           "count": 4
         },
         {
-          "name": "Southwest01",
+          "name": "Masterzin",
+          "count": 4
+        },
+        {
+          "name": "Rodrigo",
           "count": 4
         },
         {
@@ -21226,11 +21206,15 @@
           "count": 3
         },
         {
-          "name": "Bazïinga",
+          "name": "Baby Bax Baba Bax",
           "count": 3
         },
         {
-          "name": "BlackHeiX",
+          "name": "Banu89",
+          "count": 3
+        },
+        {
+          "name": "Bazïinga",
           "count": 3
         },
         {
@@ -21266,7 +21250,7 @@
           "count": 3
         },
         {
-          "name": "Lord Rembe",
+          "name": "jhonkarther",
           "count": 3
         },
         {
@@ -21274,7 +21258,7 @@
           "count": 3
         },
         {
-          "name": "Masterzin",
+          "name": "MarchH",
           "count": 3
         },
         {
@@ -21283,6 +21267,10 @@
         },
         {
           "name": "ReflexX",
+          "count": 3
+        },
+        {
+          "name": "Ringwraiths",
           "count": 3
         },
         {
@@ -21298,15 +21286,11 @@
           "count": 3
         },
         {
+          "name": "Zettovic",
+          "count": 3
+        },
+        {
           "name": "73Katy",
-          "count": 2
-        },
-        {
-          "name": "Baby Bax Baba Bax",
-          "count": 2
-        },
-        {
-          "name": "Banu89",
           "count": 2
         },
         {
@@ -21330,7 +21314,7 @@
           "count": 2
         },
         {
-          "name": "jhonkarther",
+          "name": "JazzHandsThomas",
           "count": 2
         },
         {
@@ -21339,10 +21323,6 @@
         },
         {
           "name": "Lover Of Manquaca",
-          "count": 2
-        },
-        {
-          "name": "MarchH",
           "count": 2
         },
         {
@@ -21358,10 +21338,6 @@
           "count": 2
         },
         {
-          "name": "Ringwraiths",
-          "count": 2
-        },
-        {
           "name": "Sosiskaa",
           "count": 2
         },
@@ -21371,10 +21347,6 @@
         },
         {
           "name": "User1904",
-          "count": 2
-        },
-        {
-          "name": "Zettovic",
           "count": 2
         },
         {
@@ -21414,7 +21386,7 @@
           "count": 1
         },
         {
-          "name": "JazzHandsThomas",
+          "name": "jacknnn2",
           "count": 1
         },
         {
@@ -21462,8 +21434,8 @@
           "count": 1
         }
       ],
-      "week_total": 243,
-      "vs_cycle_total": 243,
+      "week_total": 257,
+      "vs_cycle_total": 257,
       "vs_cycle_note": "current_iso_week"
     }
   }
