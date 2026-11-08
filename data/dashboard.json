@@ -20949,11 +20949,11 @@
       ]
     }
   },
-  "generated_at": "2026-11-08T08:09:53Z",
-  "stand_berlin": "08.11.2026, 09:09",
+  "generated_at": "2026-11-08T16:09:51Z",
+  "stand_berlin": "08.11.2026, 17:09",
   "source": "google_sheets",
   "source_file": "DawN - Base + Tabs (live)",
-  "snapshot": "2026-11-08T08:09:53",
+  "snapshot": "2026-11-08T16:09:51",
   "links": {
     "title": "DawN",
     "tagline": "Important links",
@@ -21218,114 +21218,94 @@
     }
   ],
   "presence": {
-    "as_of": "2026-11-08T09:09:59+01:00",
+    "as_of": "2026-11-08T17:09:57+01:00",
     "offline_flag_hours": 8,
     "online": {
       "date": "2026-11-08",
-      "sampled": 69,
+      "sampled": 70,
       "offline": [
         {
-          "name": "Xx RvE Xx",
-          "hours_offline": 18.0
+          "name": "AJ die Beste",
+          "hours_offline": 24.0
         },
         {
-          "name": "Lover Of Manquaca",
-          "hours_offline": 17.0
+          "name": "BlackHeiX",
+          "hours_offline": 24.0
         },
         {
-          "name": "RubiA",
-          "hours_offline": 16.0
+          "name": "Clone",
+          "hours_offline": 24.0
         },
         {
-          "name": "Griffeyga",
-          "hours_offline": 15.0
+          "name": "Dani Earth",
+          "hours_offline": 24.0
         },
         {
-          "name": "AndreResende",
-          "hours_offline": 14.0
-        },
-        {
-          "name": "Buckioio",
-          "hours_offline": 11.0
-        },
-        {
-          "name": "ImpAugustus",
-          "hours_offline": 11.0
-        },
-        {
-          "name": "Megalocasiadon",
-          "hours_offline": 11.0
-        },
-        {
-          "name": "ReflexX",
-          "hours_offline": 11.0
+          "name": "Deaths Brother",
+          "hours_offline": 24.0
         },
         {
           "name": "Filippos4Paok",
+          "hours_offline": 24.0
+        },
+        {
+          "name": "Nakama Tskulaxo",
+          "hours_offline": 24.0
+        },
+        {
+          "name": "ReflexX",
+          "hours_offline": 24.0
+        },
+        {
+          "name": "Rodrigo",
+          "hours_offline": 24.0
+        },
+        {
+          "name": "Southwest01",
+          "hours_offline": 24.0
+        },
+        {
+          "name": "The phantom 0",
+          "hours_offline": 24.0
+        },
+        {
+          "name": "Xx RvE Xx",
+          "hours_offline": 24.0
+        },
+        {
+          "name": "Zettovic",
+          "hours_offline": 24.0
+        },
+        {
+          "name": "Griffeyga",
+          "hours_offline": 23.0
+        },
+        {
+          "name": "ImpAugustus",
+          "hours_offline": 19.0
+        },
+        {
+          "name": "Megalocasiadon",
+          "hours_offline": 19.0
+        },
+        {
+          "name": "Neritoo",
+          "hours_offline": 14.0
+        },
+        {
+          "name": "Andressita MD",
+          "hours_offline": 11.0
+        },
+        {
+          "name": "Yuna",
           "hours_offline": 10.0
         },
         {
-          "name": "Kaizennnnnnnnnnnn",
-          "hours_offline": 10.0
-        },
-        {
-          "name": "Mr Xanor",
-          "hours_offline": 10.0
-        },
-        {
-          "name": "Noxnanni",
-          "hours_offline": 10.0
-        },
-        {
-          "name": "xXxJoKeRxXx",
-          "hours_offline": 10.0
-        },
-        {
-          "name": "Bruna Laïs",
-          "hours_offline": 9.0
-        },
-        {
-          "name": "Rico 2026",
-          "hours_offline": 9.0
-        },
-        {
-          "name": "Ringwraiths",
-          "hours_offline": 9.0
-        },
-        {
-          "name": "Tiane",
-          "hours_offline": 9.0
-        },
-        {
-          "name": "Tomatofake",
-          "hours_offline": 9.0
-        },
-        {
-          "name": "blubbb123",
-          "hours_offline": 8.0
-        },
-        {
-          "name": "damboddambod",
-          "hours_offline": 8.0
-        },
-        {
-          "name": "Jazzcat78",
-          "hours_offline": 8.0
-        },
-        {
-          "name": "Optimus Bob",
-          "hours_offline": 8.0
-        },
-        {
-          "name": "SEKRETIK",
-          "hours_offline": 8.0
-        },
-        {
-          "name": "Squatislav",
+          "name": "73Katy",
           "hours_offline": 8.0
         }
       ],
-      "offline_count": 25
+      "offline_count": 20
     },
     "gifts": {
       "date": "2026-11-08",
