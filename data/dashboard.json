@@ -20949,11 +20949,11 @@
       ]
     }
   },
-  "generated_at": "2026-11-09T08:09:54Z",
-  "stand_berlin": "09.11.2026, 09:09",
+  "generated_at": "2026-11-09T16:19:38Z",
+  "stand_berlin": "09.11.2026, 17:19",
   "source": "google_sheets",
   "source_file": "DawN - Base + Tabs (live)",
-  "snapshot": "2026-11-09T08:09:54",
+  "snapshot": "2026-11-09T16:19:38",
   "links": {
     "title": "DawN",
     "tagline": "Important links",
@@ -21218,7 +21218,7 @@
     }
   ],
   "presence": {
-    "as_of": "2026-11-09T09:10:00+01:00",
+    "as_of": "2026-11-09T17:19:43+01:00",
     "offline_flag_hours": 8,
     "online": {
       "date": "2026-11-09",
