@@ -27,9 +27,9 @@
     "VSLastDate": "2026-11-07",
     "VSWeekMode": "push",
     "VSWeekMin": "7.200.000",
-    "GameDate": "2026-11-08",
+    "GameDate": "2026-11-09",
     "VSWeekYear": "2026",
-    "VSWeekNumber": "45"
+    "VSWeekNumber": "46"
   },
   "members": [
     {
@@ -20949,11 +20949,11 @@
       ]
     }
   },
-  "generated_at": "2026-11-09T00:09:50Z",
-  "stand_berlin": "09.11.2026, 01:09",
+  "generated_at": "2026-11-09T08:09:54Z",
+  "stand_berlin": "09.11.2026, 09:09",
   "source": "google_sheets",
   "source_file": "DawN - Base + Tabs (live)",
-  "snapshot": "2026-11-09T00:09:50",
+  "snapshot": "2026-11-09T08:09:54",
   "links": {
     "title": "DawN",
     "tagline": "Important links",
@@ -21211,29 +21211,37 @@
       "source": "archive"
     },
     {
-      "date": "2026-11-08",
+      "date": "2026-11-09",
       "avg": 0.3316,
       "n": 103,
       "source": "live"
     }
   ],
   "presence": {
-    "as_of": "2026-11-09T01:09:56+01:00",
+    "as_of": "2026-11-09T09:10:00+01:00",
     "offline_flag_hours": 8,
     "online": {
-      "date": "2026-11-08",
+      "date": "2026-11-09",
       "sampled": 69,
       "offline": [
         {
-          "name": "SEKRETIK",
-          "hours_offline": 14.0
+          "name": "CANONDA",
+          "hours_offline": 12.0
         },
         {
-          "name": "Bazïinga",
+          "name": "Fabinho gomes",
           "hours_offline": 11.0
+        },
+        {
+          "name": "Masterzin",
+          "hours_offline": 9.0
+        },
+        {
+          "name": "Megalocasiadon",
+          "hours_offline": 9.0
         }
       ],
-      "offline_count": 2
+      "offline_count": 4
     },
     "gifts": {
       "date": "2026-11-08",
@@ -21524,332 +21532,28 @@
     },
     "absences": {
       "threshold_hours": 8,
-      "iso_week": "2026-W45",
-      "snapshots": 21,
+      "iso_week": "2026-W46",
+      "snapshots": 1,
       "per_member": [
         {
-          "name": "SEKRETIK",
-          "count": 13
-        },
-        {
-          "name": "Xx RvE Xx",
-          "count": 13
-        },
-        {
-          "name": "ImpAugustus",
-          "count": 12
-        },
-        {
-          "name": "Megalocasiadon",
-          "count": 10
-        },
-        {
-          "name": "Random Attacks",
-          "count": 8
-        },
-        {
-          "name": "Yuna",
-          "count": 7
-        },
-        {
           "name": "CANONDA",
-          "count": 6
-        },
-        {
-          "name": "Gubalibre",
-          "count": 6
-        },
-        {
-          "name": "Kaizennnnnnnnnnnn",
-          "count": 6
-        },
-        {
-          "name": "Noxnanni",
-          "count": 6
-        },
-        {
-          "name": "Tomatofake",
-          "count": 6
-        },
-        {
-          "name": "HeinselHH",
-          "count": 5
-        },
-        {
-          "name": "Lawima",
-          "count": 5
-        },
-        {
-          "name": "Neritoo",
-          "count": 5
-        },
-        {
-          "name": "Southwest01",
-          "count": 5
-        },
-        {
-          "name": "AJ die Beste",
-          "count": 4
-        },
-        {
-          "name": "Bazïinga",
-          "count": 4
-        },
-        {
-          "name": "BlackHeiX",
-          "count": 4
-        },
-        {
-          "name": "Buckioio",
-          "count": 4
-        },
-        {
-          "name": "Griffeyga",
-          "count": 4
-        },
-        {
-          "name": "Lord Rembe",
-          "count": 4
-        },
-        {
-          "name": "Masterzin",
-          "count": 4
-        },
-        {
-          "name": "Rodrigo",
-          "count": 4
-        },
-        {
-          "name": "RubiA",
-          "count": 4
-        },
-        {
-          "name": "xXxJoKeRxXx",
-          "count": 4
-        },
-        {
-          "name": "Andressita MD",
-          "count": 3
-        },
-        {
-          "name": "Baby Bax Baba Bax",
-          "count": 3
-        },
-        {
-          "name": "Banu89",
-          "count": 3
-        },
-        {
-          "name": "Bruna Laïs",
-          "count": 3
-        },
-        {
-          "name": "Dani Earth",
-          "count": 3
-        },
-        {
-          "name": "Everton 123456",
-          "count": 3
+          "count": 1
         },
         {
           "name": "Fabinho gomes",
-          "count": 3
-        },
-        {
-          "name": "Filippos4Paok",
-          "count": 3
-        },
-        {
-          "name": "Fred67290",
-          "count": 3
-        },
-        {
-          "name": "iamJazzyy",
-          "count": 3
-        },
-        {
-          "name": "jhonkarther",
-          "count": 3
-        },
-        {
-          "name": "Lover Of Manquaca",
-          "count": 3
-        },
-        {
-          "name": "MAJØR",
-          "count": 3
-        },
-        {
-          "name": "MarchH",
-          "count": 3
-        },
-        {
-          "name": "Mr Xanor",
-          "count": 3
-        },
-        {
-          "name": "ReflexX",
-          "count": 3
-        },
-        {
-          "name": "Ringwraiths",
-          "count": 3
-        },
-        {
-          "name": "The phantom 0",
-          "count": 3
-        },
-        {
-          "name": "TheStarks",
-          "count": 3
-        },
-        {
-          "name": "Zettovic",
-          "count": 3
-        },
-        {
-          "name": "73Katy",
-          "count": 2
-        },
-        {
-          "name": "blubbb123",
-          "count": 2
-        },
-        {
-          "name": "Cmdr William T Riker",
-          "count": 2
-        },
-        {
-          "name": "Deaths Brother",
-          "count": 2
-        },
-        {
-          "name": "Inlv1",
-          "count": 2
-        },
-        {
-          "name": "Jazzcat78",
-          "count": 2
-        },
-        {
-          "name": "JazzHandsThomas",
-          "count": 2
-        },
-        {
-          "name": "Juliani86",
-          "count": 2
-        },
-        {
-          "name": "Omori UG)>",
-          "count": 2
-        },
-        {
-          "name": "PunisherR93",
-          "count": 2
-        },
-        {
-          "name": "Rico 2026",
-          "count": 2
-        },
-        {
-          "name": "Sosiskaa",
-          "count": 2
-        },
-        {
-          "name": "Tiane",
-          "count": 2
-        },
-        {
-          "name": "User1904",
-          "count": 2
-        },
-        {
-          "name": "ßKATERINA ß",
-          "count": 2
-        },
-        {
-          "name": "Alex000392",
           "count": 1
         },
         {
-          "name": "AndreResende",
+          "name": "Masterzin",
           "count": 1
         },
         {
-          "name": "AnnoraX",
-          "count": 1
-        },
-        {
-          "name": "chalako77",
-          "count": 1
-        },
-        {
-          "name": "Clone",
-          "count": 1
-        },
-        {
-          "name": "damboddambod",
-          "count": 1
-        },
-        {
-          "name": "Erdbeermarmelade",
-          "count": 1
-        },
-        {
-          "name": "Hassleham",
-          "count": 1
-        },
-        {
-          "name": "jacknnn2",
-          "count": 1
-        },
-        {
-          "name": "Jiintan",
-          "count": 1
-        },
-        {
-          "name": "Munsoned",
-          "count": 1
-        },
-        {
-          "name": "Nakama Tskulaxo",
-          "count": 1
-        },
-        {
-          "name": "NocB",
-          "count": 1
-        },
-        {
-          "name": "Optimus Bob",
-          "count": 1
-        },
-        {
-          "name": "Outerspace Chase",
-          "count": 1
-        },
-        {
-          "name": "Relapse94",
-          "count": 1
-        },
-        {
-          "name": "Squatislav",
-          "count": 1
-        },
-        {
-          "name": "Valério",
-          "count": 1
-        },
-        {
-          "name": "xJeeane",
-          "count": 1
-        },
-        {
-          "name": "СТРАННИК",
+          "name": "Megalocasiadon",
           "count": 1
         }
       ],
-      "week_total": 263,
-      "vs_cycle_total": 263,
+      "week_total": 4,
+      "vs_cycle_total": 4,
       "vs_cycle_note": "current_iso_week"
     }
   }
