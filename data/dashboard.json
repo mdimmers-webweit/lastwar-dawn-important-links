@@ -18946,11 +18946,11 @@
       ]
     }
   },
-  "generated_at": "2026-11-10T04:54:56Z",
-  "stand_berlin": "10.11.2026, 05:54",
+  "generated_at": "2026-11-10T08:07:49Z",
+  "stand_berlin": "10.11.2026, 09:07",
   "source": "google_sheets",
   "source_file": "DawN - Base + Tabs (live)",
-  "snapshot": "2026-11-10T04:54:56",
+  "snapshot": "2026-11-10T08:07:49",
   "links": {
     "title": "DawN",
     "tagline": "Important links",
@@ -19215,46 +19215,30 @@
     }
   ],
   "presence": {
-    "as_of": "2026-11-10T05:55:02+01:00",
+    "as_of": "2026-11-10T09:09:55+01:00",
     "offline_flag_hours": 8,
     "online": {
       "date": "2026-11-10",
-      "sampled": 67,
+      "sampled": 68,
       "offline": [
         {
-          "name": "Alex000392",
-          "hours_offline": 58.0
-        },
-        {
           "name": "Neritoo",
-          "hours_offline": 22.0
+          "hours_offline": 24.0
         },
         {
           "name": "ImpAugustus",
-          "hours_offline": 14.0
+          "hours_offline": 18.0
         },
         {
           "name": "CANONDA",
-          "hours_offline": 9.0
+          "hours_offline": 12.0
         },
         {
-          "name": "Gubalibre",
-          "hours_offline": 9.0
-        },
-        {
-          "name": "Xx RvE Xx",
-          "hours_offline": 9.0
-        },
-        {
-          "name": "Buckioio",
-          "hours_offline": 8.0
-        },
-        {
-          "name": "xXxJoKeRxXx",
+          "name": "Andressita MD",
           "hours_offline": 8.0
         }
       ],
-      "offline_count": 8
+      "offline_count": 4
     },
     "gifts": {
       "date": "2026-11-10",
@@ -19501,22 +19485,26 @@
     "absences": {
       "threshold_hours": 8,
       "iso_week": "2026-W46",
-      "snapshots": 3,
+      "snapshots": 4,
       "per_member": [
         {
           "name": "CANONDA",
-          "count": 2
+          "count": 3
         },
         {
           "name": "ImpAugustus",
-          "count": 2
+          "count": 3
         },
         {
           "name": "Neritoo",
-          "count": 2
+          "count": 3
         },
         {
           "name": "Alex000392",
+          "count": 1
+        },
+        {
+          "name": "Andressita MD",
           "count": 1
         },
         {
@@ -19548,8 +19536,8 @@
           "count": 1
         }
       ],
-      "week_total": 14,
-      "vs_cycle_total": 14,
+      "week_total": 18,
+      "vs_cycle_total": 18,
       "vs_cycle_note": "current_iso_week"
     }
   }
