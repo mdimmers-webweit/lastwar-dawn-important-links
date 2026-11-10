@@ -20949,11 +20949,11 @@
       ]
     }
   },
-  "generated_at": "2026-11-09T16:19:38Z",
-  "stand_berlin": "09.11.2026, 17:19",
+  "generated_at": "2026-11-10T00:09:43Z",
+  "stand_berlin": "10.11.2026, 01:09",
   "source": "google_sheets",
   "source_file": "DawN - Base + Tabs (live)",
-  "snapshot": "2026-11-09T16:19:38",
+  "snapshot": "2026-11-10T00:09:43",
   "links": {
     "title": "DawN",
     "tagline": "Important links",
@@ -21218,30 +21218,22 @@
     }
   ],
   "presence": {
-    "as_of": "2026-11-09T17:19:43+01:00",
+    "as_of": "2026-11-10T01:09:48+01:00",
     "offline_flag_hours": 8,
     "online": {
       "date": "2026-11-09",
-      "sampled": 69,
+      "sampled": 68,
       "offline": [
         {
-          "name": "CANONDA",
-          "hours_offline": 12.0
+          "name": "Neritoo",
+          "hours_offline": 18.0
         },
         {
-          "name": "Fabinho gomes",
-          "hours_offline": 11.0
-        },
-        {
-          "name": "Masterzin",
-          "hours_offline": 9.0
-        },
-        {
-          "name": "Megalocasiadon",
-          "hours_offline": 9.0
+          "name": "ImpAugustus",
+          "hours_offline": 10.0
         }
       ],
-      "offline_count": 4
+      "offline_count": 2
     },
     "gifts": {
       "date": "2026-11-08",
@@ -21533,7 +21525,7 @@
     "absences": {
       "threshold_hours": 8,
       "iso_week": "2026-W46",
-      "snapshots": 1,
+      "snapshots": 2,
       "per_member": [
         {
           "name": "CANONDA",
@@ -21544,16 +21536,24 @@
           "count": 1
         },
         {
+          "name": "ImpAugustus",
+          "count": 1
+        },
+        {
           "name": "Masterzin",
           "count": 1
         },
         {
           "name": "Megalocasiadon",
           "count": 1
+        },
+        {
+          "name": "Neritoo",
+          "count": 1
         }
       ],
-      "week_total": 4,
-      "vs_cycle_total": 4,
+      "week_total": 6,
+      "vs_cycle_total": 6,
       "vs_cycle_note": "current_iso_week"
     }
   }
