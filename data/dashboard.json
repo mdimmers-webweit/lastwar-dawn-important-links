@@ -18946,11 +18946,11 @@
       ]
     }
   },
-  "generated_at": "2026-11-10T08:07:49Z",
-  "stand_berlin": "10.11.2026, 09:07",
+  "generated_at": "2026-11-10T16:09:50Z",
+  "stand_berlin": "10.11.2026, 17:09",
   "source": "google_sheets",
   "source_file": "DawN - Base + Tabs (live)",
-  "snapshot": "2026-11-10T08:07:49",
+  "snapshot": "2026-11-10T16:09:50",
   "links": {
     "title": "DawN",
     "tagline": "Important links",
@@ -19215,30 +19215,34 @@
     }
   ],
   "presence": {
-    "as_of": "2026-11-10T09:09:55+01:00",
+    "as_of": "2026-11-10T17:09:56+01:00",
     "offline_flag_hours": 8,
     "online": {
       "date": "2026-11-10",
       "sampled": 68,
       "offline": [
         {
-          "name": "Neritoo",
-          "hours_offline": 24.0
-        },
-        {
-          "name": "ImpAugustus",
-          "hours_offline": 18.0
-        },
-        {
           "name": "CANONDA",
-          "hours_offline": 12.0
+          "hours_offline": 20.0
         },
         {
-          "name": "Andressita MD",
-          "hours_offline": 8.0
+          "name": "Hassleham",
+          "hours_offline": 15.0
+        },
+        {
+          "name": "TheStarks",
+          "hours_offline": 11.0
+        },
+        {
+          "name": "SEKRETIK",
+          "hours_offline": 9.0
+        },
+        {
+          "name": "Xx RvE Xx",
+          "hours_offline": 9.0
         }
       ],
-      "offline_count": 4
+      "offline_count": 5
     },
     "gifts": {
       "date": "2026-11-10",
@@ -19485,11 +19489,11 @@
     "absences": {
       "threshold_hours": 8,
       "iso_week": "2026-W46",
-      "snapshots": 4,
+      "snapshots": 5,
       "per_member": [
         {
           "name": "CANONDA",
-          "count": 3
+          "count": 4
         },
         {
           "name": "ImpAugustus",
@@ -19498,6 +19502,10 @@
         {
           "name": "Neritoo",
           "count": 3
+        },
+        {
+          "name": "Xx RvE Xx",
+          "count": 2
         },
         {
           "name": "Alex000392",
@@ -19520,6 +19528,10 @@
           "count": 1
         },
         {
+          "name": "Hassleham",
+          "count": 1
+        },
+        {
           "name": "Masterzin",
           "count": 1
         },
@@ -19528,7 +19540,11 @@
           "count": 1
         },
         {
-          "name": "Xx RvE Xx",
+          "name": "SEKRETIK",
+          "count": 1
+        },
+        {
+          "name": "TheStarks",
           "count": 1
         },
         {
@@ -19536,8 +19552,8 @@
           "count": 1
         }
       ],
-      "week_total": 18,
-      "vs_cycle_total": 18,
+      "week_total": 23,
+      "vs_cycle_total": 23,
       "vs_cycle_note": "current_iso_week"
     }
   }
