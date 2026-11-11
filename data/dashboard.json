@@ -19406,11 +19406,11 @@
       ]
     }
   },
-  "generated_at": "2026-11-11T08:09:31Z",
-  "stand_berlin": "11.11.2026, 09:09",
+  "generated_at": "2026-11-11T16:08:44Z",
+  "stand_berlin": "11.11.2026, 17:08",
   "source": "google_sheets",
   "source_file": "DawN - Base + Tabs (live)",
-  "snapshot": "2026-11-11T08:09:31",
+  "snapshot": "2026-11-11T16:08:44",
   "links": {
     "title": "DawN",
     "tagline": "Important links",
@@ -19675,102 +19675,82 @@
     }
   ],
   "presence": {
-    "as_of": "2026-11-11T09:09:35+01:00",
+    "as_of": "2026-11-11T17:08:50+01:00",
     "offline_flag_hours": 8,
     "online": {
       "date": "2026-11-11",
-      "sampled": 67,
+      "sampled": 66,
       "offline": [
         {
-          "name": "HeinselHH",
+          "name": "jhonkarther",
           "hours_offline": 72.0
         },
         {
-          "name": "TheStarks",
+          "name": "Kaizennnnnnnnnnnn",
           "hours_offline": 72.0
-        },
-        {
-          "name": "BlackHeiX",
-          "hours_offline": 48.0
-        },
-        {
-          "name": "Gubalibre",
-          "hours_offline": 48.0
-        },
-        {
-          "name": "Itamar1130",
-          "hours_offline": 48.0
-        },
-        {
-          "name": "jacknnn2",
-          "hours_offline": 48.0
-        },
-        {
-          "name": "Mr Xanor",
-          "hours_offline": 48.0
-        },
-        {
-          "name": "Optimus Bob",
-          "hours_offline": 48.0
-        },
-        {
-          "name": "Ringwraiths",
-          "hours_offline": 48.0
-        },
-        {
-          "name": "Xx RvE Xx",
-          "hours_offline": 48.0
-        },
-        {
-          "name": "3KATERINA (3",
-          "hours_offline": 24.0
-        },
-        {
-          "name": "Buckioio",
-          "hours_offline": 24.0
-        },
-        {
-          "name": "DesertSniper",
-          "hours_offline": 24.0
         },
         {
           "name": "MAJØR",
+          "hours_offline": 72.0
+        },
+        {
+          "name": "PunisherR93",
+          "hours_offline": 72.0
+        },
+        {
+          "name": "Random Attacks",
+          "hours_offline": 72.0
+        },
+        {
+          "name": "Lover Of Manquaca",
+          "hours_offline": 48.0
+        },
+        {
+          "name": "AJ die Beste",
           "hours_offline": 24.0
         },
         {
-          "name": "Millanoo",
+          "name": "Baby Bax Baba Bax",
           "hours_offline": 24.0
-        },
-        {
-          "name": "Southwest01",
-          "hours_offline": 24.0
-        },
-        {
-          "name": "WT1110",
-          "hours_offline": 24.0
-        },
-        {
-          "name": "RubiA",
-          "hours_offline": 14.0
-        },
-        {
-          "name": "ImpAugustus",
-          "hours_offline": 11.0
-        },
-        {
-          "name": "Noxnanni",
-          "hours_offline": 9.0
         },
         {
           "name": "Bazïinga",
-          "hours_offline": 8.0
+          "hours_offline": 24.0
         },
         {
-          "name": "damboddambod",
-          "hours_offline": 8.0
+          "name": "Draurg v2",
+          "hours_offline": 24.0
+        },
+        {
+          "name": "HeinselHH",
+          "hours_offline": 24.0
+        },
+        {
+          "name": "Juliani86",
+          "hours_offline": 24.0
+        },
+        {
+          "name": "Lawima",
+          "hours_offline": 24.0
+        },
+        {
+          "name": "ImpAugustus",
+          "hours_offline": 19.0
+        },
+        {
+          "name": "Neritoo",
+          "hours_offline": 14.0
+        },
+        {
+          "name": "TheStarks",
+          "hours_offline": 11.0
+        },
+        {
+          "name": "Xx RvE Xx",
+          "hours_offline": 10.0
         }
       ],
-      "offline_count": 22
+      "offline_count": 17
     },
     "gifts": {
       "date": "2026-11-11",
@@ -20020,22 +20000,26 @@
     "absences": {
       "threshold_hours": 8,
       "iso_week": "2026-W46",
-      "snapshots": 6,
+      "snapshots": 7,
       "per_member": [
+        {
+          "name": "Neritoo",
+          "count": 5
+        },
         {
           "name": "CANONDA",
           "count": 4
         },
         {
-          "name": "Neritoo",
+          "name": "ImpAugustus",
           "count": 4
         },
         {
-          "name": "ImpAugustus",
-          "count": 3
+          "name": "Xx RvE Xx",
+          "count": 4
         },
         {
-          "name": "Xx RvE Xx",
+          "name": "TheStarks",
           "count": 3
         },
         {
@@ -20047,15 +20031,35 @@
           "count": 2
         },
         {
+          "name": "Baby Bax Baba Bax",
+          "count": 2
+        },
+        {
+          "name": "Draurg v2",
+          "count": 2
+        },
+        {
+          "name": "Kaizennnnnnnnnnnn",
+          "count": 2
+        },
+        {
+          "name": "Lover Of Manquaca",
+          "count": 2
+        },
+        {
           "name": "Megalocasiadon",
           "count": 2
         },
         {
-          "name": "TheStarks",
+          "name": "PunisherR93",
           "count": 2
         },
         {
           "name": "0 AÇOUGUEIRO",
+          "count": 1
+        },
+        {
+          "name": "AJ die Beste",
           "count": 1
         },
         {
@@ -20067,7 +20071,7 @@
           "count": 1
         },
         {
-          "name": "Baby Bax Baba Bax",
+          "name": "Bazïinga",
           "count": 1
         },
         {
@@ -20087,10 +20091,6 @@
           "count": 1
         },
         {
-          "name": "Draurg v2",
-          "count": 1
-        },
-        {
           "name": "Fabinho gomes",
           "count": 1
         },
@@ -20107,6 +20107,10 @@
           "count": 1
         },
         {
+          "name": "HeinselHH",
+          "count": 1
+        },
+        {
           "name": "iamJazzyy",
           "count": 1
         },
@@ -20115,11 +20119,19 @@
           "count": 1
         },
         {
-          "name": "Kaizennnnnnnnnnnn",
+          "name": "jhonkarther",
           "count": 1
         },
         {
-          "name": "Lover Of Manquaca",
+          "name": "Juliani86",
+          "count": 1
+        },
+        {
+          "name": "Lawima",
+          "count": 1
+        },
+        {
+          "name": "MAJØR",
           "count": 1
         },
         {
@@ -20135,7 +20147,7 @@
           "count": 1
         },
         {
-          "name": "PunisherR93",
+          "name": "Random Attacks",
           "count": 1
         },
         {
@@ -20167,8 +20179,8 @@
           "count": 1
         }
       ],
-      "week_total": 50,
-      "vs_cycle_total": 50,
+      "week_total": 67,
+      "vs_cycle_total": 67,
       "vs_cycle_note": "current_iso_week"
     }
   }
