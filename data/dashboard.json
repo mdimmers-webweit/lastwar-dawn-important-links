@@ -18946,11 +18946,11 @@
       ]
     }
   },
-  "generated_at": "2026-11-10T16:09:50Z",
-  "stand_berlin": "10.11.2026, 17:09",
+  "generated_at": "2026-11-11T00:08:25Z",
+  "stand_berlin": "11.11.2026, 01:08",
   "source": "google_sheets",
   "source_file": "DawN - Base + Tabs (live)",
-  "snapshot": "2026-11-10T16:09:50",
+  "snapshot": "2026-11-11T00:08:25",
   "links": {
     "title": "DawN",
     "tagline": "Important links",
@@ -19215,34 +19215,30 @@
     }
   ],
   "presence": {
-    "as_of": "2026-11-10T17:09:56+01:00",
+    "as_of": "2026-11-11T01:08:29+01:00",
     "offline_flag_hours": 8,
     "online": {
       "date": "2026-11-10",
-      "sampled": 68,
+      "sampled": 66,
       "offline": [
         {
-          "name": "CANONDA",
-          "hours_offline": 20.0
+          "name": "HeinselHH",
+          "hours_offline": 10.0
         },
         {
-          "name": "Hassleham",
-          "hours_offline": 15.0
+          "name": "Neritoo",
+          "hours_offline": 10.0
         },
         {
-          "name": "TheStarks",
-          "hours_offline": 11.0
-        },
-        {
-          "name": "SEKRETIK",
+          "name": "Kaizennnnnnnnnnnn",
           "hours_offline": 9.0
         },
         {
-          "name": "Xx RvE Xx",
-          "hours_offline": 9.0
+          "name": "iamJazzyy",
+          "hours_offline": 8.0
         }
       ],
-      "offline_count": 5
+      "offline_count": 4
     },
     "gifts": {
       "date": "2026-11-10",
