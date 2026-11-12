@@ -19277,11 +19277,11 @@
       ]
     }
   },
-  "generated_at": "2026-11-12T08:09:42Z",
-  "stand_berlin": "12.11.2026, 09:09",
+  "generated_at": "2026-11-12T16:08:33Z",
+  "stand_berlin": "12.11.2026, 17:08",
   "source": "google_sheets",
   "source_file": "DawN - Base + Tabs (live)",
-  "snapshot": "2026-11-12T08:09:42",
+  "snapshot": "2026-11-12T16:08:33",
   "links": {
     "title": "DawN",
     "tagline": "Important links",
@@ -19546,62 +19546,38 @@
     }
   ],
   "presence": {
-    "as_of": "2026-11-12T09:09:47+01:00",
+    "as_of": "2026-11-12T17:08:38+01:00",
     "offline_flag_hours": 8,
     "online": {
       "date": "2026-11-12",
-      "sampled": 67,
+      "sampled": 66,
       "offline": [
         {
-          "name": "AJ die Beste",
-          "hours_offline": 24.0
+          "name": "Bazïinga",
+          "hours_offline": 58.0
         },
         {
-          "name": "BlackHeiX",
-          "hours_offline": 24.0
+          "name": "AndreResende",
+          "hours_offline": 57.0
         },
         {
-          "name": "Dani Earth",
-          "hours_offline": 24.0
+          "name": "Andressita MD",
+          "hours_offline": 13.0
         },
         {
-          "name": "Fred67290",
-          "hours_offline": 24.0
+          "name": "HeinselHH",
+          "hours_offline": 11.0
         },
         {
-          "name": "Gubalibre",
-          "hours_offline": 24.0
+          "name": "Xx RvE Xx",
+          "hours_offline": 11.0
         },
         {
-          "name": "jhonkarther",
-          "hours_offline": 24.0
-        },
-        {
-          "name": "Lawima",
-          "hours_offline": 24.0
-        },
-        {
-          "name": "Relapse94",
-          "hours_offline": 24.0
-        },
-        {
-          "name": "Ringwraiths",
-          "hours_offline": 24.0
-        },
-        {
-          "name": "Sandboxman",
-          "hours_offline": 24.0
-        },
-        {
-          "name": "ImpAugustus",
-          "hours_offline": 9.0
-        },
-        {
-          "name": "Noxnanni",
-          "hours_offline": 8.0
+          "name": "Megalocasiadon",
+          "hours_offline": 10.0
         }
       ],
-      "offline_count": 12
+      "offline_count": 6
     },
     "gifts": {
       "date": "2026-11-12",
@@ -19911,11 +19887,15 @@
     "absences": {
       "threshold_hours": 8,
       "iso_week": "2026-W46",
-      "snapshots": 9,
+      "snapshots": 10,
       "per_member": [
         {
           "name": "Neritoo",
           "count": 6
+        },
+        {
+          "name": "Xx RvE Xx",
+          "count": 5
         },
         {
           "name": "CANONDA",
@@ -19930,15 +19910,19 @@
           "count": 4
         },
         {
-          "name": "Xx RvE Xx",
-          "count": 4
+          "name": "Andressita MD",
+          "count": 3
+        },
+        {
+          "name": "Megalocasiadon",
+          "count": 3
         },
         {
           "name": "Alex000392",
           "count": 2
         },
         {
-          "name": "Andressita MD",
+          "name": "AndreResende",
           "count": 2
         },
         {
@@ -19946,7 +19930,15 @@
           "count": 2
         },
         {
+          "name": "Bazïinga",
+          "count": 2
+        },
+        {
           "name": "Draurg v2",
+          "count": 2
+        },
+        {
+          "name": "HeinselHH",
           "count": 2
         },
         {
@@ -19955,10 +19947,6 @@
         },
         {
           "name": "Lover Of Manquaca",
-          "count": 2
-        },
-        {
-          "name": "Megalocasiadon",
           "count": 2
         },
         {
@@ -19986,15 +19974,7 @@
           "count": 1
         },
         {
-          "name": "AndreResende",
-          "count": 1
-        },
-        {
           "name": "AnnoraX",
-          "count": 1
-        },
-        {
-          "name": "Bazïinga",
           "count": 1
         },
         {
@@ -20027,10 +20007,6 @@
         },
         {
           "name": "Hassleham",
-          "count": 1
-        },
-        {
-          "name": "HeinselHH",
           "count": 1
         },
         {
@@ -20094,8 +20070,8 @@
           "count": 1
         }
       ],
-      "week_total": 72,
-      "vs_cycle_total": 72,
+      "week_total": 78,
+      "vs_cycle_total": 78,
       "vs_cycle_note": "current_iso_week"
     }
   }
