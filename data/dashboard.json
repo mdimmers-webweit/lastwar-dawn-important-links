@@ -140,7 +140,7 @@
       "kills": "+41.873",
       "kills_pct": 0.0033375162878574124,
       "events": "10/10",
-      "ds": null,
+      "ds": true,
       "cs": null,
       "season_activity": 0.3,
       "season_display": "30,0%",
@@ -182,13 +182,13 @@
         "role": "R4",
         "thp": 121000000,
         "thp_display": "121000000",
-        "preferred_team": "",
-        "preferred_slot": "",
-        "request": "",
-        "registered": null,
-        "registered_display": "",
-        "played": null,
-        "played_display": "",
+        "preferred_team": "Team B",
+        "preferred_slot": "09:00",
+        "request": "Yes",
+        "registered": true,
+        "registered_display": "Yes",
+        "played": true,
+        "played_display": "Yes",
         "comment": ""
       },
       "cs_master": {
@@ -376,8 +376,8 @@
         "role": "R4",
         "thp": 166400000,
         "thp_display": "166400000",
-        "preferred_team": "Team B",
-        "preferred_slot": "09:00",
+        "preferred_team": "Team A",
+        "preferred_slot": "18:00",
         "request": "Yes",
         "registered": true,
         "registered_display": "Yes",
@@ -856,8 +856,8 @@
         "role": "R4",
         "thp": 143400000,
         "thp_display": "143400000",
-        "preferred_team": "Team B",
-        "preferred_slot": "09:00",
+        "preferred_team": "Team A",
+        "preferred_slot": "18:00",
         "request": "Yes",
         "registered": true,
         "registered_display": "Yes",
@@ -1202,7 +1202,7 @@
       "kills": "±0",
       "kills_pct": 0.0,
       "events": "10/10",
-      "ds": true,
+      "ds": false,
       "cs": true,
       "season_activity": 0.0,
       "season_display": "0,0%",
@@ -1247,11 +1247,11 @@
         "preferred_team": "Team A",
         "preferred_slot": "18:00",
         "request": "Yes",
-        "registered": true,
-        "registered_display": "Yes",
-        "played": true,
-        "played_display": "Yes",
-        "comment": ""
+        "registered": false,
+        "registered_display": "No",
+        "played": false,
+        "played_display": "No",
+        "comment": "N"
       },
       "cs_master": {
         "name": "Bruna Laïs",
@@ -1299,7 +1299,7 @@
       "kills": "±0",
       "kills_pct": 0.0,
       "events": "10/10",
-      "ds": false,
+      "ds": true,
       "cs": true,
       "season_activity": 0.0,
       "season_display": "0,0%",
@@ -1344,11 +1344,11 @@
         "preferred_team": "Team A",
         "preferred_slot": "18:00",
         "request": "Yes",
-        "registered": false,
-        "registered_display": "No",
-        "played": null,
-        "played_display": "",
-        "comment": "N"
+        "registered": true,
+        "registered_display": "Yes",
+        "played": true,
+        "played_display": "Yes",
+        "comment": "N/S"
       },
       "cs_master": {
         "name": "Andressita MD",
@@ -1445,7 +1445,7 @@
         "registered_display": "Yes",
         "played": true,
         "played_display": "Yes",
-        "comment": ""
+        "comment": "S"
       },
       "cs_master": {
         "name": "Cmdr William T Riker",
@@ -1828,7 +1828,7 @@
         "registered_display": "Yes",
         "played": true,
         "played_display": "Yes",
-        "comment": "S"
+        "comment": ""
       },
       "cs_master": {
         "name": "Lana 67",
@@ -1876,7 +1876,7 @@
       "kills": "+158",
       "kills_pct": 4.8983165292141175e-05,
       "events": "10/10",
-      "ds": true,
+      "ds": null,
       "cs": null,
       "season_activity": 0.0,
       "season_display": "0,0%",
@@ -1918,13 +1918,13 @@
         "role": "R3",
         "thp": 125900000,
         "thp_display": "125900000",
-        "preferred_team": "Team A",
-        "preferred_slot": "18:00",
-        "request": "Yes",
-        "registered": true,
-        "registered_display": "Yes",
-        "played": true,
-        "played_display": "Yes",
+        "preferred_team": "",
+        "preferred_slot": "",
+        "request": "",
+        "registered": null,
+        "registered_display": "",
+        "played": null,
+        "played_display": "",
         "comment": ""
       },
       "cs_master": {
@@ -1973,7 +1973,7 @@
       "kills": "±0",
       "kills_pct": 0.0,
       "events": "10/10",
-      "ds": null,
+      "ds": true,
       "cs": true,
       "season_activity": 0.0,
       "season_display": "0,0%",
@@ -2015,14 +2015,14 @@
         "role": "R3",
         "thp": 99500000,
         "thp_display": "99500000",
-        "preferred_team": "",
-        "preferred_slot": "",
-        "request": "",
-        "registered": null,
-        "registered_display": "",
-        "played": null,
-        "played_display": "",
-        "comment": ""
+        "preferred_team": "Team B",
+        "preferred_slot": "09:00",
+        "request": "Yes",
+        "registered": true,
+        "registered_display": "Yes",
+        "played": true,
+        "played_display": "Yes",
+        "comment": "S"
       },
       "cs_master": {
         "name": "Everton 123456",
@@ -2167,7 +2167,7 @@
       "kills": "+401",
       "kills_pct": 0.00017495720965502015,
       "events": "10/10",
-      "ds": null,
+      "ds": true,
       "cs": true,
       "season_activity": 0.3,
       "season_display": "30,0%",
@@ -2209,13 +2209,13 @@
         "role": "R4",
         "thp": 139500000,
         "thp_display": "139500000",
-        "preferred_team": "",
-        "preferred_slot": "",
-        "request": "",
-        "registered": null,
-        "registered_display": "",
-        "played": null,
-        "played_display": "",
+        "preferred_team": "Team B",
+        "preferred_slot": "09:00",
+        "request": "Yes",
+        "registered": true,
+        "registered_display": "Yes",
+        "played": true,
+        "played_display": "Yes",
         "comment": ""
       },
       "cs_master": {
@@ -2495,8 +2495,8 @@
         "role": "R3",
         "thp": 122400000,
         "thp_display": "122400000",
-        "preferred_team": "Team A",
-        "preferred_slot": "18:00",
+        "preferred_team": "Team B",
+        "preferred_slot": "09:00",
         "request": "Yes",
         "registered": true,
         "registered_display": "Yes",
@@ -2550,7 +2550,7 @@
       "kills": "±0",
       "kills_pct": 0.0,
       "events": "10/10",
-      "ds": null,
+      "ds": true,
       "cs": true,
       "season_activity": 0.0,
       "season_display": "0,0%",
@@ -2592,14 +2592,14 @@
         "role": "R3",
         "thp": 109400000,
         "thp_display": "109400000",
-        "preferred_team": "",
-        "preferred_slot": "",
-        "request": "",
-        "registered": null,
-        "registered_display": "",
-        "played": null,
-        "played_display": "",
-        "comment": ""
+        "preferred_team": "Team A",
+        "preferred_slot": "18:00",
+        "request": "Yes",
+        "registered": true,
+        "registered_display": "Yes",
+        "played": true,
+        "played_display": "Yes",
+        "comment": "S"
       },
       "cs_master": {
         "name": "Dani Earth",
@@ -2694,8 +2694,8 @@
         "request": "Yes",
         "registered": true,
         "registered_display": "Yes",
-        "played": false,
-        "played_display": "No",
+        "played": true,
+        "played_display": "Yes",
         "comment": ""
       },
       "cs_master": {
@@ -3179,8 +3179,8 @@
         "request": "Yes",
         "registered": true,
         "registered_display": "Yes",
-        "played": true,
-        "played_display": "Yes",
+        "played": false,
+        "played_display": "No",
         "comment": ""
       },
       "cs_master": {
@@ -3229,7 +3229,7 @@
       "kills": "±0",
       "kills_pct": 0.0,
       "events": "10/10",
-      "ds": true,
+      "ds": null,
       "cs": null,
       "season_activity": 0.0,
       "season_display": "0,0%",
@@ -3271,14 +3271,14 @@
         "role": "R3",
         "thp": 105100000,
         "thp_display": "105100000",
-        "preferred_team": "Team B",
-        "preferred_slot": "09:00",
-        "request": "Yes",
-        "registered": true,
-        "registered_display": "Yes",
-        "played": false,
-        "played_display": "No",
-        "comment": "S"
+        "preferred_team": "",
+        "preferred_slot": "",
+        "request": "",
+        "registered": null,
+        "registered_display": "",
+        "played": null,
+        "played_display": "",
+        "comment": ""
       },
       "cs_master": {
         "name": "Hassleham",
@@ -3423,7 +3423,7 @@
       "kills": "±0",
       "kills_pct": 0.0,
       "events": "10/10",
-      "ds": false,
+      "ds": true,
       "cs": true,
       "season_activity": 0.0,
       "season_display": "0,0%",
@@ -3468,11 +3468,11 @@
         "preferred_team": "Team A",
         "preferred_slot": "18:00",
         "request": "Yes",
-        "registered": false,
-        "registered_display": "No",
-        "played": null,
-        "played_display": "",
-        "comment": "N"
+        "registered": true,
+        "registered_display": "Yes",
+        "played": true,
+        "played_display": "Yes",
+        "comment": "N/S"
       },
       "cs_master": {
         "name": "Diniz Infaaaa",
@@ -3666,7 +3666,7 @@
         "registered_display": "Yes",
         "played": false,
         "played_display": "No",
-        "comment": ""
+        "comment": "S"
       },
       "cs_master": {
         "name": "AndreResende",
@@ -3908,7 +3908,7 @@
       "kills": "±0",
       "kills_pct": 0.0,
       "events": "10/10",
-      "ds": null,
+      "ds": true,
       "cs": true,
       "season_activity": 0.0,
       "season_display": "0,0%",
@@ -3950,13 +3950,13 @@
         "role": "R3",
         "thp": 121100000,
         "thp_display": "121100000",
-        "preferred_team": "",
-        "preferred_slot": "",
-        "request": "",
-        "registered": null,
-        "registered_display": "",
-        "played": null,
-        "played_display": "",
+        "preferred_team": "Team B",
+        "preferred_slot": "09:00",
+        "request": "Yes",
+        "registered": true,
+        "registered_display": "Yes",
+        "played": true,
+        "played_display": "Yes",
         "comment": ""
       },
       "cs_master": {
@@ -4005,7 +4005,7 @@
       "kills": "±0",
       "kills_pct": 0.0,
       "events": "10/10",
-      "ds": null,
+      "ds": true,
       "cs": null,
       "season_activity": 0.0,
       "season_display": "0,0%",
@@ -4047,14 +4047,14 @@
         "role": "R3",
         "thp": 100500000,
         "thp_display": "100500000",
-        "preferred_team": "",
-        "preferred_slot": "",
-        "request": "",
-        "registered": null,
-        "registered_display": "",
-        "played": null,
-        "played_display": "",
-        "comment": ""
+        "preferred_team": "Team B",
+        "preferred_slot": "09:00",
+        "request": "Yes",
+        "registered": true,
+        "registered_display": "Yes",
+        "played": false,
+        "played_display": "No",
+        "comment": "S"
       },
       "cs_master": {
         "name": "AJ die Beste",
@@ -4149,8 +4149,8 @@
         "request": "Yes",
         "registered": true,
         "registered_display": "Yes",
-        "played": true,
-        "played_display": "Yes",
+        "played": false,
+        "played_display": "No",
         "comment": "S"
       },
       "cs_master": {
@@ -4199,7 +4199,7 @@
       "kills": "+506",
       "kills_pct": 0.0004985501648861069,
       "events": "—",
-      "ds": true,
+      "ds": null,
       "cs": true,
       "season_activity": 0.0,
       "season_display": "0,0%",
@@ -4241,14 +4241,14 @@
         "role": "R3",
         "thp": 105400000,
         "thp_display": "105400000",
-        "preferred_team": "Team B",
-        "preferred_slot": "09:00",
-        "request": "Yes",
-        "registered": true,
-        "registered_display": "Yes",
-        "played": true,
-        "played_display": "Yes",
-        "comment": "S"
+        "preferred_team": "",
+        "preferred_slot": "",
+        "request": "",
+        "registered": null,
+        "registered_display": "",
+        "played": null,
+        "played_display": "",
+        "comment": ""
       },
       "cs_master": {
         "name": "Random Attacks",
@@ -4624,8 +4624,8 @@
         "role": "R3",
         "thp": 103300000,
         "thp_display": "103300000",
-        "preferred_team": "Team A",
-        "preferred_slot": "18:00",
+        "preferred_team": "Team B",
+        "preferred_slot": "09:00",
         "request": "Yes",
         "registered": true,
         "registered_display": "Yes",
@@ -4950,7 +4950,7 @@
       "kills": "+12",
       "kills_pct": 1.1851395353660451e-05,
       "events": "",
-      "ds": true,
+      "ds": null,
       "cs": true,
       "season_activity": 0.0,
       "season_display": "0,0%",
@@ -4992,14 +4992,14 @@
         "role": "R3",
         "thp": null,
         "thp_display": "",
-        "preferred_team": "Team B",
-        "preferred_slot": "09:00",
-        "request": "Yes",
-        "registered": true,
-        "registered_display": "Yes",
-        "played": false,
-        "played_display": "No",
-        "comment": "S"
+        "preferred_team": "",
+        "preferred_slot": "",
+        "request": "",
+        "registered": null,
+        "registered_display": "",
+        "played": null,
+        "played_display": "",
+        "comment": ""
       },
       "cs_master": {
         "name": "Buckioio",
@@ -5365,8 +5365,8 @@
         "request": "Yes",
         "registered": true,
         "registered_display": "Yes",
-        "played": true,
-        "played_display": "Yes",
+        "played": false,
+        "played_display": "No",
         "comment": "S"
       },
       "cs_master": {
@@ -5549,8 +5549,8 @@
         "request": "Yes",
         "registered": true,
         "registered_display": "Yes",
-        "played": true,
-        "played_display": "Yes",
+        "played": false,
+        "played_display": "No",
         "comment": "S"
       },
       "cs_master": {
@@ -6103,7 +6103,7 @@
         "registered_display": "Yes",
         "played": true,
         "played_display": "Yes",
-        "comment": ""
+        "comment": "S"
       },
       "cs_master": {
         "name": "Valério",
@@ -6238,7 +6238,7 @@
       "kills": "±0",
       "kills_pct": 0.0,
       "events": "",
-      "ds": null,
+      "ds": true,
       "cs": null,
       "season_activity": 0.0,
       "season_display": "0,0%",
@@ -6280,14 +6280,14 @@
         "role": "R3",
         "thp": null,
         "thp_display": "",
-        "preferred_team": "",
-        "preferred_slot": "",
-        "request": "",
-        "registered": null,
-        "registered_display": "",
-        "played": null,
-        "played_display": "",
-        "comment": ""
+        "preferred_team": "Team B",
+        "preferred_slot": "09:00",
+        "request": "Yes",
+        "registered": true,
+        "registered_display": "Yes",
+        "played": true,
+        "played_display": "Yes",
+        "comment": "S"
       },
       "cs_master": {
         "name": "Mr Xanor",
@@ -6330,7 +6330,7 @@
       "kills": "±0",
       "kills_pct": 0.0,
       "events": "",
-      "ds": true,
+      "ds": false,
       "cs": true,
       "season_activity": 0.0,
       "season_display": "0,0%",
@@ -6375,11 +6375,11 @@
         "preferred_team": "Team A",
         "preferred_slot": "18:00",
         "request": "Yes",
-        "registered": true,
-        "registered_display": "Yes",
-        "played": true,
-        "played_display": "Yes",
-        "comment": "S"
+        "registered": false,
+        "registered_display": "No",
+        "played": false,
+        "played_display": "No",
+        "comment": "N"
       },
       "cs_master": {
         "name": "Noxnanni",
@@ -6422,7 +6422,7 @@
       "kills": "±0",
       "kills_pct": 0.0,
       "events": "",
-      "ds": true,
+      "ds": null,
       "cs": true,
       "season_activity": 0.0,
       "season_display": "0,0%",
@@ -6464,13 +6464,13 @@
         "role": "R3",
         "thp": null,
         "thp_display": "",
-        "preferred_team": "Team B",
-        "preferred_slot": "09:00",
-        "request": "Yes",
-        "registered": true,
-        "registered_display": "Yes",
-        "played": true,
-        "played_display": "Yes",
+        "preferred_team": "",
+        "preferred_slot": "",
+        "request": "",
+        "registered": null,
+        "registered_display": "",
+        "played": null,
+        "played_display": "",
         "comment": ""
       },
       "cs_master": {
@@ -6606,7 +6606,7 @@
       "kills": "±0",
       "kills_pct": 0.0,
       "events": "",
-      "ds": false,
+      "ds": true,
       "cs": null,
       "season_activity": 0.0,
       "season_display": "0,0%",
@@ -6648,14 +6648,14 @@
         "role": "R3",
         "thp": null,
         "thp_display": "",
-        "preferred_team": "Team A",
-        "preferred_slot": "18:00",
+        "preferred_team": "Team B",
+        "preferred_slot": "09:00",
         "request": "Yes",
-        "registered": false,
-        "registered_display": "No",
-        "played": null,
-        "played_display": "",
-        "comment": "N"
+        "registered": true,
+        "registered_display": "Yes",
+        "played": true,
+        "played_display": "Yes",
+        "comment": "S"
       },
       "cs_master": {
         "name": "Lawima",
@@ -7115,7 +7115,7 @@
         "registered_display": "Yes",
         "played": true,
         "played_display": "Yes",
-        "comment": ""
+        "comment": "S"
       },
       "cs_master": {
         "name": "Rodrigo",
@@ -7158,7 +7158,7 @@
       "kills": "±0",
       "kills_pct": 0.0,
       "events": "",
-      "ds": true,
+      "ds": null,
       "cs": null,
       "season_activity": 0.0,
       "season_display": "0,0%",
@@ -7200,14 +7200,14 @@
         "role": "R3",
         "thp": null,
         "thp_display": "",
-        "preferred_team": "Team A",
-        "preferred_slot": "18:00",
-        "request": "Yes",
-        "registered": true,
-        "registered_display": "Yes",
-        "played": false,
-        "played_display": "No",
-        "comment": "N/S"
+        "preferred_team": "",
+        "preferred_slot": "",
+        "request": "",
+        "registered": null,
+        "registered_display": "",
+        "played": null,
+        "played_display": "",
+        "comment": ""
       },
       "cs_master": {
         "name": "xJeeane",
@@ -7710,7 +7710,7 @@
       "kills": "±0",
       "kills_pct": 0.0,
       "events": "",
-      "ds": null,
+      "ds": true,
       "cs": null,
       "season_activity": 0.0,
       "season_display": "0,0%",
@@ -7752,13 +7752,13 @@
         "role": "R3",
         "thp": null,
         "thp_display": "",
-        "preferred_team": "",
-        "preferred_slot": "",
-        "request": "",
-        "registered": null,
-        "registered_display": "",
-        "played": null,
-        "played_display": "",
+        "preferred_team": "Team A",
+        "preferred_slot": "18:00",
+        "request": "Yes",
+        "registered": true,
+        "registered_display": "Yes",
+        "played": true,
+        "played_display": "Yes",
         "comment": ""
       },
       "cs_master": {
@@ -7986,7 +7986,7 @@
       "kills": "±0",
       "kills_pct": 0.0,
       "events": "",
-      "ds": null,
+      "ds": false,
       "cs": null,
       "season_activity": 0.0,
       "season_display": "0,0%",
@@ -8028,14 +8028,14 @@
         "role": "R1",
         "thp": null,
         "thp_display": "",
-        "preferred_team": "",
-        "preferred_slot": "",
-        "request": "",
-        "registered": null,
-        "registered_display": "",
+        "preferred_team": "Team A",
+        "preferred_slot": "18:00",
+        "request": "Yes",
+        "registered": false,
+        "registered_display": "No",
         "played": null,
         "played_display": "",
-        "comment": ""
+        "comment": "N"
       },
       "cs_master": {
         "name": "MAJØR",
@@ -8078,7 +8078,7 @@
       "kills": "+6",
       "kills_pct": 7.4909733770806174e-06,
       "events": "",
-      "ds": true,
+      "ds": null,
       "cs": null,
       "season_activity": 0.0,
       "season_display": "0,0%",
@@ -8120,14 +8120,14 @@
         "role": "R3",
         "thp": 103800000,
         "thp_display": "103800000",
-        "preferred_team": "Team B",
-        "preferred_slot": "09:00",
-        "request": "Yes",
-        "registered": true,
-        "registered_display": "Yes",
-        "played": true,
-        "played_display": "Yes",
-        "comment": "S"
+        "preferred_team": "",
+        "preferred_slot": "",
+        "request": "",
+        "registered": null,
+        "registered_display": "",
+        "played": null,
+        "played_display": "",
+        "comment": ""
       },
       "cs_master": {
         "name": "Kaizennnnnnnnnnnn",
@@ -8262,7 +8262,7 @@
       "kills": "±0",
       "kills_pct": 0.0,
       "events": "",
-      "ds": null,
+      "ds": true,
       "cs": null,
       "season_activity": 0.0,
       "season_display": "0,0%",
@@ -8304,13 +8304,13 @@
         "role": "R2",
         "thp": null,
         "thp_display": "",
-        "preferred_team": "",
-        "preferred_slot": "",
-        "request": "",
-        "registered": null,
-        "registered_display": "",
-        "played": null,
-        "played_display": "",
+        "preferred_team": "Team B",
+        "preferred_slot": "09:00",
+        "request": "Yes",
+        "registered": true,
+        "registered_display": "Yes",
+        "played": true,
+        "played_display": "Yes",
         "comment": ""
       },
       "cs_master": {
@@ -8354,7 +8354,7 @@
       "kills": "+6",
       "kills_pct": 1.4808522107025632e-06,
       "events": "",
-      "ds": null,
+      "ds": true,
       "cs": null,
       "season_activity": 0.0,
       "season_display": "0,0%",
@@ -8396,13 +8396,13 @@
         "role": "R2",
         "thp": null,
         "thp_display": "",
-        "preferred_team": "",
-        "preferred_slot": "",
-        "request": "",
-        "registered": null,
-        "registered_display": "",
-        "played": null,
-        "played_display": "",
+        "preferred_team": "Team B",
+        "preferred_slot": "18:00",
+        "request": "Yes",
+        "registered": true,
+        "registered_display": "Yes",
+        "played": true,
+        "played_display": "Yes",
         "comment": ""
       },
       "cs_master": {
@@ -8684,7 +8684,7 @@
         "registered_display": "Yes",
         "played": true,
         "played_display": "Yes",
-        "comment": "S"
+        "comment": ""
       },
       "cs_master": {
         "name": "Deaths Brother",
@@ -8727,7 +8727,7 @@
       "kills": "±0",
       "kills_pct": 0.0,
       "events": "",
-      "ds": null,
+      "ds": false,
       "cs": null,
       "season_activity": 0.0,
       "season_display": "0,0%",
@@ -8769,14 +8769,14 @@
         "role": "R3",
         "thp": null,
         "thp_display": "",
-        "preferred_team": "",
-        "preferred_slot": "",
-        "request": "",
-        "registered": null,
-        "registered_display": "",
+        "preferred_team": "Team A",
+        "preferred_slot": "18:00",
+        "request": "Yes",
+        "registered": false,
+        "registered_display": "No",
         "played": null,
         "played_display": "",
-        "comment": ""
+        "comment": "N"
       },
       "cs_master": {
         "name": "NocB",
@@ -8819,7 +8819,7 @@
       "kills": "±0",
       "kills_pct": 0.0,
       "events": "",
-      "ds": null,
+      "ds": true,
       "cs": null,
       "season_activity": 0.0,
       "season_display": "0,0%",
@@ -8861,13 +8861,13 @@
         "role": "R2",
         "thp": null,
         "thp_display": "",
-        "preferred_team": "",
-        "preferred_slot": "",
-        "request": "",
-        "registered": null,
-        "registered_display": "",
-        "played": null,
-        "played_display": "",
+        "preferred_team": "Team A",
+        "preferred_slot": "18:00",
+        "request": "Yes",
+        "registered": true,
+        "registered_display": "Yes",
+        "played": true,
+        "played_display": "Yes",
         "comment": ""
       },
       "cs_master": {
@@ -9276,9 +9276,9 @@
     "vs_ok": 87,
     "vs_other": 0,
     "vs_below_quota": 10,
-    "ds_registered": 53,
+    "ds_registered": 58,
     "cs_registered": 55,
-    "ds_played": 48,
+    "ds_played": 52,
     "cs_played": 44,
     "generals_trial_rows": 44
   },
@@ -16120,13 +16120,13 @@
           "role": "R4",
           "thp": 121000000,
           "thp_display": "121000000",
-          "preferred_team": "",
-          "preferred_slot": "",
-          "request": "",
-          "registered": null,
-          "registered_display": "",
-          "played": null,
-          "played_display": "",
+          "preferred_team": "Team B",
+          "preferred_slot": "09:00",
+          "request": "Yes",
+          "registered": true,
+          "registered_display": "Yes",
+          "played": true,
+          "played_display": "Yes",
           "comment": ""
         },
         {
@@ -16148,8 +16148,8 @@
           "role": "R4",
           "thp": 166400000,
           "thp_display": "166400000",
-          "preferred_team": "Team B",
-          "preferred_slot": "09:00",
+          "preferred_team": "Team A",
+          "preferred_slot": "18:00",
           "request": "Yes",
           "registered": true,
           "registered_display": "Yes",
@@ -16218,8 +16218,8 @@
           "role": "R4",
           "thp": 143400000,
           "thp_display": "143400000",
-          "preferred_team": "Team B",
-          "preferred_slot": "09:00",
+          "preferred_team": "Team A",
+          "preferred_slot": "18:00",
           "request": "Yes",
           "registered": true,
           "registered_display": "Yes",
@@ -16277,11 +16277,11 @@
           "preferred_team": "Team A",
           "preferred_slot": "18:00",
           "request": "Yes",
-          "registered": true,
-          "registered_display": "Yes",
-          "played": true,
-          "played_display": "Yes",
-          "comment": ""
+          "registered": false,
+          "registered_display": "No",
+          "played": false,
+          "played_display": "No",
+          "comment": "N"
         },
         {
           "name": "Andressita MD",
@@ -16291,11 +16291,11 @@
           "preferred_team": "Team A",
           "preferred_slot": "18:00",
           "request": "Yes",
-          "registered": false,
-          "registered_display": "No",
-          "played": null,
-          "played_display": "",
-          "comment": "N"
+          "registered": true,
+          "registered_display": "Yes",
+          "played": true,
+          "played_display": "Yes",
+          "comment": "N/S"
         },
         {
           "name": "Cmdr William T Riker",
@@ -16309,7 +16309,7 @@
           "registered_display": "Yes",
           "played": true,
           "played_display": "Yes",
-          "comment": ""
+          "comment": "S"
         },
         {
           "name": "Knives00",
@@ -16393,27 +16393,13 @@
           "registered_display": "Yes",
           "played": true,
           "played_display": "Yes",
-          "comment": "S"
+          "comment": ""
         },
         {
           "name": "Relapse94",
           "role": "R3",
           "thp": 125900000,
           "thp_display": "125900000",
-          "preferred_team": "Team A",
-          "preferred_slot": "18:00",
-          "request": "Yes",
-          "registered": true,
-          "registered_display": "Yes",
-          "played": true,
-          "played_display": "Yes",
-          "comment": ""
-        },
-        {
-          "name": "Everton 123456",
-          "role": "R3",
-          "thp": 99500000,
-          "thp_display": "99500000",
           "preferred_team": "",
           "preferred_slot": "",
           "request": "",
@@ -16422,6 +16408,20 @@
           "played": null,
           "played_display": "",
           "comment": ""
+        },
+        {
+          "name": "Everton 123456",
+          "role": "R3",
+          "thp": 99500000,
+          "thp_display": "99500000",
+          "preferred_team": "Team B",
+          "preferred_slot": "09:00",
+          "request": "Yes",
+          "registered": true,
+          "registered_display": "Yes",
+          "played": true,
+          "played_display": "Yes",
+          "comment": "S"
         },
         {
           "name": "damboddambod",
@@ -16442,13 +16442,13 @@
           "role": "R4",
           "thp": 139500000,
           "thp_display": "139500000",
-          "preferred_team": "",
-          "preferred_slot": "",
-          "request": "",
-          "registered": null,
-          "registered_display": "",
-          "played": null,
-          "played_display": "",
+          "preferred_team": "Team B",
+          "preferred_slot": "09:00",
+          "request": "Yes",
+          "registered": true,
+          "registered_display": "Yes",
+          "played": true,
+          "played_display": "Yes",
           "comment": ""
         },
         {
@@ -16484,8 +16484,8 @@
           "role": "R3",
           "thp": 122400000,
           "thp_display": "122400000",
-          "preferred_team": "Team A",
-          "preferred_slot": "18:00",
+          "preferred_team": "Team B",
+          "preferred_slot": "09:00",
           "request": "Yes",
           "registered": true,
           "registered_display": "Yes",
@@ -16498,14 +16498,14 @@
           "role": "R3",
           "thp": 109400000,
           "thp_display": "109400000",
-          "preferred_team": "",
-          "preferred_slot": "",
-          "request": "",
-          "registered": null,
-          "registered_display": "",
-          "played": null,
-          "played_display": "",
-          "comment": ""
+          "preferred_team": "Team A",
+          "preferred_slot": "18:00",
+          "request": "Yes",
+          "registered": true,
+          "registered_display": "Yes",
+          "played": true,
+          "played_display": "Yes",
+          "comment": "S"
         },
         {
           "name": "Itamar1130",
@@ -16517,8 +16517,8 @@
           "request": "Yes",
           "registered": true,
           "registered_display": "Yes",
-          "played": false,
-          "played_display": "No",
+          "played": true,
+          "played_display": "Yes",
           "comment": ""
         },
         {
@@ -16587,8 +16587,8 @@
           "request": "Yes",
           "registered": true,
           "registered_display": "Yes",
-          "played": true,
-          "played_display": "Yes",
+          "played": false,
+          "played_display": "No",
           "comment": ""
         },
         {
@@ -16596,14 +16596,14 @@
           "role": "R3",
           "thp": 105100000,
           "thp_display": "105100000",
-          "preferred_team": "Team B",
-          "preferred_slot": "09:00",
-          "request": "Yes",
-          "registered": true,
-          "registered_display": "Yes",
-          "played": false,
-          "played_display": "No",
-          "comment": "S"
+          "preferred_team": "",
+          "preferred_slot": "",
+          "request": "",
+          "registered": null,
+          "registered_display": "",
+          "played": null,
+          "played_display": "",
+          "comment": ""
         },
         {
           "name": "JazzHandsThomas",
@@ -16627,11 +16627,11 @@
           "preferred_team": "Team A",
           "preferred_slot": "18:00",
           "request": "Yes",
-          "registered": false,
-          "registered_display": "No",
-          "played": null,
-          "played_display": "",
-          "comment": "N"
+          "registered": true,
+          "registered_display": "Yes",
+          "played": true,
+          "played_display": "Yes",
+          "comment": "N/S"
         },
         {
           "name": "Fred67290",
@@ -16659,7 +16659,7 @@
           "registered_display": "Yes",
           "played": false,
           "played_display": "No",
-          "comment": ""
+          "comment": "S"
         },
         {
           "name": "chalako77",
@@ -16694,13 +16694,13 @@
           "role": "R3",
           "thp": 121100000,
           "thp_display": "121100000",
-          "preferred_team": "",
-          "preferred_slot": "",
-          "request": "",
-          "registered": null,
-          "registered_display": "",
-          "played": null,
-          "played_display": "",
+          "preferred_team": "Team B",
+          "preferred_slot": "09:00",
+          "request": "Yes",
+          "registered": true,
+          "registered_display": "Yes",
+          "played": true,
+          "played_display": "Yes",
           "comment": ""
         },
         {
@@ -16736,14 +16736,14 @@
           "role": "R3",
           "thp": 100500000,
           "thp_display": "100500000",
-          "preferred_team": "",
-          "preferred_slot": "",
-          "request": "",
-          "registered": null,
-          "registered_display": "",
-          "played": null,
-          "played_display": "",
-          "comment": ""
+          "preferred_team": "Team B",
+          "preferred_slot": "09:00",
+          "request": "Yes",
+          "registered": true,
+          "registered_display": "Yes",
+          "played": false,
+          "played_display": "No",
+          "comment": "S"
         },
         {
           "name": "73Katy",
@@ -16755,8 +16755,8 @@
           "request": "Yes",
           "registered": true,
           "registered_display": "Yes",
-          "played": true,
-          "played_display": "Yes",
+          "played": false,
+          "played_display": "No",
           "comment": "S"
         },
         {
@@ -16764,28 +16764,28 @@
           "role": "R3",
           "thp": 105400000,
           "thp_display": "105400000",
-          "preferred_team": "Team B",
-          "preferred_slot": "09:00",
-          "request": "Yes",
-          "registered": true,
-          "registered_display": "Yes",
-          "played": true,
-          "played_display": "Yes",
-          "comment": "S"
+          "preferred_team": "",
+          "preferred_slot": "",
+          "request": "",
+          "registered": null,
+          "registered_display": "",
+          "played": null,
+          "played_display": "",
+          "comment": ""
         },
         {
           "name": "Kaizennnnnnnnnnnn",
           "role": "R3",
           "thp": 103800000,
           "thp_display": "103800000",
-          "preferred_team": "Team B",
-          "preferred_slot": "09:00",
-          "request": "Yes",
-          "registered": true,
-          "registered_display": "Yes",
-          "played": true,
-          "played_display": "Yes",
-          "comment": "S"
+          "preferred_team": "",
+          "preferred_slot": "",
+          "request": "",
+          "registered": null,
+          "registered_display": "",
+          "played": null,
+          "played_display": "",
+          "comment": ""
         },
         {
           "name": "Sandboxman",
@@ -16834,8 +16834,8 @@
           "role": "R3",
           "thp": 103300000,
           "thp_display": "103300000",
-          "preferred_team": "Team A",
-          "preferred_slot": "18:00",
+          "preferred_team": "Team B",
+          "preferred_slot": "09:00",
           "request": "Yes",
           "registered": true,
           "registered_display": "Yes",
@@ -16890,14 +16890,14 @@
           "role": "R3",
           "thp": null,
           "thp_display": "",
-          "preferred_team": "Team B",
-          "preferred_slot": "09:00",
-          "request": "Yes",
-          "registered": true,
-          "registered_display": "Yes",
-          "played": false,
-          "played_display": "No",
-          "comment": "S"
+          "preferred_team": "",
+          "preferred_slot": "",
+          "request": "",
+          "registered": null,
+          "registered_display": "",
+          "played": null,
+          "played_display": "",
+          "comment": ""
         },
         {
           "name": "xXxJoKeRxXx",
@@ -16946,13 +16946,13 @@
           "role": "R3",
           "thp": null,
           "thp_display": "",
-          "preferred_team": "Team B",
-          "preferred_slot": "09:00",
-          "request": "Yes",
-          "registered": true,
-          "registered_display": "Yes",
-          "played": true,
-          "played_display": "Yes",
+          "preferred_team": "",
+          "preferred_slot": "",
+          "request": "",
+          "registered": null,
+          "registered_display": "",
+          "played": null,
+          "played_display": "",
           "comment": ""
         },
         {
@@ -16965,8 +16965,8 @@
           "request": "Yes",
           "registered": true,
           "registered_display": "Yes",
-          "played": true,
-          "played_display": "Yes",
+          "played": false,
+          "played_display": "No",
           "comment": "S"
         },
         {
@@ -16993,8 +16993,8 @@
           "request": "Yes",
           "registered": true,
           "registered_display": "Yes",
-          "played": true,
-          "played_display": "Yes",
+          "played": false,
+          "played_display": "No",
           "comment": "S"
         },
         {
@@ -17044,13 +17044,13 @@
           "role": "R3",
           "thp": null,
           "thp_display": "",
-          "preferred_team": "Team B",
-          "preferred_slot": "09:00",
-          "request": "Yes",
-          "registered": true,
-          "registered_display": "Yes",
-          "played": true,
-          "played_display": "Yes",
+          "preferred_team": "",
+          "preferred_slot": "",
+          "request": "",
+          "registered": null,
+          "registered_display": "",
+          "played": null,
+          "played_display": "",
           "comment": ""
         },
         {
@@ -17135,7 +17135,7 @@
           "registered_display": "Yes",
           "played": true,
           "played_display": "Yes",
-          "comment": ""
+          "comment": "S"
         },
         {
           "name": "iamJazzyy",
@@ -17156,14 +17156,14 @@
           "role": "R3",
           "thp": null,
           "thp_display": "",
-          "preferred_team": "",
-          "preferred_slot": "",
-          "request": "",
-          "registered": null,
-          "registered_display": "",
-          "played": null,
-          "played_display": "",
-          "comment": ""
+          "preferred_team": "Team B",
+          "preferred_slot": "09:00",
+          "request": "Yes",
+          "registered": true,
+          "registered_display": "Yes",
+          "played": true,
+          "played_display": "Yes",
+          "comment": "S"
         },
         {
           "name": "Noxnanni",
@@ -17173,24 +17173,24 @@
           "preferred_team": "Team A",
           "preferred_slot": "18:00",
           "request": "Yes",
-          "registered": true,
-          "registered_display": "Yes",
-          "played": true,
-          "played_display": "Yes",
-          "comment": "S"
+          "registered": false,
+          "registered_display": "No",
+          "played": false,
+          "played_display": "No",
+          "comment": "N"
         },
         {
           "name": "CANONDA",
           "role": "R3",
           "thp": null,
           "thp_display": "",
-          "preferred_team": "Team B",
-          "preferred_slot": "09:00",
-          "request": "Yes",
-          "registered": true,
-          "registered_display": "Yes",
-          "played": true,
-          "played_display": "Yes",
+          "preferred_team": "",
+          "preferred_slot": "",
+          "request": "",
+          "registered": null,
+          "registered_display": "",
+          "played": null,
+          "played_display": "",
           "comment": ""
         },
         {
@@ -17212,14 +17212,14 @@
           "role": "R3",
           "thp": null,
           "thp_display": "",
-          "preferred_team": "Team A",
-          "preferred_slot": "18:00",
+          "preferred_team": "Team B",
+          "preferred_slot": "09:00",
           "request": "Yes",
-          "registered": false,
-          "registered_display": "No",
-          "played": null,
-          "played_display": "",
-          "comment": "N"
+          "registered": true,
+          "registered_display": "Yes",
+          "played": true,
+          "played_display": "Yes",
+          "comment": "S"
         },
         {
           "name": "blubbb123",
@@ -17240,14 +17240,14 @@
           "role": "R3",
           "thp": null,
           "thp_display": "",
-          "preferred_team": "Team A",
-          "preferred_slot": "18:00",
-          "request": "Yes",
-          "registered": true,
-          "registered_display": "Yes",
-          "played": false,
-          "played_display": "No",
-          "comment": "N/S"
+          "preferred_team": "",
+          "preferred_slot": "",
+          "request": "",
+          "registered": null,
+          "registered_display": "",
+          "played": null,
+          "played_display": "",
+          "comment": ""
         },
         {
           "name": "BlackHeiX",
@@ -17317,21 +17317,21 @@
           "registered_display": "Yes",
           "played": true,
           "played_display": "Yes",
-          "comment": ""
+          "comment": "S"
         },
         {
           "name": "xJeeane",
           "role": "R3",
           "thp": null,
           "thp_display": "",
-          "preferred_team": "Team A",
-          "preferred_slot": "18:00",
-          "request": "Yes",
-          "registered": true,
-          "registered_display": "Yes",
-          "played": false,
-          "played_display": "No",
-          "comment": "N/S"
+          "preferred_team": "",
+          "preferred_slot": "",
+          "request": "",
+          "registered": null,
+          "registered_display": "",
+          "played": null,
+          "played_display": "",
+          "comment": ""
         },
         {
           "name": "Inlv1",
@@ -17436,13 +17436,13 @@
           "role": "R3",
           "thp": null,
           "thp_display": "",
-          "preferred_team": "",
-          "preferred_slot": "",
-          "request": "",
-          "registered": null,
-          "registered_display": "",
-          "played": null,
-          "played_display": "",
+          "preferred_team": "Team A",
+          "preferred_slot": "18:00",
+          "request": "Yes",
+          "registered": true,
+          "registered_display": "Yes",
+          "played": true,
+          "played_display": "Yes",
           "comment": ""
         },
         {
@@ -17478,6 +17478,20 @@
           "role": "R1",
           "thp": null,
           "thp_display": "",
+          "preferred_team": "Team A",
+          "preferred_slot": "18:00",
+          "request": "Yes",
+          "registered": false,
+          "registered_display": "No",
+          "played": null,
+          "played_display": "",
+          "comment": "N"
+        },
+        {
+          "name": "Neritoo",
+          "role": "R3",
+          "thp": null,
+          "thp_display": "",
           "preferred_team": "",
           "preferred_slot": "",
           "request": "",
@@ -17488,46 +17502,32 @@
           "comment": ""
         },
         {
-          "name": "Neritoo",
-          "role": "R3",
-          "thp": null,
-          "thp_display": "",
-          "preferred_team": "Team B",
-          "preferred_slot": "09:00",
-          "request": "Yes",
-          "registered": false,
-          "registered_display": "No",
-          "played": null,
-          "played_display": "",
-          "comment": "N"
-        },
-        {
           "name": "Tiane",
           "role": "R2",
           "thp": null,
           "thp_display": "",
-          "preferred_team": "Team A",
-          "preferred_slot": "18:00",
-          "request": "Yes",
-          "registered": false,
-          "registered_display": "No",
+          "preferred_team": "",
+          "preferred_slot": "",
+          "request": "",
+          "registered": null,
+          "registered_display": "",
           "played": null,
           "played_display": "",
-          "comment": "N"
+          "comment": ""
         },
         {
           "name": "MarcH",
           "role": "R3",
           "thp": null,
           "thp_display": "",
-          "preferred_team": "Team A",
-          "preferred_slot": "18:00",
-          "request": "Yes",
-          "registered": false,
-          "registered_display": "No",
+          "preferred_team": "",
+          "preferred_slot": "",
+          "request": "",
+          "registered": null,
+          "registered_display": "",
           "played": null,
           "played_display": "",
-          "comment": "N"
+          "comment": ""
         },
         {
           "name": "Jazzda7o",
@@ -17562,13 +17562,13 @@
           "role": "R2",
           "thp": null,
           "thp_display": "",
-          "preferred_team": "",
-          "preferred_slot": "",
-          "request": "",
-          "registered": null,
-          "registered_display": "",
-          "played": null,
-          "played_display": "",
+          "preferred_team": "Team B",
+          "preferred_slot": "09:00",
+          "request": "Yes",
+          "registered": true,
+          "registered_display": "Yes",
+          "played": true,
+          "played_display": "Yes",
           "comment": ""
         },
         {
@@ -17590,13 +17590,13 @@
           "role": "R2",
           "thp": null,
           "thp_display": "",
-          "preferred_team": "",
-          "preferred_slot": "",
-          "request": "",
-          "registered": null,
-          "registered_display": "",
-          "played": null,
-          "played_display": "",
+          "preferred_team": "Team B",
+          "preferred_slot": "18:00",
+          "request": "Yes",
+          "registered": true,
+          "registered_display": "Yes",
+          "played": true,
+          "played_display": "Yes",
           "comment": ""
         },
         {
@@ -17653,21 +17653,21 @@
           "registered_display": "Yes",
           "played": true,
           "played_display": "Yes",
-          "comment": "S"
+          "comment": ""
         },
         {
           "name": "NocB",
           "role": "R3",
           "thp": null,
           "thp_display": "",
-          "preferred_team": "",
-          "preferred_slot": "",
-          "request": "",
-          "registered": null,
-          "registered_display": "",
+          "preferred_team": "Team A",
+          "preferred_slot": "18:00",
+          "request": "Yes",
+          "registered": false,
+          "registered_display": "No",
           "played": null,
           "played_display": "",
-          "comment": ""
+          "comment": "N"
         },
         {
           "name": "Omori ㄑ0",
@@ -17688,13 +17688,13 @@
           "role": "R2",
           "thp": null,
           "thp_display": "",
-          "preferred_team": "",
-          "preferred_slot": "",
-          "request": "",
-          "registered": null,
-          "registered_display": "",
-          "played": null,
-          "played_display": "",
+          "preferred_team": "Team A",
+          "preferred_slot": "18:00",
+          "request": "Yes",
+          "registered": true,
+          "registered_display": "Yes",
+          "played": true,
+          "played_display": "Yes",
           "comment": ""
         },
         {
@@ -19901,11 +19901,11 @@
       ]
     }
   },
-  "generated_at": "2026-11-14T16:19:48Z",
-  "stand_berlin": "14.11.2026, 17:19",
+  "generated_at": "2026-11-15T00:09:29Z",
+  "stand_berlin": "15.11.2026, 01:09",
   "source": "google_sheets",
   "source_file": "DawN - Base + Tabs (live)",
-  "snapshot": "2026-11-14T16:19:48",
+  "snapshot": "2026-11-15T00:09:29",
   "links": {
     "title": "DawN",
     "tagline": "Important links",
@@ -20170,59 +20170,59 @@
     }
   ],
   "presence": {
-    "as_of": "2026-11-14T17:19:52+01:00",
+    "as_of": "2026-11-15T01:09:33+01:00",
     "offline_flag_hours": 8,
     "online": {
       "date": "2026-11-14",
-      "sampled": 66,
+      "sampled": 65,
       "offline": [
         {
-          "name": "iamJazzyy",
-          "hours_offline": 14.0
-        },
-        {
-          "name": "ReflexX",
-          "hours_offline": 13.0
-        },
-        {
-          "name": "Megalocasiadon",
-          "hours_offline": 10.0
-        },
-        {
-          "name": "Mr Xanor",
-          "hours_offline": 9.0
-        },
-        {
-          "name": "Optimus Bob",
-          "hours_offline": 9.0
-        },
-        {
-          "name": "TheStarks",
-          "hours_offline": 9.0
-        },
-        {
-          "name": "Tomatofake",
-          "hours_offline": 9.0
-        },
-        {
-          "name": "xXxJoKeRxXx",
-          "hours_offline": 9.0
-        },
-        {
-          "name": "Zettovic",
-          "hours_offline": 9.0
+          "name": "73Katy",
+          "hours_offline": 24.0
         },
         {
           "name": "AJ die Beste",
-          "hours_offline": 8.0
+          "hours_offline": 24.0
+        },
+        {
+          "name": "damboddambod",
+          "hours_offline": 24.0
+        },
+        {
+          "name": "Itamar1130",
+          "hours_offline": 24.0
+        },
+        {
+          "name": "Kaizennnnnnnnnnnn",
+          "hours_offline": 24.0
+        },
+        {
+          "name": "rePlay",
+          "hours_offline": 24.0
+        },
+        {
+          "name": "Rico 2026",
+          "hours_offline": 24.0
+        },
+        {
+          "name": "Valério",
+          "hours_offline": 24.0
+        },
+        {
+          "name": "Zettovic",
+          "hours_offline": 24.0
         },
         {
           "name": "HeinselHH",
-          "hours_offline": 8.0
+          "hours_offline": 13.0
         },
         {
-          "name": "ImpAugustus",
-          "hours_offline": 8.0
+          "name": "Baby Bax Baba Bax",
+          "hours_offline": 9.0
+        },
+        {
+          "name": "Xx RvE Xx",
+          "hours_offline": 9.0
         }
       ],
       "offline_count": 12
