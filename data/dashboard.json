@@ -18973,11 +18973,11 @@
       ]
     }
   },
-  "generated_at": "2026-11-17T04:52:21Z",
-  "stand_berlin": "17.11.2026, 05:52",
+  "generated_at": "2026-11-18T00:08:33Z",
+  "stand_berlin": "18.11.2026, 01:08",
   "source": "google_sheets",
   "source_file": "DawN - Base + Tabs (live)",
-  "snapshot": "2026-11-17T04:52:21",
+  "snapshot": "2026-11-18T00:08:33",
   "links": {
     "title": "DawN",
     "tagline": "Important links",
@@ -19242,66 +19242,46 @@
     }
   ],
   "presence": {
-    "as_of": "2026-11-17T05:52:26+01:00",
+    "as_of": "2026-11-18T01:08:37+01:00",
     "offline_flag_hours": 8,
     "online": {
       "date": "2026-11-17",
-      "sampled": 68,
+      "sampled": 69,
       "offline": [
         {
-          "name": "Buckioio",
-          "hours_offline": 15.0
-        },
-        {
-          "name": "Random Attacks",
-          "hours_offline": 14.0
-        },
-        {
-          "name": "Mr Xanor",
+          "name": "RubiA",
           "hours_offline": 13.0
         },
         {
-          "name": "iamJazzyy",
+          "name": "Yuna",
           "hours_offline": 12.0
         },
         {
-          "name": "HeinselHH",
+          "name": "Kaizennnnnnnnnnnn",
           "hours_offline": 11.0
         },
         {
-          "name": "BlackHeiX",
-          "hours_offline": 9.0
-        },
-        {
-          "name": "3KATERINA (3",
-          "hours_offline": 8.0
-        },
-        {
-          "name": "Fred67290",
-          "hours_offline": 8.0
-        },
-        {
-          "name": "Kaizennnnnnnnnnnn",
-          "hours_offline": 8.0
-        },
-        {
           "name": "SEKRETIK",
-          "hours_offline": 8.0
+          "hours_offline": 11.0
         },
         {
-          "name": "TheStarks",
-          "hours_offline": 8.0
+          "name": "HeinselHH",
+          "hours_offline": 10.0
         },
         {
           "name": "Xx RvE Xx",
+          "hours_offline": 9.0
+        },
+        {
+          "name": "iamJazzyy",
           "hours_offline": 8.0
         },
         {
-          "name": "xXxJoKeRxXx",
+          "name": "ImpAugustus",
           "hours_offline": 8.0
         }
       ],
-      "offline_count": 13
+      "offline_count": 8
     },
     "gifts": {
       "date": "2026-11-17",
