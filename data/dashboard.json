@@ -19396,11 +19396,11 @@
       ]
     }
   },
-  "generated_at": "2026-11-18T04:57:55Z",
-  "stand_berlin": "18.11.2026, 05:57",
+  "generated_at": "2026-11-19T00:09:31Z",
+  "stand_berlin": "19.11.2026, 01:09",
   "source": "google_sheets",
   "source_file": "DawN - Base + Tabs (live)",
-  "snapshot": "2026-11-18T04:57:55",
+  "snapshot": "2026-11-19T00:09:31",
   "links": {
     "title": "DawN",
     "tagline": "Important links",
@@ -19665,150 +19665,26 @@
     }
   ],
   "presence": {
-    "as_of": "2026-11-18T05:58:00+01:00",
+    "as_of": "2026-11-19T01:09:42+01:00",
     "offline_flag_hours": 8,
     "online": {
       "date": "2026-11-18",
       "sampled": 68,
       "offline": [
         {
-          "name": "Relapse94",
-          "hours_offline": 72.0
-        },
-        {
-          "name": "Sosiskaa",
-          "hours_offline": 72.0
-        },
-        {
-          "name": "Inlv1",
-          "hours_offline": 48.0
-        },
-        {
-          "name": "Valério",
-          "hours_offline": 48.0
-        },
-        {
-          "name": "0 AÇOUGUEIRO",
-          "hours_offline": 24.0
-        },
-        {
-          "name": "Alex000392",
-          "hours_offline": 24.0
-        },
-        {
-          "name": "AndreResende",
-          "hours_offline": 24.0
-        },
-        {
-          "name": "Baby Bax Baba Bax",
-          "hours_offline": 24.0
-        },
-        {
-          "name": "Bruna Laïs",
-          "hours_offline": 24.0
-        },
-        {
-          "name": "chalako77",
-          "hours_offline": 24.0
-        },
-        {
-          "name": "DesertSniper",
-          "hours_offline": 24.0
-        },
-        {
-          "name": "Diniz Infaaaa",
-          "hours_offline": 24.0
-        },
-        {
-          "name": "Draurg v2",
-          "hours_offline": 24.0
-        },
-        {
-          "name": "Griffeyga",
-          "hours_offline": 24.0
-        },
-        {
-          "name": "iamJazzyy",
-          "hours_offline": 24.0
-        },
-        {
-          "name": "Lover Of Manquaca",
-          "hours_offline": 24.0
-        },
-        {
-          "name": "Nakama Tskulaxo",
-          "hours_offline": 24.0
-        },
-        {
-          "name": "Omori UG)>",
-          "hours_offline": 24.0
-        },
-        {
-          "name": "Ougat",
-          "hours_offline": 24.0
-        },
-        {
-          "name": "PunisherR93",
-          "hours_offline": 24.0
-        },
-        {
-          "name": "Rodrigo",
-          "hours_offline": 24.0
-        },
-        {
-          "name": "RubiA",
-          "hours_offline": 24.0
-        },
-        {
-          "name": "Sandboxman",
-          "hours_offline": 24.0
-        },
-        {
-          "name": "Soster",
-          "hours_offline": 24.0
-        },
-        {
-          "name": "Tomatofake",
-          "hours_offline": 24.0
-        },
-        {
-          "name": "HeinselHH",
-          "hours_offline": 15.0
-        },
-        {
-          "name": "Kaizennnnnnnnnnnn",
-          "hours_offline": 15.0
-        },
-        {
-          "name": "SEKRETIK",
-          "hours_offline": 15.0
-        },
-        {
-          "name": "ImpAugustus",
-          "hours_offline": 13.0
-        },
-        {
           "name": "Buckioio",
-          "hours_offline": 10.0
+          "hours_offline": 24.0
         },
         {
-          "name": "TheStarks",
-          "hours_offline": 10.0
-        },
-        {
-          "name": "Lawima",
+          "name": "Yuna",
           "hours_offline": 9.0
         },
         {
-          "name": "Filippos4Paok",
-          "hours_offline": 8.0
-        },
-        {
-          "name": "Gubalibre",
+          "name": "CANONDA",
           "hours_offline": 8.0
         }
       ],
-      "offline_count": 34
+      "offline_count": 3
     },
     "gifts": {
       "date": "2026-11-18",
@@ -20112,11 +19988,11 @@
     "absences": {
       "threshold_hours": 8,
       "iso_week": "2026-W47",
-      "snapshots": 4,
+      "snapshots": 5,
       "per_member": [
         {
           "name": "Buckioio",
-          "count": 3
+          "count": 4
         },
         {
           "name": "Mr Xanor",
@@ -20155,6 +20031,10 @@
           "count": 2
         },
         {
+          "name": "Yuna",
+          "count": 2
+        },
+        {
           "name": "0 AÇOUGUEIRO",
           "count": 1
         },
@@ -20180,6 +20060,10 @@
         },
         {
           "name": "Bruna Laïs",
+          "count": 1
+        },
+        {
+          "name": "CANONDA",
           "count": 1
         },
         {
@@ -20293,14 +20177,10 @@
         {
           "name": "xXxJoKeRxXx",
           "count": 1
-        },
-        {
-          "name": "Yuna",
-          "count": 1
         }
       ],
-      "week_total": 58,
-      "vs_cycle_total": 58,
+      "week_total": 61,
+      "vs_cycle_total": 61,
       "vs_cycle_note": "current_iso_week"
     }
   }
