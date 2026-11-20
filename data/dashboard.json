@@ -19831,11 +19831,11 @@
       ]
     }
   },
-  "generated_at": "2026-11-19T05:13:06Z",
-  "stand_berlin": "19.11.2026, 06:13",
+  "generated_at": "2026-11-20T00:14:38Z",
+  "stand_berlin": "20.11.2026, 01:14",
   "source": "google_sheets",
   "source_file": "DawN - Base + Tabs (live)",
-  "snapshot": "2026-11-19T05:13:06",
+  "snapshot": "2026-11-20T00:14:38",
   "links": {
     "title": "DawN",
     "tagline": "Important links",
@@ -20100,54 +20100,38 @@
     }
   ],
   "presence": {
-    "as_of": "2026-11-19T06:13:11+01:00",
+    "as_of": "2026-11-20T01:14:44+01:00",
     "offline_flag_hours": 8,
     "online": {
       "date": "2026-11-19",
-      "sampled": 65,
+      "sampled": 69,
       "offline": [
         {
           "name": "Buckioio",
+          "hours_offline": 48.0
+        },
+        {
+          "name": "HeinselHH",
           "hours_offline": 24.0
         },
         {
-          "name": "iamJazzyy",
-          "hours_offline": 10.0
+          "name": "ImpAugustus",
+          "hours_offline": 13.0
         },
         {
-          "name": "Lover Of Manquaca",
-          "hours_offline": 10.0
-        },
-        {
-          "name": "Megalocasiadon",
-          "hours_offline": 10.0
-        },
-        {
-          "name": "BlackHeiX",
+          "name": "Fred67290",
           "hours_offline": 9.0
         },
         {
-          "name": "Deaths Brother",
+          "name": "Xx RvE Xx",
           "hours_offline": 9.0
         },
         {
-          "name": "Gubalibre",
-          "hours_offline": 9.0
-        },
-        {
-          "name": "Lawima",
-          "hours_offline": 9.0
-        },
-        {
-          "name": "Mr Xanor",
-          "hours_offline": 8.0
-        },
-        {
-          "name": "TheStarks",
+          "name": "AndreResende",
           "hours_offline": 8.0
         }
       ],
-      "offline_count": 10
+      "offline_count": 6
     },
     "gifts": {
       "date": "2026-11-19",
@@ -20433,23 +20417,35 @@
     "absences": {
       "threshold_hours": 8,
       "iso_week": "2026-W47",
-      "snapshots": 6,
+      "snapshots": 7,
       "per_member": [
         {
           "name": "Buckioio",
-          "count": 5
+          "count": 6
         },
         {
           "name": "Mr Xanor",
           "count": 4
         },
         {
+          "name": "HeinselHH",
+          "count": 3
+        },
+        {
           "name": "iamJazzyy",
+          "count": 3
+        },
+        {
+          "name": "ImpAugustus",
           "count": 3
         },
         {
           "name": "TheStarks",
           "count": 3
+        },
+        {
+          "name": "AndreResende",
+          "count": 2
         },
         {
           "name": "Baby Bax Baba Bax",
@@ -20460,15 +20456,11 @@
           "count": 2
         },
         {
+          "name": "Fred67290",
+          "count": 2
+        },
+        {
           "name": "Gubalibre",
-          "count": 2
-        },
-        {
-          "name": "HeinselHH",
-          "count": 2
-        },
-        {
-          "name": "ImpAugustus",
           "count": 2
         },
         {
@@ -20496,6 +20488,10 @@
           "count": 2
         },
         {
+          "name": "Xx RvE Xx",
+          "count": 2
+        },
+        {
           "name": "Yuna",
           "count": 2
         },
@@ -20509,10 +20505,6 @@
         },
         {
           "name": "Alex000392",
-          "count": 1
-        },
-        {
-          "name": "AndreResende",
           "count": 1
         },
         {
@@ -20549,10 +20541,6 @@
         },
         {
           "name": "Filippos4Paok",
-          "count": 1
-        },
-        {
-          "name": "Fred67290",
           "count": 1
         },
         {
@@ -20620,16 +20608,12 @@
           "count": 1
         },
         {
-          "name": "Xx RvE Xx",
-          "count": 1
-        },
-        {
           "name": "xXxJoKeRxXx",
           "count": 1
         }
       ],
-      "week_total": 71,
-      "vs_cycle_total": 71,
+      "week_total": 77,
+      "vs_cycle_total": 77,
       "vs_cycle_note": "current_iso_week"
     }
   }
