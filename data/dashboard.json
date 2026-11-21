@@ -20136,11 +20136,11 @@
       ]
     }
   },
-  "generated_at": "2026-11-20T04:58:21Z",
-  "stand_berlin": "20.11.2026, 05:58",
+  "generated_at": "2026-11-21T00:08:29Z",
+  "stand_berlin": "21.11.2026, 01:08",
   "source": "google_sheets",
   "source_file": "DawN - Base + Tabs (live)",
-  "snapshot": "2026-11-20T04:58:21",
+  "snapshot": "2026-11-21T00:08:29",
   "links": {
     "title": "DawN",
     "tagline": "Important links",
@@ -20405,66 +20405,26 @@
     }
   ],
   "presence": {
-    "as_of": "2026-11-20T05:58:26+01:00",
+    "as_of": "2026-11-21T01:08:33+01:00",
     "offline_flag_hours": 8,
     "online": {
       "date": "2026-11-20",
-      "sampled": 67,
+      "sampled": 68,
       "offline": [
         {
-          "name": "Matheus g",
-          "hours_offline": 72.0
-        },
-        {
-          "name": "Buckioio",
-          "hours_offline": 48.0
-        },
-        {
-          "name": "CANONDA",
-          "hours_offline": 48.0
-        },
-        {
-          "name": "HeinselHH",
-          "hours_offline": 24.0
-        },
-        {
-          "name": "Tiane",
-          "hours_offline": 24.0
-        },
-        {
-          "name": "ImpAugustus",
-          "hours_offline": 17.0
-        },
-        {
-          "name": "Fred67290",
-          "hours_offline": 14.0
-        },
-        {
-          "name": "Xx RvE Xx",
-          "hours_offline": 13.0
-        },
-        {
-          "name": "iamJazzyy",
+          "name": "Dani Earth",
           "hours_offline": 11.0
         },
         {
-          "name": "Jazzcat78",
-          "hours_offline": 10.0
-        },
-        {
-          "name": "Megalocasiadon",
-          "hours_offline": 9.0
-        },
-        {
-          "name": "Deaths Brother",
+          "name": "Baby Bax Baba Bax",
           "hours_offline": 8.0
         },
         {
-          "name": "Lawima",
+          "name": "ReflexX",
           "hours_offline": 8.0
         }
       ],
-      "offline_count": 13
+      "offline_count": 3
     },
     "gifts": {
       "date": "2026-11-20",
