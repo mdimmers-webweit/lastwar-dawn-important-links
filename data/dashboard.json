@@ -18423,11 +18423,11 @@
       ]
     }
   },
-  "generated_at": "2026-11-24T04:55:57Z",
-  "stand_berlin": "24.11.2026, 05:55",
+  "generated_at": "2026-11-25T00:08:37Z",
+  "stand_berlin": "25.11.2026, 01:08",
   "source": "google_sheets",
   "source_file": "DawN - Base + Tabs (live)",
-  "snapshot": "2026-11-24T04:55:57",
+  "snapshot": "2026-11-25T00:08:37",
   "links": {
     "title": "DawN",
     "tagline": "Important links",
@@ -18692,38 +18692,50 @@
     }
   ],
   "presence": {
-    "as_of": "2026-11-24T05:56:02+01:00",
+    "as_of": "2026-11-25T01:08:42+01:00",
     "offline_flag_hours": 8,
     "online": {
       "date": "2026-11-24",
       "sampled": 67,
       "offline": [
         {
+          "name": "CANONDA",
+          "hours_offline": 168.0
+        },
+        {
           "name": "Buckioio",
-          "hours_offline": 48.0
+          "hours_offline": 72.0
         },
         {
           "name": "ImpAugustus",
           "hours_offline": 12.0
         },
         {
-          "name": "CANONDA",
-          "hours_offline": 9.0
+          "name": "Jazzcat78",
+          "hours_offline": 12.0
         },
         {
-          "name": "Lawima",
-          "hours_offline": 9.0
+          "name": "Yuna",
+          "hours_offline": 12.0
         },
         {
-          "name": "TheStarks",
-          "hours_offline": 9.0
+          "name": "Fred67290",
+          "hours_offline": 11.0
         },
         {
-          "name": "СТРАННИК",
+          "name": "Soster",
+          "hours_offline": 11.0
+        },
+        {
+          "name": "Andressita MD",
+          "hours_offline": 10.0
+        },
+        {
+          "name": "Eisen024",
           "hours_offline": 8.0
         }
       ],
-      "offline_count": 6
+      "offline_count": 9
     },
     "gifts": {
       "date": "2026-11-24",
@@ -19018,18 +19030,34 @@
     "absences": {
       "threshold_hours": 8,
       "iso_week": "2026-W48",
-      "snapshots": 1,
+      "snapshots": 2,
       "per_member": [
         {
           "name": "Buckioio",
-          "count": 1
+          "count": 2
         },
         {
           "name": "CANONDA",
-          "count": 1
+          "count": 2
         },
         {
           "name": "ImpAugustus",
+          "count": 2
+        },
+        {
+          "name": "Andressita MD",
+          "count": 1
+        },
+        {
+          "name": "Eisen024",
+          "count": 1
+        },
+        {
+          "name": "Fred67290",
+          "count": 1
+        },
+        {
+          "name": "Jazzcat78",
           "count": 1
         },
         {
@@ -19037,7 +19065,15 @@
           "count": 1
         },
         {
+          "name": "Soster",
+          "count": 1
+        },
+        {
           "name": "TheStarks",
+          "count": 1
+        },
+        {
+          "name": "Yuna",
           "count": 1
         },
         {
@@ -19045,8 +19081,8 @@
           "count": 1
         }
       ],
-      "week_total": 6,
-      "vs_cycle_total": 6,
+      "week_total": 15,
+      "vs_cycle_total": 15,
       "vs_cycle_note": "current_iso_week"
     }
   }
