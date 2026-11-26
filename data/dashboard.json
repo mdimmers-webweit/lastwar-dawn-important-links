@@ -18778,11 +18778,11 @@
       ]
     }
   },
-  "generated_at": "2026-11-25T04:55:09Z",
-  "stand_berlin": "25.11.2026, 05:55",
+  "generated_at": "2026-11-26T00:09:09Z",
+  "stand_berlin": "26.11.2026, 01:09",
   "source": "google_sheets",
   "source_file": "DawN - Base + Tabs (live)",
-  "snapshot": "2026-11-25T04:55:09",
+  "snapshot": "2026-11-26T00:09:09",
   "links": {
     "title": "DawN",
     "tagline": "Important links",
@@ -19047,74 +19047,42 @@
     }
   ],
   "presence": {
-    "as_of": "2026-11-25T05:55:14+01:00",
+    "as_of": "2026-11-26T01:09:13+01:00",
     "offline_flag_hours": 8,
     "online": {
       "date": "2026-11-25",
-      "sampled": 68,
+      "sampled": 67,
       "offline": [
         {
           "name": "Buckioio",
-          "hours_offline": 72.0
+          "hours_offline": 96.0
         },
         {
-          "name": "ImpAugustus",
-          "hours_offline": 17.0
-        },
-        {
-          "name": "Jazzcat78",
-          "hours_offline": 17.0
-        },
-        {
-          "name": "Fred67290",
-          "hours_offline": 15.0
-        },
-        {
-          "name": "CANONDA",
+          "name": "PunisherR93",
           "hours_offline": 12.0
         },
         {
-          "name": "iamJazzyy",
+          "name": "Yuna",
+          "hours_offline": 11.0
+        },
+        {
+          "name": "Baby Bax Baba Bax",
           "hours_offline": 10.0
         },
         {
-          "name": "AJ die Beste",
+          "name": "TheStarks",
+          "hours_offline": 10.0
+        },
+        {
+          "name": "RubiA",
           "hours_offline": 9.0
         },
         {
-          "name": "Deaths Brother",
-          "hours_offline": 8.0
-        },
-        {
-          "name": "Gubalibre",
-          "hours_offline": 8.0
-        },
-        {
-          "name": "Lawima",
-          "hours_offline": 8.0
-        },
-        {
-          "name": "Optimus Bob",
-          "hours_offline": 8.0
-        },
-        {
-          "name": "Random Attacks",
-          "hours_offline": 8.0
-        },
-        {
-          "name": "TheStarks",
-          "hours_offline": 8.0
-        },
-        {
-          "name": "ßKATERINA ß",
-          "hours_offline": 8.0
-        },
-        {
-          "name": "СТРАННИК",
+          "name": "ImpAugustus",
           "hours_offline": 8.0
         }
       ],
-      "offline_count": 15
+      "offline_count": 7
     },
     "gifts": {
       "date": "2026-11-25",
