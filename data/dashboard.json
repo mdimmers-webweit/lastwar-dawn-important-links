@@ -19424,11 +19424,11 @@
       ]
     }
   },
-  "generated_at": "2026-11-26T05:11:13Z",
-  "stand_berlin": "26.11.2026, 06:11",
+  "generated_at": "2026-11-27T00:08:47Z",
+  "stand_berlin": "27.11.2026, 01:08",
   "source": "google_sheets",
   "source_file": "DawN - Base + Tabs (live)",
-  "snapshot": "2026-11-26T05:11:13",
+  "snapshot": "2026-11-27T00:08:47",
   "links": {
     "title": "DawN",
     "tagline": "Important links",
@@ -19693,66 +19693,46 @@
     }
   ],
   "presence": {
-    "as_of": "2026-11-26T06:11:18+01:00",
+    "as_of": "2026-11-27T01:08:52+01:00",
     "offline_flag_hours": 8,
     "online": {
       "date": "2026-11-26",
-      "sampled": 71,
+      "sampled": 70,
       "offline": [
         {
+          "name": "CANONDA",
+          "hours_offline": 192.0
+        },
+        {
           "name": "Buckioio",
-          "hours_offline": 96.0
+          "hours_offline": 120.0
         },
         {
-          "name": "TheStarks",
-          "hours_offline": 14.0
+          "name": "xxxJOCHARUIxxx",
+          "hours_offline": 120.0
         },
         {
-          "name": "ImpAugustus",
-          "hours_offline": 13.0
-        },
-        {
-          "name": "Mr Xanor",
+          "name": "Soster",
           "hours_offline": 12.0
         },
         {
-          "name": "CANONDA",
-          "hours_offline": 11.0
-        },
-        {
-          "name": "iamJazzyy",
-          "hours_offline": 11.0
-        },
-        {
-          "name": "Xx RvE Xx",
+          "name": "Tiane",
           "hours_offline": 11.0
         },
         {
           "name": "ReflexX",
+          "hours_offline": 10.0
+        },
+        {
+          "name": "Jazzcat78",
           "hours_offline": 9.0
         },
         {
-          "name": "Filippos4Paok",
-          "hours_offline": 8.0
-        },
-        {
-          "name": "Fred67290",
-          "hours_offline": 8.0
-        },
-        {
-          "name": "Gubalibre",
-          "hours_offline": 8.0
-        },
-        {
-          "name": "Optimus Bob",
-          "hours_offline": 8.0
-        },
-        {
-          "name": "ßKATERINA ß",
+          "name": "Xx RvE Xx",
           "hours_offline": 8.0
         }
       ],
-      "offline_count": 13
+      "offline_count": 8
     },
     "gifts": {
       "date": "2026-11-26",
